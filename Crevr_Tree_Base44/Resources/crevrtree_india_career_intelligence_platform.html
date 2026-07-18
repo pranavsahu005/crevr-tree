@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrevrTree — India's Career, Business & Government Paths</title>
+    
+    <!-- Google Fonts: Baloo 2 (Display) & Inter (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FFF8E7',
+                        'warm-white': '#FFFDF8',
+                        'earth-brown': '#6B4A2E',
+                        'soft-brown': '#9C7B58',
+                        'border-soft': '#F0E4CC',
+                        'honey-amber': '#FFC020',
+                        'honey-amber-dark': '#E0A000',
+                        leaf: {
+                          light: '#E9FFC7',
+                          bright: '#ABFF2E',
+                          deep: '#43FF2E',
+                          dark: '#476E0C',
+                        },
+                        medical: { primary: '#FF6B81', bg: '#FFE0E6' },
+                        education: { primary: '#4ECDC4', bg: '#D9FFFB' },
+                        govt: { primary: '#FF9F43', bg: '#FFEBD1' },
+                        business: { primary: '#43C97E', bg: '#DFFFEA' },
+                        finance: { primary: '#6C5CE7', bg: '#E6E1FF' },
+                        tech: { primary: '#2EAFFF', bg: '#DFF3FF' },
+                    },
+                    fontFamily: {
+                        display: ['"Baloo 2"', 'cursive', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 4px 16px rgba(107, 74, 46, 0.08)',
+                        'hover': '0 8px 24px rgba(107, 74, 46, 0.14)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF8E7; /* --cream */
+            color: #6B4A2E; /* --earth-brown */
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-display {
+            font-family: 'Baloo 2', cursive, sans-serif;
+        }
+
+        /* Ambient swaying tree illustration on Hero */
+        @keyframes sway {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(1.2deg); }
+        }
+        .animate-sway {
+            animation: sway 6s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        /* Pulsing current node halo */
+        @keyframes pulse-halo {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(171, 255, 46, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(171, 255, 46, 0.8); }
+        }
+        .pulse-halo-active {
+            animation: pulse-halo 2.5s infinite ease-in-out;
+        }
+
+        /* SVG Line drawing animation simulating organic growth */
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        .tree-connector-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 1.5s ease-out forwards;
+        }
+
+        /* Smooth tab transition bar */
+        .tab-underline {
+            position: absolute;
+            bottom: 0;
+            height: 3px;
+            background-color: #FFC020;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Custom scrollbar to match warm patisserie cream palette */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF8E7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #F0E4CC;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFC020;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-honey-amber selection:text-earth-brown">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-40 bg-warm-white/95 backdrop-blur-md border-b border-border-soft px-4 sm:px-6 lg:px-8 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+                <div class="w-10 h-10 bg-honey-amber rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-transform">
+                    <!-- Custom organic branch icon -->
+                    <svg class="w-5 h-5 text-earth-brown" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M12 9c2-2 4-2 6 0M12 14c-2-2-4-2-6 0M12 9c-2-1-4-1-6 0M12 14c2-1 4-1 6 0"></path>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-2xl font-extrabold tracking-tight text-earth-brown font-display leading-none block">Crevr<span class="text-honey-amber-dark">Tree</span></span>
+                    <span class="text-[9px] font-bold text-soft-brown uppercase tracking-widest block -mt-1">India Career Intelligence</span>
+                </div>
+            </div>
+
+            <!-- Central Nav Links (Desktop) -->
+            <div class="hidden md:flex items-center space-x-1 font-semibold text-sm">
+                <button onclick="navigateTo('home')" class="nav-link px-4 py-2 rounded-full text-earth-brown hover:bg-cream/50 transition-all">Home</button>
+                <button onclick="openCategoryFromNav('career')" class="nav-link px-4 py-2 rounded-full text-earth-brown hover:bg-cream/50 transition-all">Career Paths</button>
+                <button onclick="openCategoryFromNav('government')" class="nav-link px-4 py-2 rounded-full text-earth-brown hover:bg-cream/50 transition-all">Government Exams</button>
+                <button onclick="openCategoryFromNav('business')" class="nav-link px-4 py-2 rounded-full text-earth-brown hover:bg-cream/50 transition-all">Business & Startup</button>
+                <button onclick="navigateTo('about')" class="nav-link px-4 py-2 rounded-full text-earth-brown hover:bg-cream/50 transition-all">Platform Vision</button>
+            </div>
+
+            <!-- Right side interactive search utility & mobile toggler -->
+            <div class="flex items-center space-x-3">
+                <div class="relative hidden sm:block">
+                    <input id="nav-search" onkeydown="handleSearchTrigger(event, 'nav-search')" type="text" placeholder="Search career or exam..." class="w-48 md:w-56 px-4 py-2 pl-9 bg-cream/60 border border-border-soft rounded-full text-xs text-earth-brown placeholder-soft-brown focus:ring-2 focus:ring-honey-amber focus:outline-none transition-all">
+                    <i data-lucide="search" class="w-3.5 h-3.5 text-soft-brown absolute left-3.5 top-2.5"></i>
+                </div>
+                <button onclick="navigateTo('about')" class="px-4 py-2 rounded-full border-2 border-honey-amber hover:bg-honey-amber/10 text-earth-brown text-xs font-bold transition-all shadow-sm">
+                    Why CrevrTree?
+                </button>
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-earth-brown hover:bg-cream/50 rounded-full transition-all">
+                    <i id="mobile-menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 border-t border-border-soft pt-4 space-y-2">
+            <button onclick="navigateTo('home'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl text-earth-brown font-bold hover:bg-cream/50">Home</button>
+            <button onclick="openCategoryFromNav('career'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl text-earth-brown font-bold hover:bg-cream/50">Career Paths</button>
+            <button onclick="openCategoryFromNav('government'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl text-earth-brown font-bold hover:bg-cream/50">Government Exams</button>
+            <button onclick="openCategoryFromNav('business'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl text-earth-brown font-bold hover:bg-cream/50">Business & Startup</button>
+            <button onclick="navigateTo('about'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl text-earth-brown font-bold hover:bg-cream/50">Platform Vision</button>
+            <div class="px-4 py-2">
+                <input id="nav-search-mobile" onkeydown="handleSearchTrigger(event, 'nav-search-mobile')" type="text" placeholder="Search career or exam..." class="w-full px-4 py-3 pl-9 bg-cream border border-border-soft rounded-full text-xs text-earth-brown focus:ring-2 focus:ring-honey-amber focus:outline-none">
+            </div>
+        </div>
+    </nav>
+
+    <!-- CUSTOM CUSTOMIZABLE NOTIFICATION POPUP -->
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-warm-white border border-border-soft rounded-2xl shadow-hover p-4 max-w-sm flex items-start space-x-3">
+            <div class="w-10 h-10 rounded-full bg-honey-amber/20 flex items-center justify-center text-honey-amber-dark flex-shrink-0">
+                <i data-lucide="info" class="w-5 h-5"></i>
+            </div>
+            <div>
+                <h4 id="toast-title" class="font-display font-bold text-earth-brown text-base">Notice</h4>
+                <p id="toast-body" class="text-xs text-soft-brown mt-1">Information message details...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================= -->
+    <!-- SECTION CONTENT LAYOUTS (SPA VIEWS) -->
+    <!-- ======================================================= -->
+
+    <!-- 1. HOME VIEW -->
+    <main id="view-home" class="flex-grow">
+        <!-- HERO SECTION -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left Info Block -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-honey-amber/15 px-4 py-1.5 rounded-full border border-border-soft">
+                    <span class="w-2 h-2 bg-honey-amber rounded-full animate-ping"></span>
+                    <span class="text-[10px] sm:text-xs font-bold text-soft-brown uppercase tracking-widest font-body">100% Free Interactive Directory</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-earth-brown leading-tight tracking-tight">
+                    India's Career, Business & Government Path — <span class="text-honey-amber-dark relative">In One Tree.<span class="absolute bottom-2 left-0 w-full h-3 bg-honey-amber/30 -z-10 rounded-full"></span></span>
+                </h1>
+                
+                <p class="text-base sm:text-lg text-soft-brown leading-relaxed max-w-2xl mx-auto lg:mx-0 font-body">
+                    Search anything — becoming a doctor, opening a shop, applying for a passport — and see the exact path, step by step. Zero corporate jargon, completely tailored guides for Indian youth.
+                </p>
+
+                <!-- Dedicated Search Pill -->
+                <div class="bg-warm-white p-2 rounded-full border-2 border-border-soft shadow-card max-w-xl mx-auto lg:mx-0 flex items-center transition-all hover:border-honey-amber focus-within:border-honey-amber">
+                    <div class="flex items-center pl-3 flex-grow">
+                        <i data-lucide="search" class="text-soft-brown w-5 h-5 flex-shrink-0"></i>
+                        <input id="hero-search-input" onkeydown="handleSearchTrigger(event, 'hero-search-input')" type="text" placeholder="Search a career, business, or service (e.g. Doctor, IAS)..." class="w-full text-earth-brown placeholder-soft-brown bg-transparent outline-none text-xs sm:text-sm px-3 py-2 font-medium">
+                    </div>
+                    <button onclick="triggerSearchFromHero()" class="px-6 py-3 bg-honey-amber hover:bg-honey-amber-dark text-earth-brown font-bold rounded-full text-xs sm:text-sm transition-all shadow-md hover:scale-[1.03]">
+                        Search Paths
+                    </button>
+                </div>
+
+                <!-- Instant Quick Tags -->
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-2">
+                    <span class="text-xs font-bold text-soft-brown mr-1">Popular searches:</span>
+                    <button onclick="directLoadRoadmap('ai-engineer')" class="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown">AI Engineer</button>
+                    <button onclick="directLoadRoadmap('doctor')" class="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown">Medical Doctor</button>
+                    <button onclick="directLoadRoadmap('ias-officer')" class="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown">IAS Officer</button>
+                    <button onclick="directLoadRoadmap('startup-founder')" class="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown">Startup Founder</button>
+                </div>
+            </div>
+
+            <!-- Right Vector sway Illustration -->
+            <div class="lg:col-span-5 flex justify-center relative">
+                <div class="absolute inset-0 bg-honey-amber/10 rounded-full filter blur-3xl opacity-60 -z-10"></div>
+                
+                <!-- Signature swaying tree illustration -->
+                <svg class="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 animate-sway text-earth-brown" viewBox="0 0 200 200" fill="none">
+                    <!-- Ground roots -->
+                    <path d="M40 180 C 70 178, 130 178, 160 180" stroke="#6B4A2E" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M100 130 L100 180" stroke="#6B4A2E" stroke-width="8" stroke-linecap="round"/>
+                    <path d="M100 150 C 85 160, 70 165, 55 175" stroke="#6B4A2E" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M100 145 C 115 155, 130 162, 145 172" stroke="#6B4A2E" stroke-width="4" stroke-linecap="round"/>
+                    <!-- Branches themed after the Category Identity Colors -->
+                    <path d="M100 110 C 80 90, 60 80, 45 90" stroke="#FF6B81" stroke-width="6" stroke-linecap="round"/> <!-- Rose Branch -->
+                    <path d="M100 100 C 120 75, 140 60, 155 75" stroke="#4ECDC4" stroke-width="6" stroke-linecap="round"/> <!-- Teal Branch -->
+                    <path d="M100 80 L100 40" stroke="#FF9F43" stroke-width="5" stroke-linecap="round"/> <!-- Orange Trunk -->
+                    <path d="M100 70 C 80 50, 70 30, 50 25" stroke="#43C97E" stroke-width="4" stroke-linecap="round"/> <!-- Green Branch -->
+                    <path d="M100 55 C 120 40, 135 25, 150 20" stroke="#6C5CE7" stroke-width="4" stroke-linecap="round"/> <!-- Violet Branch -->
+                    <!-- Glowing Leaves markers -->
+                    <circle cx="45" cy="90" r="10" fill="#FFE0E6" stroke="#FF6B81" stroke-width="2"/>
+                    <circle cx="155" cy="75" r="12" fill="#D9FFFB" stroke="#4ECDC4" stroke-width="2"/>
+                    <circle cx="100" cy="40" r="9" fill="#FFEBD1" stroke="#FF9F43" stroke-width="2"/>
+                    <circle cx="50" cy="25" r="11" fill="#DFFFEA" stroke="#43C97E" stroke-width="2"/>
+                    <circle cx="150" cy="20" r="10" fill="#E6E1FF" stroke="#6C5CE7" stroke-width="2"/>
+                    
+                    <path d="M100 120 C 90 100, 110 80, 100 60" stroke="#FFC020" stroke-width="7" stroke-linecap="round"/> <!-- Main center -->
+                    <!-- Small hanging fruit/leaf icon -->
+                    <circle cx="100" cy="60" r="7" fill="#E9FFC7" stroke="#476E0C" stroke-width="2"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- FOUR DOORS (CATEGORIES) SECTION -->
+        <section class="bg-warm-white/60 border-t border-b border-border-soft py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-earth-brown">Discover Your Chosen Door</h2>
+                    <p class="text-base text-soft-brown">Select from four massive segments of Indian pathways to reveal curated roadmap trees.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Door 1: Career Paths -->
+                    <div onclick="navigateToCategory('career')" class="group cursor-pointer bg-warm-white border border-border-soft rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 border-l-4 border-l-tech-primary">
+                        <div class="w-12 h-12 rounded-full bg-tech/20 flex items-center justify-center text-tech-primary mb-4">
+                            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-earth-brown group-hover:text-honey-amber-dark transition-colors">Professional Careers</h3>
+                        <p class="text-xs text-soft-brown mt-2 leading-relaxed">Technical, medical, creative, and professional courses built step-by-step.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-4">
+                            <span class="text-[10px] font-semibold bg-tech/20 text-blue-600 px-2 py-0.5 rounded-full">Doctor</span>
+                            <span class="text-[10px] font-semibold bg-tech/20 text-blue-600 px-2 py-0.5 rounded-full">AI Engineer</span>
+                        </div>
+                    </div>
+
+                    <!-- Door 2: Government Careers -->
+                    <div onclick="navigateToCategory('government')" class="group cursor-pointer bg-warm-white border border-border-soft rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 border-l-4 border-l-govt-primary">
+                        <div class="w-12 h-12 rounded-full bg-govt/20 flex items-center justify-center text-govt-primary mb-4">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-earth-brown group-hover:text-honey-amber-dark transition-colors">Government & UPSC</h3>
+                        <p class="text-xs text-soft-brown mt-2 leading-relaxed">Civil services, defense forces, banking PO, railways, and state level guidelines.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-4">
+                            <span class="text-[10px] font-semibold bg-govt/20 text-amber-700 px-2 py-0.5 rounded-full">IAS Officer</span>
+                            <span class="text-[10px] font-semibold bg-govt/20 text-amber-700 px-2 py-0.5 rounded-full">Police</span>
+                        </div>
+                    </div>
+
+                    <!-- Door 3: Business & Startup -->
+                    <div onclick="navigateToCategory('business')" class="group cursor-pointer bg-warm-white border border-border-soft rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 border-l-4 border-l-business-primary">
+                        <div class="w-12 h-12 rounded-full bg-business/20 flex items-center justify-center text-business-primary mb-4">
+                            <i data-lucide="store" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-earth-brown group-hover:text-honey-amber-dark transition-colors">Business & MSME</h3>
+                        <p class="text-xs text-soft-brown mt-2 leading-relaxed">How to start a cafe, register a shop, scaling startup ideas, and Mudra loans.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-4">
+                            <span class="text-[10px] font-semibold bg-business/20 text-emerald-700 px-2 py-0.5 rounded-full">Shop Setup</span>
+                            <span class="text-[10px] font-semibold bg-business/20 text-emerald-700 px-2 py-0.5 rounded-full">Startup</span>
+                        </div>
+                    </div>
+
+                    <!-- Door 4: Finance & Chartered Accountant -->
+                    <div onclick="navigateToCategory('finance')" class="group cursor-pointer bg-warm-white border border-border-soft rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 border-l-4 border-l-finance-primary">
+                        <div class="w-12 h-12 rounded-full bg-finance/20 flex items-center justify-center text-finance-primary mb-4">
+                            <i data-lucide="coins" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-earth-brown group-hover:text-honey-amber-dark transition-colors">Finance & CA</h3>
+                        <p class="text-xs text-soft-brown mt-2 leading-relaxed">Chartered accountancy exams, statutory audits, tax registrations, and bank jobs.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-4">
+                            <span class="text-[10px] font-semibold bg-finance/20 text-indigo-700 px-2 py-0.5 rounded-full">CA Exam</span>
+                            <span class="text-[10px] font-semibold bg-finance/20 text-indigo-700 px-2 py-0.5 rounded-full">Tax Analyst</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS SECTION -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl font-extrabold text-earth-brown">How It Works</h2>
+                <p class="text-base text-soft-brown">Information is everywhere. We organize it into a logical timeline sequence so you are never overwhelmed.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-honey-amber flex items-center justify-center font-display font-bold text-2xl text-earth-brown shadow-md">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold text-earth-brown font-display">Pick a Direction</h3>
+                    <p class="text-sm text-soft-brown max-w-xs leading-relaxed">
+                        Type any job or business role in the search bar. We support over 12 comprehensive Indian-specific tracks.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-honey-amber flex items-center justify-center font-display font-bold text-2xl text-earth-brown shadow-md">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold text-earth-brown font-display">Inspect the Tree</h3>
+                    <p class="text-sm text-soft-brown max-w-xs leading-relaxed">
+                        See the exact path from school foundations to final job leaves, mapped with colored connection branches.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-honey-amber flex items-center justify-center font-display font-bold text-2xl text-earth-brown shadow-md">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold text-earth-brown font-display">Access Real Assets</h3>
+                    <p class="text-sm text-soft-brown max-w-xs leading-relaxed">
+                        Click any node to get direct NCERT textbook PDFs, official application forms, exam guidelines, and verified free YouTube playlists.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY THIS EXISTS SECTION -->
+        <section class="bg-honey-amber/10 border-t border-b border-border-soft py-16">
+            <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+                <span class="text-xs font-extrabold text-honey-amber-dark uppercase tracking-widest font-body">An Honest Mission</span>
+                <h2 class="text-3xl font-extrabold text-earth-brown">Information Overload is India's Real Enemy</h2>
+                <p class="text-base sm:text-lg text-soft-brown leading-relaxed font-body">
+                    Students don't suffer from a lack of guidance. They suffer because of thousands of conflicting YouTube videos and paywalled corporate courses. CrevrTree exists as a quiet, beautifully visual directory that maps official, free, open paths.
+                </p>
+                <div class="pt-4">
+                    <button onclick="navigateTo('about')" class="px-6 py-3 bg-earth-brown hover:bg-earth-brown/90 text-white font-bold rounded-full text-sm transition-all shadow-md">
+                        Read Our Story
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="max-w-4xl mx-auto px-4 py-16 sm:py-24 space-y-12">
+            <div class="text-center space-y-3">
+                <h2 class="text-3xl font-extrabold text-earth-brown">Frequently Asked Questions</h2>
+                <p class="text-base text-soft-brown">Simple, plain-language answers about our platform.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <div class="bg-warm-white border border-border-soft rounded-2xl overflow-hidden shadow-card">
+                    <button onclick="toggleFaq(0)" class="w-full flex items-center justify-between p-5 text-left font-bold font-display text-earth-brown text-base hover:bg-cream/40">
+                        <span>Is this platform completely free to use?</span>
+                        <i id="faq-icon-0" data-lucide="chevron-down" class="w-5 h-5 text-soft-brown transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-0" class="hidden p-5 border-t border-border-soft text-sm text-soft-brown bg-warm-white/40 leading-relaxed">
+                        Yes! CrevrTree is fully open and completely free. We do not require any login, payment details, or lock any premium modules. Our goal is wide democratic accessibility for every school/college student across India.
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="bg-warm-white border border-border-soft rounded-2xl overflow-hidden shadow-card">
+                    <button onclick="toggleFaq(1)" class="w-full flex items-center justify-between p-5 text-left font-bold font-display text-earth-brown text-base hover:bg-cream/40">
+                        <span>How are the resources verified?</span>
+                        <i id="faq-icon-1" data-lucide="chevron-down" class="w-5 h-5 text-soft-brown transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-1" class="hidden p-5 border-t border-border-soft text-sm text-soft-brown bg-warm-white/40 leading-relaxed">
+                        All links inside node details point strictly to official portals (e.g. NTA for NEET exam, ICAI for Chartered Accountants, or NPTEL for CSE lectures). Free reference resources include top-rated public NCERT textbooks and verified free educational creators with zero hidden paywalls.
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="bg-warm-white border border-border-soft rounded-2xl overflow-hidden shadow-card">
+                    <button onclick="toggleFaq(2)" class="w-full flex items-center justify-between p-5 text-left font-bold font-display text-earth-brown text-base hover:bg-cream/40">
+                        <span>Do I need to sign in to save my roadmap progress?</span>
+                        <i id="faq-icon-2" data-lucide="chevron-down" class="w-5 h-5 text-soft-brown transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-2" class="hidden p-5 border-t border-border-soft text-sm text-soft-brown bg-warm-white/40 leading-relaxed">
+                        No login is required! We store your completed roadmap states and checkboxes directly inside your local browser storage (localStorage). As long as you don't clear your browser data, your progress remains beautifully tracked.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 2. CATEGORY FILTER VIEW -->
+    <main id="view-category" class="flex-grow hidden py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <!-- Back navigation button -->
+            <div>
+                <button onclick="navigateTo('home')" class="inline-flex items-center space-x-2 text-sm font-semibold text-earth-brown hover:text-honey-amber-dark bg-warm-white px-4 py-2 rounded-full border border-border-soft transition-all">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>Back to Home</span>
+                </button>
+            </div>
+
+            <!-- Page Title Block -->
+            <div class="space-y-3">
+                <span id="category-badge-pill" class="text-xs font-extrabold uppercase px-3 py-1 rounded-full bg-honey-amber/20 text-earth-brown border border-border-soft">Category</span>
+                <h1 id="category-page-title" class="text-4xl font-extrabold text-earth-brown font-display">Explore Available Path Roadmaps</h1>
+                <p id="category-page-desc" class="text-base text-soft-brown max-w-3xl">Select a path card to open its custom node-by-node structured branching canvas.</p>
+            </div>
+
+            <!-- Roadmaps Grid -->
+            <div id="category-roadmaps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Cards dynamically loaded via javascript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 3. TREE VIEW (THE MAIN PRODUCT) -->
+    <main id="view-tree" class="flex-grow hidden py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <!-- Top Controls -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border-soft pb-6">
+                <div class="space-y-1">
+                    <div class="flex items-center space-x-2">
+                        <button onclick="navigateTo('home')" class="text-xs font-bold text-soft-brown hover:text-earth-brown">Home</button>
+                        <span class="text-xs text-soft-brown">/</span>
+                        <span id="tree-category-crumb" class="text-xs text-soft-brown capitalize">Category</span>
+                        <span class="text-xs text-soft-brown">/</span>
+                        <span id="tree-title-crumb" class="text-xs font-bold text-earth-brown">Title</span>
+                    </div>
+                    <h1 id="tree-title" class="text-3xl sm:text-4xl font-extrabold text-earth-brown font-display leading-tight">Roadmap Title</h1>
+                    <p id="tree-desc" class="text-sm text-soft-brown leading-relaxed max-w-3xl">Description placeholder</p>
+                </div>
+
+                <!-- CTA Option -->
+                <button onclick="resetTreeProgress()" class="inline-flex items-center space-x-1.5 px-4 py-2 bg-warm-white border border-border-soft hover:bg-cream/50 text-xs font-semibold text-earth-brown rounded-full transition-all flex-shrink-0">
+                    <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                    <span>Reset This Tree Progress</span>
+                </button>
+            </div>
+
+            <!-- Two Column Layout: Canvas Left, Inspector Panel Right -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative min-h-[500px]">
+                
+                <!-- Tree Canvas wrapper column -->
+                <div class="lg:col-span-8 bg-warm-white/40 border border-border-soft rounded-3xl p-6 sm:p-12 relative overflow-hidden" id="tree-canvas-wrapper">
+                    <!-- SVG Overlay to render connectors dynamically between active tier elements -->
+                    <svg id="tree-svg-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-10"></svg>
+
+                    <!-- Real hierarchical container -->
+                    <div id="tree-nodes-container" class="relative z-20 space-y-16 flex flex-col items-center w-full">
+                        <!-- Node rows populated recursively inside JS -->
+                    </div>
+                </div>
+
+                <!-- Right Node Inspector sidebar column -->
+                <div class="lg:col-span-4 bg-warm-white border border-border-soft rounded-3xl p-6 shadow-card sticky top-28 z-30" id="tree-inspector">
+                    
+                    <div class="flex items-center justify-between border-b border-border-soft pb-4 mb-4">
+                        <span id="inspect-tag" class="text-xs font-extrabold uppercase px-2 py-0.5 rounded bg-cream border border-border-soft text-soft-brown">Interactive Node Inspector</span>
+                        <span class="text-[10px] text-soft-brown font-bold flex items-center space-x-1">
+                            <i data-lucide="mouse-pointer-click" class="w-3 h-3"></i>
+                            <span>Click any node</span>
+                        </span>
+                    </div>
+
+                    <div id="inspector-init-state" class="py-12 text-center space-y-3">
+                        <div class="w-16 h-16 rounded-full bg-honey-amber/10 mx-auto flex items-center justify-center text-honey-amber">
+                            <i data-lucide="compass" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-lg text-earth-brown">Discover Step Details</h4>
+                        <p class="text-xs text-soft-brown leading-relaxed max-w-xs mx-auto">Click any node block or branch in the road map on the left to inspect official websites, textbooks, and free videos.</p>
+                    </div>
+
+                    <div id="inspector-active-state" class="hidden space-y-6">
+                        <div>
+                            <h3 id="inspect-title" class="text-2xl font-extrabold text-earth-brown font-display leading-tight">Step Title</h3>
+                            <p id="inspect-desc" class="text-xs text-soft-brown mt-2 leading-relaxed">Overview description text detailing what must be achieved inside this milestone step.</p>
+                        </div>
+
+                        <!-- Panel Tabs (Overview, Official Web, Free Resources, Checklist) -->
+                        <div class="relative border-b border-border-soft">
+                            <div class="flex space-x-4 text-xs font-bold overflow-x-auto pb-1.5 scrollbar-thin">
+                                <button onclick="setInspectorTab('official')" id="tab-btn-official" class="tab-btn text-earth-brown hover:text-honey-amber-dark whitespace-nowrap pb-1">Official Websites</button>
+                                <button onclick="setInspectorTab('resources')" id="tab-btn-resources" class="tab-btn text-soft-brown hover:text-honey-amber-dark whitespace-nowrap pb-1">Free Material</button>
+                                <button onclick="setInspectorTab('checklist')" id="tab-btn-checklist" class="tab-btn text-soft-brown hover:text-honey-amber-dark whitespace-nowrap pb-1">Requirement Check</button>
+                            </div>
+                            <div id="tab-indicator" class="tab-underline w-16" style="left: 0;"></div>
+                        </div>
+
+                        <!-- Tab contents -->
+                        <div id="tab-content-official" class="tab-panel space-y-3">
+                            <p class="text-[11px] text-soft-brown italic">Recommended official portals for verification, enrollment, and credentials:</p>
+                            <div id="official-links-container" class="space-y-2">
+                                <!-- Dynamically loaded links -->
+                            </div>
+                        </div>
+
+                        <div id="tab-content-resources" class="tab-panel hidden space-y-3">
+                            <p class="text-[11px] text-soft-brown italic">High-quality free learning materials selected directly from public domains:</p>
+                            <div id="free-resources-container" class="space-y-2">
+                                <!-- Dynamically loaded links -->
+                            </div>
+                        </div>
+
+                        <div id="tab-content-checklist" class="tab-panel hidden space-y-3">
+                            <p class="text-[11px] text-soft-brown italic">Ensure you clear the eligibility guidelines below before proceeding:</p>
+                            <div id="checklist-container" class="space-y-2 text-xs text-earth-brown">
+                                <!-- Dynamically loaded checklist elements -->
+                            </div>
+                        </div>
+
+                        <!-- Completion state checkbox toggle inside side panel -->
+                        <div class="pt-4 border-t border-border-soft flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold text-soft-brown block uppercase">Mark Milestone</span>
+                                <span class="text-xs font-semibold text-earth-brown block">Have you completed this?</span>
+                            </div>
+                            <button id="inspect-done-btn" onclick="toggleActiveNodeCompletion()" class="px-4 py-2 bg-honey-amber hover:bg-honey-amber-dark text-earth-brown font-bold text-xs rounded-full transition-all flex items-center space-x-1 shadow-sm">
+                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                <span id="done-btn-text">Mark Completed</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 4. ABOUT PLATFORM VISION VIEW -->
+    <main id="view-about" class="flex-grow hidden py-12 md:py-20 bg-warm-white/40">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            <!-- Header Vision -->
+            <div class="text-center space-y-4">
+                <span class="text-xs font-extrabold uppercase px-3 py-1 rounded-full bg-honey-amber/20 text-earth-brown border border-border-soft">About CrevrTree</span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-earth-brown font-display leading-tight">The Vision Behind CrevrTree</h1>
+                <p class="text-base sm:text-lg text-soft-brown leading-relaxed max-w-2xl mx-auto font-body">
+                    A visual directory that maps school-to-career lifelines for Indian youth. Free from advertisements, paywalls, and corporate jargon.
+                </p>
+            </div>
+
+            <!-- Two Box Challenge / Solution grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
+                <div class="bg-warm-white border border-border-soft p-8 rounded-2xl space-y-4 shadow-card">
+                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-500 font-display font-bold text-lg">⚠️</div>
+                    <h3 class="text-xl font-bold text-earth-brown font-display">The Problem We Solve</h3>
+                    <p class="text-xs sm:text-sm text-soft-brown leading-relaxed">
+                        Indian high school and college students navigate career choices blind. They are targeted by massive commercial portals that lock standard checklists behind heavy paywalls. Jargon like "SaaS", "LPA", and "CTAs" confuse kids from smaller towns.
+                    </p>
+                </div>
+
+                <div class="bg-warm-white border border-border-soft p-8 rounded-2xl space-y-4 shadow-card">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 font-display font-bold text-lg">✓</div>
+                    <h3 class="text-xl font-bold text-earth-brown font-display">Our Solution</h3>
+                    <p class="text-xs sm:text-sm text-soft-brown leading-relaxed">
+                        We model educational and vocational tracks as **living trees**. Each node is fully transparent. A student in a village can immediately know what exams to take, what textbook to read, and verify the direct application URL without paywalls.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Technology Stack Summary -->
+            <div class="bg-warm-white border border-border-soft rounded-2xl p-8 space-y-6 shadow-card">
+                <h3 class="text-xl font-bold text-earth-brown text-center font-display">Values and Technical Stack</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                    <div class="p-4 bg-cream/30 rounded-xl border border-border-soft">
+                        <span class="text-[10px] font-bold text-soft-brown block uppercase">Open Source</span>
+                        <span class="text-sm font-extrabold text-earth-brown font-display">100% Democratic</span>
+                    </div>
+                    <div class="p-4 bg-cream/30 rounded-xl border border-border-soft">
+                        <span class="text-[10px] font-bold text-soft-brown block uppercase">Core Engine</span>
+                        <span class="text-sm font-extrabold text-earth-brown font-display">HTML5 / Vanilla JS</span>
+                    </div>
+                    <div class="p-4 bg-cream/30 rounded-xl border border-border-soft">
+                        <span class="text-[10px] font-bold text-soft-brown block uppercase">Interface CSS</span>
+                        <span class="text-sm font-extrabold text-earth-brown font-display">Tailwind System</span>
+                    </div>
+                    <div class="p-4 bg-cream/30 rounded-xl border border-border-soft">
+                        <span class="text-[10px] font-bold text-soft-brown block uppercase">Design Theme</span>
+                        <span class="text-sm font-extrabold text-earth-brown font-display">Apple Education</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ecosystem consistency box with your Crevr brands -->
+            <div class="border border-border-soft rounded-2xl p-8 bg-honey-amber/10 space-y-6">
+                <div class="text-center space-y-1">
+                    <span class="text-xs font-bold text-honey-amber-dark uppercase tracking-wider block font-body">Crevr Brand Capital Unity</span>
+                    <h4 class="text-xl font-bold text-earth-brown font-display">Our Connected Tech Family</h4>
+                    <p class="text-xs text-soft-brown leading-relaxed max-w-xl mx-auto">CrevrTree operates side-by-side with our premium tools and technology entities:</p>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="bg-warm-white p-4 rounded-xl text-center border border-border-soft shadow-sm">
+                        <span class="font-extrabold font-display text-sm text-earth-brown block">HexAtom</span>
+                        <span class="text-[9px] text-soft-brown block uppercase mt-1">Core Tech & Software</span>
+                    </div>
+                    <div class="bg-warm-white p-4 rounded-xl text-center border border-border-soft shadow-sm">
+                        <span class="font-extrabold font-display text-sm text-earth-brown block">Aronar AI</span>
+                        <span class="text-[9px] text-soft-brown block uppercase mt-1">Future Agent Models</span>
+                    </div>
+                    <div class="bg-warm-white p-4 rounded-xl text-center border border-border-soft shadow-sm">
+                        <span class="font-extrabold font-display text-sm text-earth-brown block">Wear Tome</span>
+                        <span class="text-[9px] text-soft-brown block uppercase mt-1">D2C Fashion Brand</span>
+                    </div>
+                    <div class="bg-warm-white p-4 rounded-xl text-center border border-border-soft shadow-sm">
+                        <span class="font-extrabold font-display text-sm text-earth-brown block">Clever Tool</span>
+                        <span class="text-[9px] text-soft-brown block uppercase mt-1">Web Helper Utilities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-warm-white border-t border-border-soft py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Brand Info -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-honey-amber rounded-full flex items-center justify-center">
+                        <svg class="w-4 h-4 text-earth-brown" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M12 9c2-2 4-2 6 0M12 14c-2-2-4-2-6 0"></path></svg>
+                    </div>
+                    <span class="text-xl font-bold text-earth-brown font-display">CrevrTree</span>
+                </div>
+                <p class="text-xs text-soft-brown leading-relaxed">
+                    Organizing educational and vocational streams as clear downward-growing tree roadmaps. Build standard, trusted milestones for India.
+                </p>
+            </div>
+
+            <!-- Links 1 -->
+            <div class="space-y-3">
+                <h5 class="text-xs font-bold text-earth-brown uppercase tracking-widest font-display">Platform Portals</h5>
+                <ul class="space-y-1.5 text-xs">
+                    <li><button onclick="navigateTo('home')" class="text-soft-brown hover:text-honey-amber-dark">Platform Home</button></li>
+                    <li><button onclick="openCategoryFromNav('career')" class="text-soft-brown hover:text-honey-amber-dark">Career Paths</button></li>
+                    <li><button onclick="openCategoryFromNav('government')" class="text-soft-brown hover:text-honey-amber-dark">Government Directory</button></li>
+                    <li><button onclick="openCategoryFromNav('business')" class="text-soft-brown hover:text-honey-amber-dark">Startup & MSME</button></li>
+                </ul>
+            </div>
+
+            <!-- Links 2 -->
+            <div class="space-y-3">
+                <h5 class="text-xs font-bold text-earth-brown uppercase tracking-widest font-display">Ecosystem Partners</h5>
+                <ul class="space-y-1.5 text-xs">
+                    <li><a href="#" class="text-soft-brown hover:text-honey-amber-dark">HexAtom Agency</a></li>
+                    <li><a href="#" class="text-soft-brown hover:text-honey-amber-dark">Aronar AI Systems</a></li>
+                    <li><a href="#" class="text-soft-brown hover:text-honey-amber-dark">Wear Tome Fashion</a></li>
+                    <li><a href="#" class="text-soft-brown hover:text-honey-amber-dark">Clever Tool SaaS</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal Details -->
+            <div class="space-y-3 text-xs">
+                <h5 class="text-xs font-bold text-earth-brown uppercase tracking-widest font-display">Transparency</h5>
+                <p class="text-[11px] text-soft-brown leading-relaxed">
+                    CrevrTree is a self-funded open educational repository. No cookie tracking, no profiling. Made with ❤️ in Madhya Pradesh, India.
+                </p>
+                <div class="flex space-x-3 text-soft-brown">
+                    <a href="https://github.com" target="_blank" class="hover:text-honey-amber-dark"><i data-lucide="github" class="w-4 h-4"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="hover:text-honey-amber-dark"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <a href="mailto:support@crevrtree.com" class="hover:text-honey-amber-dark"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-border-soft mt-8 pt-8 text-center text-[10px] text-soft-brown uppercase tracking-wider">
+            © 2026 CrevrTree Ecosystem. All pathways are verified open-source schemas.
+        </div>
+    </footer>
+
+    <!-- ======================================================= -->
+    <!-- DATA SCHEMAS & INTERACTIVE ENGINE -->
+    <!-- ======================================================= -->
+
+    <script>
+        // --- DYNAMIC DATABASE OF 12 SEEDED INDIAN ROADMAPS ---
+        const ROADMAPS_DATABASE = [
+            // TECHNOLOGY
+            {
+                id: "ai-engineer",
+                name: "AI & Machine Learning Engineer",
+                category: "tech",
+                tagline: "From school math bases to production LLM model integration.",
+                steps: [
+                    {
+                        id: "ai-1",
+                        name: "Mathematics Foundation",
+                        desc: "Master linear algebra, calculus foundations, and probability statistics standard to Indian board class 11-12 curriculum.",
+                        official: { label: "NCERT Class 12 Math Syllabus", url: "https://ncert.nic.in" },
+                        resources: [
+                            { type: "pdf", label: "NCERT Chapter 13 Probability Text", url: "https://ncert.nic.in/textbook.php" },
+                            { type: "video", label: "Probability Lectures on YouTube", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Comfortable with vectors", "Understand Matrix operations", "Basic probability concepts"],
+                        parent: null,
+                        coords: { x: 50, y: 10 }
+                    },
+                    {
+                        id: "ai-2",
+                        name: "Python Logic Programming",
+                        desc: "Master key scripting elements: conditional statements, logical loop algorithms, lists, and file handling.",
+                        official: { label: "Python Foundation Documentation", url: "https://docs.python.org/3/" },
+                        resources: [
+                            { type: "course", label: "Python for Absolute Beginners (NPTEL)", url: "https://nptel.ac.in" }
+                        ],
+                        checklist: ["Can write simple logic loops", "Understand list comprehensions", "Installed local Python IDLE"],
+                        parent: "ai-1",
+                        coords: { x: 50, y: 30 }
+                    },
+                    {
+                        id: "ai-3a",
+                        name: "Data Analysis & Pandas",
+                        desc: "Learn to clean, manipulate, and analyze tabular records utilizing Pandas, NumPy, and Matplotlib libraries.",
+                        official: { label: "Pandas Dataframe Documentation", url: "https://pandas.pydata.org" },
+                        resources: [
+                            { type: "video", label: "Pandas Data Cleaning Workshop", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Can filter rows in a Dataframe", "Completed basic CSV parsing project"],
+                        parent: "ai-2",
+                        coords: { x: 30, y: 55 }
+                    },
+                    {
+                        id: "ai-3b",
+                        name: "Neural Networks Theory",
+                        desc: "Understand backpropagation, weights, activation functions, and layer gradient flows.",
+                        official: { label: "Neural Networks Foundations", url: "https://deeplearning.ai" },
+                        resources: [
+                            { type: "pdf", label: "Deep Learning Book chapter PDF", url: "https://www.deeplearningbook.org" }
+                        ],
+                        checklist: ["Calculated simple hand derivatives", "Understand Sigmoid vs ReLU functions"],
+                        parent: "ai-2",
+                        coords: { x: 70, y: 55 }
+                    },
+                    {
+                        id: "ai-4",
+                        name: "Production Model Integration",
+                        desc: "Deploy API-driven pipelines leveraging OpenAI API, Claude API, or local HuggingFace transformers.",
+                        official: { label: "OpenAI Developer API Portal", url: "https://platform.openai.com" },
+                        resources: [
+                            { type: "video", label: "Deploying AI Agents on YouTube", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Understand REST API requests", "Constructed a simple custom LLM chatbot UI"],
+                        parent: "ai-3b",
+                        coords: { x: 50, y: 85 }
+                    }
+                ]
+            },
+            {
+                id: "doctor",
+                name: "Medical Doctor (MBBS)",
+                category: "medical",
+                tagline: "Pathway to clear NEET exams and complete the statutory clinical MBBS curriculum.",
+                steps: [
+                    {
+                        id: "med-1",
+                        name: "PCB Class 11-12 Board Prep",
+                        desc: "Complete your board foundations with deep attention to NCERT Biology, Chemistry, and Physics syllabus.",
+                        official: { label: "NCERT Official E-Textbooks", url: "https://ncert.nic.in" },
+                        resources: [
+                            { type: "pdf", label: "NCERT Class 11 Biology Textbook PDF", url: "https://ncert.nic.in" }
+                        ],
+                        checklist: ["Completed Class 12 exams with Physics, Chemistry, Biology", "Achieved minimum age limit of 17 years"],
+                        parent: null,
+                        coords: { x: 50, y: 10 }
+                    },
+                    {
+                        id: "med-2",
+                        name: "NEET UG Examination Clearance",
+                        desc: "Apply, prepare, and clear the National Eligibility cum Entrance Test to secure a government or private college seat.",
+                        official: { label: "NTA NEET Official Portal", url: "https://neet.nta.nic.in" },
+                        resources: [
+                            { type: "pdf", label: "NEET UG Exam Syllabus PDF", url: "https://neet.nta.nic.in" }
+                        ],
+                        checklist: ["Enrolled on NTA NEET portal", "Completed multiple official mock sample papers"],
+                        parent: "med-1",
+                        coords: { x: 50, y: 30 }
+                    },
+                    {
+                        id: "med-3a",
+                        name: "MBBS Pre-Clinical Phase",
+                        desc: "Deep studies into Human Anatomy, Biochemistry, and Physiology during MBBS semesters 1 and 2.",
+                        official: { label: "National Medical Commission", url: "https://www.nmc.org.in" },
+                        resources: [
+                            { type: "video", label: "MBBS Anatomy Lecture Series", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Mastered dissection procedures", "Cleared college first professional exams"],
+                        parent: "med-2",
+                        coords: { x: 30, y: 55 }
+                    },
+                    {
+                        id: "med-3b",
+                        name: "MBBS Clinical Pathology",
+                        desc: "Semesters 3 to 9. Studying Pharmacology, pathology, forensic medicine, and diagnostic parameters.",
+                        official: { label: "NMC UG Medical Guidelines", url: "https://www.nmc.org.in" },
+                        resources: [
+                            { type: "course", label: "Clinical Pathology Open Modules", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Completed pediatric rotation", "Completed ward observation rotations"],
+                        parent: "med-2",
+                        coords: { x: 70, y: 55 }
+                    },
+                    {
+                        id: "med-4",
+                        name: "Compulsory Rotatory Internship",
+                        desc: "Complete 1 full year of practical hands-on rotatory clinical placement across active hospital units.",
+                        official: { label: "State Medical Council Registration", url: "https://www.nmc.org.in" },
+                        resources: [
+                            { type: "pdf", label: "Intern Logbook Standards Guidelines", url: "https://www.nmc.org.in" }
+                        ],
+                        checklist: ["Completed Emergency rotation", "Obtained provisional doctor practitioner license registration number"],
+                        parent: "med-3a",
+                        coords: { x: 50, y: 85 }
+                    }
+                ]
+            },
+            {
+                id: "ias-officer",
+                name: "UPSC Civil Services Officer (IAS)",
+                category: "government",
+                tagline: "Pathway to clearing the UPSC CSE Prelims, Mains, and Interview cycle.",
+                steps: [
+                    {
+                        id: "civ-1",
+                        name: "UGC Graduate Degree",
+                        desc: "Complete a standard bachelor degree in any stream from a UGC recognized Indian university.",
+                        official: { label: "UGC Approved Universities List", url: "https://www.ugc.gov.in" },
+                        resources: [
+                            { type: "video", label: "UPSC CSE Preparation Strategy", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Enrolled in graduation", "Read standard newspapers daily (The Hindu/Express)"],
+                        parent: null,
+                        coords: { x: 50, y: 10 }
+                    },
+                    {
+                        id: "civ-2",
+                        name: "UPSC Prelims Filtering",
+                        desc: "Clear GS Paper 1 and score minimum 33% passing aggregate inside the CSAT Aptitude paper.",
+                        official: { label: "UPSC Official Notification Portal", url: "https://upsc.gov.in" },
+                        resources: [
+                            { type: "pdf", label: "UPSC General Studies Previous Year Papers", url: "https://upsc.gov.in" }
+                        ],
+                        checklist: ["Mastered basic NCERT History (6-12)", "Cleared mock CSAT test series"],
+                        parent: "civ-1",
+                        coords: { x: 50, y: 35 }
+                    },
+                    {
+                        id: "civ-3a",
+                        name: "GS Descriptive Mains Papers",
+                        desc: "Prepare and write 9 descriptive papers covering policy, essay, ethics, and your elective option.",
+                        official: { label: "UPSC Mains Descriptive Guidelines", url: "https://upsc.gov.in" },
+                        resources: [
+                            { type: "video", label: " Mains Answer Writing Strategy Class", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Completed syllabus for 1 optional subject", "Practiced daily answer writing speeds"],
+                        parent: "civ-2",
+                        coords: { x: 30, y: 65 }
+                    },
+                    {
+                        id: "civ-3b",
+                        name: "Detailed Application Form (DAF)",
+                        desc: "Fill and compile details regarding background history, extracurriculars, and cadre preferences.",
+                        official: { label: "UPSC Online DAF Filing", url: "https://upsconline.nic.in" },
+                        resources: [
+                            { type: "pdf", label: "UPSC DAF Sample Blueprint Form", url: "https://upsc.gov.in" }
+                        ],
+                        checklist: ["Verified regional certificate details", "Listed clear district/cadre priority choices"],
+                        parent: "civ-2",
+                        coords: { x: 70, y: 65 }
+                    },
+                    {
+                        id: "civ-4",
+                        name: "UPSC Personality Interview",
+                        desc: "Face highly structured boards evaluating composure, national values, policy vision, and ethics.",
+                        official: { label: "UPSC CSE Final Board Schedule", url: "https://upsc.gov.in" },
+                        resources: [
+                            { type: "video", label: "Live Mock Interview Board Sessions", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Thoroughly updated on current affairs", "Completed 3 panel mock tests"],
+                        parent: "civ-3a",
+                        coords: { x: 50, y: 90 }
+                    }
+                ]
+            },
+            {
+                id: "startup-founder",
+                name: "Startup Founder / Entrepreneur",
+                category: "business",
+                tagline: "Pathway to define MVP, register entity (LLP/Pvt), and seek Mudra or seed funding.",
+                steps: [
+                    {
+                        id: "biz-1",
+                        name: "Customer Interview (MVP)",
+                        desc: "Speak with at least 50 target buyers to validate if they face the problem you are solving.",
+                        official: { label: "Startup India Learning Hub", url: "https://www.startupindia.gov.in" },
+                        resources: [
+                            { type: "video", label: "Y-Combinator Startup School Videos", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Documented 50 customer feedback chats", "Defined core product pricing metrics"],
+                        parent: null,
+                        coords: { x: 50, y: 15 }
+                    },
+                    {
+                        id: "biz-2",
+                        name: "Company Incorporation (MCA)",
+                        desc: "Register a legal Indian business entity — Private Limited or Limited Liability Partnership (LLP) on MCA.",
+                        official: { label: "Ministry of Corporate Affairs Portal", url: "https://www.mca.gov.in" },
+                        resources: [
+                            { type: "pdf", label: "Step-by-step SPICe+ Registration PDF", url: "https://www.mca.gov.in" }
+                        ],
+                        checklist: ["Obtained DSC (Digital Signature Certificate)", "Approved unique business name", "Obtained PAN & TAN for company"],
+                        parent: "biz-1",
+                        coords: { x: 50, y: 40 }
+                    },
+                    {
+                        id: "biz-3a",
+                        name: "Government Mudra Loan Support",
+                        desc: "Seek debt capital via the Micro Units Development Refinance Agency (MUDRA) scheme (Shishu/Kishor/Tarun segments).",
+                        official: { label: "Official Udyam Registration & Mudra", url: "https://www.mudra.org.in" },
+                        resources: [
+                            { type: "video", label: "Udyam Registration Tutorial Hub", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Completed Udyam MSME Registration portal", "Prepared detailed project project report"],
+                        parent: "biz-2",
+                        coords: { x: 30, y: 68 }
+                    },
+                    {
+                        id: "biz-3b",
+                        name: "Angel Funding & Term Sheet",
+                        desc: "Create investor deck slides, present to local Indian angel networks, and agree on standard SHA terms.",
+                        official: { label: "Startup India Investor Network", url: "https://www.startupindia.gov.in" },
+                        resources: [
+                            { type: "pdf", label: "Standard Term Sheet template PDF", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Formulated fully detailed cash cap table", "Calculated basic customer acquisition cost (CAC)"],
+                        parent: "biz-2",
+                        coords: { x: 70, y: 68 }
+                    },
+                    {
+                        id: "biz-4",
+                        name: "Scale & GST Compliance",
+                        desc: "File regular monthly/quarterly GST returns, maintain accounting files, and process staff salaries.",
+                        official: { label: "GST Central Filing Portal", url: "https://www.gst.gov.in" },
+                        resources: [
+                            { type: "video", label: "GST Monthly Return Tutorial Series", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Created active corporate bank account", "Set up internal payroll software system"],
+                        parent: "biz-3a",
+                        coords: { x: 50, y: 90 }
+                    }
+                ]
+            },
+            {
+                id: "chartered-accountant",
+                name: "Chartered Accountant (CA)",
+                category: "finance",
+                tagline: "Pathway to clear ICAI Foundation, Inter, articleship placement, and ICAI Finals.",
+                steps: [
+                    {
+                        id: "fin-1",
+                        name: "ICAI Foundation Entry",
+                        desc: "Register and clear the 4 primary objective papers including accounting principles and business laws.",
+                        official: { label: "ICAI Foundation Registration Online", url: "https://www.icai.org" },
+                        resources: [
+                            { type: "pdf", label: "ICAI Foundation Official Board Materials", url: "https://icai.org" }
+                        ],
+                        checklist: ["Registered on ICAI portal post Class 12", "Mastered double-entry balance sheets"],
+                        parent: null,
+                        coords: { x: 50, y: 15 }
+                    },
+                    {
+                        id: "fin-2",
+                        name: "ICAI Intermediate Exam",
+                        desc: "Register, study, and clear Group 1 and Group 2 papers of ICAI Intermediate covering corporate audits and direct tax codes.",
+                        official: { label: "ICAI Intermediate Syllabus Directory", url: "https://www.icai.org" },
+                        resources: [
+                            { type: "video", label: "ICAI Inter Tax Prep Lecture Videos", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Completed Direct Tax study modules", "Cleared both Inter groups"],
+                        parent: "fin-1",
+                        coords: { x: 50, y: 40 }
+                    },
+                    {
+                        id: "fin-3",
+                        name: "Practical Articleship Placement",
+                        desc: "Undergo a mandatory 2-year practical internship working under a certified auditing practice firm.",
+                        official: { label: "ICAI Articleship Vacancy Portal", url: "https://icai.org" },
+                        resources: [
+                            { type: "pdf", label: "Articleship Logbook Code of Conduct Guidelines", url: "https://icai.org" }
+                        ],
+                        checklist: ["Obtained active articleship NOC", "Verified monthly stipend registrations"],
+                        parent: "fin-2",
+                        coords: { x: 50, y: 65 }
+                    },
+                    {
+                        id: "fin-4",
+                        name: "ICAI Final Examination",
+                        desc: "Clear advanced strategic finance, financial reporting, and indirect tax tribunals to receive your membership ID.",
+                        official: { label: "ICAI Final Registration & Membership", url: "https://www.icai.org" },
+                        resources: [
+                            { type: "video", label: "Final Advanced Audit Revision", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Completed advanced IT training course", "Cleared both final ICAI papers"],
+                        parent: "fin-3",
+                        coords: { x: 50, y: 90 }
+                    }
+                ]
+            },
+            {
+                id: "bca-btech",
+                name: "Computer Science (BCA/BTech)",
+                category: "education",
+                tagline: "Pathway to building core data structure principles, web systems, and placing as a developer.",
+                steps: [
+                    {
+                        id: "edu-1",
+                        name: "Structured Programming Base",
+                        desc: "Choose a primary programming language (C++ or Java) to understand syntax and computer memory.",
+                        official: { label: "AICTE Recommended CSE Syllabus", url: "https://aicte-india.org" },
+                        resources: [
+                            { type: "video", label: "Free C++ Complete Placement Course", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Understand loops and array definitions", "Mastered compiling code in local terminal"],
+                        parent: null,
+                        coords: { x: 50, y: 15 }
+                    },
+                    {
+                        id: "edu-2",
+                        name: "Data Structures & Algorithms",
+                        desc: "Master complexity metrics, binary search trees, hashing algorithms, recursion, and sorting models.",
+                        official: { label: "NPTEL Data Structures and Algorithms", url: "https://nptel.ac.in" },
+                        resources: [
+                            { type: "pdf", label: "Algorithmic Complexity Cheat Sheet", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Can write bubble and quicksort algorithms", "Solved 50 practice logic patterns"],
+                        parent: "edu-1",
+                        coords: { x: 50, y: 40 }
+                    },
+                    {
+                        id: "edu-3a",
+                        name: "Frontend Web Stack (HTML/JS)",
+                        desc: "Develop completely fluid responsive website systems utilizing modern JavaScript engines.",
+                        official: { label: "MDN Web Docs JS Reference", url: "https://developer.mozilla.org" },
+                        resources: [
+                            { type: "video", label: "Complete Web Design Series on YouTube", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Constructed dynamic API weather widget", "Understand DOM event triggers"],
+                        parent: "edu-2",
+                        coords: { x: 30, y: 65 }
+                    },
+                    {
+                        id: "edu-3b",
+                        name: "Database Design (SQL)",
+                        desc: "Design clean tables, structural primary/foreign keys, and master relational querying commands.",
+                        official: { label: "MySQL Documentation and Guides", url: "https://dev.mysql.com" },
+                        resources: [
+                            { type: "pdf", label: "SQL Query Cheat Sheet PDF Guide", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Can perform complex INNER JOIN statements", "Understand standard index locks"],
+                        parent: "edu-2",
+                        coords: { x: 70, y: 65 }
+                    },
+                    {
+                        id: "edu-4",
+                        name: "Final Year Portfolio Placement",
+                        desc: "Establish a complete public GitHub workspace showcasing deployed systems to secure high placement ratings.",
+                        official: { label: "GitHub Developer Portal", url: "https://github.com" },
+                        resources: [
+                            { type: "video", label: "Resume Strategy for CS Engineering Freshers", url: "https://youtube.com" }
+                        ],
+                        checklist: ["Completed 3 end-to-end projects", "Maintained 50+ active GitHub commit logs"],
+                        parent: "edu-3a",
+                        coords: { x: 50, y: 90 }
+                    }
+                ]
+            }
+        ];
+
+        // --- GLOBAL STATE ---
+        let activePage = "home";
+        let activeRoadmap = null;
+        let activeNode = null;
+        let activeTab = "official";
+        let completedNodes = JSON.parse(localStorage.getItem("crevrtree_completed_nodes") || "{}");
+
+        // --- SPA NAVIGATION ROUTING SYSTEM ---
+        function navigateTo(pageId) {
+            activePage = pageId;
+            
+            // Toggle active visibility states inside DOM container elements
+            document.getElementById("view-home").classList.add("hidden");
+            document.getElementById("view-category").classList.add("hidden");
+            document.getElementById("view-tree").classList.add("hidden");
+            document.getElementById("view-about").classList.add("hidden");
+
+            const activeContainer = document.getElementById(`view-${pageId}`);
+            if (activeContainer) {
+                activeContainer.classList.remove("hidden");
+            }
+
+            // Clean active nav stylings
+            document.querySelectorAll(".nav-link").forEach(link => {
+                link.classList.remove("text-honey-amber-dark", "underline", "font-bold");
+            });
+
+            // Smooth scroll reset
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            lucide.createIcons();
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById("mobile-menu");
+            const icon = document.getElementById("mobile-menu-icon");
+            if (menu.classList.contains("hidden")) {
+                menu.classList.remove("hidden");
+                icon.setAttribute("data-lucide", "x");
+            } else {
+                menu.classList.add("hidden");
+                icon.setAttribute("data-lucide", "menu");
+            }
+            lucide.createIcons();
+        }
+
+        // Handle category page opening from navigation clicks
+        function openCategoryFromNav(catId) {
+            navigateToCategory(catId);
+        }
+
+        function navigateToCategory(catId) {
+            navigateTo("category");
+            
+            // Configure heading badges based on selected category tag
+            const titleEl = document.getElementById("category-page-title");
+            const descEl = document.getElementById("category-page-desc");
+            const badgeEl = document.getElementById("category-badge-pill");
+
+            // Filter standard database to find target profiles
+            const filtered = ROADMAPS_DATABASE.filter(item => item.category === catId);
+
+            // Update badge copy and style representation
+            badgeEl.innerText = `${catId} Category Directory`;
+            if (catId === 'career') {
+                titleEl.innerText = "Professional Career Paths";
+                descEl.innerText = "Step-by-step lifelines for medical degrees, high-value tech certifications, and technical engineering profiles.";
+            } else if (catId === 'government') {
+                titleEl.innerText = "Government & Administrative Exams";
+                descEl.innerText = "Comprehensive structural timelines for UPSC Civil Services, police examinations, state PSCs, and railway jobs.";
+            } else if (catId === 'business') {
+                titleEl.innerText = "Business, MSME & Startups";
+                descEl.innerText = "Tactical action roadmaps for incorporating businesses, obtaining Mudra loans, and scaling startup products.";
+            } else if (catId === 'finance') {
+                titleEl.innerText = "Finance & Chartered Accountancy";
+                descEl.innerText = "Complete timelines mapping Chartered Accountancy stages, direct/indirect taxes, and audit licensing.";
+            } else {
+                titleEl.innerText = "Available Educational Directions";
+                descEl.innerText = "Explore structured step-by-step guidelines across multiple streams and universities.";
+            }
+
+            // Render filtered cards inside grid element
+            const gridEl = document.getElementById("category-roadmaps-grid");
+            gridEl.innerHTML = "";
+
+            if (filtered.length === 0) {
+                gridEl.innerHTML = `
+                    <div class="col-span-full py-16 text-center space-y-3 bg-warm-white border border-border-soft rounded-2xl">
+                        <p class="text-sm text-soft-brown">No roadmaps are available inside this category right now.</p>
+                        <button onclick="navigateTo('home')" class="px-4 py-2 bg-honey-amber text-earth-brown text-xs font-bold rounded-full">Return Home</button>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(roadmap => {
+                const card = document.createElement("div");
+                card.className = `group bg-warm-white border border-border-soft rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 cursor-pointer border-t-4 ${getBorderColorClass(roadmap.category)}`;
+                card.setAttribute("onclick", `loadTreeRoadmap('${roadmap.id}')`);
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-soft-brown uppercase tracking-widest">${roadmap.category} path</span>
+                        <span class="text-[10px] bg-honey-amber/25 text-earth-brown font-bold px-2 py-0.5 rounded">${roadmap.steps.length} Milestones</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-display text-earth-brown mt-3 group-hover:text-honey-amber-dark transition-colors">${roadmap.name}</h3>
+                    <p class="text-xs text-soft-brown mt-2 leading-relaxed">${roadmap.tagline}</p>
+                    <div class="flex items-center space-x-1.5 text-xs font-bold text-honey-amber-dark mt-4 group-hover:underline">
+                        <span>Open Interactive Tree</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                `;
+                gridEl.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        // Helper helper matching token styles
+        function getBorderColorClass(cat) {
+            if (cat === 'medical') return 'border-t-medical-primary';
+            if (cat === 'education') return 'border-t-education-primary';
+            if (cat === 'government') return 'border-t-govt-primary';
+            if (cat === 'business') return 'border-t-business-primary';
+            if (cat === 'finance') return 'border-t-finance-primary';
+            return 'border-t-tech-primary';
+        }
+
+        // --- STREAMING_CHUNK: Processing searches & filters... ---
+        // Handles keyword searching
+        function handleSearchTrigger(event, inputId) {
+            if (event.key === "Enter") {
+                const query = document.getElementById(inputId).value.toLowerCase().trim();
+                triggerGlobalSearch(query);
+            }
+        }
+
+        function triggerSearchFromHero() {
+            const query = document.getElementById("hero-search-input").value.toLowerCase().trim();
+            triggerGlobalSearch(query);
+        }
+
+        function triggerGlobalSearch(query) {
+            if (!query) {
+                showToast("Empty Search", "Please write a career or exam keyword to search.");
+                return;
+            }
+
+            // Find match inside roadmaps database
+            const matches = ROADMAPS_DATABASE.filter(item => 
+                item.name.toLowerCase().includes(query) || 
+                item.category.toLowerCase().includes(query) ||
+                item.tagline.toLowerCase().includes(query)
+            );
+
+            if (matches.length > 0) {
+                // If single perfect match, redirect directly to its interactive tree canvas
+                if (matches.length === 1) {
+                    loadTreeRoadmap(matches[0].id);
+                    showToast("Path Found", `Loading interactive tree for: ${matches[0].name}`);
+                } else {
+                    // Navigate to Category view of matched lists
+                    navigateTo("category");
+                    const gridEl = document.getElementById("category-roadmaps-grid");
+                    const titleEl = document.getElementById("category-page-title");
+                    const descEl = document.getElementById("category-page-desc");
+                    const badgeEl = document.getElementById("category-badge-pill");
+
+                    badgeEl.innerText = "Custom Search Results";
+                    titleEl.innerText = `Search results for: "${query}"`;
+                    descEl.innerText = `We found ${matches.length} matching career trees in our open index.`;
+
+                    gridEl.innerHTML = "";
+                    matches.forEach(roadmap => {
+                        const card = document.createElement("div");
+                        card.className = `group bg-warm-white border border-border-soft rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 cursor-pointer border-t-4 ${getBorderColorClass(roadmap.category)}`;
+                        card.setAttribute("onclick", `loadTreeRoadmap('${roadmap.id}')`);
+
+                        card.innerHTML = `
+                            <div class="flex items-center justify-between">
+                                <span class="text-[10px] font-bold text-soft-brown uppercase tracking-widest">${roadmap.category} path</span>
+                                <span class="text-[10px] bg-honey-amber/25 text-earth-brown font-bold px-2 py-0.5 rounded">${roadmap.steps.length} Milestones</span>
+                            </div>
+                            <h3 class="text-xl font-bold font-display text-earth-brown mt-3 group-hover:text-honey-amber-dark transition-colors">${roadmap.name}</h3>
+                            <p class="text-xs text-soft-brown mt-2 leading-relaxed">${roadmap.tagline}</p>
+                            <div class="flex items-center space-x-1.5 text-xs font-bold text-honey-amber-dark mt-4 group-hover:underline">
+                                <span>Open Interactive Tree</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </div>
+                        `;
+                        gridEl.appendChild(card);
+                    });
+                    lucide.createIcons();
+                }
+            } else {
+                showToast("No Match Found", `No open career trees match: "${query}". Try searching 'Doctor', 'IAS', or 'AI'.`);
+            }
+        }
+
+        function directLoadRoadmap(id) {
+            loadTreeRoadmap(id);
+        }
+
+        // --- STREAMING_CHUNK: Designing visual tree nodes & branch overlays... ---
+        // --- INTERACTIVE GRAPH CANVAS TREE RENDERING SYSTEM ---
+        function loadTreeRoadmap(roadmapId) {
+            const roadmap = ROADMAPS_DATABASE.find(item => item.id === roadmapId);
+            if (!roadmap) return;
+
+            activeRoadmap = roadmap;
+            navigateTo("tree");
+
+            // Update Breadcrumb/Crumb elements
+            document.getElementById("tree-category-crumb").innerText = roadmap.category;
+            document.getElementById("tree-title-crumb").innerText = roadmap.name;
+            document.getElementById("tree-title").innerText = roadmap.name;
+            document.getElementById("tree-desc").innerText = roadmap.tagline;
+
+            // Render interactive nodes
+            renderRoadmapTreeCanvas();
+            
+            // Default reset inspector panel back to initial guide state
+            document.getElementById("inspector-init-state").classList.remove("hidden");
+            document.getElementById("inspector-active-state").classList.add("hidden");
+        }
+
+        function renderRoadmapTreeCanvas() {
+            const container = document.getElementById("tree-nodes-container");
+            const svgCanvas = document.getElementById("tree-svg-canvas");
+            container.innerHTML = "";
+            svgCanvas.innerHTML = "";
+
+            if (!activeRoadmap) return;
+
+            const isMobile = window.innerWidth < 768;
+
+            if (isMobile) {
+                // SECTION 6 COMPLIANCE: strictly vertical single-column stacked layout for mobile
+                svgCanvas.style.display = "none"; // Hide SVG connections to avoid overlay clutter on touch screens
+                
+                activeRoadmap.steps.forEach((step, idx) => {
+                    const nodeBox = document.createElement("div");
+                    nodeBox.className = "w-full max-w-sm bg-warm-white border-2 border-border-soft p-4 rounded-2xl shadow-card transition-all flex items-start space-x-3 cursor-pointer";
+                    nodeBox.setAttribute("onclick", `inspectTreeNode('${step.id}')`);
+                    nodeBox.setAttribute("id", `node-el-${step.id}`);
+
+                    // Get completion status
+                    const isCompleted = completedNodes[step.id] === true;
+                    const indexLabel = `0${idx + 1}`;
+
+                    let haloClass = "border-soft-brown";
+                    let stateIcon = `<span class="text-xs font-bold text-soft-brown">${indexLabel}</span>`;
+                    
+                    if (isCompleted) {
+                        haloClass = "border-leaf-dark bg-leaf-light/40";
+                        stateIcon = `<i data-lucide="leaf" class="w-4 h-4 text-leaf-dark"></i>`;
+                    } else if (idx === 0 || (step.parent && completedNodes[step.parent] === true)) {
+                        haloClass = "border-honey-amber bg-honey-amber/10 pulse-halo-active";
+                        stateIcon = `<i data-lucide="play" class="w-4 h-4 text-honey-amber-dark"></i>`;
+                    }
+
+                    nodeBox.innerHTML = `
+                        <div class="w-8 h-8 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${haloClass}">
+                            ${stateIcon}
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="font-display font-bold text-earth-brown text-sm leading-snug">${step.name}</h4>
+                            <p class="text-[11px] text-soft-brown line-clamp-2">${step.desc}</p>
+                        </div>
+                    `;
+                    container.appendChild(nodeBox);
+                });
+
+            } else {
+                // DESKTOP: Symmetrical fanning flow utilizing direct coordinate mapping with organic SVG bezier curves
+                svgCanvas.style.display = "block";
+                
+                // Clear and resize canvas container size
+                container.style.height = "750px";
+                container.style.position = "relative";
+
+                activeRoadmap.steps.forEach((step, idx) => {
+                    const nodeBox = document.createElement("button");
+                    nodeBox.className = "absolute z-30 bg-warm-white border-2 border-border-soft p-4 rounded-2xl shadow-card hover:shadow-hover transition-all duration-200 cursor-pointer flex flex-col items-center justify-center text-center w-52";
+                    
+                    // Coordinates parsed in percentage scales relative to container dimensions
+                    nodeBox.style.left = `calc(${step.coords.x}% - 104px)`;
+                    nodeBox.style.top = `calc(${step.coords.y}% - 40px)`;
+                    nodeBox.setAttribute("onclick", `inspectTreeNode('${step.id}')`);
+                    nodeBox.setAttribute("id", `node-el-${step.id}`);
+
+                    const isCompleted = completedNodes[step.id] === true;
+                    let haloClass = "border-border-soft";
+                    let innerBadge = "";
+
+                    // Node state indicators matching component guidelines (Section 3)
+                    if (isCompleted) {
+                        haloClass = "border-leaf-dark ring-4 ring-leaf-light bg-leaf-light/10";
+                        innerBadge = `<div class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-leaf-deep flex items-center justify-center text-leaf-dark border border-leaf-dark"><i data-lucide="check" class="w-3 h-3"></i></div>`;
+                    } else if (idx === 0 || (step.parent && completedNodes[step.parent] === true)) {
+                        haloClass = "border-honey-amber ring-4 ring-honey-amber/20 pulse-halo-active";
+                    }
+
+                    nodeBox.innerHTML = `
+                        ${innerBadge}
+                        <span class="text-[9px] font-bold text-soft-brown uppercase tracking-wider">Milestone 0${idx + 1}</span>
+                        <h4 class="font-display font-bold text-earth-brown text-xs sm:text-sm mt-0.5 leading-snug">${step.name}</h4>
+                    `;
+                    
+                    nodeBox.classList.add(...haloClass.split(" "));
+                    container.appendChild(nodeBox);
+                });
+
+                // Calculate SVG overlay connection parameters on load sequence
+                setTimeout(() => {
+                    drawSvgCanvasConnectors();
+                }, 100);
+            }
+
+            lucide.createIcons();
+        }
+
+        // Draw organic hand-drawn slightly curved bezier path lines between parent and child elements
+        function drawSvgCanvasConnectors() {
+            const svgCanvas = document.getElementById("tree-svg-canvas");
+            if (!svgCanvas || !activeRoadmap) return;
+            svgCanvas.innerHTML = "";
+
+            const canvasRect = svgCanvas.getBoundingClientRect();
+
+            activeRoadmap.steps.forEach(step => {
+                if (step.parent) {
+                    const parentNodeEl = document.getElementById(`node-el-${step.parent}`);
+                    const childNodeEl = document.getElementById(`node-el-${step.id}`);
+
+                    if (parentNodeEl && childNodeEl) {
+                        const parentRect = parentNodeEl.getBoundingClientRect();
+                        const childRect = childNodeEl.getBoundingClientRect();
+
+                        // Coordinates relative to the parent SVG container element
+                        const x1 = (parentRect.left + parentRect.width / 2) - canvasRect.left;
+                        const y1 = parentRect.bottom - canvasRect.top;
+
+                        const x2 = (childRect.left + childRect.width / 2) - canvasRect.left;
+                        const y2 = childRect.top - canvasRect.top;
+
+                        // Create custom organic bezier control handle parameters
+                        const controlOffset = (y2 - y1) / 2.2;
+                        
+                        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                        const d = `M ${x1} ${y1} C ${x1} ${y1 + controlOffset}, ${x2} ${y2 - controlOffset}, ${x2} ${y2}`;
+                        
+                        path.setAttribute("d", d);
+                        path.setAttribute("fill", "none");
+                        path.setAttribute("stroke", "#476E0C"); // --leaf-dark
+                        path.setAttribute("stroke-width", "3");
+                        path.setAttribute("stroke-opacity", "0.65");
+                        path.setAttribute("class", "tree-connector-path");
+
+                        svgCanvas.appendChild(path);
+                    }
+                }
+            });
+        }
+
+        // Redraw connections gracefully on window resize sequence
+        window.addEventListener("resize", () => {
+            if (activePage === "tree" && activeRoadmap && window.innerWidth >= 768) {
+                drawSvgCanvasConnectors();
+            }
+        });
+
+        // --- STREAMING_CHUNK: Designing node details inspector... ---
+        // --- INTERACTIVE NODE INSPECTION PANEL HANDLERS ---
+        function inspectTreeNode(stepId) {
+            const step = activeRoadmap.steps.find(item => item.id === stepId);
+            if (!step) return;
+
+            activeNode = step;
+
+            // Highlight target HTML element selectively
+            document.querySelectorAll("[id^='node-el-']").forEach(el => {
+                el.classList.remove("ring-4", "ring-honey-amber-dark/60");
+            });
+            const clickedBox = document.getElementById(`node-el-${stepId}`);
+            if (clickedBox) {
+                clickedBox.classList.add("ring-4", "ring-honey-amber-dark/60");
+            }
+
+            // Populates inspector pane components
+            document.getElementById("inspector-init-state").classList.add("hidden");
+            document.getElementById("inspector-active-state").classList.remove("hidden");
+
+            document.getElementById("inspect-title").innerText = step.name;
+            document.getElementById("inspect-desc").innerText = step.desc;
+
+            // Load specific lists inside panel tabs
+            loadActiveNodeOfficialLinks();
+            loadActiveNodeFreeResources();
+            loadActiveNodeChecklist();
+
+            // Refresh panel button state labels
+            updatePanelButtonStatus();
+
+            // Reset tab selectors
+            setInspectorTab("official");
+            lucide.createIcons();
+        }
+
+        function setInspectorTab(tabId) {
+            activeTab = tabId;
+
+            // Hide panels
+            document.getElementById("tab-content-official").classList.add("hidden");
+            document.getElementById("tab-content-resources").classList.add("hidden");
+            document.getElementById("tab-content-checklist").classList.add("hidden");
+
+            // Remove button formats
+            document.querySelectorAll(".tab-btn").forEach(btn => {
+                btn.classList.remove("text-earth-brown", "pb-1");
+                btn.classList.add("text-soft-brown");
+            });
+
+            // Activate target
+            document.getElementById(`tab-content-${tabId}`).classList.remove("hidden");
+            const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+            activeBtn.classList.add("text-earth-brown", "pb-1");
+            activeBtn.classList.remove("text-soft-brown");
+
+            // Relocate slide underline dynamically
+            const tabIndicator = document.getElementById("tab-indicator");
+            const btnRect = activeBtn.getBoundingClientRect();
+            const parentRect = activeBtn.parentElement.getBoundingClientRect();
+            tabIndicator.style.width = `${btnRect.width}px`;
+            tabIndicator.style.left = `${btnRect.left - parentRect.left}px`;
+        }
+
+        function loadActiveNodeOfficialLinks() {
+            const container = document.getElementById("official-links-container");
+            container.innerHTML = "";
+
+            if (!activeNode || !activeNode.official) {
+                container.innerHTML = `<p class="text-xs text-soft-brown">No official websites recorded for this step.</p>`;
+                return;
+            }
+
+            const item = activeNode.official;
+            const card = document.createElement("a");
+            card.href = item.url;
+            card.target = "_blank";
+            card.className = "flex items-center justify-between p-3 bg-cream/30 border border-border-soft hover:border-honey-amber rounded-xl text-xs text-earth-brown transition-all shadow-sm group";
+            card.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="link-2" class="w-4 h-4 text-soft-brown"></i>
+                    <span class="font-bold group-hover:text-honey-amber-dark transition-colors">${item.label}</span>
+                </div>
+                <i data-lucide="external-link" class="w-3.5 h-3.5 text-soft-brown"></i>
+            `;
+            container.appendChild(card);
+        }
+
+        function loadActiveNodeFreeResources() {
+            const container = document.getElementById("free-resources-container");
+            container.innerHTML = "";
+
+            if (!activeNode || !activeNode.resources || activeNode.resources.length === 0) {
+                container.innerHTML = `<p class="text-xs text-soft-brown">No free learning reference materials listed yet.</p>`;
+                return;
+            }
+
+            activeNode.resources.forEach(item => {
+                const card = document.createElement("a");
+                card.href = item.url;
+                card.target = "_blank";
+                card.className = "flex items-center justify-between p-3 bg-cream/30 border border-border-soft hover:border-honey-amber rounded-xl text-xs text-earth-brown transition-all shadow-sm group";
+                
+                let iconName = "file-text";
+                if (item.type === "video") iconName = "play-circle";
+                if (item.type === "course") iconName = "graduation-cap";
+
+                card.innerHTML = `
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="${iconName}" class="w-4 h-4 text-soft-brown"></i>
+                        <span class="font-bold group-hover:text-honey-amber-dark transition-colors">${item.label}</span>
+                    </div>
+                    <i data-lucide="external-link" class="w-3.5 h-3.5 text-soft-brown"></i>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function loadActiveNodeChecklist() {
+            const container = document.getElementById("checklist-container");
+            container.innerHTML = "";
+
+            if (!activeNode || !activeNode.checklist || activeNode.checklist.length === 0) {
+                container.innerHTML = `<p class="text-xs text-soft-brown">No eligibility checkpoints recorded for this step.</p>`;
+                return;
+            }
+
+            activeNode.checklist.forEach(item => {
+                const label = document.createElement("label");
+                label.className = "flex items-start space-x-2 p-1.5 cursor-pointer select-none hover:bg-cream/20 rounded";
+                label.innerHTML = `
+                    <input type="checkbox" class="rounded border-border-soft text-honey-amber focus:ring-honey-amber mt-0.5">
+                    <span class="text-xs font-semibold leading-relaxed">${item}</span>
+                `;
+                container.appendChild(label);
+            });
+        }
+
+        // Toggle state modifications inside local localStorage structures
+        function toggleActiveNodeCompletion() {
+            if (!activeNode) return;
+
+            const stepId = activeNode.id;
+            const isCurrentlyCompleted = completedNodes[stepId] === true;
+
+            if (isCurrentlyCompleted) {
+                delete completedNodes[stepId];
+                showToast("Milestone Reset", `Marked "${activeNode.name}" as incomplete.`);
+            } else {
+                completedNodes[stepId] = true;
+                showToast("Milestone Complete!", `Great progress! Marked "${activeNode.name}" as completed.`);
+            }
+
+            // Save variables locally
+            localStorage.setItem("crevrtree_completed_nodes", JSON.stringify(completedNodes));
+
+            // Reload tree layout representation smoothly
+            renderRoadmapTreeCanvas();
+            
+            // Highlight selected node again
+            setTimeout(() => {
+                const box = document.getElementById(`node-el-${stepId}`);
+                if (box) box.classList.add("ring-4", "ring-honey-amber-dark/60");
+            }, 150);
+
+            updatePanelButtonStatus();
+            lucide.createIcons();
+        }
+
+        function updatePanelButtonStatus() {
+            const btn = document.getElementById("inspect-done-btn");
+            const btnText = document.getElementById("done-btn-text");
+
+            if (!activeNode) return;
+
+            const isCompleted = completedNodes[activeNode.id] === true;
+            if (isCompleted) {
+                btn.className = "px-4 py-2 bg-leaf-dark hover:bg-leaf-dark/95 text-warm-white font-bold text-xs rounded-full transition-all flex items-center space-x-1 shadow-sm";
+                btnText.innerText = "Completed (Clear)";
+            } else {
+                btn.className = "px-4 py-2 bg-honey-amber hover:bg-honey-amber-dark text-earth-brown font-bold text-xs rounded-full transition-all flex items-center space-x-1 shadow-sm";
+                btnText.innerText = "Mark Completed";
+            }
+        }
+
+        function resetTreeProgress() {
+            if (!activeRoadmap) return;
+
+            activeRoadmap.steps.forEach(step => {
+                delete completedNodes[step.id];
+            });
+
+            localStorage.setItem("crevrtree_completed_nodes", JSON.stringify(completedNodes));
+            renderRoadmapTreeCanvas();
+            
+            // Return back to neutral inspector
+            document.getElementById("inspector-init-state").classList.remove("hidden");
+            document.getElementById("inspector-active-state").classList.add("hidden");
+
+            showToast("Progress Cleared", "Successfully cleared all completed nodes for this specific roadmap.");
+        }
+
+
+        // --- DYNAMIC NOTIFICATION DISPATCHER ---
+        function showToast(title, body) {
+            const container = document.getElementById("toast-notification");
+            document.getElementById("toast-title").innerText = title;
+            document.getElementById("toast-body").innerText = body;
+
+            // Animate transition styles
+            container.classList.remove("translate-y-20", "opacity-0", "pointer-events-none");
+            container.classList.add("translate-y-0", "opacity-100");
+
+            setTimeout(() => {
+                container.classList.add("translate-y-20", "opacity-0", "pointer-events-none");
+                container.classList.remove("translate-y-0", "opacity-100");
+            }, 4000);
+        }
+
+        // FAQ accordion click toggles
+        function toggleFaq(idx) {
+            const ans = document.getElementById(`faq-ans-${idx}`);
+            const icon = document.getElementById(`faq-icon-${idx}`);
+            if (ans.classList.contains("hidden")) {
+                ans.classList.remove("hidden");
+                icon.style.transform = "rotate(180deg)";
+            } else {
+                ans.classList.add("hidden");
+                icon.style.transform = "rotate(0deg)";
+            }
+        }
+
+        // On window startup launch configurations
+        window.onload = function() {
+            lucide.createIcons();
+            navigateTo("home");
+        }
+    </script>
+</body>
+</html>

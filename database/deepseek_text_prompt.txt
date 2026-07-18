@@ -1,0 +1,167 @@
+You are an expert AI developer agent working inside the OpenCode environment. I need you to execute and validate the Indian Career Intelligence Knowledge Graph generator scripts that are already saved on my system. Your mission is to run the scripts, generate the full career graph dataset, verify the output, and ensure everything is production-ready.
+
+## Environment & Project Setup
+1. Navigate to the project directory:
+   C:\xampp\htdocs\Antigravity-Pro\nearby-hiring-project\Base-India-Career-Project\
+2. Check that the following two Python files exist:
+   - deepseek_python_20260718_2bd39f.py
+   - deepseek_python_20260718_b8e969.py
+   (The first is an earlier version, the second is the full v2.0 production generator. You will use the second one as the primary script.)
+3. Verify Python is installed (version >=3.9). If not, instruct me to install it.
+4. Create a virtual environment named `venv_career` if not present, activate it, and install required packages:
+   - pyyaml
+   - pybloom-live (if not available, fall back to in-memory set; you can skip it or install from pip)
+   - (all other dependencies are standard library)
+
+## Running the Generator
+5. Run the production generator script (deepseek_python_20260718_b8e969.py) with the following configuration (you can modify parameters for a quick test first, then for full production):
+   - Output directory: ./career_graph_output (inside the current folder)
+   - Checkpoint file: ./career_checkpoint.json
+   - Max total paths: 200,000 (or for a quick test, use 500)
+   - Max nodes: 5,000,000
+   - Max edges: 10,000,000
+   - Random seed: 42
+   - All formats: jsonl, json, csv, yaml, txt
+   - Use resumable mode (checkpoint) so that if interrupted it can continue.
+   Execute the script. Monitor the logs; if it runs successfully, it will generate nodes.jsonl, edges.jsonl, nodes.json, edges.json, etc., inside the output directory.
+
+## After Generation – Double Verification (Dual Dual Check)
+6. After script completion, perform thorough validation:
+   a. Check that the output directory exists and contains all expected files:
+      - nodes.jsonl, edges.jsonl
+      - nodes.json, edges.json
+      - nodes.csv, edges.csv
+      - nodes.yaml, edges.yaml
+      - career_paths.txt
+      - generation_stats.json
+   b. For each file, verify:
+      - File size > 0 (not empty)
+      - The JSON/JSONL files contain valid JSON (parse first/last lines)
+      - CSV files have correct headers and rows
+      - YAML files can be loaded successfully
+      - The .txt file has career paths formatted correctly
+   c. Read the generation_stats.json and report total nodes, edges, paths generated.
+   d. Randomly sample 10 nodes and 10 edges from the JSONL files to ensure they have all required fields (node_id, node_type, title, etc.; edge_id, source_id, destination_id, relationship_type).
+   e. Check for duplicate node IDs and edge IDs: load all IDs from nodes.jsonl and edges.jsonl (if size permits) and ensure no duplicates. If too large, sample 10,000 records and assert uniqueness.
+   f. Ensure that the checkpoint file exists and can be loaded; if you resume from it and run again, no new duplicates are created (you can quickly test by running the script again with the same parameters and confirming no new files overwrite; the script should detect existing output and not re-write? Actually the script appends; we need to check that re-running doesn't create duplicates – the dedup tracker should prevent. So you can run a second time and compare file sizes; they should remain the same.)
+   g. Verify relationship integrity: a few edges' source and destination IDs actually exist in the nodes file.
+
+## Saving the Database Properly
+7. The generated files together form the "database" (knowledge graph). Ensure they are stored permanently in that directory. No further action needed; they are already saved.
+8. Optionally, create a compressed archive of the output directory for backup (career_graph_output.zip).
+
+## Summary Report
+9. Provide a final report with:
+   - Number of nodes, edges, career paths generated.
+   - Output directory size.
+   - Any warnings or errors encountered.
+   - Confirmation that all checks passed.
+
+## Contingency
+10. If any dependency fails, attempt to install it. If pybloom-live is not available, the script will fall back to in-memory set; that's acceptable but note it.
+11. If the script crashes or stops midway, use the checkpoint to resume: run the script again, it will continue.
+
+Execute all steps autonomously. I want a final message: "All good, dataset ready." or detailed error report if something fails.
+
+You are an expert AI developer and data architect. I need you to significantly enhance the Indian Career Intelligence Knowledge Graph generator script so it produces at least 200,000 unique career paths (and millions of nodes/edges), not just 131. The current script (deepseek_python_20260718_b8e969.py) is too limited because the taxonomy is small and the branching logic is insufficient. Your task is to transform it into a massive, production-scale generator while maintaining realism and duplicate safety.
+
+## Step 1: Understand the Bottleneck
+- Examine the current script (deepseek_python_20260718_b8e969.py) running in the environment.
+- Identify why it only generated 131 paths despite max_total_paths=20000. (Cause: Not enough seed diversity, insufficient branching per node, limited taxonomy entries.)
+- The script will generate paths by walking from education seeds (10th, diplomas, exams) and following `_education_next`, `_exam_next`, `_job_role_next`. You must expand these functions to offer many more options at each step.
+
+## Step 2: Massively Expand the Taxonomy
+You are to add a huge number of **real, plausible Indian career-related entries** to the `Taxonomies` class. Do not invent fake names, but research-based realistic ones. Add entries across all categories:
+
+### 2.1. Education
+- **School:** Keep existing. Add more vocational streams after 10th: "ITI Solar Technician", "ITI CNC Operator", "ITI Agriculture Machinery", "Polytechnic in Chemical Engineering", etc. (add at least 20 ITI/polytechnic trades)
+- **Undergraduate:** Keep existing. Add:
+  - B.Tech in more branches: "B.Tech Energy Engineering", "B.Tech Nanotechnology", "B.Tech Mechatronics", "B.Tech Automobile Engineering", "B.Tech Industrial Engineering", "B.Tech Textile Technology", "B.Tech Ceramic Engineering", "B.Tech Packaging Technology", "B.Tech Fire & Safety", "B.Tech Rubber Technology" (at least 15 new engineering)
+  - B.Sc in many new fields: "B.Sc Actuarial Science", "B.Sc Aviation", "B.Sc Nautical Science", "B.Sc Visual Communication", "B.Sc Electronic Media", "B.Sc Interior Design", "B.Sc Fashion Technology", "B.Sc Nutrition & Dietetics", "B.Sc Yoga", "B.Sc Forensic Science" (already present, add more) (20+ new B.Sc)
+  - B.Com specializations: "B.Com Banking & Insurance", "B.Com Financial Markets", "B.Com Taxation", "B.Com E-Commerce", "B.Com International Business" (10+)
+  - BBA specializations: "BBA Business Analytics", "BBA Digital Marketing", "BBA Logistics", "BBA Healthcare Management", "BBA Entrepreneurship", "BBA Retail Management" (10+)
+  - BCA specializations: "BCA Cloud Computing", "BCA Cyber Security", "BCA Data Analytics", "BCA IoT", "BCA Gaming" (5+)
+  - BA specializations: "BA Public Administration", "BA Rural Development", "BA Social Work", "BA Criminology", "BA Development Studies" (10+)
+  - Law: "B.Com LLB", "B.Sc LLB", "BBA LLB" (already), "LLB (3-year)" (explicit)
+  - Others: "Bachelor of Social Work (BSW)", "Bachelor of Library Science (B.Lib)", "Bachelor of Fine Arts (BFA)" (multiple streams)
+  - Integrated courses: "B.Tech + M.Tech (Dual Degree)", "B.Tech + MBA (Dual Degree)", "B.Sc + M.Sc (Integrated)", "BA + MA (Integrated)" (for IITs, etc.)
+- **Postgraduate:** Add many more:
+  - M.Tech specializations: "M.Tech Data Science", "M.Tech Cyber Security", "M.Tech Renewable Energy", "M.Tech Automotive Engineering", "M.Tech Biomedical Engineering", "M.Tech Industrial Internet of Things", etc. (20+)
+  - M.Sc: "M.Sc Astrophysics", "M.Sc Bioinformatics", "M.Sc Data Analytics", "M.Sc Environmental Management", "M.Sc Food Technology", "M.Sc Nanoscience", etc. (20+)
+  - MBA: "MBA Rural Management", "MBA Agribusiness", "MBA Healthcare", "MBA Hospitality", "MBA Energy", "MBA Sports Management", "MBA Family Business", "MBA Digital Transformation" (15+)
+  - M.Com, MA specializations as many as needed.
+  - Ph.D. in all major fields (include as "PhD (Computer Science)", "PhD (Physics)", etc.) — add at least 10 explicit Ph.D. nodes.
+  - Post-doc, M.Phil also.
+- **Diplomas:** Add "Diploma in Food Production", "Diploma in Bakery & Confectionery", "Diploma in Front Office Management", "Diploma in Event Management", "Diploma in Medical Record Technology", "Diploma in Sanitary Health Inspector", "Diploma in Fire & Safety", "Diploma in Film Making", "Diploma in VFX", etc. (30+ new diplomas)
+
+### 2.2. Exams
+- Add state-level engineering exams (MHT CET, WBJEE already there, add "KCET", "AP EAMCET", "TS EAMCET", "GUJCET", "OJEE", "BCECE", etc.)
+- Add more banking exams: "NABARD Grade A", "SEBI Grade A", "LIC AAO", "RBI Assistant", "NICL AO"
+- Add more government exams: "UPSC CAPF", "UPSC EPFO", "SSC JE", "RRB ALP", "RRB Technician", "DSSSB", "KVS", "NVS", "CTET", "State PSC Exams"
+- Add language tests: "PTE", "OET"
+- Add international exams: "LSAT", "MCAT", "USMLE", "PLAB"
+- Add entrance exams for design, law, hotel management, mass comm, etc.: "NCHM JEE", "IIHM eCHAT", "IIT Madras HSEE", "FTII Entrance", "SRFTI", "Jamia Mass Comm Entrance", "DU JAT", "NPAT", "SET", "MUCMET"
+- Include at least 30 new exam nodes.
+
+### 2.3. Job Roles
+- Currently the JOB_ROLES dict has around 100 entries. Expand to 500+ job roles covering every Indian sector.
+- Add multiple levels for each stream: e.g., for Mechanical: "Graduate Engineer Trainee", "Junior Mechanical Engineer", "Mechanical Engineer", "Senior Mechanical Engineer", "Lead Mechanical Engineer", "Mechanical Manager", "Chief Engineer", "Plant Head", "Vice President Manufacturing".
+- For IT: add roles like "Frontend Developer", "Backend Developer", "Full Stack Developer", "Mobile App Developer", "Blockchain Developer", "IoT Engineer", "AR/VR Developer", "Game Programmer", "QA Engineer", "Test Automation Engineer", "Release Manager", "Scrum Master", "Technical Writer".
+- For Data/AI: "Data Engineer", "Big Data Engineer", "BI Analyst", "AI Ethicist", "MLOps Engineer", "NLP Specialist", "Computer Vision Engineer", "Robotics Engineer".
+- For Business/Finance: "Equity Research Analyst", "Credit Analyst", "Treasury Manager", "Compliance Officer", "Internal Auditor", "Tax Consultant", "Investment Advisor", "Wealth Manager", "Relationship Manager", "Insurance Underwriter".
+- For Government: "Patwari", "Tehsildar", "Block Development Officer", "SDM", "DM", "Commissioner", "Principal Secretary", "Chief Secretary"; police: "Constable", "Sub-Inspector", "DSP", "SP", "DIG", "IG", "DGP"; defence: ranks; PSU-specific roles: "Junior Executive", "Senior Manager".
+- Add roles in Logistics, Supply Chain, Agriculture, Food Processing, Retail, E-commerce, Renewable Energy, etc. Each domain should have at least 5-10 role tiers.
+- Add roles for Freelance, Consulting, Startup, NGO, Research, Academia, Media, Arts, Sports (e.g., "Sports Coach", "Sports Analyst").
+- Ensure each role has a `domain` and `salary_band` entry.
+
+### 2.4. Skills
+- Keep existing; optionally add many more (like "SAP HANA", "Salesforce", "Adobe Photoshop", "Illustrator", "Premiere Pro", "Figma", "Sketch", "Blender", "Unity", "Unreal Engine", "PLC", "SCADA", "DCS", "Zoho", "QuickBooks", "Tally ERP 9", "GST", "Income Tax", "Ind AS", "IFRS", "Medical Coding", "Medical Billing", "HIPAA", "GDPR", "Criminal Law", "Civil Law", "Constitutional Law", "Contract Drafting", "Moot Court", "Client Counseling", etc.). At least 50 new skills.
+
+### 2.5. Certifications
+- Expand the list to 200+ certifications, adding: ITIL 4 Managing Professional, Azure AI Engineer, AWS Machine Learning, Google Professional Data Engineer, Salesforce Administrator, HubSpot, Adobe Certified Expert, PMI-RMP, PMI-SP, ISTQB, Certified Selenium Tester, Oracle Certified Java Programmer, Cisco DevNet, CompTIA CySA+, CompTIA PenTest+, GIAC certifications, CRISC, COBIT, NIST, ISO 31000, Lean Manufacturing, TPM, 5S, Kaizen, NEBOSH, IOSH, HACCP, FSSC 22000, SOX, BASEL, AML, KYC, etc.
+
+### 2.6. Companies
+- Keep existing; add more Indian startups (CRED, Groww, Zerodha, Upstox, BharatPe, slice, CRED, Cars24, Spinny, Dealshare, etc.), more MNCs (Siemens, ABB, Schneider Electric, Honeywell, GE, Philips, Bosch, Pfizer, Novartis, GSK, Sanofi, etc.), more Indian corporates (Godrej, Bajaj, RPG, Murugappa, etc.), more PSUs (NHPC, THDC, SJVN, IRCTC, CONCOR, etc.), more banks/financial institutions.
+- Add at least 100 new company entries.
+
+### 2.7. Industries
+- The current list has 27. Expand to 50+ industries, including sub-sectors like "Agri-tech", "Bio-technology", "Blockchain", "Climate Tech", "EdTech", "FinTech", "HealthTech", "InsurTech", "LegalTech", "PropTech", "SpaceTech", "Robotics", "3D Printing", "Industrial Automation", "Chemicals", "Petrochemicals", "Paper & Pulp", "Cement", "Steel", "Aluminum", "Glass", "Plastics", "Packaging", "Waste Management", "Water Treatment", "Fisheries", "Poultry", "Dairy", "Forestry", "Horticulture", "Sericulture", etc.
+
+### 2.8. Learning Resources
+- Add many more Indian-specific platforms: "Ekeeda", "Made Easy", "Ace Academy", "Gateforum", "IMS", "T.I.M.E.", "Career Launcher", "Mahesh Tutorials", "Allen", "Aakash", "Resonance", "Vibrant Academy", "Chahal Academy", etc.
+
+## Step 3: Enhance Path Generation Logic
+- `_education_next`: After every education node, offer many parallel branches (5-10 options). For instance, after 10th → all ITI trades, all diplomas, all 11th streams, vocational courses. Use probability to select a subset but always enough to generate variety.
+- `_exam_next`: After an exam, link to many possible degrees or jobs. For example, CAT → all MBA specializations; UPSC → all services.
+- `_job_role_next`: For every job role, provide:
+  - Promotion to the next level (if exists)
+  - Lateral move to related roles in the same domain (e.g., Software Engineer → DevOps Engineer, Data Analyst → Data Scientist, Mechanical Engineer → Design Engineer)
+  - Upskilling via certifications or higher education (e.g., take exam GATE → M.Tech; CAT → MBA)
+  - Transition to freelancing/consulting/entrepreneurship
+  - Switch to government jobs via exams
+  - Move to academia/research
+  - At least 4-8 options per job role.
+- Add more seed starting points: various ITI trades, various diplomas, 12th streams directly (not just through 10th).
+- Increase `branch_probability` and make the generator take more branches. Currently only one primary path is taken; modify `_expand` to always follow the primary, but also follow several branches with high probability (e.g., 0.7). That will multiply paths exponentially.
+- Increase `max_path_length` to 16 or 18 to allow longer chains (more nodes).
+- Ensure the depth limit doesn't prematurely stop; a path can continue until a terminal job role or max length.
+
+## Step 4: Incorporate Previous Bug Fixes
+- The earlier agent's fix: "type override bug" – when creating nodes, ensure the `type` field in taxonomy dicts doesn't overwrite NodeType enum. In `NodeFactory.from_dict`, pop "type" if it exists and ignore, or rename the field in the taxonomy to `exam_type`, etc. Implement a safe method.
+- Missing node writes: track newly created nodes and write them immediately via writer. In `CareerGraphGenerator`, maintain a `_written_nodes` set, and in `_get_node` after creating, if writer is active, call `writer.write_node(node)`.
+
+## Step 5: Test and Validate
+- After modifications, run the generator with `max_total_paths=5000` first to ensure it can produce thousands of paths without errors.
+- Check the output: number of paths, nodes, edges. If it reaches 5000 quickly (within a minute), increase to 50000, then 200000.
+- The script should be resumable; ensure checkpoint works.
+- Perform the same double verification steps as earlier: check file sizes, JSON validity, no duplicate IDs, edge referential integrity.
+- Provide a summary.
+
+## Step 6: Final Output
+- Save the updated script as `career_generator_v3.py` in the same directory.
+- Also save an archive of the generated dataset (`career_graph_output.zip`) after a successful large run.
+- Report the final counts: paths, nodes, edges, output size.
+
+You must think creatively and add massive breadth to the taxonomy while maintaining internal consistency. Do not remove any existing entries—only add. Every addition should be realistic for India. Use your knowledge of the Indian education and job market to fill in plausible entries.
+
+Execute all steps autonomously and return when the dataset is successfully generated with at least 200,000 career paths.
