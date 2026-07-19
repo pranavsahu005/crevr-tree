@@ -13,6 +13,23 @@ let nodeCounter = 0;
 export function parseCareerPaths() {
   if (cachedTree) return { tree: cachedTree, index: cachedKeywordIndex, stats: cacheStats };
 
+  const dataDir = path.join(__dirname, 'data_store');
+  const treePath = path.join(dataDir, 'career_tree.json');
+  const indexPath = path.join(dataDir, 'career_index.json');
+  const statsPath = path.join(dataDir, 'career_stats.json');
+
+  if (fs.existsSync(treePath) && fs.existsSync(indexPath) && fs.existsSync(statsPath)) {
+    console.log('[CrevrTree CareerPaths] Loading pre-cached JSON files from data_store...');
+    try {
+      cachedTree = JSON.parse(fs.readFileSync(treePath, 'utf8'));
+      cachedKeywordIndex = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+      cacheStats = JSON.parse(fs.readFileSync(statsPath, 'utf8'));
+      return { tree: cachedTree, index: cachedKeywordIndex, stats: cacheStats };
+    } catch (err) {
+      console.error('[CrevrTree CareerPaths] Failed to load pre-cached JSON, falling back to text file...', err);
+    }
+  }
+
   const filePath = path.join(__dirname, '..', 'database', 'career_graph_output_v3', 'career_paths.txt');
   if (!fs.existsSync(filePath)) {
     console.warn('[CrevrTree CareerPaths] career_paths.txt not found at', filePath);

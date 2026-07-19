@@ -176,8 +176,14 @@ export default function App() {
     }
 
     // Fallback locally
-    const rm = roadmapsDatabase.find((item) => item.id === roadmapId);
-    if (!rm) {
+    let rm = roadmapsDatabase.find((item) => item.id === roadmapId);
+    if (rm && (!rm.steps || rm.steps.length === 0)) {
+      const staticRm = ROADMAPS_DATABASE.find((item) => item.id === roadmapId);
+      if (staticRm) {
+        rm = staticRm;
+      }
+    }
+    if (!rm || !rm.steps || rm.steps.length === 0) {
       triggerToast("Path Offline", "Could not load this career track.");
       return;
     }
@@ -360,6 +366,9 @@ export default function App() {
   const getFilteredRoadmaps = () => {
     if (selectedCategory === 'search_results') {
       return searchResults;
+    }
+    if (selectedCategory === 'career') {
+      return roadmapsDatabase.filter((item) => item.category === 'tech' || item.category === 'medical' || item.category === 'career');
     }
     return roadmapsDatabase.filter((item) => item.category === selectedCategory);
   };
@@ -669,7 +678,7 @@ export default function App() {
               </p>
               <div className="pt-4">
                 <button 
-                  onClick={() => handleLoadFullCareerTree}
+                  onClick={handleLoadFullCareerTree}
                   className="px-6 py-3 bg-earth-brown hover:bg-earth-brown/90 text-white font-bold rounded-full text-sm transition-all shadow-md cursor-pointer"
                 >
                   Explore All 200K Paths

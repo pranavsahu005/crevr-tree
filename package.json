@@ -1,0 +1,9 @@
+{
+  "name": "crevr-tree-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix Crevt-Tree-Ai_Studio-main",
+    "install": "npm install --prefix Crevt-Tree-Ai_Studio-main"
+  }
+}

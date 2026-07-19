@@ -245,7 +245,19 @@ if (dbType === 'json') {
       }));
     }
 
-    if (cleanedSql.includes('select * from nodes') && cleanedSql.includes('where title like') || cleanedSql.includes('or description like')) {
+    if (cleanedSql.includes('select * from nodes') && !cleanedSql.includes('where')) {
+      const nodes = readData('nodes');
+      return nodes.map(n => ({
+        ...n,
+        prerequisites: JSON.stringify(n.prerequisites),
+        skills_required: JSON.stringify(n.skills_required),
+        skills_gained: JSON.stringify(n.skills_gained),
+        recommended_certifications: JSON.stringify(n.recommended_certifications),
+        metadata: JSON.stringify(n.metadata)
+      }));
+    }
+
+    if (cleanedSql.includes('select * from nodes') && (cleanedSql.includes('where title like') || cleanedSql.includes('or description like'))) {
       // Simple text search
       const searchTerm = params[0].replace(/%/g, '').toLowerCase();
       const nodes = readData('nodes').filter(n => 
