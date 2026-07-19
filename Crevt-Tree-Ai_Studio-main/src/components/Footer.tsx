@@ -7,14 +7,18 @@ interface FooterProps {
 
 export default function Footer({ onNavigate, onOpenCategory }: FooterProps) {
   return (
-    <footer className="bg-warm-white border-t border-border-soft py-12 mt-12" id="platform-footer">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="relative bg-warm-white border-t border-border-soft py-12 mt-12 overflow-hidden" id="platform-footer">
+      {/* Decorative leaf backgrounds from design system assets */}
+      <div className="absolute right-6 bottom-4 w-14 h-14 bg-[#43C97E]/10 rounded-tl-full rounded-br-full pointer-events-none transform rotate-45 border border-[#43C97E]/20" />
+      <div className="absolute left-8 top-6 w-10 h-10 bg-[#43C97E]/8 rounded-tl-full rounded-br-full pointer-events-none transform -rotate-12 border border-[#43C97E]/10" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
         {/* Brand Info */}
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-honey-amber rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-honey-amber rounded-full flex items-center justify-center shadow-[1.5px_1.5px_0px_0px_#2D2D2D] border-2 border-[#2D2D2D]">
               <svg className="w-4 h-4 text-earth-brown" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M12 9c2-2 4-2 6 0M12 14c-2-2-4-2-6 0"></path>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M12 9c2-2 4-2 6 0M12 14c-2-2-4-2-6 0M12 9c-2-1-4-1-6 0M12 14c2-1 4-1 6 0"></path>
               </svg>
             </div>
             <span className="text-xl font-bold text-earth-brown font-display">CrevrTree</span>

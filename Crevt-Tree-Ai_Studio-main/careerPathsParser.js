@@ -5,6 +5,19 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Robust data directory resolution for local dev & Vercel
+const getProjectRoot = () => {
+  const cwd = process.cwd();
+  if (fs.existsSync(path.join(cwd, 'Crevt-Tree-Ai_Studio-main', 'data_store'))) {
+    return path.join(cwd, 'Crevt-Tree-Ai_Studio-main');
+  }
+  if (fs.existsSync(path.join(cwd, 'data_store'))) {
+    return cwd;
+  }
+  return __dirname;
+};
+const projectRoot = getProjectRoot();
+
 let cachedTree = null;
 let cachedKeywordIndex = null;
 let cacheStats = { totalPaths: 0, totalUniqueNodes: 0, rootCount: 0 };
@@ -13,7 +26,7 @@ let nodeCounter = 0;
 export function parseCareerPaths() {
   if (cachedTree) return { tree: cachedTree, index: cachedKeywordIndex, stats: cacheStats };
 
-  const dataDir = path.join(__dirname, 'data_store');
+  const dataDir = path.join(projectRoot, 'data_store');
   const treePath = path.join(dataDir, 'career_tree.json');
   const indexPath = path.join(dataDir, 'career_index.json');
   const statsPath = path.join(dataDir, 'career_stats.json');
@@ -30,7 +43,7 @@ export function parseCareerPaths() {
     }
   }
 
-  const filePath = path.join(__dirname, '..', 'database', 'career_graph_output_v3', 'career_paths.txt');
+  const filePath = path.join(projectRoot, '..', 'database', 'career_graph_output_v3', 'career_paths.txt');
   if (!fs.existsSync(filePath)) {
     console.warn('[CrevrTree CareerPaths] career_paths.txt not found at', filePath);
     return { tree: [], index: {}, stats: cacheStats };
@@ -189,7 +202,7 @@ export function getCareerSubtree(keyword, maxDepth = 6) {
         bestMatch = { node, path: [...parentPath, node] };
       }
 
-      if (score >= 80 && node.children && node.children.length > 0) {
+      if (node.children && node.children.length > 0) {
         const childMatch = findBestMatch(node.children, [...parentPath, node]);
         if (childMatch && childMatch.score > bestScore) {
           bestScore = childMatch.score;

@@ -1,1 +1,6 @@
-{"totalPaths":200000,"totalUniqueNodes":146965,"rootCount":8,"parseTimeMs":1632}
+{
+  "totalPaths": 15,
+  "totalUniqueNodes": 119,
+  "rootCount": 14,
+  "parseTimeMs": 2
+}

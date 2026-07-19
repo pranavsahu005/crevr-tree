@@ -79,66 +79,60 @@ export default function InspectorPanel({
   return (
     <div 
       id="tree-inspector-panel" 
-      className="bg-white border-2 border-[#2D2D2D] rounded-3xl p-6 shadow-[6px_6px_0px_0px_#2D2D2D] space-y-6 transition-all duration-300 font-sans"
+      className="space-y-6 transition-all duration-300 font-sans"
     >
       {/* Header Info */}
-      <div className="border-b-2 border-[#EAE6E1] pb-4">
-        <span className="text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-amber-50 border border-[#2D2D2D] text-[#2D2D2D] block w-max shadow-[1px_1px_0px_0px_#2D2D2D]">
-          Interactive Node Inspector
-        </span>
-        <h3 className="text-xl sm:text-2xl font-extrabold text-[#2D2D2D] font-display leading-tight mt-2">
+      <div className="pb-4">
+        <h3 className="text-xl sm:text-2xl font-extrabold text-[#2D2D2D] font-display leading-tight">
           {step.name}
         </h3>
-        <p className="text-xs text-[#6B665F] mt-2 leading-relaxed">
+        <p className="text-xs text-[#6B665F] mt-2 leading-relaxed font-sans font-medium">
           {step.desc}
         </p>
       </div>
 
-      {/* Tab Selectors */}
-      <div className="relative border-b-2 border-[#EAE6E1]">
-        <div className="flex space-x-4 text-xs font-bold overflow-x-auto pb-1.5 scrollbar-thin">
-          <button 
-            onClick={() => setActiveTab('official')} 
-            className={`tab-btn whitespace-nowrap pb-1.5 transition-colors cursor-pointer ${
-              activeTab === 'official' ? 'text-sky-700 font-black' : 'text-[#6B665F] hover:text-[#2D2D2D]'
-            }`}
-          >
-            Official Portals
-          </button>
-          <button 
-            onClick={() => setActiveTab('resources')} 
-            className={`tab-btn whitespace-nowrap pb-1.5 transition-colors cursor-pointer ${
-              activeTab === 'resources' ? 'text-sky-700 font-black' : 'text-[#6B665F] hover:text-[#2D2D2D]'
-            }`}
-          >
-            Free Material
-          </button>
-          <button 
-            onClick={() => setActiveTab('checklist')} 
-            className={`tab-btn whitespace-nowrap pb-1.5 transition-colors cursor-pointer ${
-              activeTab === 'checklist' ? 'text-sky-700 font-black' : 'text-[#6B665F] hover:text-[#2D2D2D]'
-            }`}
-          >
-            Eligibility & Skills
-          </button>
-          <button 
-            onClick={() => setActiveTab('metadata')} 
-            className={`tab-btn whitespace-nowrap pb-1.5 transition-colors cursor-pointer ${
-              activeTab === 'metadata' ? 'text-sky-700 font-black' : 'text-[#6B665F] hover:text-[#2D2D2D]'
-            }`}
-          >
-            Career Metrics
-          </button>
-        </div>
-        
-        {/* Dynamic sliding line indicator */}
-        <div 
-          className="absolute bottom-0 h-[3px] bg-sky-600 transition-all duration-300"
-          style={{
-            left: activeTab === 'official' ? '0' : activeTab === 'resources' ? '92px' : activeTab === 'checklist' ? '180px' : '296px',
-            width: activeTab === 'official' ? '82px' : activeTab === 'resources' ? '78px' : activeTab === 'checklist' ? '106px' : '88px',
-          }}
-        />
+      {/* iOS-Style Segmented Tab Selectors */}
+      <div className="bg-[#FAF9F5] p-1 rounded-xl flex justify-between space-x-1 border-2 border-[#2D2D2D] shadow-[2px_2px_0px_0px_#2D2D2D]">
+        <button 
+          onClick={() => setActiveTab('official')} 
+          className={`flex-1 text-center py-2 px-1 rounded-lg font-extrabold transition-all text-[11px] cursor-pointer border ${
+            activeTab === 'official' 
+              ? 'bg-[#FFC020] text-[#2D2D2D] border-[#2D2D2D]' 
+              : 'text-slate-600 hover:text-slate-900 border-transparent hover:bg-slate-100'
+          }`}
+        >
+          Official
+        </button>
+        <button 
+          onClick={() => setActiveTab('resources')} 
+          className={`flex-1 text-center py-2 px-1 rounded-lg font-extrabold transition-all text-[11px] cursor-pointer border ${
+            activeTab === 'resources' 
+              ? 'bg-[#FFC020] text-[#2D2D2D] border-[#2D2D2D]' 
+              : 'text-slate-600 hover:text-slate-900 border-transparent hover:bg-slate-100'
+          }`}
+        >
+          Resources
+        </button>
+        <button 
+          onClick={() => setActiveTab('checklist')} 
+          className={`flex-1 text-center py-2 px-1 rounded-lg font-extrabold transition-all text-[11px] cursor-pointer border ${
+            activeTab === 'checklist' 
+              ? 'bg-[#FFC020] text-[#2D2D2D] border-[#2D2D2D]' 
+              : 'text-slate-600 hover:text-slate-900 border-transparent hover:bg-slate-100'
+          }`}
+        >
+          Checklist
+        </button>
+        <button 
+          onClick={() => setActiveTab('metadata')} 
+          className={`flex-1 text-center py-2 px-1 rounded-lg font-extrabold transition-all text-[11px] cursor-pointer border ${
+            activeTab === 'metadata' 
+              ? 'bg-[#FFC020] text-[#2D2D2D] border-[#2D2D2D]' 
+              : 'text-slate-600 hover:text-slate-900 border-transparent hover:bg-slate-100'
+          }`}
+        >
+          Metrics
+        </button>
       </div>
 
       {/* Tab Panels */}

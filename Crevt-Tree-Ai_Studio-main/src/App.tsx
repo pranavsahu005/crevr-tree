@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
-import { 
-  Search, 
-  ArrowLeft, 
-  RotateCcw, 
-  ChevronDown, 
-  Info, 
-  GraduationCap, 
-  ShieldCheck, 
-  Store, 
-  Coins, 
-  HeartHandshake, 
-  Compass, 
-  Cpu, 
+import {
+  Search,
+  ArrowLeft,
+  RotateCcw,
+  ChevronDown,
+  Info,
+  GraduationCap,
+  ShieldCheck,
+  Store,
+  Coins,
+  HeartHandshake,
+  Compass,
+  Cpu,
   BookmarkCheck,
-  Heart
+  Heart,
+  X
 } from 'lucide-react';
 
 import { ROADMAPS_DATABASE } from './data';
@@ -30,7 +31,7 @@ export default function App() {
   const [selectedNode, setSelectedNode] = useState<Step | null>(null);
   const [roadmapsDatabase, setRoadmapsDatabase] = useState<Roadmap[]>(ROADMAPS_DATABASE);
   const [searchResults, setSearchResults] = useState<Roadmap[]>([]);
-  
+
   // Load completed nodes from localStorage on startup
   const [completedNodes, setCompletedNodes] = useState<Record<string, boolean>>(() => {
     try {
@@ -68,7 +69,7 @@ export default function App() {
 
   // Global search values
   const [searchQuery, setSearchQuery] = useState('');
-  
+
   // Custom toast notification states
   const [toast, setToast] = useState<{ title: string; body: string; show: boolean }>({
     title: '',
@@ -132,11 +133,19 @@ export default function App() {
     return 'education';
   };
 
-  // Node details inspector loader
   const handleLoadRoadmap = async (roadmapId: string) => {
     try {
       const cleanId = roadmapId.replace('dynamic-', '');
-      
+
+      // If it's a cp- ID, find it in searchResults and load its subtree by keyword
+      if (cleanId.startsWith('cp-')) {
+        const match = searchResults.find(r => r.id === cleanId || r.id === `dynamic-${cleanId}`);
+        if (match) {
+          await handleLoadCareerPathByKeyword(match.name);
+          return;
+        }
+      }
+
       // 1. Try to fetch from curated roadmaps API
       let res = await fetch(`/api/roadmaps/${cleanId}`);
       if (res.ok) {
@@ -149,7 +158,7 @@ export default function App() {
           return;
         }
       }
-      
+
       // 2. Try career paths tree API (the full generated dataset)
       res = await fetch(`/api/career-paths/tree`);
       if (res.ok) {
@@ -160,7 +169,7 @@ export default function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
-      
+
       // 3. Try dynamic graph generator API
       res = await fetch(`/api/nodes/${cleanId}/tree`);
       if (res.ok) {
@@ -240,7 +249,7 @@ export default function App() {
     }
 
     const lowerQuery = query.toLowerCase().trim();
-    
+
     try {
       // 1. Search career paths from the generated dataset (400K paths)
       const cpRes = await fetch(`/api/career-paths/search?q=${encodeURIComponent(lowerQuery)}`);
@@ -252,7 +261,7 @@ export default function App() {
           name: r.name,
           category: getCategoryFromNode({ title: r.name, category: r.path?.[r.path.length - 2] || '' }) as any,
           tagline: `Path: ${r.path?.join(' → ') || r.name}`,
-          steps: []
+          steps: Array(r.path ? r.path.length : 0).fill(null).map((_, i) => ({ id: `dummy-${i}`, name: '', desc: '', parent: null, coords: { x: 0, y: 0 } }))
         }));
       }
 
@@ -266,13 +275,13 @@ export default function App() {
           name: node.title,
           category: getCategoryFromNode(node),
           tagline: node.description || `${node.title} pathway inside the knowledge graph.`,
-          steps: []
+          steps: Array(1).fill(null).map((_, i) => ({ id: node.node_id, name: node.title, desc: node.description || '', coords: { x: 50, y: 12 } }))
         }));
       }
 
       // 3. Search local curated roadmaps list
-      const localMatches = roadmapsDatabase.filter((item) => 
-        item.name.toLowerCase().includes(lowerQuery) || 
+      const localMatches = roadmapsDatabase.filter((item) =>
+        item.name.toLowerCase().includes(lowerQuery) ||
         item.category.toLowerCase().includes(lowerQuery) ||
         item.tagline.toLowerCase().includes(lowerQuery)
       );
@@ -301,8 +310,8 @@ export default function App() {
     } catch (err) {
       console.error("Search failed:", err);
       // Fallback local search
-      const localMatches = roadmapsDatabase.filter((item) => 
-        item.name.toLowerCase().includes(lowerQuery) || 
+      const localMatches = roadmapsDatabase.filter((item) =>
+        item.name.toLowerCase().includes(lowerQuery) ||
         item.category.toLowerCase().includes(lowerQuery) ||
         item.tagline.toLowerCase().includes(lowerQuery)
       );
@@ -341,7 +350,7 @@ export default function App() {
   // Roadmap specific progress resetter
   const handleResetRoadmapProgress = () => {
     if (!activeRoadmap) return;
-    
+
     setCompletedNodes((prev) => {
       const updated = { ...prev };
       activeRoadmap.steps.forEach((step) => {
@@ -389,18 +398,17 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col selection:bg-honey-amber selection:text-earth-brown bg-cream text-earth-brown">
       {/* Dynamic Nav Header */}
-      <Navbar 
-        onNavigate={handleNavigate} 
-        onSearch={handleSearch} 
-        onOpenCategory={handleOpenCategory} 
+      <Navbar
+        onNavigate={handleNavigate}
+        onSearch={handleSearch}
+        onOpenCategory={handleOpenCategory}
       />
 
       {/* Floating Animated Custom Toast */}
-      <div 
-        id="toast-notification" 
-        className={`fixed bottom-6 right-6 z-50 transform transition-all duration-300 pointer-events-none max-w-sm ${
-          toast.show ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-        }`}
+      <div
+        id="toast-notification"
+        className={`fixed bottom-6 right-6 z-50 transform transition-all duration-300 pointer-events-none max-w-sm ${toast.show ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+          }`}
       >
         <div className="bg-warm-white border border-border-soft rounded-2xl shadow-hover p-4 flex items-start space-x-3 pointer-events-auto">
           <div className="w-10 h-10 rounded-full bg-honey-amber/20 flex items-center justify-center text-honey-amber-dark flex-shrink-0">
@@ -430,7 +438,7 @@ export default function App() {
                   100% Free Interactive Directory
                 </span>
               </div>
-              
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-earth-brown leading-tight tracking-tight">
                 India's Career, Business & Government Path —{' '}
                 <span className="text-honey-amber-dark relative">
@@ -438,7 +446,7 @@ export default function App() {
                   <span className="absolute bottom-2 left-0 w-full h-3 bg-honey-amber/30 -z-10 rounded-full"></span>
                 </span>
               </h1>
-              
+
               <p className="text-base sm:text-lg text-soft-brown leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
                 Search anything — becoming a doctor, opening a shop, applying for a passport — and see the exact path, step by step. Zero corporate jargon, completely tailored guides for Indian youth.
               </p>
@@ -447,17 +455,17 @@ export default function App() {
               <div className="bg-warm-white p-2 rounded-full border-2 border-border-soft shadow-card max-w-xl mx-auto lg:mx-0 flex items-center transition-all hover:border-honey-amber focus-within:border-honey-amber">
                 <div className="flex items-center pl-3 flex-grow">
                   <Search className="text-soft-brown w-5 h-5 flex-shrink-0" />
-                  <input 
+                  <input
                     id="hero-search-input"
-                    type="text" 
+                    type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && handleSearch(searchQuery)}
-                    placeholder="Search a career, business, or service (e.g. Doctor, IAS)..." 
+                    placeholder="Search a career, business, or service (e.g. Doctor, IAS)..."
                     className="w-full text-earth-brown placeholder-soft-brown bg-transparent outline-none text-xs sm:text-sm px-3 py-2 font-medium"
                   />
                 </div>
-                <button 
+                <button
                   onClick={() => handleSearch(searchQuery)}
                   className="px-6 py-3 bg-honey-amber hover:bg-honey-amber-dark text-earth-brown font-bold rounded-full text-xs sm:text-sm transition-all shadow-md hover:scale-[1.03] cursor-pointer"
                 >
@@ -468,32 +476,32 @@ export default function App() {
               {/* Instant Quick Access Tags */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-2">
                 <span className="text-xs font-bold text-soft-brown mr-1">Popular searches:</span>
-                <button 
-                  onClick={() => handleLoadCareerPathByKeyword('Doctor')} 
+                <button
+                  onClick={() => handleLoadCareerPathByKeyword('Doctor')}
                   className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
                 >
                   Doctor
                 </button>
-                <button 
-                  onClick={() => handleLoadCareerPathByKeyword('AI Engineer')} 
+                <button
+                  onClick={() => handleLoadCareerPathByKeyword('AI Engineer')}
                   className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
                 >
                   AI Engineer
                 </button>
-                <button 
-                  onClick={() => handleLoadCareerPathByKeyword('IAS Officer')} 
+                <button
+                  onClick={() => handleLoadCareerPathByKeyword('IAS Officer')}
                   className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
                 >
                   IAS Officer
                 </button>
-                <button 
-                  onClick={() => handleLoadCareerPathByKeyword('Startup')} 
+                <button
+                  onClick={() => handleLoadCareerPathByKeyword('Startup')}
                   className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
                 >
                   Startup
                 </button>
-                <button 
-                  onClick={handleLoadFullCareerTree} 
+                <button
+                  onClick={handleLoadFullCareerTree}
                   className="px-3 py-1 bg-honey-amber/20 border border-honey-amber text-xs rounded-full hover:bg-honey-amber/40 transition-all text-earth-brown cursor-pointer font-bold"
                 >
                   Explore All Paths
@@ -503,32 +511,170 @@ export default function App() {
 
             {/* Right Column Swaying Tree SVG Illustration */}
             <div className="lg:col-span-5 flex justify-center relative">
-              <div className="absolute inset-0 bg-honey-amber/10 rounded-full filter blur-3xl opacity-60 -z-10"></div>
-              
+
+              {/* Leaf Mandala Animation from Resources/ui/leaf */}
+              <div className="absolute w-[240px] h-[240px] flex items-center justify-center -z-10 pointer-events-none transform translate-y-16">
+                {Array.from({ length: 33 }).map((_, i) => {
+                  const delay = i * 0.15;
+                  const rotation = (i + 2) * 10.5;
+                  return (
+                    <div
+                      key={i}
+                      className="absolute w-[100px] h-[100px] rounded-tl-[100px] rounded-br-[100px] rounded-tr-none rounded-bl-none origin-[100%_0] border border-[#2D2D2D]/5 transition-all"
+                      style={{
+                        transform: `rotate(${rotation}deg)`,
+                        animation: `leaf-mandala-anim 13s infinite alternate ease-in-out`,
+                        animationDelay: `${delay}s`,
+                        opacity: 0.15,
+                        backgroundColor: '#F95A8D',
+                        // Inject variables for CSS keyframes
+                        // @ts-ignore
+                        '--final-rot': `${rotation}deg`,
+                        '--final-color': '#704FFE',
+                        '--mid-color': '#13E2BE'
+                      } as any}
+                    />
+                  );
+                })}
+              </div>
+
               {/* Signature swaying tree illustration */}
               <svg className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 animate-sway text-earth-brown" viewBox="0 0 200 200" fill="none">
                 {/* Ground roots */}
-                <path d="M40 180 C 70 178, 130 178, 160 180" stroke="#6B4A2E" strokeWidth="5" strokeLinecap="round"/>
-                <path d="M100 130 L100 180" stroke="#6B4A2E" strokeWidth="8" strokeLinecap="round"/>
-                <path d="M100 150 C 85 160, 70 165, 55 175" stroke="#6B4A2E" strokeWidth="4" strokeLinecap="round"/>
-                <path d="M100 145 C 115 155, 130 162, 145 172" stroke="#6B4A2E" strokeWidth="4" strokeLinecap="round"/>
-                
-                {/* Branches themed after the Category Identity Colors */}
-                <path d="M100 110 C 80 90, 60 80, 45 90" stroke="#FF6B81" strokeWidth="6" strokeLinecap="round"/> {/* Rose Branch - Medical */}
-                <path d="M100 100 C 120 75, 140 60, 155 75" stroke="#4ECDC4" strokeWidth="6" strokeLinecap="round"/> {/* Teal Branch - Education */}
-                <path d="M100 80 L100 40" stroke="#FF9F43" strokeWidth="5" strokeLinecap="round"/> {/* Orange Trunk - Govt */}
-                <path d="M100 70 C 80 50, 70 30, 50 25" stroke="#43C97E" strokeWidth="4" strokeLinecap="round"/> {/* Green Branch - Business */}
-                <path d="M100 55 C 120 40, 135 25, 150 20" stroke="#6C5CE7" strokeWidth="4" strokeLinecap="round"/> {/* Violet Branch - Finance */}
-                
-                {/* Glowing Leaves markers */}
-                <circle cx="45" cy="90" r="10" fill="#FFE0E6" stroke="#FF6B81" strokeWidth="2"/>
-                <circle cx="155" cy="75" r="12" fill="#D9FFFB" stroke="#4ECDC4" strokeWidth="2"/>
-                <circle cx="100" cy="40" r="9" fill="#FFEBD1" stroke="#FF9F43" strokeWidth="2"/>
-                <circle cx="50" cy="25" r="11" fill="#DFFFEA" stroke="#43C97E" strokeWidth="2"/>
-                <circle cx="150" cy="20" r="10" fill="#E6E1FF" stroke="#6C5CE7" strokeWidth="2"/>
-                
-                <path d="M100 120 C 90 100, 110 80, 100 60" stroke="#FFC020" strokeWidth="7" strokeLinecap="round"/> {/* Main Center */}
-                <circle cx="100" cy="60" r="7" fill="#E9FFC7" stroke="#476E0C" strokeWidth="2"/>
+                <path d="M40 180 C 70 178, 130 178, 160 180" stroke="#6B4A2E" strokeWidth="5" strokeLinecap="round" />
+                <path d="M100 130 L100 180" stroke="#6B4A2E" strokeWidth="8" strokeLinecap="round" />
+                <path d="M100 150 C 85 160, 70 165, 55 175" stroke="#6B4A2E" strokeWidth="4" strokeLinecap="round" />
+                <path d="M100 145 C 115 155, 130 162, 145 172" stroke="#6B4A2E" strokeWidth="4" strokeLinecap="round" />
+
+                {/* Branches themed after the Category Identity Colors (Lush 10-Branch structure) */}
+                 <path d="M100 120 C 70 110, 50 110, 35 120" stroke="#FF6B81" strokeWidth="5.5" strokeLinecap="round" /> {/* Rose Branch 1 - Medical Lower Left */}
+                 <path d="M100 110 C 80 90, 60 80, 45 90" stroke="#FF6B81" strokeWidth="5" strokeLinecap="round" /> {/* Rose Branch 2 - Medical Mid Left */}
+                 <path d="M100 115 C 130 105, 150 105, 165 115" stroke="#4ECDC4" strokeWidth="5.5" strokeLinecap="round" /> {/* Teal Branch 1 - Education Lower Right */}
+                 <path d="M100 100 C 120 75, 140 60, 155 75" stroke="#4ECDC4" strokeWidth="5" strokeLinecap="round" /> {/* Teal Branch 2 - Education Mid Right */}
+                 <path d="M100 80 L100 40" stroke="#FF9F43" strokeWidth="5.5" strokeLinecap="round" /> {/* Orange Trunk - Govt Central */}
+                 <path d="M100 65 C 85 50, 85 30, 75 22" stroke="#FF9F43" strokeWidth="4" strokeLinecap="round" /> {/* Orange Branch 2 - Govt Left Top */}
+                 <path d="M100 65 C 115 50, 115 30, 125 22" stroke="#FFC020" strokeWidth="4" strokeLinecap="round" /> {/* Yellow Branch 3 - Govt Right Top */}
+                 
+                 <path d="M100 90 C 75 70, 55 55, 38 60" stroke="#43C97E" strokeWidth="4.5" strokeLinecap="round" /> {/* Green Branch 1 - Business Lower Left */}
+                 <path d="M100 70 C 80 50, 70 30, 50 25" stroke="#43C97E" strokeWidth="4" strokeLinecap="round" /> {/* Green Branch 2 - Business Upper Left */}
+                 
+                 <path d="M100 85 C 125 65, 145 50, 162 55" stroke="#6C5CE7" strokeWidth="4.5" strokeLinecap="round" /> {/* Violet Branch 1 - Finance Lower Right */}
+                 <path d="M100 55 C 120 40, 135 25, 150 20" stroke="#6C5CE7" strokeWidth="4" strokeLinecap="round" /> {/* Violet Branch 2 - Finance Upper Right */}
+
+                 {/* Lush Organic Leaves markers (31 leaves total) */}
+                 {/* Rose Branch (Medical) Leaves */}
+                 <g transform="translate(75, 115) rotate(-60) scale(0.7)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(55, 112) rotate(-63) scale(0.85)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(35, 120) rotate(-65)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(75, 92) rotate(-50) scale(0.7)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(60, 87) rotate(-55) scale(0.85)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(45, 90) rotate(-60)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+
+                 {/* Teal Branch (Education) Leaves */}
+                 <g transform="translate(125, 111) rotate(60) scale(0.7)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(145, 110) rotate(63) scale(0.85)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(165, 115) rotate(65)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(120, 83) rotate(45) scale(0.7)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(140, 71) rotate(55) scale(0.85)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(155, 75) rotate(60)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+
+                 {/* Orange Trunk (Govt) Leaves */}
+                 <g transform="translate(100, 68) rotate(-15) scale(0.75)">
+                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(100, 52) rotate(15) scale(0.85)">
+                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(100, 40) rotate(0)">
+                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(88, 38) rotate(-20) scale(0.75)">
+                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(82, 28) rotate(-22) scale(0.85)">
+                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(75, 22) rotate(-25)">
+                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(112, 38) rotate(20) scale(0.75)">
+                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FFC020" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(118, 28) rotate(22) scale(0.85)">
+                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FFC020" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(125, 22) rotate(25)">
+                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FFC020" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+
+                 {/* Green Branch (Business) Leaves */}
+                 <g transform="translate(75, 72) rotate(-45) scale(0.7)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(55, 63) rotate(-48) scale(0.85)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(38, 60) rotate(-50)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(80, 55) rotate(-35) scale(0.7)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(65, 38) rotate(-40) scale(0.85)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(50, 25) rotate(-45)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+
+                 {/* Violet Branch (Finance) Leaves */}
+                 <g transform="translate(125, 70) rotate(45) scale(0.7)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(145, 61) rotate(48) scale(0.85)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(162, 55) rotate(50)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(120, 43) rotate(35) scale(0.7)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(138, 30) rotate(40) scale(0.85)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 <g transform="translate(150, 20) rotate(45)">
+                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>
+                 
+                 <path d="M100 120 C 90 100, 110 80, 100 60" stroke="#FFC020" strokeWidth="7" strokeLinecap="round" /> {/* Main Center */}
+                 <g transform="translate(100, 60) rotate(15)">
+                   <path d="M 0,0 C -4,-3 -5,-8 -2.5,-11 C 0,-13 0,-13 2.5,-11 C 5,-8 4,-3 0,0 Z" fill="#E9FFC7" stroke="#2D2D2D" strokeWidth="2.5" />
+                 </g>    
               </svg>
             </div>
           </section>
@@ -543,8 +689,8 @@ export default function App() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {/* Door 1: Professional Careers */}
-                <div 
-                  onClick={() => handleOpenCategory('career')} 
+                <div
+                  onClick={() => handleOpenCategory('career')}
                   className="group cursor-pointer bg-warm-white border border-border-soft rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 border-l-4 border-l-tech-primary"
                 >
                   <div className="w-12 h-12 rounded-full bg-tech/20 flex items-center justify-center text-tech-primary mb-4">
@@ -563,8 +709,8 @@ export default function App() {
                 </div>
 
                 {/* Door 2: Government & UPSC */}
-                <div 
-                  onClick={() => handleOpenCategory('government')} 
+                <div
+                  onClick={() => handleOpenCategory('government')}
                   className="group cursor-pointer bg-warm-white border border-border-soft rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 border-l-4 border-l-govt-primary"
                 >
                   <div className="w-12 h-12 rounded-full bg-govt/20 flex items-center justify-center text-govt-primary mb-4">
@@ -583,8 +729,8 @@ export default function App() {
                 </div>
 
                 {/* Door 3: Business & MSME */}
-                <div 
-                  onClick={() => handleOpenCategory('business')} 
+                <div
+                  onClick={() => handleOpenCategory('business')}
                   className="group cursor-pointer bg-warm-white border border-border-soft rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 border-l-4 border-l-business-primary"
                 >
                   <div className="w-12 h-12 rounded-full bg-business/20 flex items-center justify-center text-business-primary mb-4">
@@ -603,8 +749,8 @@ export default function App() {
                 </div>
 
                 {/* Door 4: Finance & Chartered Accountant */}
-                <div 
-                  onClick={() => handleOpenCategory('finance')} 
+                <div
+                  onClick={() => handleOpenCategory('finance')}
                   className="group cursor-pointer bg-warm-white border border-border-soft rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 border-l-4 border-l-finance-primary"
                 >
                   <div className="w-12 h-12 rounded-full bg-finance/20 flex items-center justify-center text-finance-primary mb-4">
@@ -677,7 +823,7 @@ export default function App() {
                 We mapped 200,000 career pathways from 10th grade to final career destinations — Doctor, IAS, AI Engineer, Startup Founder, and everything in between. Every node links to official portals, free resources, and real checklists. No paywalls. No corporate jargon. Just clarity.
               </p>
               <div className="pt-4">
-                <button 
+                <button
                   onClick={handleLoadFullCareerTree}
                   className="px-6 py-3 bg-earth-brown hover:bg-earth-brown/90 text-white font-bold rounded-full text-sm transition-all shadow-md cursor-pointer"
                 >
@@ -697,8 +843,8 @@ export default function App() {
             <div className="space-y-4">
               {/* Q1 */}
               <div className="bg-warm-white border border-border-soft rounded-2xl overflow-hidden shadow-card">
-                <button 
-                  onClick={() => handleToggleFaq(0)} 
+                <button
+                  onClick={() => handleToggleFaq(0)}
                   className="w-full flex items-center justify-between p-5 text-left font-bold font-display text-earth-brown text-base hover:bg-cream/40 cursor-pointer"
                 >
                   <span>Is this platform completely free to use?</span>
@@ -713,8 +859,8 @@ export default function App() {
 
               {/* Q2 */}
               <div className="bg-warm-white border border-border-soft rounded-2xl overflow-hidden shadow-card">
-                <button 
-                  onClick={() => handleToggleFaq(1)} 
+                <button
+                  onClick={() => handleToggleFaq(1)}
                   className="w-full flex items-center justify-between p-5 text-left font-bold font-display text-earth-brown text-base hover:bg-cream/40 cursor-pointer"
                 >
                   <span>How are the resources verified?</span>
@@ -729,8 +875,8 @@ export default function App() {
 
               {/* Q3 */}
               <div className="bg-warm-white border border-border-soft rounded-2xl overflow-hidden shadow-card">
-                <button 
-                  onClick={() => handleToggleFaq(2)} 
+                <button
+                  onClick={() => handleToggleFaq(2)}
                   className="w-full flex items-center justify-between p-5 text-left font-bold font-display text-earth-brown text-base hover:bg-cream/40 cursor-pointer"
                 >
                   <span>Do I need to sign in to save my roadmap progress?</span>
@@ -753,8 +899,8 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             {/* Back Navigation Action */}
             <div>
-              <button 
-                onClick={() => handleNavigate('home')} 
+              <button
+                onClick={() => handleNavigate('home')}
                 className="inline-flex items-center space-x-2 text-sm font-semibold text-earth-brown hover:text-honey-amber-dark bg-warm-white px-4 py-2 rounded-full border border-border-soft transition-all cursor-pointer"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -790,7 +936,7 @@ export default function App() {
             {/* Roadmaps Grid */}
             <div id="category-roadmaps-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {getFilteredRoadmaps().map((roadmap) => (
-                <div 
+                <div
                   key={roadmap.id}
                   onClick={() => handleLoadRoadmap(roadmap.id)}
                   className={`group bg-warm-white border border-border-soft rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 cursor-pointer border-t-4 ${getBorderColorClass(roadmap.category)}`}
@@ -825,7 +971,7 @@ export default function App() {
       {currentPage === 'tree' && activeRoadmap && (
         <main id="view-tree" className="flex-grow py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            
+
             {/* Top controls and metadata headers */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border-soft pb-6">
               <div className="space-y-1">
@@ -850,15 +996,15 @@ export default function App() {
               <div className="flex flex-col sm:flex-row items-center gap-3">
                 {/* Inline Node Search Input */}
                 <div className="relative">
-                  <input 
-                    type="text" 
-                    placeholder="Locate step in this tree..." 
+                  <input
+                    type="text"
+                    placeholder="Locate step in this tree..."
                     className="px-4 py-2 pl-9 bg-warm-white border-2 border-[#2D2D2D] rounded-full text-xs font-sans text-earth-brown placeholder-soft-brown focus:outline-none shadow-[2px_2px_0px_0px_#2D2D2D] focus:shadow-[1px_1px_0px_0px_#2D2D2D] focus:translate-x-[1px] focus:translate-y-[1px] transition-all w-52"
                     onChange={(e) => {
                       const val = e.target.value.toLowerCase().trim();
                       if (!val) return;
-                      const matched = activeRoadmap.steps.find(s => 
-                        s.name.toLowerCase().includes(val) || 
+                      const matched = activeRoadmap.steps.find(s =>
+                        s.name.toLowerCase().includes(val) ||
                         s.desc.toLowerCase().includes(val)
                       );
                       if (matched) {
@@ -870,8 +1016,8 @@ export default function App() {
                 </div>
 
                 {/* Progress Reset button */}
-                <button 
-                  onClick={handleResetRoadmapProgress} 
+                <button
+                  onClick={handleResetRoadmapProgress}
                   className="inline-flex items-center space-x-1.5 px-4 py-2 bg-warm-white border-2 border-[#2D2D2D] hover:bg-cream/50 text-xs font-bold text-earth-brown rounded-full transition-all flex-shrink-0 cursor-pointer shadow-[2px_2px_0px_0px_#2D2D2D] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_#2D2D2D]"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
@@ -882,7 +1028,7 @@ export default function App() {
 
             {/* Collapsible "What is this?" explainer bar */}
             <div className="border border-border-soft bg-warm-white rounded-2xl overflow-hidden shadow-sm">
-              <button 
+              <button
                 onClick={() => setExplainOpen(!explainOpen)}
                 className="w-full flex items-center justify-between p-4 font-display font-bold text-earth-brown text-left cursor-pointer hover:bg-cream/20 transition-colors"
               >
@@ -904,12 +1050,12 @@ export default function App() {
               )}
             </div>
 
-            {/* Main grid structure: Tree canvas left, inspector panel right */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative min-h-[500px]">
-              
-              {/* Tree canvas left column */}
-              <div className="lg:col-span-8 space-y-6">
-                <TreeCanvas 
+            {/* Main layout container: full-width Tree Canvas */}
+            <div className="w-full relative min-h-[500px] space-y-6">
+
+              {/* Tree canvas full width */}
+              <div className="w-full space-y-6">
+                <TreeCanvas
                   roadmap={activeRoadmap}
                   completedNodes={completedNodes}
                   selectedNode={selectedNode}
@@ -941,15 +1087,58 @@ export default function App() {
                 })()}
               </div>
 
-              {/* Node Inspector panel right column */}
-              <div className="lg:col-span-4 lg:sticky lg:top-28 z-30">
-                <InspectorPanel 
-                  step={selectedNode}
-                  completedNodes={completedNodes}
-                  onToggleCompletion={handleToggleNodeCompletion}
-                  onExplorePath={handleLoadRoadmap}
-                />
-              </div>
+              {/* Dynamic Slide-out Inspector Drawer */}
+              {selectedNode && (
+                <div className="fixed inset-0 z-50 overflow-hidden font-sans pointer-events-none">
+                  {/* Backdrop overlay (Mobile only) */}
+                  <div
+                    onClick={() => setSelectedNode(null)}
+                    className="lg:hidden absolute inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300 cursor-pointer pointer-events-auto"
+                  />
+
+                  {/* Sliding panel container */}
+                  <div className="absolute inset-y-0 right-0 pl-10 max-w-full flex">
+                    <div
+                      className="w-screen max-w-md bg-white shadow-2xl border-l-2 border-[#2D2D2D] flex flex-col transform transition-transform duration-300 ease-out translate-x-0 pointer-events-auto"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {/* Drawer header / close button */}
+                      <div className="p-4 bg-slate-50 border-b-2 border-[#2D2D2D] flex items-center justify-between">
+                        <span className="text-xs font-black uppercase text-slate-700 bg-amber-100 px-2.5 py-1 rounded border border-[#2D2D2D] font-mono">
+                          Milestone Inspector
+                        </span>
+                        <button
+                          onClick={() => setSelectedNode(null)}
+                          className="p-1 rounded-full hover:bg-slate-200 border-2 border-[#2D2D2D] bg-white cursor-pointer shadow-[1.5px_1.5px_0px_0px_#2D2D2D]"
+                        >
+                          <X className="w-4 h-4 text-[#2D2D2D]" />
+                        </button>
+                      </div>
+
+                      {/* Scrollable Content Container */}
+                      <div className="flex-1 overflow-y-auto p-5">
+                        <InspectorPanel
+                          step={selectedNode}
+                          completedNodes={completedNodes}
+                          onToggleCompletion={handleToggleNodeCompletion}
+                          onExplorePath={handleLoadRoadmap}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Floating Menu/Toggle button to reopen details if closed */}
+              {!selectedNode && activeRoadmap && activeRoadmap.steps && activeRoadmap.steps.length > 0 && (
+                <button
+                  onClick={() => setSelectedNode(activeRoadmap.steps[0])}
+                  className="fixed bottom-6 right-6 z-40 bg-[#FFC020] hover:bg-[#E0A000] border-2 border-[#2D2D2D] text-[#2D2D2D] font-extrabold text-xs px-4 py-3 rounded-full shadow-[3px_3px_0px_0px_#2D2D2D] hover:shadow-[1px_1px_0px_0px_#2D2D2D] hover:translate-x-[1.5px] hover:translate-y-[1.5px] transition-all cursor-pointer flex items-center space-x-1.5"
+                >
+                  <Compass className="w-4 h-4 animate-spin-slow" />
+                  <span>Open Inspector</span>
+                </button>
+              )}
 
             </div>
 
@@ -961,8 +1150,8 @@ export default function App() {
               <div className="max-w-4xl mx-auto space-y-4 font-sans">
                 {/* FAQ Item 1 */}
                 <div className="bg-warm-white border border-border-soft rounded-2xl overflow-hidden shadow-sm">
-                  <button 
-                    onClick={() => handleToggleFaq(10)} 
+                  <button
+                    onClick={() => handleToggleFaq(10)}
                     className="w-full flex items-center justify-between p-5 font-display font-bold text-earth-brown text-left cursor-pointer hover:bg-cream/10 transition-colors"
                   >
                     <span>How long does it typically take to complete this pathway?</span>
@@ -977,8 +1166,8 @@ export default function App() {
 
                 {/* FAQ Item 2 */}
                 <div className="bg-warm-white border border-border-soft rounded-2xl overflow-hidden shadow-sm">
-                  <button 
-                    onClick={() => handleToggleFaq(11)} 
+                  <button
+                    onClick={() => handleToggleFaq(11)}
                     className="w-full flex items-center justify-between p-5 font-display font-bold text-earth-brown text-left cursor-pointer hover:bg-cream/10 transition-colors"
                   >
                     <span>Are the learning resources and reference links completely free?</span>
@@ -1000,7 +1189,7 @@ export default function App() {
       {currentPage === 'about' && (
         <main id="view-about" className="flex-grow py-12 md:py-20 bg-warm-white/40">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-            
+
             {/* Vision Header */}
             <div className="text-center space-y-4">
               <span className="text-xs font-extrabold uppercase px-3 py-1 rounded-full bg-honey-amber/20 text-earth-brown border border-border-soft block w-max mx-auto">
@@ -1071,7 +1260,7 @@ export default function App() {
                   CrevrTree operates side-by-side with our premium tools and technology entities:
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 font-sans">
                 <div className="bg-warm-white p-4 rounded-xl text-center border border-border-soft shadow-sm">
                   <span className="font-extrabold font-display text-sm text-earth-brown block">HexAtom</span>

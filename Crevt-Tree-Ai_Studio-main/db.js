@@ -8,6 +8,19 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Robust data directory resolution for local dev & Vercel
+const getProjectRoot = () => {
+  const cwd = process.cwd();
+  if (fs.existsSync(path.join(cwd, 'Crevt-Tree-Ai_Studio-main', 'data_store'))) {
+    return path.join(cwd, 'Crevt-Tree-Ai_Studio-main');
+  }
+  if (fs.existsSync(path.join(cwd, 'data_store'))) {
+    return cwd;
+  }
+  return __dirname;
+};
+const projectRoot = getProjectRoot();
+
 let dbType = 'json'; // Fallback by default
 let client = null;
 
@@ -78,7 +91,7 @@ if (dbType === 'mysql') {
 if (dbType === 'sqlite') {
   try {
     const sqlite3 = await import('sqlite3');
-    const dbFile = path.join(__dirname, 'database.sqlite');
+    const dbFile = path.join(projectRoot, 'database.sqlite');
     const db = new sqlite3.default.Database(dbFile);
     client = db;
 
@@ -102,7 +115,7 @@ if (dbType === 'sqlite') {
 
 // Fallback JSON-file database implementation if binary installation fails or isn't needed
 if (dbType === 'json') {
-  const dataDir = path.join(__dirname, 'data_store');
+  const dataDir = path.join(projectRoot, 'data_store');
   if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir, { recursive: true });
   }

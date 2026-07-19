@@ -95,3 +95,22 @@ h1, h2, h3, h4, .font-display {
 ::-webkit-scrollbar-thumb:hover {
   background: #CBC7C2;
 }
+
+/* Dynamic Leaf Mandala backdrop animation */
+@keyframes leaf-mandala-anim {
+  0% {
+    transform: rotate(var(--final-rot));
+    background-color: #F95A8D;
+    opacity: 0.12;
+  }
+  50% {
+    transform: rotate(var(--final-rot));
+    background-color: #704FFE;
+    opacity: 0.08;
+  }
+  100% {
+    transform: rotate(0deg);
+    background-color: #13E2BE;
+    opacity: 0.18;
+  }
+}

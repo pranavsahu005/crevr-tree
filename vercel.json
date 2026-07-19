@@ -3,7 +3,13 @@
   "builds": [
     {
       "src": "Crevt-Tree-Ai_Studio-main/api/index.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "Crevt-Tree-Ai_Studio-main/data_store/**",
+          "database/career_graph_output_v3/**"
+        ]
+      }
     },
     {
       "src": "Crevt-Tree-Ai_Studio-main/package.json",

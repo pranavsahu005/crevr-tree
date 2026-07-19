@@ -1,0 +1,1437 @@
+======================================================================
+CREVR-TREE: INDIAN CAREER INTELLIGENCE DATASET
+Generated: 2026-07-19T15:13:17.531873
+Total Career Paths: 15
+Categories: Creative, Technology, Agriculture, Law, Engineering, Healthcare, Business, Finance & Commerce, Government
+======================================================================
+
+HOW TO USE THIS FILE:
+  - Each CAREER PATH block contains a complete career journey
+  - Steps = linear progression from entry to peak
+  - Branches = alternate routes diverging from the main path
+  - Free Resources = no-cost learning materials
+  - Govt Schemes = free government support programs
+
+======================================================================
+
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: SOFTWARE ENGINEER (JEE ROUTE)
+ID: tech_software_jee
+Category: Technology → Software Development
+Difficulty: High  |  Demand: Very High
+Automation Risk: Medium  |  Remote Potential: Very High
+
+DESCRIPTION:
+India's most competitive engineering path. JEE → IIT/NIT → Top tech
+roles in India and globally.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: School (Class 6–10)
+    → Build strong Maths & Science base. Olympiads (NSO, IMO) are a bonus.
+
+  STEP 2: Class 11–12 (PCM)
+    → Join JEE coaching (Allen, Resonance, Aakash or free: Unacademy, PW). Focus: Physics, Chemistry, Maths.
+
+  STEP 3: JEE Main + Advanced
+    → JEE Main (NTA) → JEE Advanced (IIT). Score determines IIT/NIT/IIIT/State college.
+
+  STEP 4: B.Tech (4 years)
+    → CSE / IT / ECE preferred. Focus on DSA, projects, open source from Year 1.
+
+  STEP 5: Internships (Year 2–4)
+    → Target Google, Microsoft, Flipkart, startups. Use LinkedIn, Internshala, AngelList.
+
+  STEP 6: Entry Role (0–2 yrs)
+    → Junior Software Engineer / SDE-1. Salary: ₹6–25 LPA depending on company.
+
+  STEP 7: Mid Level (2–5 yrs)
+    → SDE-2 / Software Engineer II. Own features, mentor juniors. ₹20–50 LPA.
+
+  STEP 8: Senior (5–8 yrs)
+    → Senior SDE / Staff Engineer. System design, architecture ownership. ₹40–1.2 Cr.
+
+  STEP 9: Lead / Principal (8–12 yrs)
+    → Tech Lead / Principal Engineer. Cross-team impact. ₹80 L–2 Cr+.
+
+  STEP 10: Management Track
+    → Engineering Manager → Director of Engineering → VP Eng → CTO.
+
+  STEP 11: Entrepreneurship
+    → Found a startup. Use network from IIT/NIT. Apply to YC, Sequoia Surge, Accel India.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 4] Data Science / AI/ML Track
+    → B.Tech → ML internship → Data Scientist → ML Engineer → AI Researcher / MLE at FAANG
+
+  [From Step 4] Product Management
+    → B.Tech → PM intern → Associate PM → PM → Senior PM → Group PM → CPO
+
+  [From Step 6] MBA Route
+    → 2 yrs SDE → IIM MBA → Product/Strategy/Consulting roles
+
+  [From Step 4] Government / UPSC
+    → B.Tech → UPSC prep → IAS/IPS/IFS (tech background helps in policy roles)
+
+  [From Step 4] Research / PhD
+    → B.Tech → GATE → M.Tech/MS → PhD (IISc, CMU, Stanford) → Research Scientist
+
+  [From Step 6] Freelancing / Remote
+    → 2 yrs experience → Toptal / Upwork / direct clients → ₹1–5L/month possible
+
+──────────────────────────────────────────────────────────────────────
+SKILLS REQUIRED:
+  Data Structures & Algorithms | System Design | Python / Java / C++ | Git | SQL | Problem Solving | Communication
+
+SKILLS TO BUILD NEXT:
+  Cloud (AWS/GCP/Azure) | Docker & Kubernetes | React / Node.js | Machine Learning basics | Leadership
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Course] CS50 by Harvard
+    URL: https://cs50.harvard.edu/x/
+  [Course] freeCodeCamp
+    URL: https://www.freecodecamp.org/
+  [Course] NPTEL Programming Courses
+    URL: https://nptel.ac.in/
+  [Practice] Striver's DSA Sheet
+    URL: https://takeuforward.org/strivers-a2z-dsa-course/
+  [Exam Prep] Physics Wallah (JEE Prep)
+    URL: https://www.pw.live/
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Entry: ₹6–25 LPA
+  Mid: ₹20–50 LPA
+  Senior: ₹40 L–1.5 Cr
+  Executive: ₹1 Cr+
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Product: Google India, Microsoft India, Amazon India, Flipkart, Meesho, Razorpay, CRED, Zepto, PhonePe
+  Service: TCS, Infosys, Wipro, HCL Technologies, Tech Mahindra, Cognizant
+  Startups: Postman, BrowserStack, Chargebee, Freshworks, Zoho
+  Research: IISc, TCS Research, Microsoft Research India, Google Research India
+
+──────────────────────────────────────────────────────────────────────
+GOVERNMENT OPPORTUNITIES:
+  DRDO Scientist | ISRO Scientist/Engineer | C-DAC | NIC (National Informatics Centre) | ECIL
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: JEE Main → JEE Advanced → JOSAA Counselling
+TIMELINE: 12–14 years from Class 6 to Senior Engineer
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: SOFTWARE ENGINEER (BCA/MCA ROUTE)
+ID: tech_software_bca_mca
+Category: Technology → Software Development
+Difficulty: Medium  |  Demand: High
+Automation Risk: Medium  |  Remote Potential: Very High
+
+DESCRIPTION:
+Non-engineering route to software careers. More accessible, still
+leads to strong tech roles.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Class 10 (PCM or Commerce with Maths)
+    → Secure 60%+. Maths is essential for BCA admission.
+
+  STEP 2: Class 11–12
+    → PCM or Commerce with Maths. Focus on Maths and Computer Science if available.
+
+  STEP 3: BCA (3 years)
+    → Bachelor of Computer Applications. Learn: C, Java, Python, DBMS, Networking, Web Dev. CGPA matters for MCA/placements.
+
+  STEP 4: Skill Building (parallel)
+    → During BCA: build projects, contribute to GitHub, get Internshala internships, complete 1–2 certifications.
+
+  STEP 5: MCA (2 years) — Optional but Recommended
+    → Master of Computer Applications. NIMCET exam for top NITs. Alternatively: direct job after BCA at service companies.
+
+  STEP 6: Entry Role
+    → Junior Developer / Software Trainee. ₹3–8 LPA at service companies, ₹8–18 LPA at product companies with strong skills.
+
+  STEP 7: Mid Level (3–5 yrs)
+    → Software Developer / Module Lead. ₹12–30 LPA.
+
+  STEP 8: Senior (5+ yrs)
+    → Senior Developer / Tech Lead. ₹25–60 LPA.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 3] Government Job Route
+    → BCA → SSC CGL / Bank PO / State Govt IT exam → Govt IT Officer
+
+  [From Step 3] Teaching
+    → BCA → MCA → B.Ed or direct → School/College CS Teacher → Professor
+
+  [From Step 5] MBA
+    → MCA → CAT/MAT → MBA → IT Manager / Business Analyst
+
+  [From Step 6] Freelancing
+    → 2 yrs exp → Upwork/Fiverr → Web development freelancer → ₹50K–2L/month
+
+  [From Step 3] Startup
+    → BCA + strong skills → Co-found tech startup → Apply to startup accelerators
+
+──────────────────────────────────────────────────────────────────────
+SKILLS REQUIRED:
+  Programming (Python/Java) | Web Development (HTML/CSS/JS) | DBMS/SQL | Problem Solving
+
+SKILLS TO BUILD NEXT:
+  React / Angular | Node.js / Django | Cloud basics | DSA | System Design
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Course] NPTEL MCA Preparation
+    URL: https://nptel.ac.in/
+  [Full Stack Course] The Odin Project
+    URL: https://www.theodinproject.com/
+  [Reference] W3Schools
+    URL: https://www.w3schools.com/
+  [Course] freeCodeCamp
+    URL: https://www.freecodecamp.org/
+  [Exam Prep] NIMCET Preparation - YouTube PW
+    URL: https://www.youtube.com/@PhysicsWallah
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Entry: ₹3–8 LPA
+  Mid: ₹12–30 LPA
+  Senior: ₹25–60 LPA
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Service: TCS, Infosys, Wipro, Capgemini, Mphasis, Hexaware
+  Product: Zoho, Freshworks, Juspay, Swiggy, Ola
+  Startups: Local/regional tech startups, Ed-tech companies
+
+──────────────────────────────────────────────────────────────────────
+GOVERNMENT OPPORTUNITIES:
+  SSC CGL (Computer Post) | Bank IT Officer | State NIC Jobs | NIELIT
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: BCA Entrance (various) → NIMCET (for NIT MCA)
+TIMELINE: 5–7 years from Class 12 to stable mid-level role
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: DATA SCIENTIST / ML ENGINEER
+ID: tech_data_science
+Category: Technology → AI & Data
+Difficulty: High  |  Demand: Very High
+Automation Risk: Low  |  Remote Potential: Very High
+
+DESCRIPTION:
+One of India's fastest growing fields. Combines statistics,
+programming and business to extract insights from data.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Education Foundation
+    → B.Tech/B.Sc in CS, Maths, Statistics, or Physics. OR BCA/MCA. Strong Maths (Stats, Linear Algebra, Calculus) is non-negotiable.
+
+  STEP 2: Core Skills
+    → Python (NumPy, Pandas, Scikit-learn, Matplotlib), SQL, Statistics, ML fundamentals. Take Kaggle courses — all free.
+
+  STEP 3: Build Portfolio
+    → 3–5 Kaggle competitions (get a bronze/silver medal). 2–3 end-to-end ML projects on GitHub. 1 data blog on Medium/Substack.
+
+  STEP 4: Specialization
+    → Choose: NLP / Computer Vision / Time Series / Recommendation Systems / LLM Engineering.
+
+  STEP 5: Entry Role (0–2 yrs)
+    → Data Analyst → Junior Data Scientist. ₹5–15 LPA. Focus on real business problems.
+
+  STEP 6: Mid Level (2–4 yrs)
+    → Data Scientist / ML Engineer. Build and deploy models in production. ₹15–40 LPA.
+
+  STEP 7: Senior (4–7 yrs)
+    → Senior DS / Senior MLE. Own ML systems end-to-end. ₹35–80 LPA.
+
+  STEP 8: Lead / Principal
+    → Staff MLE / Principal Data Scientist / Head of AI. ₹80 L – 2 Cr+.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 4] AI Research
+    → Senior DS → PhD at IISc/CMU/Stanford → Research Scientist at DeepMind, Google Brain, Microsoft Research
+
+  [From Step 4] MLOps / Platform
+    → ML Eng → MLOps → ML Platform Engineer. Build infra for ML models at scale.
+
+  [From Step 6] Product Analytics
+    → DS → Product Analyst → Product Manager (Data PM) → CPO
+
+  [From Step 2] Business Intelligence
+    → SQL + Tableau/PowerBI → BI Analyst → BI Manager → Data Director
+
+  [From Step 5] Freelance / Consulting
+    → 2 yrs exp → Freelance Data Consulting → ₹1–5L/month for enterprise clients
+
+──────────────────────────────────────────────────────────────────────
+SKILLS REQUIRED:
+  Python | SQL | Statistics & Probability | Machine Learning (Scikit-learn) | Data Visualization | Pandas/NumPy
+
+SKILLS TO BUILD NEXT:
+  Deep Learning (TensorFlow/PyTorch) | Cloud ML (AWS SageMaker/GCP Vertex AI) | MLflow | Docker | Spark for Big Data
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Course] Kaggle Learn
+    URL: https://www.kaggle.com/learn
+  [Course] fast.ai
+    URL: https://www.fast.ai/
+  [Video] StatQuest (YouTube)
+    URL: https://www.youtube.com/@statquest
+  [Course] NPTEL Data Science
+    URL: https://nptel.ac.in/
+  [Course] Google ML Crash Course
+    URL: https://developers.google.com/machine-learning/crash-course
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Entry: ₹5–15 LPA
+  Mid: ₹15–40 LPA
+  Senior: ₹40–80 LPA
+  Executive: ₹80 L – 2 Cr+
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Product: Google India, Microsoft, Amazon, Flipkart, Swiggy, Meesho, Paytm, PhonePe, CRED
+  Analytics: Mu Sigma, Tiger Analytics, Fractal Analytics, LatentView Analytics, TheMathCompany
+  Startups: Sarvam AI, Krutrim, Ola Krutrim, Yellow.ai, Haptik
+
+──────────────────────────────────────────────────────────────────────
+GOVERNMENT OPPORTUNITIES:
+  DRDO (AI Division) | ISRO (Space Data) | NITI Aayog Data Roles | Ministry of Electronics (AI Mission)
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: GATE (CS/DS) for M.Tech in Data Science at IITs/NITs
+TIMELINE: 3–5 years to first solid DS role from graduation
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: CYBERSECURITY ENGINEER
+ID: tech_cybersecurity
+Category: Technology → Cybersecurity
+Difficulty: High  |  Demand: Very High
+Automation Risk: Low  |  Remote Potential: High
+
+DESCRIPTION:
+Protecting India's digital infrastructure. Massive demand from banks,
+IT companies, government, and startups.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Education
+    → B.Tech CSE/IT or BCA. Some enter via Diploma + certifications. Networking basics (TCP/IP, OSI) are must-know.
+
+  STEP 2: Fundamentals
+    → Linux, Networking, Scripting (Python/Bash), Operating Systems. TryHackMe + HackTheBox for hands-on practice. Both free tiers available.
+
+  STEP 3: Specialize
+    → Choose: Ethical Hacking / SOC Analyst / AppSec / Cloud Security / Malware Analysis / VAPT.
+
+  STEP 4: Certifications
+    → CEH (basic), CompTIA Security+ (globally recognized), OSCP (gold standard for penetration testing).
+
+  STEP 5: Entry Role (0–2 yrs)
+    → SOC Analyst / Junior Penetration Tester / Security Analyst. ₹4–12 LPA.
+
+  STEP 6: Mid Level (2–5 yrs)
+    → Penetration Tester / Security Engineer / VAPT Specialist. ₹12–30 LPA.
+
+  STEP 7: Senior (5–8 yrs)
+    → Senior Security Engineer / Red Team Lead / AppSec Lead. ₹30–70 LPA.
+
+  STEP 8: Leadership
+    → CISO / Head of Cybersecurity / Security Director. ₹60 L – 2 Cr+.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 3] Bug Bounty
+    → Skills → Bug Bounty (HackerOne, Bugcrowd) → ₹50K–10L per finding → Freelance security researcher
+
+  [From Step 5] Govt / Defense Security
+    → Security exp → CERT-In / NCIIPC / DRDO Cyber Division / Indian Army Cyber Corps
+
+  [From Step 3] Cloud Security
+    → Security + AWS/Azure → Cloud Security Engineer → Cloud CISO → ₹80L+
+
+  [From Step 6] Consulting
+    → Senior sec eng → Independent consultant → Security audit for banks, startups → ₹5–20L/month
+
+──────────────────────────────────────────────────────────────────────
+SKILLS REQUIRED:
+  Linux | Networking (TCP/IP) | Python/Bash Scripting | Web Security (OWASP Top 10) | Vulnerability Assessment
+
+SKILLS TO BUILD NEXT:
+  Cloud Security | DevSecOps | Threat Intelligence | Forensics | Reverse Engineering
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Hands-on Labs] TryHackMe
+    URL: https://tryhackme.com/
+  [Hands-on Labs] HackTheBox (Free Tier)
+    URL: https://www.hackthebox.com/
+  [Reference] OWASP
+    URL: https://owasp.org/
+  [Free Tools] Cybersecurity & Infrastructure Security Agency resources
+    URL: https://www.cisa.gov/free-cybersecurity-services-and-tools
+  [Video] TCM Security (YouTube)
+    URL: https://www.youtube.com/@TCMSecurityAcademy
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Entry: ₹4–12 LPA
+  Mid: ₹12–30 LPA
+  Senior: ₹30–70 LPA
+  Executive: ₹60 L – 2 Cr+
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Product: Quick Heal, Seqrite, Lucideus (now Safe Security), Innefu Labs, Sequretek
+  Service: TCS Cyber Security, Infosys InfoSec, Wipro CyberSec, PwC India, Deloitte India
+  Global: Palo Alto Networks, CrowdStrike, Check Point, Fortinet
+
+──────────────────────────────────────────────────────────────────────
+GOVERNMENT OPPORTUNITIES:
+  CERT-In | NCIIPC | Indian Army Cyber Corps | DRDO CAIR | NIC Security Team
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: CEH (EC-Council) → CompTIA Security+ → OSCP for penetration testing
+TIMELINE: 2–4 years to first security role with right certifications
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: DOCTOR (MBBS + SPECIALIZATION)
+ID: medical_mbbs
+Category: Healthcare → Medical
+Difficulty: Very High  |  Demand: Very High
+Automation Risk: Very Low  |  Remote Potential: Low
+
+DESCRIPTION:
+India's most respected professional path. NEET is the gateway to all
+government and private medical colleges.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Class 6–10
+    → Build strong Biology, Chemistry, Physics base. Score 90%+ in Science.
+
+  STEP 2: Class 11–12 (PCB)
+    → Physics, Chemistry, Biology. NEET coaching mandatory. Free resources: Unacademy, PW. Paid: Aakash, Allen.
+
+  STEP 3: NEET UG
+    → National Eligibility cum Entrance Test. 720 marks. Government college: 600+ required for good colleges. Held annually by NTA.
+
+  STEP 4: MBBS (5.5 years)
+    → 4.5 years academics + 1 year rotating internship. Government colleges: ₹10K–1.5L/yr fees. Private: ₹10–25L/yr.
+
+  STEP 5: MBBS Internship (1 yr)
+    → Mandatory clinical rotation across all departments. Stipend: ₹8K–25K/month.
+
+  STEP 6: NEXT / NEET PG (choose specialization)
+    → Previously MCI exam, now NEXT. Gives access to MD/MS programs. Rank determines branch and college.
+
+  STEP 7: MD / MS (3 years)
+    → Specialization. MD: medicine branches (Dermatology, Psychiatry, Radiology, etc). MS: surgery branches (Ortho, Ophthalmology, ENT, General Surgery).
+
+  STEP 8: Super Specialization — DM / MCh
+    → 2–3 years. DM: Cardiology, Nephrology, Neurology. MCh: Cardiac Surgery, Neurosurgery, Plastic Surgery.
+
+  STEP 9: Practice
+    → Govt hospital (service + salary), Private hospital (higher pay), Own clinic/nursing home (entrepreneurial).
+
+  STEP 10: Career Peak
+    → Senior Consultant / HOD / Professor + HOD / Medical Director / Hospital Chain Owner.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 4] Dermatology + Cosmetology
+    → MBBS → MD Dermatology → Cosmetic Dermatologist → Own clinic → ₹5–50L/month possible
+
+  [From Step 4] Psychiatry
+    → MBBS → MD Psychiatry → Mental health hospitals, private practice → Huge demand post-COVID
+
+  [From Step 4] Radiology / AI in Medicine
+    → MBBS → MD Radiology → Tele-radiology (remote, very high pay) → AI Radiology tools collaboration
+
+  [From Step 4] Medical Education
+    → MBBS → MD → DNB/Teaching post → Professor → Dean → College Principal
+
+  [From Step 4] Healthcare Administration
+    → MBBS → MBA Hospital Management → CEO of hospital chain → Health startup founder
+
+  [From Step 4] Public Health / UPSC
+    → MBBS → MD Community Medicine → WHO/UNICEF → IAS (Medical Officer route through UPSC)
+
+  [From Step 7] Cardiology
+    → MBBS → MD Medicine → DM Cardiology → Interventional Cardiologist → ₹1–5 Cr/yr
+
+  [From Step 7] Orthopaedics
+    → MBBS → MS Orthopaedics → Sports Medicine / Joint Replacement Specialist → High demand
+
+  [From Step 7] Ophthalmology
+    → MBBS → MS Ophthalmology → LASIK/Cataract surgeon → Retina specialist → Own eye hospital
+
+──────────────────────────────────────────────────────────────────────
+SKILLS REQUIRED:
+  Biology | Chemistry | Clinical Skills | Patient Communication | Diagnostic Reasoning
+
+SKILLS TO BUILD NEXT:
+  Research (publications) | Healthcare Management | Telemedicine | Medical AI tools | Leadership
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Exam Prep] Physics Wallah NEET
+    URL: https://www.pw.live/
+  [Exam Prep] Unacademy NEET (Free Content)
+    URL: https://unacademy.com/
+  [Textbooks] NCERT Biology/Chemistry/Physics
+    URL: https://ncert.nic.in/
+  [Regulatory] NMC (National Medical Commission)
+    URL: https://www.nmc.org.in/
+  [Learning] AIIMS OPD Teaching Videos (YouTube)
+    URL: https://www.youtube.com/@aiimsofficial
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Internship: ₹8K–25K/month (stipend)
+  Junior Doctor: ₹60K–1.5 LPM
+  Specialist: ₹2–8 LPM
+  Super Specialist: ₹5–40 LPM
+  Own Practice: Unlimited
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Government: AIIMS, PGI Chandigarh, State Medical Colleges, ESIC Hospitals, Railway Hospitals
+  Private: Apollo Hospitals, Fortis Healthcare, Manipal Hospitals, Max Healthcare, Medanta
+  Research: ICMR, DBT, AIIMS Research Division
+
+──────────────────────────────────────────────────────────────────────
+GOVERNMENT OPPORTUNITIES:
+  UPSC Medical Officer | State PSC Medical Posts | ESIC/ECHS | Armed Forces Medical Services | Railway Medical Services
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: NEET UG → MBBS → NEXT/NEET PG → MD/MS → DM/MCh (optional)
+TIMELINE: 13–15 years from Class 11 to becoming a full specialist
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: PHARMACIST / PHARMACEUTICAL CAREER
+ID: medical_pharmacy
+Category: Healthcare → Pharmacy
+Difficulty: Medium-High  |  Demand: High
+Automation Risk: Medium  |  Remote Potential: Medium
+
+DESCRIPTION:
+India is the world's pharmacy. Huge opportunities in pharma companies,
+R&D, regulatory affairs, and hospital pharmacy.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Class 11–12 (PCB or PCM)
+    → Physics, Chemistry mandatory. Biology preferred. Score 60%+.
+
+  STEP 2: D.Pharm (2 years) OR B.Pharm (4 years)
+    → D.Pharm: direct pharmacy practice. B.Pharm: opens R&D, industry, and further education doors.
+
+  STEP 3: Registration
+    → Register with State Pharmacy Council to practice. Required to open pharmacy or work in hospital.
+
+  STEP 4: Entry Roles
+    → Retail Pharmacist / Hospital Pharmacist / Quality Control Analyst / Medical Representative. ₹2–6 LPA.
+
+  STEP 5: M.Pharm (2 years)
+    → Specialization: Pharmaceutics, Pharmacology, Pharmacognosy, Pharm Analysis, Drug Regulatory Affairs.
+
+  STEP 6: Industry Roles (Post M.Pharm)
+    → R&D Scientist / Regulatory Affairs Officer / Quality Assurance Manager / Clinical Research Associate. ₹6–20 LPA.
+
+  STEP 7: Senior Industry Roles
+    → Senior R&D / RA Manager / Plant Head / VP Regulatory. ₹20–60 LPA.
+
+  STEP 8: Own Pharmacy / Franchise
+    → Open retail pharmacy (₹5–15L investment) or franchise (Apollo Pharmacy, MedPlus, 1mg). ₹30K–3L/month profit.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 5] Clinical Research
+    → M.Pharm → CCRP certification → Clinical Research Associate → CRA Manager → Clinical Director → ₹20–80 LPA
+
+  [From Step 5] Regulatory Affairs
+    → M.Pharm (DRA) → RA Officer → RA Manager → Head of Regulatory Affairs at pharma company
+
+  [From Step 5] PhD / Research
+    → M.Pharm → PhD → Professor + Researcher → CSIR/DBT Scientist
+
+  [From Step 4] Medical Representative → Sales Leader
+    → MR → Senior MR → Area Manager → Zone Manager → National Sales Head → ₹80L+
+
+  [From Step 3] Own Pharmacy Business
+    → D.Pharm + Registration → Retail pharmacy → Wholesale dealership → Distribution chain
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Course] NPTEL Pharmaceutical Sciences
+    URL: https://nptel.ac.in/
+  [Video] Pharmapedia India (YouTube)
+    URL: https://www.youtube.com/@pharmapediaindia
+  [Regulatory] PCI (Pharmacy Council of India)
+    URL: https://www.pci.nic.in/
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Entry: ₹2–6 LPA
+  Mid: ₹8–20 LPA
+  Senior: ₹20–60 LPA
+  Own Business: Variable
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Pharma: Sun Pharma, Dr Reddy's, Cipla, Lupin, Aurobindo Pharma, Biocon, Glenmark, Torrent Pharma
+  Retail: Apollo Pharmacy, MedPlus, Netmeds, 1mg, PharmEasy
+  Hospital: Apollo, Fortis, Max, AIIMS Pharmacy
+
+──────────────────────────────────────────────────────────────────────
+GOVERNMENT OPPORTUNITIES:
+  ESIC Pharmacist | Railways Pharmacist | State Health Department | CGHS Pharmacist | Armed Forces Pharmacist
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm
+TIMELINE: 4–6 years to stable industry role
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: IAS / IPS / IFS (UPSC CIVIL SERVICES)
+ID: govt_upsc_ias
+Category: Government → Civil Services
+Difficulty: Extremely High  |  Demand: Always High (limited seats ~900/year)
+Automation Risk: Very Low  |  Remote Potential: Low
+
+DESCRIPTION:
+The most prestigious government career in India. Enormous power,
+prestige, and service to nation. Long preparation but life-changing
+outcome.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Graduation (Any Stream)
+    → UPSC requires graduation in any subject. Many toppers: Engineering / Law / Humanities. Focus on reading habit, current affairs from Day 1.
+
+  STEP 2: Know the Exam
+    → 3 stages: Prelims (objective) → Mains (written) → Interview (Personality Test). Total: ~2 years of serious preparation for most.
+
+  STEP 3: Prelims Preparation
+    → NCERT Class 6–12 (all subjects) → Standard books (Laxmikanth, Spectrum, G.C. Leong) → 5–10 years previous papers → Current affairs daily (The Hindu/Indian Express).
+
+  STEP 4: Prelims (Stage 1)
+    → 2 papers: GS (General Studies) + CSAT. 200 marks each. CSAT is qualifying only (33%). GS score decides cut-off.
+
+  STEP 5: Mains (Stage 2)
+    → 9 papers: Essay + GS 1/2/3/4 + Optional Subject (2 papers) + Language papers. 1750 marks. Writing quality matters enormously.
+
+  STEP 6: Interview (Stage 3)
+    → Personality Test (275 marks). Board of UPSC members. Tests character, leadership, awareness, communication.
+
+  STEP 7: Training (Post Selection)
+    → IAS: LBSNAA Mussoorie. IPS: SVP NPA Hyderabad. IFS: FSOI + Lal Bahadur Shastri National Academy.
+
+  STEP 8: Posting & Career
+    → SDM → DM/Collector → Secretary → Chief Secretary (State) | Under Secretary → Joint Secretary → Additional Secretary → Secretary (Centre) | Ambassador (IFS)
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 1] IAS (Indian Administrative Service)
+    → State cadre → District Collector → Commissioner → Secretary → Chief Secretary. India's most powerful administrative role.
+
+  [From Step 1] IPS (Indian Police Service)
+    → SP → DIG → IG → DGP. Lead police forces, CBI, IB, NSG.
+
+  [From Step 1] IFS (Indian Foreign Service)
+    → Third Secretary → Second Secretary → First Secretary → Counsellor → Ambassador/High Commissioner. Represent India globally.
+
+  [From Step 1] IRS (Indian Revenue Service)
+    → Income Tax / Customs → Commissioner → Chief Commissioner. High earnings potential in service.
+
+  [From Step 1] After 1–2 Failed Attempts
+    → State PSC (PCS/KAS/MPPSC etc) → State administrative services. Equivalent dignity, slightly lower national scope.
+
+──────────────────────────────────────────────────────────────────────
+SKILLS REQUIRED:
+  Current Affairs | Essay Writing | Optional Subject Depth | Answer Writing | Mental Stamina
+
+SKILLS TO BUILD NEXT:
+  Leadership | Public Speaking | Decision Making | Crisis Management | Language Skills (Hindi + regional)
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Official] UPSC Official Site
+    URL: https://upsc.gov.in/
+  [Study Material] Drishti IAS (Free)
+    URL: https://www.drishtiias.com/
+  [Study Material] Vision IAS Free Resources
+    URL: https://www.visionias.in/
+  [Books] NCERT Books (Free PDF)
+    URL: https://ncert.nic.in/textbook.php
+  [Current Affairs] The Hindu ePaper (Subsidized for students)
+    URL: https://www.thehindu.com/
+  [Video Lectures] Unacademy UPSC (Free Lectures)
+    URL: https://unacademy.com/
+  [Video] StudyIQ IAS (YouTube)
+    URL: https://www.youtube.com/@StudyIQ
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Training: ₹56,100/month (7th Pay Commission Level 10)
+  Sdm Dm: ₹56,100–₹1,31,100/month + perks
+  Secretary: ₹1,44,200 + DA + perks (housing, car, staff, etc)
+  Total Package: Equivalent to ₹30–50 LPA when all benefits counted
+
+──────────────────────────────────────────────────────────────────────
+GOVERNMENT OPPORTUNITIES:
+  IAS | IPS | IFS | IRS | IRAS | IDAS | IES | IRTS | IIS
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: UPSC Prelims (June) → Mains (September) → Interview (March–May) → Results (May)
+TIMELINE: 1–4 years of dedicated preparation after graduation. Max 6 attempts (General), 9 (OBC), Unlimited (SC/ST)
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: BANKING & FINANCE GOVERNMENT CAREER
+ID: govt_bank_finance
+Category: Government → Banking
+Difficulty: Medium-High  |  Demand: Very High
+Automation Risk: Medium  |  Remote Potential: Low
+
+DESCRIPTION:
+PSU banks, RBI, SEBI — stable, respected, pensioned careers with good
+work-life balance.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Education
+    → Graduation in any stream. Commerce/Maths background helps but not mandatory. 60% marks preferred.
+
+  STEP 2: Choose Your Target
+    → IBPS PO (Bank PO) / IBPS Clerk / SBI PO / SBI Clerk / RBI Grade B / RBI Assistant / SEBI Grade A / NABARD Grade A.
+
+  STEP 3: Prepare
+    → Quantitative Aptitude, Reasoning, English, Banking Awareness, Computer. Mains adds Data Analysis, General/Economy/Banking Awareness essay.
+
+  STEP 4: IBPS PO / SBI PO (Entry Level Management)
+    → Join as Probationary Officer. Training period 2 years. Posted anywhere in India.
+
+  STEP 5: Growth Path (PO Route)
+    → PO → Officer Scale 1 → Officer Scale 2 (Branch Manager) → Scale 3 → AGM → DGM → GM → ED → MD/CEO
+
+  STEP 6: RBI Grade B (Elite Route)
+    → Phase 1 + Phase 2 (very tough). Posted at RBI offices. ₹35,150/month + perks. Path: Grade B → C → D (Executive Director) → Deputy Governor → Governor.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 2] SEBI Grade A
+    → Graduation → SEBI exam → Securities market regulation → Senior Officer → Executive Director → Chairman
+
+  [From Step 2] NABARD Grade A
+    → Agriculture/Rural development banking → Rural lending focus → ₹28,150+
+
+  [From Step 4] Private Banking
+    → 1–2 yrs PSU bank → HDFC/ICICI/Axis/Kotak → Better salary, faster growth, tougher targets
+
+  [From Step 4] Finance / CA Route
+    → Banking + CA = powerful combo → Big 4 / Investment Banking / CFO track
+
+  [From Step 2] Insurance Sector
+    → LIC AAO / IRDA / GIC / New India Assurance → Insurance officer career
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Official] IBPS Official
+    URL: https://www.ibps.in/
+  [Mock Tests] Oliveboard (Free Mocks)
+    URL: https://www.oliveboard.in/
+  [Prep] Adda247 (YouTube + Free Content)
+    URL: https://www.adda247.com/
+  [Mock Tests] Testbook (Free Tests)
+    URL: https://testbook.com/
+  [Exam Prep] RBI Grade B Prep - PW
+    URL: https://www.pw.live/
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Ibps Clerk: ₹11,765–31,540/month + DA + HRA
+  Ibps Po: ₹23,700–42,020/month + allowances
+  Rbi Grade B: ₹35,150/month + ₹1500 grade pay + perks
+  Sebi Grade A: ₹28,150/month + perks
+  Total Ctc: IBPS PO total ~₹7–9 LPA | RBI Grade B ~₹14–16 LPA with perks
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Banks: SBI, PNB, Bank of Baroda, Canara Bank, Union Bank, HDFC Bank (private), ICICI Bank (private)
+  Regulators: RBI, SEBI, NABARD, SIDBI, EXIM Bank, NHB
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: IBPS PO: Prelims → Mains → Interview | SBI PO: Phase 1 → Phase 2 → GD+PI | RBI Grade B: Phase 1 → Phase 2 → Interview
+TIMELINE: 6–18 months preparation for first crack. Most crack in 1–2 attempts.
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: CIVIL ENGINEER
+ID: engineering_civil
+Category: Engineering → Civil Engineering
+Difficulty: Medium-High  |  Demand: High
+Automation Risk: Low-Medium  |  Remote Potential: Low
+
+DESCRIPTION:
+Building India's infrastructure: roads, bridges, dams, airports, smart
+cities, metro systems.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Class 11–12 (PCM)
+    → Focus on Maths and Physics. JEE Mains for admission to NITs/IITs/Govt colleges. State entrance for state colleges.
+
+  STEP 2: B.Tech / B.E. Civil Engineering (4 years)
+    → Structures, Geotechnical, Transportation, Environmental, Construction Management, Hydraulics. Internship on construction site is essential.
+
+  STEP 3: Licensure
+    → Register with Institute of Engineers India (IEI). Get AMIE or pursue Graduate Engineer from state.
+
+  STEP 4: Entry Roles (0–3 yrs)
+    → Site Engineer / Junior Engineer / Structural Engineer / Quality Engineer. ₹3–8 LPA.
+
+  STEP 5: Mid Level (3–7 yrs)
+    → Project Engineer / Senior Site Engineer / Design Engineer. ₹8–18 LPA.
+
+  STEP 6: Senior Level (7–12 yrs)
+    → Project Manager / Senior Design Engineer / DGM Civil. ₹18–40 LPA.
+
+  STEP 7: Leadership
+    → General Manager / VP Infrastructure / Director Projects. ₹40–80 LPA.
+
+  STEP 8: Own Business
+    → Civil Contractor → Construction firm → Infrastructure company → Real estate developer.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 2] GATE → M.Tech → DRDO/ISRO/Govt R&D
+    → B.Tech → GATE Civil → M.Tech (IIT/NIT) → Scientist/Researcher/Professor
+
+  [From Step 2] Government Jobs (SSC JE / State JE)
+    → B.Tech/Diploma → SSC JE / State PWD JE → Junior Engineer → Assistant Engineer → Executive Engineer
+
+  [From Step 2] UPSC ESE (Engineering Services Exam)
+    → B.Tech → UPSC ESE → Assistant Executive Engineer in Central Govt → ₹56,100+ + perks
+
+  [From Step 4] Real Estate / Construction Business
+    → Site exp → Civil contractor license → Own firm → Real estate developer
+
+  [From Step 4] Structural Consulting
+    → Structural eng exp → Independent consulting firm → High value projects → ₹50L–2Cr+
+
+  [From Step 2] Urban Planning / Smart Cities
+    → B.Tech → M.Plan or M.Tech Urban → Smart City Mission roles → RERA / Town Planning
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Course] NPTEL Civil Engineering
+    URL: https://nptel.ac.in/
+  [Govt Exam] SSC JE Official
+    URL: https://ssc.nic.in/
+  [Exam Prep] GATE CE Prep - Made Easy YouTube
+    URL: https://www.youtube.com/@MadeEasyPrimeOfficial
+  [Software] AutoCAD Free Trial + Tutorials
+    URL: https://www.autodesk.com/
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Entry: ₹3–8 LPA
+  Mid: ₹8–18 LPA
+  Senior: ₹18–40 LPA
+  Leadership: ₹40–80 LPA
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Infrastructure: L&T Construction, DLF, Shapoorji Pallonji, Gammon India, AFCONS Infrastructure
+  Govt: NHAI, RITES, IRCON, CPWD, NBCC, HPCL Civil Wing
+  Consulting: AECOM India, Jacobs India, Mott MacDonald India
+
+──────────────────────────────────────────────────────────────────────
+GOVERNMENT OPPORTUNITIES:
+  PWD (State) | NHAI | Railways Civil Dept | UPSC ESE | SSC JE | CPWD | Smart Cities Mission
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: JEE Mains → B.Tech → GATE/SSC JE/UPSC ESE
+TIMELINE: 4–6 years to first job; 10–15 years to leadership
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: CHARTERED ACCOUNTANT (CA)
+ID: commerce_ca
+Category: Finance & Commerce → Accounting & Audit
+Difficulty: Very High  |  Demand: Very High
+Automation Risk: Medium (AI assists but doesn't replace)  |  Remote Potential: Medium
+
+DESCRIPTION:
+India's most respected finance credential. CA opens doors to Big 4,
+CFO roles, IND AS, FEMA, taxation, and more.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Class 11–12 (Commerce)
+    → Accounts, Economics, Business Studies, Maths. Score 60%+. PCM students also eligible.
+
+  STEP 2: CA Foundation
+    → Register with ICAI after Class 12. 4 papers: Accounts, Law, Maths/Stats, Economics. Pass both groups (200 marks each).
+
+  STEP 3: CA Intermediate
+    → 8 papers in 2 groups. Accounts, Law, Costing, Taxation, Advanced Accounts, Audit, Financial Management, IT/SM. Pass both groups.
+
+  STEP 4: Articleship (3 years)
+    → Mandatory practical training under a CA firm. Small firms: tax + audit work. Big 4 (Deloitte/PwC/EY/KPMG): industry exposure, better placement.
+
+  STEP 5: CA Final
+    → 8 papers: 2 groups. FR, SFM, Audit, Law, Costing + 3 electives (Risk, Global FR, Economics for Finance, etc). Toughest CA exam.
+
+  STEP 6: Membership (ACA)
+    → Associate Chartered Accountant. Can practice independently or join industry.
+
+  STEP 7: Entry Roles
+    → Big 4 (₹7–12 LPA) / Mid-firms (₹5–8 LPA) / Industry (₹8–15 LPA) / Own practice.
+
+  STEP 8: Growth
+    → Senior Associate → Manager → Senior Manager → Director / Partner at firms. OR CFO track in industry.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 6] Big 4 Career
+    → Articleship at Big 4 → Associate → Senior → Manager → Senior Manager → Director → Partner → ₹1–5 Cr+ as Partner
+
+  [From Step 6] CFO Track
+    → CA → Industry (Finance Manager) → Finance Controller → VP Finance → CFO. ₹80L–5Cr at large corporates.
+
+  [From Step 6] Investment Banking
+    → CA + CFA → I-banking at Goldman Sachs India/Morgan Stanley/Axis Capital → ₹40L–1.5 Cr+
+
+  [From Step 6] Own Practice
+    → CA → Setup practice → Taxation + Audit clients → Grow firm → Partner with CAs → ₹5L–1Cr+/month possible
+
+  [From Step 6] ICAI International
+    → ACA → ACCA (UK) → CPA (USA) → International finance career at MNCs
+
+  [From Step 3] CS (Company Secretary) Combo
+    → CA Foundation + CS Foundation simultaneously → Both qualifications → Powerful legal+finance combo
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Official Study Material] ICAI Official Study Material
+    URL: https://www.icai.org/
+  [Video Lectures] CA Foundation Free Videos - Unacademy
+    URL: https://unacademy.com/
+  [Free Classes] ICAI Virtual Classes (Free for students)
+    URL: https://www.icai.org/post/virtual-classes
+  [Video] VG Learning Destination (YouTube)
+    URL: https://www.youtube.com/@VGLearningDestination
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Fresher Ca: ₹7–18 LPA
+  Big4 Manager: ₹25–50 LPA
+  Big4 Director: ₹60L–1.2 Cr
+  Big4 Partner: ₹1.5–5 Cr+
+  Cfo Large Corp: ₹80L–5 Cr
+  Own Practice: ₹5L–50L+/year (variable)
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Big4: Deloitte India, PricewaterhouseCoopers (PwC) India, Ernst & Young (EY) India, KPMG India
+  Indian_Firms: Grant Thornton, S.R. Batliboi, Lodha & Co, Walker Chandiok
+  Corporates: Reliance Industries, Tata Group Finance, Infosys Finance, HDFC Bank Treasury
+
+──────────────────────────────────────────────────────────────────────
+GOVERNMENT OPPORTUNITIES:
+  CAG (Comptroller & Auditor General) | SFIO | SEBI | Income Tax Department | Company Law Board
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: CA Foundation → CA Intermediate → Articleship (3 yrs) → CA Final → ACA/FCA
+TIMELINE: 5–6 years minimum. Some take 7–8 years. Average attempt rate: 2–3 per paper.
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: MBA / BUSINESS MANAGEMENT
+ID: business_mba
+Category: Business → Management
+Difficulty: Medium-High  |  Demand: Very High
+Automation Risk: Low  |  Remote Potential: Medium
+
+DESCRIPTION:
+MBA from IIM is a game-changer. Even tier-2 MBA opens leadership,
+consulting, marketing, and finance doors.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Graduation
+    → Any bachelor's degree with 50%+. Work experience of 1–3 years significantly boosts CAT score value and IIM calls.
+
+  STEP 2: Work Experience (Recommended)
+    → 1–3 years work exp before MBA. IIMs prefer: 24–36 months. Freshers join but have lower salary leverage.
+
+  STEP 3: Entrance Exam
+    → CAT (IIMs) → Scores used by 100+ colleges. Also: XAT (XLRI), SNAP (Symbiosis), MAT, CMAT, NMAT, GMAT (international/ISB).
+
+  STEP 4: MBA Program (2 years)
+    → Year 1: Core (Finance, Marketing, HR, Operations, Strategy, Quant). Year 2: Specialization + Summer Internship (crucial for placement).
+
+  STEP 5: Summer Internship (After Year 1)
+    → 2-month internship. IIM-A/B/C: McKinsey, BCG, Bain, Goldman Sachs, etc. Stipend: ₹1–5L/month. Most convert to PPO (Pre-Placement Offer).
+
+  STEP 6: Placement (Post MBA)
+    → IIM A/B/C: ₹25–90 LPA average. Consulting, Finance, FMCG, Tech are top hirers. Tier-2: ₹8–20 LPA.
+
+  STEP 7: MBA Career Tracks
+    → Consulting / Finance (IB, PE, VC) / Marketing / General Management / Operations / Entrepreneurship.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 6] Management Consulting
+    → IIM + Consulting intern → McKinsey/BCG/Bain → Associate → Engagement Manager → Principal → Partner → ₹1–5 Cr+
+
+  [From Step 6] Investment Banking
+    → IIM Finance → Goldman/JPMorgan/Axis Capital → Analyst → Associate → VP → MD → ₹1–3 Cr+
+
+  [From Step 6] FMCG Marketing
+    → MBA Marketing → HUL/P&G/Nestlé/Marico → Brand Manager → Marketing Director → CMO
+
+  [From Step 6] VC / PE
+    → MBA + 3 yrs experience → VC firm (Sequoia/Nexus/Elevation) → Investment Analyst → Partner → Run fund
+
+  [From Step 6] Startup Founder
+    → IIM degree + network → Co-found startup → Seed funding from IIM alumni → Scale
+
+  [From Step 3] ISB (Hyderabad)
+    → 5+ yrs work exp → GMAT 700+ → ISB 1-year MBA → ₹20–50 LPA post-MBA. Top for experienced professionals.
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Official] CAT Official
+    URL: https://iimcat.ac.in/
+  [Prep] 2IIM CAT Prep (Free + Paid)
+    URL: https://www.2iim.com/
+  [Prep] Career Launcher Free Resources
+    URL: https://www.careerlauncher.com/
+  [Learning] IIMA Podcast / YouTube
+    URL: https://www.youtube.com/@IIMAhmedabad
+  [Course] HBS Online Free Courses
+    URL: https://online.hbs.edu/subjects/free-online-business-courses/
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Iim Abc Fresher: ₹25–90 LPA
+  Iim Abc 5Yrs Exp: ₹60L–1.5 Cr+
+  Tier2 Mba: ₹8–20 LPA
+  Consulting Partner: ₹2–10 Cr+
+  Corporate Ceo: ₹5–50 Cr+
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Consulting: McKinsey & Company, BCG, Bain & Company, Deloitte Consulting, EY Parthenon, Kearney
+  Finance: Goldman Sachs India, Morgan Stanley India, Axis Capital, Kotak Investment Banking
+  Fmcg: HUL, P&G India, Nestlé India, Marico, Dabur, ITC
+  Tech: Google India (Strategy), Amazon (Business roles), Microsoft, Flipkart (Strategy/Operations)
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: CAT (Nov) → GD/PI (Jan–Mar) → Results (Apr–May)
+TIMELINE: 2 years MBA + 1 year work before = 3 years to transformed career
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: RETAIL BUSINESS / DUKAAN SETUP (INDIAN CONTEXT)
+ID: business_retail_shop
+Category: Business → Local Business
+Difficulty: Low-Medium  |  Demand: Always
+Automation Risk: Low  |  Remote Potential: Low
+
+DESCRIPTION:
+Start a local shop, grocery, medical store, electronics shop, or
+franchise. India's retail sector = ₹80 lakh crore market.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Business Idea Validation
+    → Identify demand in your locality. Talk to 20 potential customers. Check competition. Low competition + high need = good.
+
+  STEP 2: Legal Registration
+    → Shop and Establishment Act registration at local Municipal Corporation (₹500–2000, varies by state). Simple process, usually same day.
+
+  STEP 3: GST Registration (if turnover > ₹20L/yr)
+    → GST Portal: gst.gov.in → Free registration → Takes 3–7 working days. Need PAN + Aadhaar + Bank account + Shop address proof.
+
+  STEP 4: FSSAI License (Food businesses)
+    → If selling any food item → FSSAI Basic license (₹100/yr) at fssai.gov.in. State license for larger operations. Required by law.
+
+  STEP 5: Udyam Registration (MSME)
+    → Register at udyamregistration.gov.in → Free → Unlocks: MSME loans at 8–12% interest, govt tenders, priority credit, subsidies.
+
+  STEP 6: Bank Account & Business Finance
+    → Current account at any bank. MUDRA Loan (Shishu: up to ₹50K, Kishor: ₹50K–5L, Tarun: ₹5L–10L) from PM MUDRA Yojana — no collateral.
+
+  STEP 7: Source Products
+    → For FMCG: Local distributor/stockist contact. For electronics: Wholesale markets (Nehru Place Delhi, SP Road Bangalore, Lamington Rd Mumbai). For pharma: C&F agent.
+
+  STEP 8: Digital Presence
+    → Google Business Profile (free) → WhatsApp Business (free) → Meesho/JioMart seller for online orders → Get listed on Swiggy Instamart / Zepto (for grocery).
+
+  STEP 9: Growth
+    → Expand inventory → Hire helper → Open second outlet → Become area distributor → Franchise model.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 3] Medical/Pharma Store
+    → D.Pharm license needed → Drug License from state → FSSAI for supplements → Become franchise of Apollo/MedPlus or independent
+
+  [From Step 5] Franchise Business
+    → MSME + capital → Contact: Amul (₹2–5L inv), DTDC Courier, Jio Point, PM Jan Aushadhi (medical store)
+
+  [From Step 6] E-Commerce Seller
+    → Products → Amazon/Flipkart seller registration → Start selling online → GST required → Scale to ₹10L+/month
+
+  [From Step 1] Agri-Based Business
+    → Farm / Food processing → FPO registration → PM Formalisation support → APEDA registration for exports
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Govt Portal] GST Official Portal
+    URL: https://www.gst.gov.in/
+  [Schemes & Support] Ministry of MSME
+    URL: https://msme.gov.in/
+  [Food License] FSSAI Registration
+    URL: https://foscos.fssai.gov.in/
+  [Free Digital Presence] Google Business Profile
+    URL: https://business.google.com/
+  [Resources & Mentorship] Startup India Hub
+    URL: https://www.startupindia.gov.in/
+
+──────────────────────────────────────────────────────────────────────
+GOVERNMENT SCHEMES & SUPPORT:
+  PM MUDRA Yojana: Collateral-free loan up to ₹10 lakh
+    URL: https://www.mudra.org.in/
+  PM SVANidhi: ₹10K–50K microloan for street vendors
+    URL: https://pmsvanidhi.mohua.gov.in/
+  Udyam Registration: Free MSME certificate, unlocks schemes
+    URL: https://udyamregistration.gov.in/
+  Stand-Up India Scheme: ₹10L–1Cr loan for SC/ST/Women entrepreneurs
+    URL: https://www.standupmitra.in/
+  Startup India: Tax benefits, IPR support, fund access for startups
+    URL: https://www.startupindia.gov.in/
+  GeM Portal: Sell to government directly — huge buyer base
+    URL: https://gem.gov.in/
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Small Shop: ₹15K–50K/month profit
+  Growing Shop: ₹50K–2L/month
+  Franchise Chain: ₹2L–10L/month
+  Distributor: ₹5L–50L/month (volume based)
+
+TIMELINE: Can start within 1–2 weeks of registration. Profitable in 3–12 months.
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: LAWYER / LEGAL CAREER (LLB)
+ID: law_llb
+Category: Law → Legal Practice
+Difficulty: Medium-High  |  Demand: High
+Automation Risk: Low-Medium  |  Remote Potential: Medium
+
+DESCRIPTION:
+Law is the backbone of democracy and business. India has 1.7M+ lawyers
+with growing demand in corporate law, litigation, IPR, and human
+rights.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: After 12th (CLAT Route)
+    → 5-year integrated BA.LLB / BBA.LLB / BSc.LLB via CLAT / AILET / LSAT India. National Law Universities are top tier.
+
+  STEP 2: OR After Graduation (3-year LLB)
+    → Any graduation + 3-year LLB. Slower but available to all streams. Delhi University, Symbiosis, Amity are popular.
+
+  STEP 3: Bar Council Enrollment
+    → Pass State Bar Council exam → Enroll as Advocate. Required to practice in courts.
+
+  STEP 4: Internships (During Study)
+    → Court internship with senior advocate + Law firm internship. Both crucial. Apply to AZB, Cyril Amarchand, Shardul Amarchand, Khaitan.
+
+  STEP 5: Entry Roles
+    → Junior Advocate (₹10K–50K/month initially — grows fast) / Law firm Associate (₹6–15 LPA) / Corporate Legal (₹8–20 LPA) / Judicial Services.
+
+  STEP 6: Growth
+    → Associate → Senior Associate → Partner at law firm. OR Court advocate → Senior Advocate designation. OR Corporate: Legal Manager → General Counsel → CLO.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 4] Corporate Law
+    → Law firm internship → Associate at AZB/Cyril Amarchand/Khaitan → Senior Associate → Partner → ₹2–10 Cr+ as Partner
+
+  [From Step 4] Litigation
+    → Junior under senior advocate → District Court → High Court → Supreme Court → Senior Advocate designation (prestigious, by SC committee)
+
+  [From Step 2] Judicial Services
+    → LLB + state Judicial Service exam → Civil Judge / JMFC → District Judge → High Court Judge → Supreme Court Judge
+
+  [From Step 4] IPR / Patent Law
+    → LLB + Science background → Patent Agent exam (CGPDTM) → Patent Law firm → IP Head at tech company
+
+  [From Step 4] Legal Tech / LegalOps
+    → LLB + Tech skills → Legal Tech startup → Contract management tools → CLM role at tech company → High growth area
+
+  [From Step 2] UPSC Route
+    → LLB → UPSC Law Optional → IAS/IPS → Legal regulatory roles → Indian Legal Service
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Exam Info] CLAT Official
+    URL: https://consortiumofnlus.ac.in/
+  [Legal News] Bar and Bench (Legal News)
+    URL: https://www.barandbench.com/
+  [Case Law Database] SCC Online (Student Access via College)
+    URL: https://www.scconline.com/
+  [Free Legal Resource] Indian Kanoon (Free Case Law)
+    URL: https://indiankanoon.org/
+  [Video Lectures] NALSAR / NLU YouTube Lectures
+    URL: https://www.youtube.com/
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Fresher Court: ₹10K–30K/month (grows significantly with experience)
+  Law Firm Associate: ₹6–15 LPA
+  Senior Associate: ₹20–50 LPA
+  Partner: ₹80L–5 Cr+
+  Inhouse Counsel: ₹15–60 LPA
+  Gc Clo: ₹1–5 Cr
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Top_Firms: AZB & Partners, Cyril Amarchand Mangaldas, Shardul Amarchand Mangaldas, Khaitan & Co, JSA Advocates, Trilegal
+  Inhouse: Reliance Legal, Tata Legal, Infosys Legal, HDFC Bank Legal
+  Govt: Ministry of Law, Attorney General's Office, Solicitor General, Law Commission
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)
+TIMELINE: 5–8 years to stable career. Court litigation takes 10–15 years to be well-established.
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: UI/UX DESIGNER / PRODUCT DESIGNER
+ID: creative_design_uiux
+Category: Creative → Design
+Difficulty: Medium  |  Demand: Very High
+Automation Risk: Low (AI assists, not replaces)  |  Remote Potential: Very High
+
+DESCRIPTION:
+Design the apps and websites Indians use daily. Booming demand from
+startups and tech companies. Portfolio > degree.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Foundation
+    → Any degree helps but not required. Start learning Figma (free) today. No gatekeeping in design — portfolio is everything.
+
+  STEP 2: Core Skills
+    → Figma (must), User Research, Wireframing, Prototyping, Design Thinking, Usability Testing, Visual Design basics.
+
+  STEP 3: Build Portfolio
+    → 3–5 case studies. Include: Problem → Research → Sketches → Wireframes → Final Design → Results. Add to Behance/Dribbble.
+
+  STEP 4: Specialize
+    → Choose: Mobile App Design / Web Design / SaaS Product / Fintech UI / Healthcare UX / Gaming UI.
+
+  STEP 5: Entry Role (0–2 yrs)
+    → Junior UI/UX Designer / Product Design Intern → Designer. ₹4–12 LPA.
+
+  STEP 6: Mid Level (2–4 yrs)
+    → UI/UX Designer / Senior Designer. Own features. ₹12–30 LPA.
+
+  STEP 7: Senior / Lead (4–7 yrs)
+    → Senior Designer / Design Lead / UX Architect. ₹30–70 LPA.
+
+  STEP 8: Leadership
+    → Principal Designer / Head of Design / VP Design / Chief Design Officer. ₹70L–2 Cr+.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 3] Freelancing
+    → Portfolio → Upwork/Fiverr/Toptal → International clients → ₹1–5L/month. Very viable early.
+
+  [From Step 6] Product Management
+    → Senior Designer → Transition to PM. Design background = huge PM advantage. → ₹30–80 LPA
+
+  [From Step 4] Design Systems
+    → Design System Specialist → DesignOps → ₹50L+ at large tech companies
+
+  [From Step 4] UX Research
+    → UX Researcher → Senior Researcher → Head of Research → ₹40–80 LPA
+
+  [From Step 3] Motion Design / Video
+    → UI/UX + After Effects → Motion Designer → Marketing agencies / startups → ₹8–25 LPA
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Tool] Figma (Free Plan)
+    URL: https://www.figma.com/
+  [Course] Google UX Design Certificate (Audit Free)
+    URL: https://www.coursera.org/professional-certificates/google-ux-design
+  [Video] DesignWithAryan (YouTube Hindi)
+    URL: https://www.youtube.com/@DesignWithAryan
+  [Reference] Laws of UX
+    URL: https://lawsofux.com/
+  [Portfolio] Behance (Portfolio)
+    URL: https://www.behance.net/
+  [Portfolio] Dribbble (Portfolio)
+    URL: https://dribbble.com/
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Entry: ₹4–12 LPA
+  Mid: ₹12–30 LPA
+  Senior: ₹30–70 LPA
+  Leadership: ₹70L–2 Cr+
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Product: Swiggy, Zomato, PhonePe, CRED, Meesho, Razorpay, Groww, Zerodha
+  Service: Infosys Design Studio, Wipro Design, Accenture Song, Frog Design
+  Startups: Vokal, Bounce, Vedantu, Doubtnut
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport.
+TIMELINE: 6 months–2 years to first design job with strong portfolio
+══════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
+CAREER PATH: AGRICULTURE / AGRITECH CAREER
+ID: agri_career
+Category: Agriculture → Farming & AgriTech
+Difficulty: Low-Medium  |  Demand: High
+Automation Risk: Medium  |  Remote Potential: Low
+
+DESCRIPTION:
+India is an agrarian economy. Modern agriculture + AgriTech = massive
+opportunity. From farming to agri-startups to government roles.
+
+──────────────────────────────────────────────────────────────────────
+CAREER STEPS (LINEAR PATH):
+──────────────────────────────────────────────────────────────────────
+  STEP 1: Education Options
+    → B.Sc Agriculture (4 yrs via ICAR-AIEEA or state exams) OR B.Tech AgriTech/Food Tech OR Diploma in Agriculture (2 yrs, state level).
+
+  STEP 2: Core Knowledge
+    → Soil science, Crop science, Agronomy, Plant pathology, Agricultural economics. Hands-on farm experience is essential.
+
+  STEP 3: Career Paths
+    → Govt agriculture officer, agri input company, AgriTech startup, farming entrepreneur, cooperative sector, export/import, teaching.
+
+  STEP 4: Government Jobs
+    → Agriculture Officer (State PSC) / NABARD Officer / FCI (Food Corporation of India) / IARI Scientist / Agricultural Scientist (ICAR) / Block Agriculture Officer.
+
+  STEP 5: AgriTech Sector
+    → Work at agri-startups: drone services, precision farming, soil testing, farmer advisory apps, agri e-commerce.
+
+  STEP 6: Entrepreneurship
+    → Organic farming / Poly house / Mushroom cultivation / Apiculture / Dairy / Agro-processing unit — all supported by PM schemes.
+
+──────────────────────────────────────────────────────────────────────
+BRANCH PATHS (ALTERNATE ROUTES FROM THIS CAREER):
+──────────────────────────────────────────────────────────────────────
+  [From Step 2] ICAR Scientist
+    → B.Sc Agri → M.Sc Agri → PhD → ICAR JRF/SRF → Scientist → Senior Scientist → Principal Scientist
+
+  [From Step 2] Agri Business
+    → B.Sc Agri → MBA Agribusiness (MANAGE Hyderabad) → Agri input company / commodity trading / export house
+
+  [From Step 2] AgriTech Startup
+    → B.Sc/B.Tech → Agri startup (Ninjacart, DeHaat, AgroStar, Fasal) → Tech + Agri = high growth
+
+  [From Step 1] FPO Formation
+    → Farmer + degree → Form Farmer Producer Organization → Collectivize 300+ farmers → PM FPO scheme (₹15L+ support) → Market linkage
+
+──────────────────────────────────────────────────────────────────────
+FREE LEARNING RESOURCES:
+  [Free Agri Courses] ICAR e-Krishi Shiksha
+    URL: https://ecourses.icar.gov.in/
+  [Agri Management Training] MANAGE Hyderabad
+    URL: https://www.manage.gov.in/
+  [Govt App] Kisan Suvidha App
+    URL: https://play.google.com/store/apps/details?id=in.gov.kisansuvidha
+  [Schemes & Finance] NABARD (Farmer Portal)
+    URL: https://www.nabard.org/
+
+──────────────────────────────────────────────────────────────────────
+GOVERNMENT SCHEMES & SUPPORT:
+  PM-KISAN: ₹6000/year direct to farmer accounts
+    URL: https://pmkisan.gov.in/
+  PMFBY (Crop Insurance): Subsidized crop insurance
+    URL: https://pmfby.gov.in/
+  PM Kisan Sampada Yojana: Food processing unit subsidy
+    URL: https://www.mofpi.gov.in/
+  NABARD Schemes: Farm loans, FPO support, agri infra fund
+    URL: https://www.nabard.org/
+  Soil Health Card: Free soil testing for farmers
+    URL: https://soilhealth.dac.gov.in/
+
+──────────────────────────────────────────────────────────────────────
+SALARY RANGE:
+  Govt Agri Officer: ₹3.5–8 LPA
+  Agritech Startup: ₹4–15 LPA
+  Research Scientist: ₹6–20 LPA
+  Own Farming: Variable (₹2L–₹20L+/acre depending on crop)
+
+──────────────────────────────────────────────────────────────────────
+KEY EMPLOYERS:
+  Agritech: Ninjacart, DeHaat, AgroStar, Fasal, Cropin, BigHaat, Waycool
+  Input_Companies: Bayer CropScience India, Syngenta India, UPL, Coromandel International, PI Industries
+  Govt: FCI, NAFED, ICAR Institutes, State Agriculture Depts, NABARD
+
+──────────────────────────────────────────────────────────────────────
+EXAM PATH: ICAR AIEEA (UG) → B.Sc Agri | ICAR JRF → Research | State PSC → Agri Officer
+TIMELINE: 4 years B.Sc + 1-2 years to stable career
+══════════════════════════════════════════════════════════════════════
+
+======================================================================
+CAREER PATH INDEX
+======================================================================
+  01. [tech_software_jee] Software Engineer (JEE Route) (Technology)
+  02. [tech_software_bca_mca] Software Engineer (BCA/MCA Route) (Technology)
+  03. [tech_data_science] Data Scientist / ML Engineer (Technology)
+  04. [tech_cybersecurity] Cybersecurity Engineer (Technology)
+  05. [medical_mbbs] Doctor (MBBS + Specialization) (Healthcare)
+  06. [medical_pharmacy] Pharmacist / Pharmaceutical Career (Healthcare)
+  07. [govt_upsc_ias] IAS / IPS / IFS (UPSC Civil Services) (Government)
+  08. [govt_bank_finance] Banking & Finance Government Career (Government)
+  09. [engineering_civil] Civil Engineer (Engineering)
+  10. [commerce_ca] Chartered Accountant (CA) (Finance & Commerce)
+  11. [business_mba] MBA / Business Management (Business)
+  12. [business_retail_shop] Retail Business / Dukaan Setup (Indian Context) (Business)
+  13. [law_llb] Lawyer / Legal Career (LLB) (Law)
+  14. [creative_design_uiux] UI/UX Designer / Product Designer (Creative)
+  15. [agri_career] Agriculture / AgriTech Career (Agriculture)

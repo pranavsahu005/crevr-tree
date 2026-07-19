@@ -1,2 +1,723 @@
-<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<div id="body"></div>
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindTree Concept Designer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        /* Standard CSS for natural physical swaying without neon glow */
+        @keyframes gentle-breeze {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(1deg) translate(0.5px, -0.5px); }
+        }
+
+        .sway-active {
+            transform-origin: bottom center;
+            animation: gentle-breeze 4.5s ease-in-out infinite alternate;
+        }
+
+        /* SVG Node styling */
+        .tree-node {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .tree-node:hover {
+            transform: scale(1.12);
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+
+        .tree-node.active-selected {
+            stroke: #1e293b;
+            stroke-width: 2.5px;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+        }
+
+        /* Custom light scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <!-- Minimal Premium Light Header -->
+    <header class="w-full bg-white border-b border-slate-200 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 z-10">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-white shadow-sm">
+                <i class="fa-solid fa-tree text-lg"></i>
+            </div>
+            <div>
+                <h1 class="text-lg font-bold text-slate-900 tracking-tight">MindTree Designer</h1>
+                <p class="text-xs text-slate-500 font-medium">Flat Vector Concept Mapping Tool</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <!-- Reset Button -->
+            <button onclick="resetDefaultTree()" class="px-3.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition">
+                <i class="fa-solid fa-arrow-rotate-left"></i> Reset Design
+            </button>
+            <!-- Preset switcher inspired by original graphics -->
+            <div class="h-6 w-[1px] bg-slate-200"></div>
+            <span class="text-xs font-semibold text-slate-500">Tree Base Style:</span>
+            <div class="inline-flex rounded-lg bg-slate-100 p-0.5">
+                <button id="btn-style-bold" onclick="switchBaseStyle('bold')" class="px-3 py-1 rounded-md text-xs font-bold transition bg-white text-slate-800 shadow-sm">
+                    Bold Tech
+                </button>
+                <button id="btn-style-organic" onclick="switchBaseStyle('organic')" class="px-3 py-1 rounded-md text-xs font-medium transition text-slate-500 hover:text-slate-800">
+                    Organic Wood
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main interactive Workspace -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        
+        <!-- Left Column: Simple White Canvas for SVG Rendering -->
+        <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 flex flex-col justify-between items-center relative overflow-hidden shadow-sm">
+            
+            <!-- Canvas Label Details -->
+            <div class="absolute top-4 left-4 flex flex-col gap-0.5 pointer-events-none z-10">
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">Interactive Canvas</span>
+                <span id="canvas-style-badge" class="text-xs font-semibold text-slate-600 flex items-center gap-1">
+                    <i class="fa-solid fa-circle text-[8px] text-slate-400"></i> Bold Gray Trunk (image_a5404b.jpg)
+                </span>
+            </div>
+
+            <!-- Gentle Wind control badge -->
+            <div class="absolute top-4 right-4 flex items-center gap-2 bg-slate-50 border border-slate-100 rounded-full py-1 px-3 z-10">
+                <span class="text-[10px] font-bold text-slate-500">Breeze Mode:</span>
+                <button id="btn-sway-toggle" onclick="toggleBreeze()" class="w-8 h-4 rounded-full bg-slate-300 relative transition-colors focus:outline-none">
+                    <span id="breeze-dot" class="absolute w-3.5 h-3.5 rounded-full bg-white top-0.5 left-0.5 transition-transform"></span>
+                </button>
+            </div>
+
+            <!-- Pure Responsive SVG Tree Canvas -->
+            <div class="w-full flex-1 flex items-center justify-center min-h-[420px] sm:min-h-[500px]">
+                <svg id="concept-tree-svg" viewBox="0 0 400 400" class="w-full max-w-[500px] select-none">
+                    
+                    <!-- Shadow Oval Base matching both references exactly -->
+                    <ellipse id="base-shadow" cx="200" cy="355" rx="100" ry="20" fill="url(#shadow-gradient)" />
+                    
+                    <!-- SVG gradients definition -->
+                    <defs>
+                        <!-- Shadow gradient for bottom stand/base -->
+                        <radialGradient id="shadow-gradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#475569" stop-opacity="0.3" />
+                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                        </radialGradient>
+                    </defs>
+
+                    <!-- Dynamic Base Group -->
+                    <g id="tree-base-group" class="transition-all duration-500">
+                        <!-- Defaulting to image_a5404b.jpg Style: Thick Solid Gray Modern Web Tree -->
+                        <!-- Trunk Path -->
+                        <path d="M 194 355 L 206 355 Q 206 280 220 220 T 175 140 Q 185 130 195 135 Q 205 155 204 180 T 212 240 Q 218 290 206 355 Z" fill="#94a3b8" />
+                        <!-- Branch Limbs -->
+                        <path d="M 212 245 Q 250 240 280 250 Q 255 230 220 232 Z" fill="#94a3b8" /> <!-- Right lower branch -->
+                        <path d="M 216 210 Q 260 190 295 160 Q 255 175 214 195 Z" fill="#94a3b8" /> <!-- Right mid branch -->
+                        <path d="M 185 240 Q 140 230 110 210 Q 145 215 188 225 Z" fill="#94a3b8" /> <!-- Left lower branch -->
+                        <path d="M 180 200 Q 135 180 115 140 Q 145 165 185 182 Z" fill="#94a3b8" /> <!-- Left mid branch -->
+                        <path d="M 190 155 Q 160 120 125 120 Q 155 110 185 132 Z" fill="#94a3b8" /> <!-- Left high branch -->
+                        <path d="M 205 145 Q 240 115 270 125 Q 240 100 210 125 Z" fill="#94a3b8" /> <!-- Right high branch -->
+                        
+                        <!-- Text along trunk like image_a5404b.jpg -->
+                        <g id="trunk-text-group" transform="translate(198, 290) rotate(-95)">
+                            <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#f8fafc" letter-spacing="1">WORLD WIDE WEB</text>
+                        </g>
+                    </g>
+
+                    <!-- Dynamic Circles/Leaf nodes containing solid pure colors -->
+                    <g id="leaf-nodes-group">
+                        <!-- Initialized via JavaScript dynamically from treeNodes data -->
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Bottom Interactive Stats bar -->
+            <div class="w-full flex justify-between items-center bg-slate-50 border border-slate-100 rounded-2xl p-4 gap-4 flex-wrap text-xs font-semibold">
+                <div class="flex items-center gap-1.5 text-slate-600">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                    <span>Nodes: <span id="nodes-count" class="text-slate-900">0</span></span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-600">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span>Primary Colorways: <span class="text-slate-900">5 Solid</span></span>
+                </div>
+                <div class="text-slate-500 font-normal">
+                    Click any circle node to edit properties.
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Control Panel & Simple Concept Inspector -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+            
+            <!-- Selection Status Card / Simple Inspector -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                            <span class="p-1 rounded bg-slate-100 text-slate-700 text-xs"><i class="fa-solid fa-sliders"></i></span>
+                            Concept Inspector
+                        </h2>
+                        <p class="text-[11px] text-slate-500">Alter current node metadata, color and dimension</p>
+                    </div>
+                    <span id="active-tag-id" class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono uppercase">None</span>
+                </div>
+
+                <!-- Custom Notification message box -->
+                <div id="status-message" class="hidden py-2 px-3 bg-emerald-50 border border-emerald-100 text-emerald-800 text-xs rounded-xl flex items-center gap-2 transition-all duration-300">
+                    <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                    <span id="status-message-text">Message placeholder</span>
+                </div>
+
+                <!-- Active Node form (Light styling) -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 space-y-3.5">
+                    
+                    <!-- Label Field -->
+                    <div class="space-y-1.5">
+                        <label class="text-xs text-slate-600 font-bold flex justify-between">
+                            <span>Node Label:</span>
+                            <span class="text-[10px] font-normal text-slate-400">Keep short for crisp layouts</span>
+                        </label>
+                        <input type="text" id="node-label-input" disabled value="Select a circle node first" class="w-full bg-white border border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 rounded-xl px-3 py-2 text-xs text-slate-800 font-semibold focus:outline-none focus:border-slate-400 transition" oninput="updateActiveNode()">
+                    </div>
+
+                    <!-- Dimension Radius Slider -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-xs text-slate-600 font-bold">
+                            <span>Circle Size (Radius):</span>
+                            <span id="node-size-label" class="text-slate-500">0 px</span>
+                        </div>
+                        <input type="range" id="node-size-slider" disabled min="6" max="26" value="12" class="w-full accent-slate-700 bg-slate-200 rounded-lg appearance-none h-1 cursor-pointer disabled:opacity-50" oninput="updateActiveNode()">
+                    </div>
+
+                    <!-- Pure Solid Color Select Grid -->
+                    <div class="space-y-1.5">
+                        <label class="text-xs text-slate-600 font-bold">Concept Category Color:</label>
+                        <div class="grid grid-cols-5 gap-2">
+                            <!-- Blue -->
+                            <button id="color-blue" onclick="changeActiveColor('#2196f3')" disabled class="color-picker-btn h-8 rounded-lg bg-[#2196f3] border-2 border-transparent disabled:opacity-50 transition"></button>
+                            <!-- Green -->
+                            <button id="color-green" onclick="changeActiveColor('#4caf50')" disabled class="color-picker-btn h-8 rounded-lg bg-[#4caf50] border-2 border-transparent disabled:opacity-50 transition"></button>
+                            <!-- Red -->
+                            <button id="color-red" onclick="changeActiveColor('#f44336')" disabled class="color-picker-btn h-8 rounded-lg bg-[#f44336] border-2 border-transparent disabled:opacity-50 transition"></button>
+                            <!-- Orange -->
+                            <button id="color-orange" onclick="changeActiveColor('#ff9800')" disabled class="color-picker-btn h-8 rounded-lg bg-[#ff9800] border-2 border-transparent disabled:opacity-50 transition"></button>
+                            <!-- Gold -->
+                            <button id="color-yellow" onclick="changeActiveColor('#ffb300')" disabled class="color-picker-btn h-8 rounded-lg bg-[#ffb300] border-2 border-transparent disabled:opacity-50 transition"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delete Node trigger -->
+                <button id="btn-prune-node" disabled onclick="pruneSelectedNode()" class="w-full py-2.5 bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 disabled:opacity-40 disabled:hover:bg-red-50 disabled:cursor-not-allowed rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-trash-can text-red-500"></i> Prune Selected Node
+                </button>
+            </div>
+
+            <!-- Tree Sprouting / Assembly tools -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-4">
+                <div>
+                    <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                        <span class="p-1 rounded bg-slate-100 text-slate-700 text-xs"><i class="fa-solid fa-seedling"></i></span>
+                        Assemble & Sprout Nodes
+                    </h2>
+                    <p class="text-[11px] text-slate-500">Quickly inject customizable concept bubbles on current branch tips</p>
+                </div>
+
+                <!-- Node Adding Tool -->
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="sproutNode('left')" class="py-2.5 px-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-xs font-bold text-slate-700 transition flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-left-long text-slate-500"></i> Sprout Left
+                    </button>
+                    <button onclick="sproutNode('right')" class="py-2.5 px-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-xs font-bold text-slate-700 transition flex items-center justify-center gap-1.5">
+                        Sprout Right <i class="fa-solid fa-right-long text-slate-500"></i>
+                    </button>
+                </div>
+
+                <!-- Custom Trunk text content (matches image_a5404b.jpg) -->
+                <div class="space-y-1.5">
+                    <label class="text-xs text-slate-600 font-bold flex justify-between">
+                        <span>Central Trunk Label text:</span>
+                    </label>
+                    <input type="text" id="trunk-text-input" value="WORLD WIDE WEB" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 font-semibold focus:outline-none focus:border-slate-400 transition" oninput="updateTrunkText(this.value)">
+                </div>
+
+                <div class="h-[1px] bg-slate-100 w-full"></div>
+
+                <!-- Save and export tools -->
+                <div class="flex gap-2">
+                    <button onclick="exportCleanSVG()" class="flex-1 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold transition flex justify-center items-center gap-1.5 shadow-sm">
+                        <i class="fa-solid fa-download"></i> Save Clean SVG
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Minimalist Light Footer -->
+    <footer class="w-full bg-white border-t border-slate-200 px-6 py-4 flex flex-col md:flex-row justify-between items-center text-center gap-2">
+        <p class="text-xs text-slate-500">Clean concept mapping visualizer with flat-colored bubble nodes, reflecting styles from <b>image_a5404b.jpg</b> and <b>image_a54065.jpg</b>.</p>
+        <p class="text-[10px] text-slate-400 font-mono">Pure Design • No Neon Glows • Minimal Vector Layout</p>
+    </footer>
+
+    <script>
+        // Data coordinates based on beautiful layout resembling both reference images
+        let treeNodes = [
+            // Left Branches (Green/Orange/Red)
+            { id: 'node_1', x: 100, y: 130, r: 21, color: '#4caf50', text: 'PHP' },
+            { id: 'node_2', x: 110, y: 210, r: 24, color: '#ff9800', text: 'DESIGN' },
+            { id: 'node_3', x: 105, y: 172, r: 18, color: '#4caf50', text: 'SASS' },
+            { id: 'node_4', x: 92, y: 270, r: 22, color: '#f44336', text: 'CSS' },
+            { id: 'node_5', x: 165, y: 165, r: 19, color: '#f44336', text: 'JSON' },
+            { id: 'node_6', x: 210, y: 235, r: 18, color: '#f44336', text: 'PSD' },
+            { id: 'node_7', x: 130, y: 295, r: 17, color: '#ff9800', text: 'UI' },
+
+            // Small filler nodes on the left side (varying colors)
+            { id: 'node_sm_1', x: 155, y: 100, r: 12, color: '#ff9800', text: '' },
+            { id: 'node_sm_2', x: 120, y: 70, r: 11, color: '#2196f3', text: '' },
+            { id: 'node_sm_3', x: 145, y: 150, r: 8, color: '#ff9800', text: '' },
+            { id: 'node_sm_4', x: 153, y: 205, r: 7, color: '#4caf50', text: '' },
+            { id: 'node_sm_5', x: 175, y: 222, r: 6, color: '#2196f3', text: '' },
+            { id: 'node_sm_6', x: 151, y: 250, r: 9, color: '#2196f3', text: '' },
+            { id: 'node_sm_7', x: 105, y: 315, r: 10, color: '#4caf50', text: '' },
+            { id: 'node_sm_8', x: 181, y: 300, r: 8, color: '#f44336', text: '' },
+
+            // Center Top (CMS/JS)
+            { id: 'node_8', x: 200, y: 75, r: 16, color: '#f44336', text: 'CMS' },
+            { id: 'node_9', x: 245, y: 55, r: 22, color: '#2196f3', text: 'JS' },
+            
+            // Central Top fillers
+            { id: 'node_sm_9', x: 210, y: 40, r: 9, color: '#4caf50', text: '' },
+            { id: 'node_sm_10', x: 178, y: 55, r: 7, color: '#2196f3', text: '' },
+
+            // Right Branches (AJAX/HTML/WWW/JS)
+            { id: 'node_10', x: 295, y: 170, r: 25, color: '#f44336', text: 'AJAX' },
+            { id: 'node_11', x: 345, y: 232, r: 23, color: '#4caf50', text: 'HTML' },
+            { id: 'node_12', x: 335, y: 185, r: 19, color: '#2196f3', text: 'API' },
+            { id: 'node_13', x: 270, y: 260, r: 19, color: '#ff9800', text: 'WWW' },
+            { id: 'node_14', x: 255, y: 200, r: 17, color: '#2196f3', text: 'XML' },
+
+            // Small filler nodes on the right side
+            { id: 'node_sm_11', x: 250, y: 95, r: 9, color: '#4caf50', text: '' },
+            { id: 'node_sm_12', x: 280, y: 100, r: 11, color: '#ff9800', text: '' },
+            { id: 'node_sm_13', x: 225, y: 120, r: 7, color: '#4caf50', text: '' },
+            { id: 'node_sm_14', x: 280, y: 145, r: 6, color: '#f44336', text: '' },
+            { id: 'node_sm_15', x: 300, y: 92, r: 8, color: '#2196f3', text: '' },
+            { id: 'node_sm_16', x: 292, y: 115, r: 9, color: '#4caf50', text: '' },
+            { id: 'node_sm_17', x: 282, y: 215, r: 6, color: '#f44336', text: '' },
+            { id: 'node_sm_18', x: 305, y: 210, r: 8, color: '#2196f3', text: '' },
+            { id: 'node_sm_19', x: 298, y: 242, r: 7, color: '#f44336', text: '' },
+            { id: 'node_sm_20', x: 310, y: 250, r: 9, color: '#2196f3', text: '' },
+            { id: 'node_sm_21', x: 295, y: 290, r: 11, color: '#2196f3', text: '' },
+            { id: 'node_sm_22', x: 320, y: 295, r: 15, color: '#f44336', text: '' },
+            { id: 'node_sm_23', x: 355, y: 275, r: 7, color: '#4caf50', text: '' },
+            { id: 'node_sm_24', x: 268, y: 300, r: 8, color: '#4caf50', text: '' }
+        ];
+
+        // Backup for total resets
+        const defaultTreeBackup = JSON.parse(JSON.stringify(treeNodes));
+
+        let selectedNodeId = null;
+        let isBreezeActive = false;
+        let currentBaseStyle = 'bold'; // Options: 'bold' (image_a5404b) or 'organic' (image_a54065)
+
+        // Populate SVG with flat-colored bubble nodes
+        function renderTreeNodes() {
+            const container = document.getElementById('leaf-nodes-group');
+            container.innerHTML = '';
+
+            treeNodes.forEach(node => {
+                const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                group.setAttribute('id', node.id);
+                group.setAttribute('class', `tree-node ${selectedNodeId === node.id ? 'active-selected' : ''}`);
+                group.setAttribute('onclick', `selectNode('${node.id}')`);
+
+                // Dynamic pure colored circle
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', node.x);
+                circle.setAttribute('cy', node.y);
+                circle.setAttribute('r', node.r);
+                circle.setAttribute('fill', node.color);
+                
+                // Pure vector styling: clean crisp strokes matching reference graphic design style
+                circle.setAttribute('stroke', '#ffffff');
+                circle.setAttribute('stroke-width', node.r > 12 ? '2' : '1.2');
+
+                group.appendChild(circle);
+
+                // Pure minimalist uppercase node labels
+                if (node.text && node.r > 12) {
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    text.setAttribute('x', node.x);
+                    // Center text vertically
+                    text.setAttribute('y', node.y + 4);
+                    text.setAttribute('text-anchor', 'middle');
+                    text.setAttribute('fill', '#ffffff');
+                    text.setAttribute('font-family', "'Inter', sans-serif");
+                    text.setAttribute('font-weight', '700');
+                    // Font scaling based on radius
+                    const fontSize = Math.max(7, Math.floor(node.r * 0.45));
+                    text.setAttribute('font-size', `${fontSize}px`);
+                    text.textContent = node.text.toUpperCase();
+                    group.appendChild(text);
+                }
+
+                container.appendChild(group);
+            });
+
+            // Update badge counts
+            document.getElementById('nodes-count').innerText = treeNodes.length;
+        }
+
+        // Select Node click handler
+        function selectNode(id) {
+            selectedNodeId = id;
+            const node = treeNodes.find(n => n.id === id);
+            
+            // Refresh visuals to draw selection highlight stroke
+            renderTreeNodes();
+
+            if (node) {
+                // Set inspector controls active
+                document.getElementById('active-tag-id').innerText = node.id;
+                
+                const labelInput = document.getElementById('node-label-input');
+                labelInput.disabled = false;
+                labelInput.value = node.text;
+
+                const sizeSlider = document.getElementById('node-size-slider');
+                sizeSlider.disabled = false;
+                sizeSlider.value = node.r;
+                document.getElementById('node-size-label').innerText = `${node.r} px`;
+
+                // Enable color pickers
+                document.querySelectorAll('.color-picker-btn').forEach(btn => {
+                    btn.disabled = false;
+                    // Highlight selected color indicator
+                    btn.classList.remove('ring-4', 'ring-slate-400');
+                });
+
+                // Find matching color swatch and highlight
+                const hexToName = {
+                    '#2196f3': 'color-blue',
+                    '#4caf50': 'color-green',
+                    '#f44336': 'color-red',
+                    '#ff9800': 'color-orange',
+                    '#ffb300': 'color-yellow'
+                };
+                const matchingBtnId = hexToName[node.color];
+                if (matchingBtnId) {
+                    document.getElementById(matchingBtnId).classList.add('ring-4', 'ring-slate-400');
+                }
+
+                // Enable Prune trigger
+                document.getElementById('btn-prune-node').disabled = false;
+            }
+        }
+
+        // Sync Inspector inputs back to targeted SVG circle properties
+        function updateActiveNode() {
+            if (!selectedNodeId) return;
+
+            const node = treeNodes.find(n => n.id === selectedNodeId);
+            if (node) {
+                const labelVal = document.getElementById('node-label-input').value;
+                const sizeVal = parseInt(document.getElementById('node-size-slider').value);
+
+                node.text = labelVal;
+                node.r = sizeVal;
+
+                document.getElementById('node-size-label').innerText = `${sizeVal} px`;
+
+                // Instant clean redraw
+                renderTreeNodes();
+            }
+        }
+
+        // Change Active Color picker event
+        function changeActiveColor(hex) {
+            if (!selectedNodeId) return;
+
+            const node = treeNodes.find(n => n.id === selectedNodeId);
+            if (node) {
+                node.color = hex;
+                
+                // Clear active states and highlight new color swatch
+                document.querySelectorAll('.color-picker-btn').forEach(btn => {
+                    btn.classList.remove('ring-4', 'ring-slate-400');
+                });
+                
+                // Find matching btn
+                const hexToName = {
+                    '#2196f3': 'color-blue',
+                    '#4caf50': 'color-green',
+                    '#f44336': 'color-red',
+                    '#ff9800': 'color-orange',
+                    '#ffb300': 'color-yellow'
+                };
+                const matchingBtnId = hexToName[hex];
+                if (matchingBtnId) {
+                    document.getElementById(matchingBtnId).classList.add('ring-4', 'ring-slate-400');
+                }
+
+                renderTreeNodes();
+                triggerAlertMessage("Colorway modified cleanly!");
+            }
+        }
+
+        // Add dynamically sprouted concept bubbles at safe offsets
+        function sproutNode(direction) {
+            let offsetDirection = direction === 'left' ? -1 : 1;
+            
+            // Calculate a safe coordinate near the top branching tips
+            const randomY = Math.floor(Math.random() * 120) + 120; // 120 to 240 coordinates
+            const randomX = direction === 'left' ? (Math.floor(Math.random() * 60) + 100) : (Math.floor(Math.random() * 60) + 240);
+            
+            const newId = `sprouted_node_${Date.now()}`;
+            const solidColors = ['#2196f3', '#4caf50', '#f44336', '#ff9800', '#ffb300'];
+            const randomColor = solidColors[Math.floor(Math.random() * solidColors.length)];
+
+            const newlySprouted = {
+                id: newId,
+                x: randomX,
+                y: randomY,
+                r: 16,
+                color: randomColor,
+                text: 'NEW'
+            };
+
+            treeNodes.push(newlySprouted);
+            renderTreeNodes();
+            selectNode(newId);
+            triggerAlertMessage("Sprouted new bubble on branch!");
+        }
+
+        // Prune the selected leaf node
+        function pruneSelectedNode() {
+            if (!selectedNodeId) return;
+
+            // Remove node from list
+            treeNodes = treeNodes.filter(n => n.id !== selectedNodeId);
+            
+            // Reset inspector selection states
+            selectedNodeId = null;
+            document.getElementById('active-tag-id').innerText = 'None';
+            document.getElementById('node-label-input').value = 'Select a circle node first';
+            document.getElementById('node-label-input').disabled = true;
+            document.getElementById('node-size-slider').disabled = true;
+            document.getElementById('node-size-slider').value = 12;
+            document.getElementById('node-size-label').innerText = '0 px';
+            
+            document.querySelectorAll('.color-picker-btn').forEach(btn => {
+                btn.disabled = true;
+                btn.classList.remove('ring-4', 'ring-slate-400');
+            });
+            
+            document.getElementById('btn-prune-node').disabled = true;
+
+            renderTreeNodes();
+            triggerAlertMessage("Selected node pruned successfully.");
+        }
+
+        // Update Trunk Label Text
+        function updateTrunkText(val) {
+            const trunkGroup = document.getElementById('trunk-text-group');
+            if (trunkGroup) {
+                const textNode = trunkGroup.querySelector('text');
+                if (textNode) {
+                    textNode.textContent = val.toUpperCase();
+                }
+            }
+        }
+
+        // Switch Base Style between Modern Solid Bold Gray and Brown Organic branches
+        function switchBaseStyle(style) {
+            currentBaseStyle = style;
+
+            const btnBold = document.getElementById('btn-style-bold');
+            const btnOrganic = document.getElementById('btn-style-organic');
+            const badge = document.getElementById('canvas-style-badge');
+            const baseGroup = document.getElementById('tree-base-group');
+
+            if (style === 'bold') {
+                // Style A: image_a5404b.jpg style
+                btnBold.className = "px-3 py-1 rounded-md text-xs font-bold transition bg-white text-slate-800 shadow-sm";
+                btnOrganic.className = "px-3 py-1 rounded-md text-xs font-medium transition text-slate-500 hover:text-slate-800";
+                badge.innerHTML = `<i class="fa-solid fa-circle text-[8px] text-slate-400"></i> Bold Gray Trunk (image_a5404b.jpg)`;
+
+                // Update SVG trunk to matching thick grey paths
+                baseGroup.innerHTML = `
+                    <!-- Thick Gray trunk paths -->
+                    <path d="M 194 355 L 206 355 Q 206 280 220 220 T 175 140 Q 185 130 195 135 Q 205 155 204 180 T 212 240 Q 218 290 206 355 Z" fill="#94a3b8" />
+                    <path d="M 212 245 Q 250 240 280 250 Q 255 230 220 232 Z" fill="#94a3b8" />
+                    <path d="M 216 210 Q 260 190 295 160 Q 255 175 214 195 Z" fill="#94a3b8" />
+                    <path d="M 185 240 Q 140 230 110 210 Q 145 215 188 225 Z" fill="#94a3b8" />
+                    <path d="M 180 200 Q 135 180 115 140 Q 145 165 185 182 Z" fill="#94a3b8" />
+                    <path d="M 190 155 Q 160 120 125 120 Q 155 110 185 132 Z" fill="#94a3b8" />
+                    <path d="M 205 145 Q 240 115 270 125 Q 240 100 210 125 Z" fill="#94a3b8" />
+                    <g id="trunk-text-group" transform="translate(198, 290) rotate(-95)">
+                        <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#f8fafc" letter-spacing="1">WORLD WIDE WEB</text>
+                    </g>
+                `;
+                // Update trunk value
+                updateTrunkText(document.getElementById('trunk-text-input').value);
+            } else {
+                // Style B: image_a54065.jpg style - Symmetrical fine organic wood branches
+                btnOrganic.className = "px-3 py-1 rounded-md text-xs font-bold transition bg-white text-slate-800 shadow-sm";
+                btnBold.className = "px-3 py-1 rounded-md text-xs font-medium transition text-slate-500 hover:text-slate-800";
+                badge.innerHTML = `<i class="fa-solid fa-circle text-[8px] text-amber-600"></i> Organic Symmetrical Wood (image_a54065.jpg)`;
+
+                // Fine brown curved limbs
+                baseGroup.innerHTML = `
+                    <!-- Organic wood branches vector curves -->
+                    <path d="M 196 355 L 204 355 Q 200 300 197 260 T 202 180 Q 200 120 198 100 Q 202 120 204 180 Z" fill="#78350f" />
+                    <path d="M 198 280 Q 160 250 120 240 Q 165 242 197 270 Z" fill="#78350f" />
+                    <path d="M 198 250 Q 140 210 110 160 Q 150 185 198 235 Z" fill="#78350f" />
+                    <path d="M 201 260 Q 245 230 285 220 Q 245 222 201 250 Z" fill="#78350f" />
+                    <path d="M 202 225 Q 255 190 290 140 Q 245 168 202 210 Z" fill="#78350f" />
+                    <path d="M 200 190 Q 160 140 135 110 Q 170 130 199 175 Z" fill="#78350f" />
+                    <path d="M 201 175 Q 240 130 265 105 Q 235 125 201 165 Z" fill="#78350f" />
+                    <path d="M 198 140 Q 175 110 165 85 Q 185 105 198 135 Z" fill="#78350f" />
+                    <path d="M 202 140 Q 225 110 235 85 Q 215 105 202 135 Z" fill="#78350f" />
+                `;
+            }
+
+            triggerAlertMessage(`Successfully switched layout styling to ${style.toUpperCase()}`);
+        }
+
+        // Toggle Dynamic Breeze
+        function toggleBreeze() {
+            isBreezeActive = !isBreezeActive;
+            const dot = document.getElementById('breeze-dot');
+            const btn = document.getElementById('btn-sway-toggle');
+            const svg = document.getElementById('concept-tree-svg');
+
+            if (isBreezeActive) {
+                dot.style.transform = 'translateX(16px)';
+                btn.classList.remove('bg-slate-300');
+                btn.classList.add('bg-slate-800');
+                svg.classList.add('sway-active');
+                triggerAlertMessage("Physical gentle breeze activated.");
+            } else {
+                dot.style.transform = 'translateX(0px)';
+                btn.classList.remove('bg-slate-800');
+                btn.classList.add('bg-slate-300');
+                svg.classList.remove('sway-active');
+                triggerAlertMessage("Breeze paused cleanly.");
+            }
+        }
+
+        // Custom minimal clean status notification
+        function triggerAlertMessage(text) {
+            const container = document.getElementById('status-message');
+            const label = document.getElementById('status-message-text');
+
+            label.innerText = text;
+            container.classList.remove('hidden', 'opacity-0');
+            container.classList.add('opacity-100');
+
+            // Hide automatically after 2.5s
+            setTimeout(() => {
+                container.classList.add('opacity-0');
+                setTimeout(() => {
+                    container.classList.add('hidden');
+                }, 300);
+            }, 2500);
+        }
+
+        // Export Clean Vector SVG to User Local Disk
+        function exportCleanSVG() {
+            try {
+                const svg = document.getElementById('concept-tree-svg').cloneNode(true);
+                
+                // Remove interactive outline states prior to compilation
+                svg.querySelectorAll('.tree-node').forEach(node => {
+                    node.classList.remove('active-selected');
+                });
+
+                const serializer = new XMLSerializer();
+                const svgString = serializer.serializeToString(svg);
+                
+                const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+                const downloadUrl = window.URL.createObjectURL(blob);
+                
+                const dummyAnchor = document.createElement('a');
+                dummyAnchor.href = downloadUrl;
+                dummyAnchor.download = `mindtree-vector-concept.svg`;
+                document.body.appendChild(dummyAnchor);
+                dummyAnchor.click();
+                document.body.removeChild(dummyAnchor);
+
+                triggerAlertMessage("SVG File saved successfully!");
+            } catch (err) {
+                triggerAlertMessage("Compilation failed.");
+            }
+        }
+
+        // Reset elements back to default clean visual state
+        function resetDefaultTree() {
+            treeNodes = JSON.parse(JSON.stringify(defaultTreeBackup));
+            selectedNodeId = null;
+
+            // Reset selection inputs
+            document.getElementById('active-tag-id').innerText = 'None';
+            document.getElementById('node-label-input').value = 'Select a circle node first';
+            document.getElementById('node-label-input').disabled = true;
+            document.getElementById('node-size-slider').disabled = true;
+            document.getElementById('node-size-slider').value = 12;
+            document.getElementById('node-size-label').innerText = '0 px';
+            
+            document.querySelectorAll('.color-picker-btn').forEach(btn => {
+                btn.disabled = true;
+                btn.classList.remove('ring-4', 'ring-slate-400');
+            });
+            
+            document.getElementById('btn-prune-node').disabled = true;
+            document.getElementById('trunk-text-input').value = 'WORLD WIDE WEB';
+
+            switchBaseStyle('bold');
+            
+            // Turn off breeze
+            isBreezeActive = true;
+            toggleBreeze();
+
+            renderTreeNodes();
+            triggerAlertMessage("Restored to raw original flat vectors!");
+        }
+
+        // Window Init
+        window.onload = function() {
+            renderTreeNodes();
+        }
+    </script>
+</body>
+</html>

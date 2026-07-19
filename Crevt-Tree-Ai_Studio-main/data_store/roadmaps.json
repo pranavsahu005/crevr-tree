@@ -1,74 +1,92 @@
 [
   {
-    "id": "ai-engineer",
-    "name": "AI & Machine Learning Engineer",
+    "id": "tech_software_jee",
+    "name": "Software Engineer (JEE Route)",
     "category": "tech",
-    "tagline": "From school mathematics bases to production LLM model integration."
+    "tagline": "India's most competitive engineering path. JEE → IIT/NIT → Top tech roles in India and globally."
   },
   {
-    "id": "doctor",
-    "name": "Medical Doctor (MBBS)",
+    "id": "tech_software_bca_mca",
+    "name": "Software Engineer (BCA/MCA Route)",
+    "category": "tech",
+    "tagline": "Non-engineering route to software careers. More accessible, still leads to strong tech roles."
+  },
+  {
+    "id": "tech_data_science",
+    "name": "Data Scientist / ML Engineer",
+    "category": "tech",
+    "tagline": "One of India's fastest growing fields. Combines statistics, programming and business to extract insights from data."
+  },
+  {
+    "id": "tech_cybersecurity",
+    "name": "Cybersecurity Engineer",
+    "category": "tech",
+    "tagline": "Protecting India's digital infrastructure. Massive demand from banks, IT companies, government, and startups."
+  },
+  {
+    "id": "medical_mbbs",
+    "name": "Doctor (MBBS + Specialization)",
     "category": "medical",
-    "tagline": "Pathway to clear NEET exams and complete the statutory clinical MBBS curriculum."
+    "tagline": "India's most respected professional path. NEET is the gateway to all government and private medical colleges."
   },
   {
-    "id": "ias-officer",
-    "name": "UPSC Civil Services Officer (IAS)",
+    "id": "medical_pharmacy",
+    "name": "Pharmacist / Pharmaceutical Career",
+    "category": "medical",
+    "tagline": "India is the world's pharmacy. Huge opportunities in pharma companies, R&D, regulatory affairs, and hospital pharmacy."
+  },
+  {
+    "id": "govt_upsc_ias",
+    "name": "IAS / IPS / IFS (UPSC Civil Services)",
     "category": "government",
-    "tagline": "Pathway to clearing the UPSC CSE Prelims, Mains, and Interview cycle."
+    "tagline": "The most prestigious government career in India. Enormous power, prestige, and service to nation. Long preparation but life-changing outcome."
   },
   {
-    "id": "startup-founder",
-    "name": "Startup Founder / Entrepreneur",
-    "category": "business",
-    "tagline": "Pathway to define MVP, register entity (LLP/Pvt), and seek Mudra or seed funding."
+    "id": "govt_bank_finance",
+    "name": "Banking & Finance Government Career",
+    "category": "government",
+    "tagline": "PSU banks, RBI, SEBI — stable, respected, pensioned careers with good work-life balance."
   },
   {
-    "id": "chartered-accountant",
+    "id": "engineering_civil",
+    "name": "Civil Engineer",
+    "category": "tech",
+    "tagline": "Building India's infrastructure: roads, bridges, dams, airports, smart cities, metro systems."
+  },
+  {
+    "id": "commerce_ca",
     "name": "Chartered Accountant (CA)",
     "category": "finance",
-    "tagline": "Pathway to clear ICAI Foundation, Inter, articleship placement, and ICAI Finals."
+    "tagline": "India's most respected finance credential. CA opens doors to Big 4, CFO roles, IND AS, FEMA, taxation, and more."
   },
   {
-    "id": "bca-btech",
-    "name": "Computer Science (BCA/BTech)",
-    "category": "education",
-    "tagline": "Pathway to building core data structure principles, web systems, and placing as a developer."
-  },
-  {
-    "id": "software-engineer",
-    "name": "Full Stack Software Developer",
-    "category": "tech",
-    "tagline": "Complete engineering roadmap from web fundamentals to Cloud, DevOps and Scalability."
-  },
-  {
-    "id": "nurse",
-    "name": "Registered Nurse (B.Sc Nursing)",
-    "category": "medical",
-    "tagline": "Pathway mapping the academic nursing college course, clinical boards, and hospital registry."
-  },
-  {
-    "id": "police-sub-inspector",
-    "name": "Police Sub-Inspector (SI)",
-    "category": "government",
-    "tagline": "Milestones for clearing police SI recruitments, physical screening tests, and basic training academies."
-  },
-  {
-    "id": "organic-farmer-agritech",
-    "name": "Organic Farming & Agritech Startup",
+    "id": "business_mba",
+    "name": "MBA / Business Management",
     "category": "business",
-    "tagline": "Pathway to starting an organic crop system, MSME registration, and commercial supply logs."
+    "tagline": "MBA from IIM is a game-changer. Even tier-2 MBA opens leadership, consulting, marketing, and finance doors."
   },
   {
-    "id": "bank-po",
-    "name": "Bank Probationary Officer (IBPS/SBI PO)",
-    "category": "finance",
-    "tagline": "Pathway mapping bank examinations, commercial banking foundations, and PO training."
+    "id": "business_retail_shop",
+    "name": "Retail Business / Dukaan Setup (Indian Context)",
+    "category": "business",
+    "tagline": "Start a local shop, grocery, medical store, electronics shop, or franchise. India's retail sector = ₹80 lakh crore market."
   },
   {
-    "id": "cuet-ug",
-    "name": "CUET UG College Entrance",
-    "category": "education",
-    "tagline": "Pathway to preparing and clearing Common University Entrance Test for top central university slots."
+    "id": "law_llb",
+    "name": "Lawyer / Legal Career (LLB)",
+    "category": "government",
+    "tagline": "Law is the backbone of democracy and business. India has 1.7M+ lawyers with growing demand in corporate law, litigation, IPR, and human rights."
+  },
+  {
+    "id": "creative_design_uiux",
+    "name": "UI/UX Designer / Product Designer",
+    "category": "tech",
+    "tagline": "Design the apps and websites Indians use daily. Booming demand from startups and tech companies. Portfolio > degree."
+  },
+  {
+    "id": "agri_career",
+    "name": "Agriculture / AgriTech Career",
+    "category": "business",
+    "tagline": "India is an agrarian economy. Modern agriculture + AgriTech = massive opportunity. From farming to agri-startups to government roles."
   }
 ]

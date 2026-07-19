@@ -13,6 +13,18 @@ async function runSeeder() {
   // 1. Initialize tables first
   await initializeDatabase();
 
+  // Clear existing data to ensure clean re-seeding without constraint errors
+  console.log('[CrevrTree Seeder] Cleaning existing tables...');
+  try {
+    await dbQuery('DELETE FROM roadmap_steps');
+    await dbQuery('DELETE FROM roadmaps');
+    await dbQuery('DELETE FROM nodes');
+    await dbQuery('DELETE FROM edges');
+    console.log('[CrevrTree Seeder] Existing tables cleared successfully!');
+  } catch (err) {
+    console.warn('[CrevrTree Seeder] Note: Error during clean up:', err.message);
+  }
+
   // 2. Seed Curated Roadmaps
   console.log(`[CrevrTree Seeder] Seeding ${ROADMAPS_DATABASE.length} curated roadmaps...`);
   

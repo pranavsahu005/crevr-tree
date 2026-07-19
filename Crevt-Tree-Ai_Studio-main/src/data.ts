@@ -1,802 +1,5383 @@
-import { Roadmap } from './types';
+// Auto-generated curated roadmaps from Claude career_data.json
+export interface Step {
+  id: string;
+  name: string;
+  desc: string;
+  official?: { label: string; url: string };
+  resources?: { type: string; label: string; url: string }[];
+  checklist?: string[];
+  parent?: string | null;
+  coords: { x: number; y: number };
+  salary?: string | null;
+  companies?: string[];
+  colleges?: string[];
+  entranceExams?: string[];
+}
+
+export interface Roadmap {
+  id: string;
+  name: string;
+  category: 'tech' | 'medical' | 'government' | 'business' | 'finance' | 'education';
+  tagline: string;
+  steps: Step[];
+}
 
 export const ROADMAPS_DATABASE: Roadmap[] = [
-  // 1. TECHNOLOGY: AI & ML ENGINEER
   {
-    id: "ai-engineer",
-    name: "AI & Machine Learning Engineer",
-    category: "tech",
-    tagline: "From school mathematics bases to production LLM model integration.",
-    steps: [
+    "id": "tech_software_jee",
+    "name": "Software Engineer (JEE Route)",
+    "category": "tech",
+    "tagline": "India's most competitive engineering path. JEE → IIT/NIT → Top tech roles in India and globally.",
+    "steps": [
       {
-        id: "ai-1",
-        name: "Mathematics Foundation",
-        desc: "Master linear algebra, calculus foundations, and probability statistics standard to Indian board class 11-12 curriculum.",
-        official: { label: "NCERT Class 12 Math Syllabus", url: "https://ncert.nic.in" },
-        resources: [
-          { type: "pdf", label: "NCERT Chapter 13 Probability Text", url: "https://ncert.nic.in/textbook.php" },
-          { type: "video", label: "Probability Lectures on YouTube", url: "https://youtube.com" }
+        "id": "tech_software_jee-1",
+        "name": "School (Class 6–10)",
+        "desc": "Build strong Maths & Science base. Olympiads (NSO, IMO) are a bonus.",
+        "official": {
+          "label": "JEE Main",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu/x/"
+          },
+          {
+            "type": "course",
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/"
+          },
+          {
+            "type": "course",
+            "label": "NPTEL Programming Courses",
+            "url": "https://nptel.ac.in/"
+          }
         ],
-        checklist: ["Comfortable with vectors", "Understand Matrix operations", "Basic probability concepts"],
-        parent: null,
-        coords: { x: 50, y: 12 },
-        salary: "₹6 - ₹12 LPA (Entry)",
-        companies: ["TCS Research", "Infosys Helix", "Google India", "Uniphore"],
-        colleges: ["IIT Madras", "IIIT Hyderabad", "BITS Pilani"],
-        entranceExams: ["JEE Advanced", "GATE CS"]
+        "checklist": [
+          "Understand Data Structures & Algorithms",
+          "Practice Cloud (AWS/GCP/Azure)",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Amazon India",
+          "Flipkart",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Main"
+        ]
       },
       {
-        id: "ai-2",
-        name: "Python Logic Programming",
-        desc: "Master key scripting elements: conditional statements, logical loop algorithms, lists, and file handling.",
-        official: { label: "Python Foundation Documentation", url: "https://docs.python.org/3/" },
-        resources: [
-          { type: "course", label: "Python for Absolute Beginners (NPTEL)", url: "https://nptel.ac.in" }
+        "id": "tech_software_jee-2",
+        "name": "Class 11–12 (PCM)",
+        "desc": "Join JEE coaching (Allen, Resonance, Aakash or free: Unacademy, PW). Focus: Physics, Chemistry, Maths.",
+        "official": {
+          "label": "JEE Main",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu/x/"
+          },
+          {
+            "type": "course",
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/"
+          },
+          {
+            "type": "course",
+            "label": "NPTEL Programming Courses",
+            "url": "https://nptel.ac.in/"
+          }
         ],
-        checklist: ["Can write simple logic loops", "Understand list comprehensions", "Installed local Python IDLE"],
-        parent: "ai-1",
-        coords: { x: 50, y: 32 }
+        "checklist": [
+          "Understand System Design",
+          "Practice Docker & Kubernetes",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_jee-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Amazon India",
+          "Flipkart",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Main"
+        ]
       },
       {
-        id: "ai-3a",
-        name: "Data Analysis & Pandas",
-        desc: "Learn to clean, manipulate, and analyze tabular records utilizing Pandas, NumPy, and Matplotlib libraries.",
-        official: { label: "Pandas Dataframe Documentation", url: "https://pandas.pydata.org" },
-        resources: [
-          { type: "video", label: "Pandas Data Cleaning Workshop", url: "https://youtube.com" }
+        "id": "tech_software_jee-3",
+        "name": "JEE Main + Advanced",
+        "desc": "JEE Main (NTA) → JEE Advanced (IIT). Score determines IIT/NIT/IIIT/State college.",
+        "official": {
+          "label": "JEE Main",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu/x/"
+          },
+          {
+            "type": "course",
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/"
+          },
+          {
+            "type": "course",
+            "label": "NPTEL Programming Courses",
+            "url": "https://nptel.ac.in/"
+          }
         ],
-        checklist: ["Can filter rows in a Dataframe", "Completed basic CSV parsing project"],
-        parent: "ai-2",
-        coords: { x: 30, y: 56 }
+        "checklist": [
+          "Understand Python / Java / C++",
+          "Practice React / Node.js",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_jee-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Amazon India",
+          "Flipkart",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Main"
+        ]
       },
       {
-        id: "ai-3b",
-        name: "Neural Networks Theory",
-        desc: "Understand backpropagation, weights, activation functions, and layer gradient flows.",
-        official: { label: "Neural Networks Foundations", url: "https://deeplearning.ai" },
-        resources: [
-          { type: "pdf", label: "Deep Learning Book chapter PDF", url: "https://www.deeplearningbook.org" }
+        "id": "tech_software_jee-4",
+        "name": "B.Tech (4 years)",
+        "desc": "CSE / IT / ECE preferred. Focus on DSA, projects, open source from Year 1.",
+        "official": {
+          "label": "JEE Main",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu/x/"
+          },
+          {
+            "type": "course",
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/"
+          },
+          {
+            "type": "course",
+            "label": "NPTEL Programming Courses",
+            "url": "https://nptel.ac.in/"
+          }
         ],
-        checklist: ["Calculated simple hand derivatives", "Understand Sigmoid vs ReLU functions"],
-        parent: "ai-2",
-        coords: { x: 70, y: 56 }
+        "checklist": [
+          "Understand Git",
+          "Practice Machine Learning basics",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_jee-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Amazon India",
+          "Flipkart",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Main"
+        ]
       },
       {
-        id: "ai-4",
-        name: "Production Model Integration",
-        desc: "Deploy API-driven pipelines leveraging OpenAI API, Claude API, or local HuggingFace transformers.",
-        official: { label: "OpenAI Developer API Portal", url: "https://platform.openai.com" },
-        resources: [
-          { type: "video", label: "Deploying AI Agents on YouTube", url: "https://youtube.com" }
+        "id": "tech_software_jee-5",
+        "name": "Internships (Year 2–4)",
+        "desc": "Target Google, Microsoft, Flipkart, startups. Use LinkedIn, Internshala, AngelList.",
+        "official": {
+          "label": "JEE Main",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu/x/"
+          },
+          {
+            "type": "course",
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/"
+          },
+          {
+            "type": "course",
+            "label": "NPTEL Programming Courses",
+            "url": "https://nptel.ac.in/"
+          }
         ],
-        checklist: ["Understand REST API requests", "Constructed a simple custom LLM chatbot UI"],
-        parent: "ai-3b",
-        coords: { x: 50, y: 86 }
+        "checklist": [
+          "Understand SQL",
+          "Practice Leadership",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_jee-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": "₹6–25 LPA",
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Amazon India",
+          "Flipkart",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Main"
+        ]
+      },
+      {
+        "id": "tech_software_jee-6",
+        "name": "Entry Role (0–2 yrs)",
+        "desc": "Junior Software Engineer / SDE-1. Salary: ₹6–25 LPA depending on company.",
+        "official": {
+          "label": "JEE Main",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu/x/"
+          },
+          {
+            "type": "course",
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/"
+          },
+          {
+            "type": "course",
+            "label": "NPTEL Programming Courses",
+            "url": "https://nptel.ac.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Problem Solving",
+          "Practice Cloud (AWS/GCP/Azure)",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_jee-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": "₹6–25 LPA",
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Amazon India",
+          "Flipkart",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Main"
+        ]
+      },
+      {
+        "id": "tech_software_jee-7",
+        "name": "Mid Level (2–5 yrs)",
+        "desc": "SDE-2 / Software Engineer II. Own features, mentor juniors. ₹20–50 LPA.",
+        "official": {
+          "label": "JEE Main",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu/x/"
+          },
+          {
+            "type": "course",
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/"
+          },
+          {
+            "type": "course",
+            "label": "NPTEL Programming Courses",
+            "url": "https://nptel.ac.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Communication",
+          "Practice Docker & Kubernetes",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_jee-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": "₹20–50 LPA",
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Amazon India",
+          "Flipkart",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Main"
+        ]
+      },
+      {
+        "id": "tech_software_jee-8",
+        "name": "Senior (5–8 yrs)",
+        "desc": "Senior SDE / Staff Engineer. System design, architecture ownership. ₹40–1.2 Cr.",
+        "official": {
+          "label": "JEE Main",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu/x/"
+          },
+          {
+            "type": "course",
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/"
+          },
+          {
+            "type": "course",
+            "label": "NPTEL Programming Courses",
+            "url": "https://nptel.ac.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Data Structures & Algorithms",
+          "Practice React / Node.js",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_jee-6",
+        "coords": {
+          "x": 50,
+          "y": 112
+        },
+        "salary": "₹40 L–1.5 Cr",
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Amazon India",
+          "Flipkart",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Main"
+        ]
+      },
+      {
+        "id": "tech_software_jee-9",
+        "name": "Lead / Principal (8–12 yrs)",
+        "desc": "Tech Lead / Principal Engineer. Cross-team impact. ₹80 L–2 Cr+.",
+        "official": {
+          "label": "JEE Main",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu/x/"
+          },
+          {
+            "type": "course",
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/"
+          },
+          {
+            "type": "course",
+            "label": "NPTEL Programming Courses",
+            "url": "https://nptel.ac.in/"
+          }
+        ],
+        "checklist": [
+          "Understand System Design",
+          "Practice Machine Learning basics",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_jee-8",
+        "coords": {
+          "x": 50,
+          "y": 134
+        },
+        "salary": "₹1 Cr+",
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Amazon India",
+          "Flipkart",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Main"
+        ]
+      },
+      {
+        "id": "tech_software_jee-10",
+        "name": "Management Track",
+        "desc": "Engineering Manager → Director of Engineering → VP Eng → CTO.",
+        "official": {
+          "label": "JEE Main",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu/x/"
+          },
+          {
+            "type": "course",
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/"
+          },
+          {
+            "type": "course",
+            "label": "NPTEL Programming Courses",
+            "url": "https://nptel.ac.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Python / Java / C++",
+          "Practice Leadership",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_jee-9",
+        "coords": {
+          "x": 50,
+          "y": 156
+        },
+        "salary": "₹1 Cr+",
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Amazon India",
+          "Flipkart",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Main"
+        ]
+      },
+      {
+        "id": "tech_software_jee-11",
+        "name": "Entrepreneurship",
+        "desc": "Found a startup. Use network from IIT/NIT. Apply to YC, Sequoia Surge, Accel India.",
+        "official": {
+          "label": "JEE Main",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu/x/"
+          },
+          {
+            "type": "course",
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/"
+          },
+          {
+            "type": "course",
+            "label": "NPTEL Programming Courses",
+            "url": "https://nptel.ac.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Git",
+          "Practice Cloud (AWS/GCP/Azure)",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_jee-10",
+        "coords": {
+          "x": 50,
+          "y": 178
+        },
+        "salary": "₹1 Cr+",
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Amazon India",
+          "Flipkart",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Main"
+        ]
       }
     ]
   },
-
-  // 2. MEDICAL: DOCTOR (MBBS)
   {
-    id: "doctor",
-    name: "Medical Doctor (MBBS)",
-    category: "medical",
-    tagline: "Pathway to clear NEET exams and complete the statutory clinical MBBS curriculum.",
-    steps: [
+    "id": "tech_software_bca_mca",
+    "name": "Software Engineer (BCA/MCA Route)",
+    "category": "tech",
+    "tagline": "Non-engineering route to software careers. More accessible, still leads to strong tech roles.",
+    "steps": [
       {
-        id: "med-1",
-        name: "PCB Class 11-12 Board Prep",
-        desc: "Complete your board foundations with deep attention to NCERT Biology, Chemistry, and Physics syllabus.",
-        official: { label: "NCERT Official E-Textbooks", url: "https://ncert.nic.in" },
-        resources: [
-          { type: "pdf", label: "NCERT Class 11 Biology Textbook PDF", url: "https://ncert.nic.in" }
+        "id": "tech_software_bca_mca-1",
+        "name": "Class 10 (PCM or Commerce with Maths)",
+        "desc": "Secure 60%+. Maths is essential for BCA admission.",
+        "official": {
+          "label": "BCA Entrance (various)",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL MCA Preparation",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "full stack course",
+            "label": "The Odin Project",
+            "url": "https://www.theodinproject.com/"
+          },
+          {
+            "type": "reference",
+            "label": "W3Schools",
+            "url": "https://www.w3schools.com/"
+          }
         ],
-        checklist: ["Completed Class 12 exams with Physics, Chemistry, Biology", "Achieved minimum age limit of 17 years"],
-        parent: null,
-        coords: { x: 50, y: 12 },
-        salary: "₹8 - ₹15 LPA (Govt Medical Officer)",
-        companies: ["AIIMS", "Apollo Hospitals", "Fortis Healthcare"],
-        colleges: ["AIIMS New Delhi", "CMC Vellore", "KGMU Lucknow"],
-        entranceExams: ["NEET UG"]
+        "checklist": [
+          "Understand Programming (Python/Java)",
+          "Practice React / Angular",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [
+          "Zoho",
+          "Freshworks",
+          "Juspay",
+          "Swiggy",
+          "Ola"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "BCA Entrance (various)"
+        ]
       },
       {
-        id: "med-2",
-        name: "NEET UG Examination Clearance",
-        desc: "Apply, prepare, and clear the National Eligibility cum Entrance Test to secure a government or private college seat.",
-        official: { label: "NTA NEET Official Portal", url: "https://neet.nta.nic.in" },
-        resources: [
-          { type: "pdf", label: "NEET UG Exam Syllabus PDF", url: "https://neet.nta.nic.in" }
+        "id": "tech_software_bca_mca-2",
+        "name": "Class 11–12",
+        "desc": "PCM or Commerce with Maths. Focus on Maths and Computer Science if available.",
+        "official": {
+          "label": "BCA Entrance (various)",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL MCA Preparation",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "full stack course",
+            "label": "The Odin Project",
+            "url": "https://www.theodinproject.com/"
+          },
+          {
+            "type": "reference",
+            "label": "W3Schools",
+            "url": "https://www.w3schools.com/"
+          }
         ],
-        checklist: ["Enrolled on NTA NEET portal", "Completed multiple official mock sample papers"],
-        parent: "med-1",
-        coords: { x: 50, y: 32 }
+        "checklist": [
+          "Understand Web Development (HTML/CSS/JS)",
+          "Practice Node.js / Django",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_bca_mca-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [
+          "Zoho",
+          "Freshworks",
+          "Juspay",
+          "Swiggy",
+          "Ola"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "BCA Entrance (various)"
+        ]
       },
       {
-        id: "med-3a",
-        name: "MBBS Pre-Clinical Phase",
-        desc: "Deep studies into Human Anatomy, Biochemistry, and Physiology during MBBS semesters 1 and 2.",
-        official: { label: "National Medical Commission", url: "https://www.nmc.org.in" },
-        resources: [
-          { type: "video", label: "MBBS Anatomy Lecture Series", url: "https://youtube.com" }
+        "id": "tech_software_bca_mca-3",
+        "name": "BCA (3 years)",
+        "desc": "Bachelor of Computer Applications. Learn: C, Java, Python, DBMS, Networking, Web Dev. CGPA matters for MCA/placements.",
+        "official": {
+          "label": "BCA Entrance (various)",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL MCA Preparation",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "full stack course",
+            "label": "The Odin Project",
+            "url": "https://www.theodinproject.com/"
+          },
+          {
+            "type": "reference",
+            "label": "W3Schools",
+            "url": "https://www.w3schools.com/"
+          }
         ],
-        checklist: ["Mastered dissection procedures", "Cleared college first professional exams"],
-        parent: "med-2",
-        coords: { x: 30, y: 56 }
+        "checklist": [
+          "Understand DBMS/SQL",
+          "Practice Cloud basics",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_bca_mca-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [
+          "Zoho",
+          "Freshworks",
+          "Juspay",
+          "Swiggy",
+          "Ola"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "BCA Entrance (various)"
+        ]
       },
       {
-        id: "med-3b",
-        name: "MBBS Clinical Pathology",
-        desc: "Semesters 3 to 9. Studying Pharmacology, pathology, forensic medicine, and diagnostic parameters.",
-        official: { label: "NMC UG Medical Guidelines", url: "https://www.nmc.org.in" },
-        resources: [
-          { type: "course", label: "Clinical Pathology Open Modules", url: "https://youtube.com" }
+        "id": "tech_software_bca_mca-4",
+        "name": "Skill Building (parallel)",
+        "desc": "During BCA: build projects, contribute to GitHub, get Internshala internships, complete 1–2 certifications.",
+        "official": {
+          "label": "BCA Entrance (various)",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL MCA Preparation",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "full stack course",
+            "label": "The Odin Project",
+            "url": "https://www.theodinproject.com/"
+          },
+          {
+            "type": "reference",
+            "label": "W3Schools",
+            "url": "https://www.w3schools.com/"
+          }
         ],
-        checklist: ["Completed pediatric rotation", "Completed ward observation rotations"],
-        parent: "med-2",
-        coords: { x: 70, y: 56 }
+        "checklist": [
+          "Understand Problem Solving",
+          "Practice DSA",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_bca_mca-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [
+          "Zoho",
+          "Freshworks",
+          "Juspay",
+          "Swiggy",
+          "Ola"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "BCA Entrance (various)"
+        ]
       },
       {
-        id: "med-4",
-        name: "Compulsory Rotatory Internship",
-        desc: "Complete 1 full year of practical hands-on rotatory clinical placement across active hospital units.",
-        official: { label: "State Medical Council Registration", url: "https://www.nmc.org.in" },
-        resources: [
-          { type: "pdf", label: "Intern Logbook Standards Guidelines", url: "https://www.nmc.org.in" }
+        "id": "tech_software_bca_mca-5",
+        "name": "MCA (2 years) — Optional but Recommended",
+        "desc": "Master of Computer Applications. NIMCET exam for top NITs. Alternatively: direct job after BCA at service companies.",
+        "official": {
+          "label": "BCA Entrance (various)",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL MCA Preparation",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "full stack course",
+            "label": "The Odin Project",
+            "url": "https://www.theodinproject.com/"
+          },
+          {
+            "type": "reference",
+            "label": "W3Schools",
+            "url": "https://www.w3schools.com/"
+          }
         ],
-        checklist: ["Completed Emergency rotation", "Obtained provisional doctor practitioner license registration number"],
-        parent: "med-3a",
-        coords: { x: 50, y: 86 }
+        "checklist": [
+          "Understand Programming (Python/Java)",
+          "Practice System Design",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_bca_mca-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": "₹3–8 LPA",
+        "companies": [
+          "Zoho",
+          "Freshworks",
+          "Juspay",
+          "Swiggy",
+          "Ola"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "BCA Entrance (various)"
+        ]
+      },
+      {
+        "id": "tech_software_bca_mca-6",
+        "name": "Entry Role",
+        "desc": "Junior Developer / Software Trainee. ₹3–8 LPA at service companies, ₹8–18 LPA at product companies with strong skills.",
+        "official": {
+          "label": "BCA Entrance (various)",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL MCA Preparation",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "full stack course",
+            "label": "The Odin Project",
+            "url": "https://www.theodinproject.com/"
+          },
+          {
+            "type": "reference",
+            "label": "W3Schools",
+            "url": "https://www.w3schools.com/"
+          }
+        ],
+        "checklist": [
+          "Understand Web Development (HTML/CSS/JS)",
+          "Practice React / Angular",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_bca_mca-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": "₹3–8 LPA",
+        "companies": [
+          "Zoho",
+          "Freshworks",
+          "Juspay",
+          "Swiggy",
+          "Ola"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "BCA Entrance (various)"
+        ]
+      },
+      {
+        "id": "tech_software_bca_mca-7",
+        "name": "Mid Level (3–5 yrs)",
+        "desc": "Software Developer / Module Lead. ₹12–30 LPA.",
+        "official": {
+          "label": "BCA Entrance (various)",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL MCA Preparation",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "full stack course",
+            "label": "The Odin Project",
+            "url": "https://www.theodinproject.com/"
+          },
+          {
+            "type": "reference",
+            "label": "W3Schools",
+            "url": "https://www.w3schools.com/"
+          }
+        ],
+        "checklist": [
+          "Understand DBMS/SQL",
+          "Practice Node.js / Django",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_bca_mca-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": "₹12–30 LPA",
+        "companies": [
+          "Zoho",
+          "Freshworks",
+          "Juspay",
+          "Swiggy",
+          "Ola"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "BCA Entrance (various)"
+        ]
+      },
+      {
+        "id": "tech_software_bca_mca-8",
+        "name": "Senior (5+ yrs)",
+        "desc": "Senior Developer / Tech Lead. ₹25–60 LPA.",
+        "official": {
+          "label": "BCA Entrance (various)",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL MCA Preparation",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "full stack course",
+            "label": "The Odin Project",
+            "url": "https://www.theodinproject.com/"
+          },
+          {
+            "type": "reference",
+            "label": "W3Schools",
+            "url": "https://www.w3schools.com/"
+          }
+        ],
+        "checklist": [
+          "Understand Problem Solving",
+          "Practice Cloud basics",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_software_bca_mca-6",
+        "coords": {
+          "x": 50,
+          "y": 112
+        },
+        "salary": "₹25–60 LPA",
+        "companies": [
+          "Zoho",
+          "Freshworks",
+          "Juspay",
+          "Swiggy",
+          "Ola"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "BCA Entrance (various)"
+        ]
       }
     ]
   },
-
-  // 3. GOVERNMENT: UPSC CIVIL SERVICES (IAS)
   {
-    id: "ias-officer",
-    name: "UPSC Civil Services Officer (IAS)",
-    category: "government",
-    tagline: "Pathway to clearing the UPSC CSE Prelims, Mains, and Interview cycle.",
-    steps: [
+    "id": "tech_data_science",
+    "name": "Data Scientist / ML Engineer",
+    "category": "tech",
+    "tagline": "One of India's fastest growing fields. Combines statistics, programming and business to extract insights from data.",
+    "steps": [
       {
-        id: "civ-1",
-        name: "UGC Graduate Degree",
-        desc: "Complete a standard bachelor degree in any stream from a UGC recognized Indian university.",
-        official: { label: "UGC Approved Universities List", url: "https://www.ugc.gov.in" },
-        resources: [
-          { type: "video", label: "UPSC CSE Preparation Strategy", url: "https://youtube.com" }
+        "id": "tech_data_science-1",
+        "name": "Education Foundation",
+        "desc": "B.Tech/B.Sc in CS, Maths, Statistics, or Physics. OR BCA/MCA. Strong Maths (Stats, Linear Algebra, Calculus) is non-negotiable.",
+        "official": {
+          "label": "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs",
+          "url": "https://www.kaggle.com/learn"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "Kaggle Learn",
+            "url": "https://www.kaggle.com/learn"
+          },
+          {
+            "type": "course",
+            "label": "fast.ai",
+            "url": "https://www.fast.ai/"
+          },
+          {
+            "type": "video",
+            "label": "StatQuest (YouTube)",
+            "url": "https://www.youtube.com/@statquest"
+          }
         ],
-        checklist: ["Enrolled in graduation", "Read standard newspapers daily (The Hindu/Express)"],
-        parent: null,
-        coords: { x: 50, y: 12 },
-        salary: "₹56,100 - ₹2,500,000 per month (Basic Pay Matrix)",
-        companies: ["Ministry of Home Affairs", "District Administrations", "Public Sector Enterprises"],
-        colleges: ["LBSNAA Mussoorie (Post-selection Training)"],
-        entranceExams: ["UPSC Civil Services Examination"]
+        "checklist": [
+          "Understand Python",
+          "Practice Deep Learning (TensorFlow/PyTorch)",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [
+          "Google India",
+          "Microsoft",
+          "Amazon",
+          "Flipkart",
+          "Swiggy"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs"
+        ]
       },
       {
-        id: "civ-2",
-        name: "UPSC Prelims Filtering",
-        desc: "Clear GS Paper 1 and score minimum 33% passing aggregate inside the CSAT Aptitude paper.",
-        official: { label: "UPSC Official Notification Portal", url: "https://upsc.gov.in" },
-        resources: [
-          { type: "pdf", label: "UPSC General Studies Previous Year Papers", url: "https://upsc.gov.in" }
+        "id": "tech_data_science-2",
+        "name": "Core Skills",
+        "desc": "Python (NumPy, Pandas, Scikit-learn, Matplotlib), SQL, Statistics, ML fundamentals. Take Kaggle courses — all free.",
+        "official": {
+          "label": "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs",
+          "url": "https://www.kaggle.com/learn"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "Kaggle Learn",
+            "url": "https://www.kaggle.com/learn"
+          },
+          {
+            "type": "course",
+            "label": "fast.ai",
+            "url": "https://www.fast.ai/"
+          },
+          {
+            "type": "video",
+            "label": "StatQuest (YouTube)",
+            "url": "https://www.youtube.com/@statquest"
+          }
         ],
-        checklist: ["Mastered basic NCERT History (6-12)", "Cleared mock CSAT test series"],
-        parent: "civ-1",
-        coords: { x: 50, y: 35 }
+        "checklist": [
+          "Understand SQL",
+          "Practice Cloud ML (AWS SageMaker/GCP Vertex AI)",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_data_science-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [
+          "Google India",
+          "Microsoft",
+          "Amazon",
+          "Flipkart",
+          "Swiggy"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs"
+        ]
       },
       {
-        id: "civ-3a",
-        name: "GS Descriptive Mains Papers",
-        desc: "Prepare and write 9 descriptive papers covering policy, essay, ethics, and your elective option.",
-        official: { label: "UPSC Mains Descriptive Guidelines", url: "https://upsc.gov.in" },
-        resources: [
-          { type: "video", label: "Mains Answer Writing Strategy Class", url: "https://youtube.com" }
+        "id": "tech_data_science-3",
+        "name": "Build Portfolio",
+        "desc": "3–5 Kaggle competitions (get a bronze/silver medal). 2–3 end-to-end ML projects on GitHub. 1 data blog on Medium/Substack.",
+        "official": {
+          "label": "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs",
+          "url": "https://www.kaggle.com/learn"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "Kaggle Learn",
+            "url": "https://www.kaggle.com/learn"
+          },
+          {
+            "type": "course",
+            "label": "fast.ai",
+            "url": "https://www.fast.ai/"
+          },
+          {
+            "type": "video",
+            "label": "StatQuest (YouTube)",
+            "url": "https://www.youtube.com/@statquest"
+          }
         ],
-        checklist: ["Completed syllabus for 1 optional subject", "Practiced daily answer writing speeds"],
-        parent: "civ-2",
-        coords: { x: 30, y: 65 }
+        "checklist": [
+          "Understand Statistics & Probability",
+          "Practice MLflow",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_data_science-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [
+          "Google India",
+          "Microsoft",
+          "Amazon",
+          "Flipkart",
+          "Swiggy"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs"
+        ]
       },
       {
-        id: "civ-3b",
-        name: "Detailed Application Form (DAF)",
-        desc: "Fill and compile details regarding background history, extracurriculars, and cadre preferences.",
-        official: { label: "UPSC Online DAF Filing", url: "https://upsconline.nic.in" },
-        resources: [
-          { type: "pdf", label: "UPSC DAF Sample Blueprint Form", url: "https://upsc.gov.in" }
+        "id": "tech_data_science-4",
+        "name": "Specialization",
+        "desc": "Choose: NLP / Computer Vision / Time Series / Recommendation Systems / LLM Engineering.",
+        "official": {
+          "label": "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs",
+          "url": "https://www.kaggle.com/learn"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "Kaggle Learn",
+            "url": "https://www.kaggle.com/learn"
+          },
+          {
+            "type": "course",
+            "label": "fast.ai",
+            "url": "https://www.fast.ai/"
+          },
+          {
+            "type": "video",
+            "label": "StatQuest (YouTube)",
+            "url": "https://www.youtube.com/@statquest"
+          }
         ],
-        checklist: ["Verified regional certificate details", "Listed clear district/cadre priority choices"],
-        parent: "civ-2",
-        coords: { x: 70, y: 65 }
+        "checklist": [
+          "Understand Machine Learning (Scikit-learn)",
+          "Practice Docker",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_data_science-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [
+          "Google India",
+          "Microsoft",
+          "Amazon",
+          "Flipkart",
+          "Swiggy"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs"
+        ]
       },
       {
-        id: "civ-4",
-        name: "UPSC Personality Interview",
-        desc: "Face highly structured boards evaluating composure, national values, policy vision, and ethics.",
-        official: { label: "UPSC CSE Final Board Schedule", url: "https://upsc.gov.in" },
-        resources: [
-          { type: "video", label: "Live Mock Interview Board Sessions", url: "https://youtube.com" }
+        "id": "tech_data_science-5",
+        "name": "Entry Role (0–2 yrs)",
+        "desc": "Data Analyst → Junior Data Scientist. ₹5–15 LPA. Focus on real business problems.",
+        "official": {
+          "label": "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs",
+          "url": "https://www.kaggle.com/learn"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "Kaggle Learn",
+            "url": "https://www.kaggle.com/learn"
+          },
+          {
+            "type": "course",
+            "label": "fast.ai",
+            "url": "https://www.fast.ai/"
+          },
+          {
+            "type": "video",
+            "label": "StatQuest (YouTube)",
+            "url": "https://www.youtube.com/@statquest"
+          }
         ],
-        checklist: ["Thoroughly updated on current affairs", "Completed 3 panel mock tests"],
-        parent: "civ-3a",
-        coords: { x: 50, y: 90 }
+        "checklist": [
+          "Understand Data Visualization",
+          "Practice Spark for Big Data",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_data_science-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": "₹5–15 LPA",
+        "companies": [
+          "Google India",
+          "Microsoft",
+          "Amazon",
+          "Flipkart",
+          "Swiggy"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs"
+        ]
+      },
+      {
+        "id": "tech_data_science-6",
+        "name": "Mid Level (2–4 yrs)",
+        "desc": "Data Scientist / ML Engineer. Build and deploy models in production. ₹15–40 LPA.",
+        "official": {
+          "label": "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs",
+          "url": "https://www.kaggle.com/learn"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "Kaggle Learn",
+            "url": "https://www.kaggle.com/learn"
+          },
+          {
+            "type": "course",
+            "label": "fast.ai",
+            "url": "https://www.fast.ai/"
+          },
+          {
+            "type": "video",
+            "label": "StatQuest (YouTube)",
+            "url": "https://www.youtube.com/@statquest"
+          }
+        ],
+        "checklist": [
+          "Understand Pandas/NumPy",
+          "Practice Deep Learning (TensorFlow/PyTorch)",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_data_science-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": "₹5–15 LPA",
+        "companies": [
+          "Google India",
+          "Microsoft",
+          "Amazon",
+          "Flipkart",
+          "Swiggy"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs"
+        ]
+      },
+      {
+        "id": "tech_data_science-7",
+        "name": "Senior (4–7 yrs)",
+        "desc": "Senior DS / Senior MLE. Own ML systems end-to-end. ₹35–80 LPA.",
+        "official": {
+          "label": "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs",
+          "url": "https://www.kaggle.com/learn"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "Kaggle Learn",
+            "url": "https://www.kaggle.com/learn"
+          },
+          {
+            "type": "course",
+            "label": "fast.ai",
+            "url": "https://www.fast.ai/"
+          },
+          {
+            "type": "video",
+            "label": "StatQuest (YouTube)",
+            "url": "https://www.youtube.com/@statquest"
+          }
+        ],
+        "checklist": [
+          "Understand Python",
+          "Practice Cloud ML (AWS SageMaker/GCP Vertex AI)",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_data_science-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": "₹15–40 LPA",
+        "companies": [
+          "Google India",
+          "Microsoft",
+          "Amazon",
+          "Flipkart",
+          "Swiggy"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs"
+        ]
+      },
+      {
+        "id": "tech_data_science-8",
+        "name": "Lead / Principal",
+        "desc": "Staff MLE / Principal Data Scientist / Head of AI. ₹80 L – 2 Cr+.",
+        "official": {
+          "label": "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs",
+          "url": "https://www.kaggle.com/learn"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "Kaggle Learn",
+            "url": "https://www.kaggle.com/learn"
+          },
+          {
+            "type": "course",
+            "label": "fast.ai",
+            "url": "https://www.fast.ai/"
+          },
+          {
+            "type": "video",
+            "label": "StatQuest (YouTube)",
+            "url": "https://www.youtube.com/@statquest"
+          }
+        ],
+        "checklist": [
+          "Understand SQL",
+          "Practice MLflow",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_data_science-6",
+        "coords": {
+          "x": 50,
+          "y": 112
+        },
+        "salary": "₹40–80 LPA",
+        "companies": [
+          "Google India",
+          "Microsoft",
+          "Amazon",
+          "Flipkart",
+          "Swiggy"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "GATE (CS/DS) for M.Tech in Data Science at IITs/NITs"
+        ]
       }
     ]
   },
-
-  // 4. BUSINESS: STARTUP FOUNDER
   {
-    id: "startup-founder",
-    name: "Startup Founder / Entrepreneur",
-    category: "business",
-    tagline: "Pathway to define MVP, register entity (LLP/Pvt), and seek Mudra or seed funding.",
-    steps: [
+    "id": "tech_cybersecurity",
+    "name": "Cybersecurity Engineer",
+    "category": "tech",
+    "tagline": "Protecting India's digital infrastructure. Massive demand from banks, IT companies, government, and startups.",
+    "steps": [
       {
-        id: "biz-1",
-        name: "Customer Interview (MVP)",
-        desc: "Speak with at least 50 target buyers to validate if they face the problem you are solving.",
-        official: { label: "Startup India Learning Hub", url: "https://www.startupindia.gov.in" },
-        resources: [
-          { type: "video", label: "Y-Combinator Startup School Videos", url: "https://youtube.com" }
+        "id": "tech_cybersecurity-1",
+        "name": "Education",
+        "desc": "B.Tech CSE/IT or BCA. Some enter via Diploma + certifications. Networking basics (TCP/IP, OSI) are must-know.",
+        "official": {
+          "label": "CEH (EC-Council)",
+          "url": "https://tryhackme.com/"
+        },
+        "resources": [
+          {
+            "type": "hands-on labs",
+            "label": "TryHackMe",
+            "url": "https://tryhackme.com/"
+          },
+          {
+            "type": "hands-on labs",
+            "label": "HackTheBox (Free Tier)",
+            "url": "https://www.hackthebox.com/"
+          },
+          {
+            "type": "reference",
+            "label": "OWASP",
+            "url": "https://owasp.org/"
+          }
         ],
-        checklist: ["Documented 50 customer feedback chats", "Defined core product pricing metrics"],
-        parent: null,
-        coords: { x: 50, y: 15 },
-        salary: "Self-structured (Revenue Dependent)",
-        companies: ["NITI Aayog Incubators", "Y Combinator", "Indian Angel Network"]
+        "checklist": [
+          "Understand Linux",
+          "Practice Cloud Security",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [
+          "Quick Heal",
+          "Seqrite",
+          "Lucideus (now Safe Security)",
+          "Innefu Labs",
+          "Sequretek"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "CEH (EC-Council)"
+        ]
       },
       {
-        id: "biz-2",
-        name: "Company Incorporation (MCA)",
-        desc: "Register a legal Indian business entity — Private Limited or Limited Liability Partnership (LLP) on MCA.",
-        official: { label: "Ministry of Corporate Affairs Portal", url: "https://www.mca.gov.in" },
-        resources: [
-          { type: "pdf", label: "Step-by-step SPICe+ Registration PDF", url: "https://www.mca.gov.in" }
+        "id": "tech_cybersecurity-2",
+        "name": "Fundamentals",
+        "desc": "Linux, Networking, Scripting (Python/Bash), Operating Systems. TryHackMe + HackTheBox for hands-on practice. Both free tiers available.",
+        "official": {
+          "label": "CEH (EC-Council)",
+          "url": "https://tryhackme.com/"
+        },
+        "resources": [
+          {
+            "type": "hands-on labs",
+            "label": "TryHackMe",
+            "url": "https://tryhackme.com/"
+          },
+          {
+            "type": "hands-on labs",
+            "label": "HackTheBox (Free Tier)",
+            "url": "https://www.hackthebox.com/"
+          },
+          {
+            "type": "reference",
+            "label": "OWASP",
+            "url": "https://owasp.org/"
+          }
         ],
-        checklist: ["Obtained DSC (Digital Signature Certificate)", "Approved unique business name", "Obtained PAN & TAN for company"],
-        parent: "biz-1",
-        coords: { x: 50, y: 40 }
+        "checklist": [
+          "Understand Networking (TCP/IP)",
+          "Practice DevSecOps",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_cybersecurity-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [
+          "Quick Heal",
+          "Seqrite",
+          "Lucideus (now Safe Security)",
+          "Innefu Labs",
+          "Sequretek"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "CEH (EC-Council)"
+        ]
       },
       {
-        id: "biz-3a",
-        name: "Government Mudra Loan Support",
-        desc: "Seek debt capital via the Micro Units Development Refinance Agency (MUDRA) scheme (Shishu/Kishor/Tarun segments).",
-        official: { label: "Official Udyam Registration & Mudra", url: "https://www.mudra.org.in" },
-        resources: [
-          { type: "video", label: "Udyam Registration Tutorial Hub", url: "https://youtube.com" }
+        "id": "tech_cybersecurity-3",
+        "name": "Specialize",
+        "desc": "Choose: Ethical Hacking / SOC Analyst / AppSec / Cloud Security / Malware Analysis / VAPT.",
+        "official": {
+          "label": "CEH (EC-Council)",
+          "url": "https://tryhackme.com/"
+        },
+        "resources": [
+          {
+            "type": "hands-on labs",
+            "label": "TryHackMe",
+            "url": "https://tryhackme.com/"
+          },
+          {
+            "type": "hands-on labs",
+            "label": "HackTheBox (Free Tier)",
+            "url": "https://www.hackthebox.com/"
+          },
+          {
+            "type": "reference",
+            "label": "OWASP",
+            "url": "https://owasp.org/"
+          }
         ],
-        checklist: ["Completed Udyam MSME Registration portal", "Prepared detailed project report"],
-        parent: "biz-2",
-        coords: { x: 30, y: 68 }
+        "checklist": [
+          "Understand Python/Bash Scripting",
+          "Practice Threat Intelligence",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_cybersecurity-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [
+          "Quick Heal",
+          "Seqrite",
+          "Lucideus (now Safe Security)",
+          "Innefu Labs",
+          "Sequretek"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "CEH (EC-Council)"
+        ]
       },
       {
-        id: "biz-3b",
-        name: "Angel Funding & Term Sheet",
-        desc: "Create investor deck slides, present to local Indian angel networks, and agree on standard SHA terms.",
-        official: { label: "Startup India Investor Network", url: "https://www.startupindia.gov.in" },
-        resources: [
-          { type: "pdf", label: "Standard Term Sheet template PDF", url: "https://youtube.com" }
+        "id": "tech_cybersecurity-4",
+        "name": "Certifications",
+        "desc": "CEH (basic), CompTIA Security+ (globally recognized), OSCP (gold standard for penetration testing).",
+        "official": {
+          "label": "CEH (EC-Council)",
+          "url": "https://tryhackme.com/"
+        },
+        "resources": [
+          {
+            "type": "hands-on labs",
+            "label": "TryHackMe",
+            "url": "https://tryhackme.com/"
+          },
+          {
+            "type": "hands-on labs",
+            "label": "HackTheBox (Free Tier)",
+            "url": "https://www.hackthebox.com/"
+          },
+          {
+            "type": "reference",
+            "label": "OWASP",
+            "url": "https://owasp.org/"
+          }
         ],
-        checklist: ["Formulated fully detailed cash cap table", "Calculated basic customer acquisition cost (CAC)"],
-        parent: "biz-2",
-        coords: { x: 70, y: 68 }
+        "checklist": [
+          "Understand Web Security (OWASP Top 10)",
+          "Practice Forensics",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_cybersecurity-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [
+          "Quick Heal",
+          "Seqrite",
+          "Lucideus (now Safe Security)",
+          "Innefu Labs",
+          "Sequretek"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "CEH (EC-Council)"
+        ]
       },
       {
-        id: "biz-4",
-        name: "Scale & GST Compliance",
-        desc: "File regular monthly/quarterly GST returns, maintain accounting files, and process staff salaries.",
-        official: { label: "GST Central Filing Portal", url: "https://www.gst.gov.in" },
-        resources: [
-          { type: "video", label: "GST Monthly Return Tutorial Series", url: "https://youtube.com" }
+        "id": "tech_cybersecurity-5",
+        "name": "Entry Role (0–2 yrs)",
+        "desc": "SOC Analyst / Junior Penetration Tester / Security Analyst. ₹4–12 LPA.",
+        "official": {
+          "label": "CEH (EC-Council)",
+          "url": "https://tryhackme.com/"
+        },
+        "resources": [
+          {
+            "type": "hands-on labs",
+            "label": "TryHackMe",
+            "url": "https://tryhackme.com/"
+          },
+          {
+            "type": "hands-on labs",
+            "label": "HackTheBox (Free Tier)",
+            "url": "https://www.hackthebox.com/"
+          },
+          {
+            "type": "reference",
+            "label": "OWASP",
+            "url": "https://owasp.org/"
+          }
         ],
-        checklist: ["Created active corporate bank account", "Set up internal payroll software system"],
-        parent: "biz-3a",
-        coords: { x: 50, y: 90 }
+        "checklist": [
+          "Understand Vulnerability Assessment",
+          "Practice Reverse Engineering",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_cybersecurity-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": "₹4–12 LPA",
+        "companies": [
+          "Quick Heal",
+          "Seqrite",
+          "Lucideus (now Safe Security)",
+          "Innefu Labs",
+          "Sequretek"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "CEH (EC-Council)"
+        ]
+      },
+      {
+        "id": "tech_cybersecurity-6",
+        "name": "Mid Level (2–5 yrs)",
+        "desc": "Penetration Tester / Security Engineer / VAPT Specialist. ₹12–30 LPA.",
+        "official": {
+          "label": "CEH (EC-Council)",
+          "url": "https://tryhackme.com/"
+        },
+        "resources": [
+          {
+            "type": "hands-on labs",
+            "label": "TryHackMe",
+            "url": "https://tryhackme.com/"
+          },
+          {
+            "type": "hands-on labs",
+            "label": "HackTheBox (Free Tier)",
+            "url": "https://www.hackthebox.com/"
+          },
+          {
+            "type": "reference",
+            "label": "OWASP",
+            "url": "https://owasp.org/"
+          }
+        ],
+        "checklist": [
+          "Understand Linux",
+          "Practice Cloud Security",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_cybersecurity-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": "₹4–12 LPA",
+        "companies": [
+          "Quick Heal",
+          "Seqrite",
+          "Lucideus (now Safe Security)",
+          "Innefu Labs",
+          "Sequretek"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "CEH (EC-Council)"
+        ]
+      },
+      {
+        "id": "tech_cybersecurity-7",
+        "name": "Senior (5–8 yrs)",
+        "desc": "Senior Security Engineer / Red Team Lead / AppSec Lead. ₹30–70 LPA.",
+        "official": {
+          "label": "CEH (EC-Council)",
+          "url": "https://tryhackme.com/"
+        },
+        "resources": [
+          {
+            "type": "hands-on labs",
+            "label": "TryHackMe",
+            "url": "https://tryhackme.com/"
+          },
+          {
+            "type": "hands-on labs",
+            "label": "HackTheBox (Free Tier)",
+            "url": "https://www.hackthebox.com/"
+          },
+          {
+            "type": "reference",
+            "label": "OWASP",
+            "url": "https://owasp.org/"
+          }
+        ],
+        "checklist": [
+          "Understand Networking (TCP/IP)",
+          "Practice DevSecOps",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_cybersecurity-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": "₹12–30 LPA",
+        "companies": [
+          "Quick Heal",
+          "Seqrite",
+          "Lucideus (now Safe Security)",
+          "Innefu Labs",
+          "Sequretek"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "CEH (EC-Council)"
+        ]
+      },
+      {
+        "id": "tech_cybersecurity-8",
+        "name": "Leadership",
+        "desc": "CISO / Head of Cybersecurity / Security Director. ₹60 L – 2 Cr+.",
+        "official": {
+          "label": "CEH (EC-Council)",
+          "url": "https://tryhackme.com/"
+        },
+        "resources": [
+          {
+            "type": "hands-on labs",
+            "label": "TryHackMe",
+            "url": "https://tryhackme.com/"
+          },
+          {
+            "type": "hands-on labs",
+            "label": "HackTheBox (Free Tier)",
+            "url": "https://www.hackthebox.com/"
+          },
+          {
+            "type": "reference",
+            "label": "OWASP",
+            "url": "https://owasp.org/"
+          }
+        ],
+        "checklist": [
+          "Understand Python/Bash Scripting",
+          "Practice Threat Intelligence",
+          "Complete stage milestones"
+        ],
+        "parent": "tech_cybersecurity-6",
+        "coords": {
+          "x": 50,
+          "y": 112
+        },
+        "salary": "₹30–70 LPA",
+        "companies": [
+          "Quick Heal",
+          "Seqrite",
+          "Lucideus (now Safe Security)",
+          "Innefu Labs",
+          "Sequretek"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "CEH (EC-Council)"
+        ]
       }
     ]
   },
-
-  // 5. FINANCE: CHARTERED ACCOUNTANT (CA)
   {
-    id: "chartered-accountant",
-    name: "Chartered Accountant (CA)",
-    category: "finance",
-    tagline: "Pathway to clear ICAI Foundation, Inter, articleship placement, and ICAI Finals.",
-    steps: [
+    "id": "medical_mbbs",
+    "name": "Doctor (MBBS + Specialization)",
+    "category": "medical",
+    "tagline": "India's most respected professional path. NEET is the gateway to all government and private medical colleges.",
+    "steps": [
       {
-        id: "fin-1",
-        name: "ICAI Foundation Entry",
-        desc: "Register and clear the 4 primary objective papers including accounting principles and business laws.",
-        official: { label: "ICAI Foundation Registration Online", url: "https://www.icai.org" },
-        resources: [
-          { type: "pdf", label: "ICAI Foundation Official Board Materials", url: "https://icai.org" }
+        "id": "medical_mbbs-1",
+        "name": "Class 6–10",
+        "desc": "Build strong Biology, Chemistry, Physics base. Score 90%+ in Science.",
+        "official": {
+          "label": "NEET UG",
+          "url": "https://www.pw.live/"
+        },
+        "resources": [
+          {
+            "type": "exam prep",
+            "label": "Physics Wallah NEET",
+            "url": "https://www.pw.live/"
+          },
+          {
+            "type": "exam prep",
+            "label": "Unacademy NEET (Free Content)",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "textbooks",
+            "label": "NCERT Biology/Chemistry/Physics",
+            "url": "https://ncert.nic.in/"
+          }
         ],
-        checklist: ["Registered on ICAI portal post Class 12", "Mastered double-entry balance sheets"],
-        parent: null,
-        coords: { x: 50, y: 15 },
-        salary: "₹7 - ₹20 LPA (Fresh Chartered Accountant)",
-        companies: ["Deloitte India", "EY", "KPMG", "PwC", "Aditya Birla Group"]
+        "checklist": [
+          "Understand Biology",
+          "Practice Research (publications)",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "NEET UG"
+        ]
       },
       {
-        id: "fin-2",
-        name: "ICAI Intermediate Exam",
-        desc: "Register, study, and clear Group 1 and Group 2 papers of ICAI Intermediate covering corporate audits and direct tax codes.",
-        official: { label: "ICAI Intermediate Syllabus Directory", url: "https://www.icai.org" },
-        resources: [
-          { type: "video", label: "ICAI Inter Tax Prep Lecture Videos", url: "https://youtube.com" }
+        "id": "medical_mbbs-2",
+        "name": "Class 11–12 (PCB)",
+        "desc": "Physics, Chemistry, Biology. NEET coaching mandatory. Free resources: Unacademy, PW. Paid: Aakash, Allen.",
+        "official": {
+          "label": "NEET UG",
+          "url": "https://www.pw.live/"
+        },
+        "resources": [
+          {
+            "type": "exam prep",
+            "label": "Physics Wallah NEET",
+            "url": "https://www.pw.live/"
+          },
+          {
+            "type": "exam prep",
+            "label": "Unacademy NEET (Free Content)",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "textbooks",
+            "label": "NCERT Biology/Chemistry/Physics",
+            "url": "https://ncert.nic.in/"
+          }
         ],
-        checklist: ["Completed Direct Tax study modules", "Cleared both Inter groups"],
-        parent: "fin-1",
-        coords: { x: 50, y: 40 }
+        "checklist": [
+          "Understand Chemistry",
+          "Practice Healthcare Management",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_mbbs-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "NEET UG"
+        ]
       },
       {
-        id: "fin-3",
-        name: "Practical Articleship Placement",
-        desc: "Undergo a mandatory 2-year practical internship working under a certified auditing practice firm.",
-        official: { label: "ICAI Articleship Vacancy Portal", url: "https://icai.org" },
-        resources: [
-          { type: "pdf", label: "Articleship Logbook Code of Conduct Guidelines", url: "https://icai.org" }
+        "id": "medical_mbbs-3",
+        "name": "NEET UG",
+        "desc": "National Eligibility cum Entrance Test. 720 marks. Government college: 600+ required for good colleges. Held annually by NTA.",
+        "official": {
+          "label": "NEET UG",
+          "url": "https://www.pw.live/"
+        },
+        "resources": [
+          {
+            "type": "exam prep",
+            "label": "Physics Wallah NEET",
+            "url": "https://www.pw.live/"
+          },
+          {
+            "type": "exam prep",
+            "label": "Unacademy NEET (Free Content)",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "textbooks",
+            "label": "NCERT Biology/Chemistry/Physics",
+            "url": "https://ncert.nic.in/"
+          }
         ],
-        checklist: ["Obtained active articleship NOC", "Verified monthly stipend registrations"],
-        parent: "fin-2",
-        coords: { x: 50, y: 65 }
+        "checklist": [
+          "Understand Clinical Skills",
+          "Practice Telemedicine",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_mbbs-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "NEET UG"
+        ]
       },
       {
-        id: "fin-4",
-        name: "ICAI Final Examination",
-        desc: "Clear advanced strategic finance, financial reporting, and indirect tax tribunals to receive your membership ID.",
-        official: { label: "ICAI Final Registration & Membership", url: "https://www.icai.org" },
-        resources: [
-          { type: "video", label: "Final Advanced Audit Revision", url: "https://youtube.com" }
+        "id": "medical_mbbs-4",
+        "name": "MBBS (5.5 years)",
+        "desc": "4.5 years academics + 1 year rotating internship. Government colleges: ₹10K–1.5L/yr fees. Private: ₹10–25L/yr.",
+        "official": {
+          "label": "NEET UG",
+          "url": "https://www.pw.live/"
+        },
+        "resources": [
+          {
+            "type": "exam prep",
+            "label": "Physics Wallah NEET",
+            "url": "https://www.pw.live/"
+          },
+          {
+            "type": "exam prep",
+            "label": "Unacademy NEET (Free Content)",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "textbooks",
+            "label": "NCERT Biology/Chemistry/Physics",
+            "url": "https://ncert.nic.in/"
+          }
         ],
-        checklist: ["Completed advanced IT training course", "Cleared both final ICAI papers"],
-        parent: "fin-3",
-        coords: { x: 50, y: 90 }
+        "checklist": [
+          "Understand Patient Communication",
+          "Practice Medical AI tools",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_mbbs-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "NEET UG"
+        ]
+      },
+      {
+        "id": "medical_mbbs-5",
+        "name": "MBBS Internship (1 yr)",
+        "desc": "Mandatory clinical rotation across all departments. Stipend: ₹8K–25K/month.",
+        "official": {
+          "label": "NEET UG",
+          "url": "https://www.pw.live/"
+        },
+        "resources": [
+          {
+            "type": "exam prep",
+            "label": "Physics Wallah NEET",
+            "url": "https://www.pw.live/"
+          },
+          {
+            "type": "exam prep",
+            "label": "Unacademy NEET (Free Content)",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "textbooks",
+            "label": "NCERT Biology/Chemistry/Physics",
+            "url": "https://ncert.nic.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Diagnostic Reasoning",
+          "Practice Leadership",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_mbbs-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "NEET UG"
+        ]
+      },
+      {
+        "id": "medical_mbbs-6",
+        "name": "NEXT / NEET PG (choose specialization)",
+        "desc": "Previously MCI exam, now NEXT. Gives access to MD/MS programs. Rank determines branch and college.",
+        "official": {
+          "label": "NEET UG",
+          "url": "https://www.pw.live/"
+        },
+        "resources": [
+          {
+            "type": "exam prep",
+            "label": "Physics Wallah NEET",
+            "url": "https://www.pw.live/"
+          },
+          {
+            "type": "exam prep",
+            "label": "Unacademy NEET (Free Content)",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "textbooks",
+            "label": "NCERT Biology/Chemistry/Physics",
+            "url": "https://ncert.nic.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Biology",
+          "Practice Research (publications)",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_mbbs-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "NEET UG"
+        ]
+      },
+      {
+        "id": "medical_mbbs-7",
+        "name": "MD / MS (3 years)",
+        "desc": "Specialization. MD: medicine branches (Dermatology, Psychiatry, Radiology, etc). MS: surgery branches (Ortho, Ophthalmology, ENT, General Surgery).",
+        "official": {
+          "label": "NEET UG",
+          "url": "https://www.pw.live/"
+        },
+        "resources": [
+          {
+            "type": "exam prep",
+            "label": "Physics Wallah NEET",
+            "url": "https://www.pw.live/"
+          },
+          {
+            "type": "exam prep",
+            "label": "Unacademy NEET (Free Content)",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "textbooks",
+            "label": "NCERT Biology/Chemistry/Physics",
+            "url": "https://ncert.nic.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Chemistry",
+          "Practice Healthcare Management",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_mbbs-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "NEET UG"
+        ]
+      },
+      {
+        "id": "medical_mbbs-8",
+        "name": "Super Specialization — DM / MCh",
+        "desc": "2–3 years. DM: Cardiology, Nephrology, Neurology. MCh: Cardiac Surgery, Neurosurgery, Plastic Surgery.",
+        "official": {
+          "label": "NEET UG",
+          "url": "https://www.pw.live/"
+        },
+        "resources": [
+          {
+            "type": "exam prep",
+            "label": "Physics Wallah NEET",
+            "url": "https://www.pw.live/"
+          },
+          {
+            "type": "exam prep",
+            "label": "Unacademy NEET (Free Content)",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "textbooks",
+            "label": "NCERT Biology/Chemistry/Physics",
+            "url": "https://ncert.nic.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Clinical Skills",
+          "Practice Telemedicine",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_mbbs-6",
+        "coords": {
+          "x": 50,
+          "y": 112
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "NEET UG"
+        ]
+      },
+      {
+        "id": "medical_mbbs-9",
+        "name": "Practice",
+        "desc": "Govt hospital (service + salary), Private hospital (higher pay), Own clinic/nursing home (entrepreneurial).",
+        "official": {
+          "label": "NEET UG",
+          "url": "https://www.pw.live/"
+        },
+        "resources": [
+          {
+            "type": "exam prep",
+            "label": "Physics Wallah NEET",
+            "url": "https://www.pw.live/"
+          },
+          {
+            "type": "exam prep",
+            "label": "Unacademy NEET (Free Content)",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "textbooks",
+            "label": "NCERT Biology/Chemistry/Physics",
+            "url": "https://ncert.nic.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Patient Communication",
+          "Practice Medical AI tools",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_mbbs-8",
+        "coords": {
+          "x": 50,
+          "y": 134
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "NEET UG"
+        ]
+      },
+      {
+        "id": "medical_mbbs-10",
+        "name": "Career Peak",
+        "desc": "Senior Consultant / HOD / Professor + HOD / Medical Director / Hospital Chain Owner.",
+        "official": {
+          "label": "NEET UG",
+          "url": "https://www.pw.live/"
+        },
+        "resources": [
+          {
+            "type": "exam prep",
+            "label": "Physics Wallah NEET",
+            "url": "https://www.pw.live/"
+          },
+          {
+            "type": "exam prep",
+            "label": "Unacademy NEET (Free Content)",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "textbooks",
+            "label": "NCERT Biology/Chemistry/Physics",
+            "url": "https://ncert.nic.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Diagnostic Reasoning",
+          "Practice Leadership",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_mbbs-9",
+        "coords": {
+          "x": 50,
+          "y": 156
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "NEET UG"
+        ]
       }
     ]
   },
-
-  // 6. EDUCATION: COMPUTER SCIENCE (BCA/BTECH)
   {
-    id: "bca-btech",
-    name: "Computer Science (BCA/BTech)",
-    category: "education",
-    tagline: "Pathway to building core data structure principles, web systems, and placing as a developer.",
-    steps: [
+    "id": "medical_pharmacy",
+    "name": "Pharmacist / Pharmaceutical Career",
+    "category": "medical",
+    "tagline": "India is the world's pharmacy. Huge opportunities in pharma companies, R&D, regulatory affairs, and hospital pharmacy.",
+    "steps": [
       {
-        id: "edu-1",
-        name: "Structured Programming Base",
-        desc: "Choose a primary programming language (C++ or Java) to understand syntax and computer memory.",
-        official: { label: "AICTE Recommended CSE Syllabus", url: "https://aicte-india.org" },
-        resources: [
-          { type: "video", label: "Free C++ Complete Placement Course", url: "https://youtube.com" }
+        "id": "medical_pharmacy-1",
+        "name": "Class 11–12 (PCB or PCM)",
+        "desc": "Physics, Chemistry mandatory. Biology preferred. Score 60%+.",
+        "official": {
+          "label": "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Pharmaceutical Sciences",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "video",
+            "label": "Pharmapedia India (YouTube)",
+            "url": "https://www.youtube.com/@pharmapediaindia"
+          },
+          {
+            "type": "regulatory",
+            "label": "PCI (Pharmacy Council of India)",
+            "url": "https://www.pci.nic.in/"
+          }
         ],
-        checklist: ["Understand loops and array definitions", "Mastered compiling code in local terminal"],
-        parent: null,
-        coords: { x: 50, y: 15 },
-        salary: "₹4.5 - ₹15 LPA (Junior Engineer)",
-        companies: ["TCS", "Wipro", "HCLTech", "Cognizant India", "Razorpay"],
-        entranceExams: ["JEE Main", "WBJEE", "MHT CET"]
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm"
+        ]
       },
       {
-        id: "edu-2",
-        name: "Data Structures & Algorithms",
-        desc: "Master complexity metrics, binary search trees, hashing algorithms, recursion, and sorting models.",
-        official: { label: "NPTEL Data Structures and Algorithms", url: "https://nptel.ac.in" },
-        resources: [
-          { type: "pdf", label: "Algorithmic Complexity Cheat Sheet", url: "https://youtube.com" }
+        "id": "medical_pharmacy-2",
+        "name": "D.Pharm (2 years) OR B.Pharm (4 years)",
+        "desc": "D.Pharm: direct pharmacy practice. B.Pharm: opens R&D, industry, and further education doors.",
+        "official": {
+          "label": "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Pharmaceutical Sciences",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "video",
+            "label": "Pharmapedia India (YouTube)",
+            "url": "https://www.youtube.com/@pharmapediaindia"
+          },
+          {
+            "type": "regulatory",
+            "label": "PCI (Pharmacy Council of India)",
+            "url": "https://www.pci.nic.in/"
+          }
         ],
-        checklist: ["Can write bubble and quicksort algorithms", "Solved 50 practice logic patterns"],
-        parent: "edu-1",
-        coords: { x: 50, y: 40 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_pharmacy-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm"
+        ]
       },
       {
-        id: "edu-3a",
-        name: "Frontend Web Stack (HTML/JS)",
-        desc: "Develop completely fluid responsive website systems utilizing modern JavaScript engines.",
-        official: { label: "MDN Web Docs JS Reference", url: "https://developer.mozilla.org" },
-        resources: [
-          { type: "video", label: "Complete Web Design Series on YouTube", url: "https://youtube.com" }
+        "id": "medical_pharmacy-3",
+        "name": "Registration",
+        "desc": "Register with State Pharmacy Council to practice. Required to open pharmacy or work in hospital.",
+        "official": {
+          "label": "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Pharmaceutical Sciences",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "video",
+            "label": "Pharmapedia India (YouTube)",
+            "url": "https://www.youtube.com/@pharmapediaindia"
+          },
+          {
+            "type": "regulatory",
+            "label": "PCI (Pharmacy Council of India)",
+            "url": "https://www.pci.nic.in/"
+          }
         ],
-        checklist: ["Constructed dynamic API weather widget", "Understand DOM event triggers"],
-        parent: "edu-2",
-        coords: { x: 30, y: 65 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_pharmacy-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm"
+        ]
       },
       {
-        id: "edu-3b",
-        name: "Database Design (SQL)",
-        desc: "Design clean tables, structural primary/foreign keys, and master relational querying commands.",
-        official: { label: "MySQL Documentation and Guides", url: "https://dev.mysql.com" },
-        resources: [
-          { type: "pdf", label: "SQL Query Cheat Sheet PDF Guide", url: "https://youtube.com" }
+        "id": "medical_pharmacy-4",
+        "name": "Entry Roles",
+        "desc": "Retail Pharmacist / Hospital Pharmacist / Quality Control Analyst / Medical Representative. ₹2–6 LPA.",
+        "official": {
+          "label": "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Pharmaceutical Sciences",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "video",
+            "label": "Pharmapedia India (YouTube)",
+            "url": "https://www.youtube.com/@pharmapediaindia"
+          },
+          {
+            "type": "regulatory",
+            "label": "PCI (Pharmacy Council of India)",
+            "url": "https://www.pci.nic.in/"
+          }
         ],
-        checklist: ["Can perform complex INNER JOIN statements", "Understand standard index locks"],
-        parent: "edu-2",
-        coords: { x: 70, y: 65 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_pharmacy-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm"
+        ]
       },
       {
-        id: "edu-4",
-        name: "Final Year Portfolio Placement",
-        desc: "Establish a complete public GitHub workspace showcasing deployed systems to secure high placement ratings.",
-        official: { label: "GitHub Developer Portal", url: "https://github.com" },
-        resources: [
-          { type: "video", label: "Resume Strategy for CS Engineering Freshers", url: "https://youtube.com" }
+        "id": "medical_pharmacy-5",
+        "name": "M.Pharm (2 years)",
+        "desc": "Specialization: Pharmaceutics, Pharmacology, Pharmacognosy, Pharm Analysis, Drug Regulatory Affairs.",
+        "official": {
+          "label": "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Pharmaceutical Sciences",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "video",
+            "label": "Pharmapedia India (YouTube)",
+            "url": "https://www.youtube.com/@pharmapediaindia"
+          },
+          {
+            "type": "regulatory",
+            "label": "PCI (Pharmacy Council of India)",
+            "url": "https://www.pci.nic.in/"
+          }
         ],
-        checklist: ["Completed 3 end-to-end projects", "Maintained 50+ active GitHub commit logs"],
-        parent: "edu-3a",
-        coords: { x: 50, y: 90 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_pharmacy-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": "₹2–6 LPA",
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm"
+        ]
+      },
+      {
+        "id": "medical_pharmacy-6",
+        "name": "Industry Roles (Post M.Pharm)",
+        "desc": "R&D Scientist / Regulatory Affairs Officer / Quality Assurance Manager / Clinical Research Associate. ₹6–20 LPA.",
+        "official": {
+          "label": "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Pharmaceutical Sciences",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "video",
+            "label": "Pharmapedia India (YouTube)",
+            "url": "https://www.youtube.com/@pharmapediaindia"
+          },
+          {
+            "type": "regulatory",
+            "label": "PCI (Pharmacy Council of India)",
+            "url": "https://www.pci.nic.in/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_pharmacy-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": "₹2–6 LPA",
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm"
+        ]
+      },
+      {
+        "id": "medical_pharmacy-7",
+        "name": "Senior Industry Roles",
+        "desc": "Senior R&D / RA Manager / Plant Head / VP Regulatory. ₹20–60 LPA.",
+        "official": {
+          "label": "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Pharmaceutical Sciences",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "video",
+            "label": "Pharmapedia India (YouTube)",
+            "url": "https://www.youtube.com/@pharmapediaindia"
+          },
+          {
+            "type": "regulatory",
+            "label": "PCI (Pharmacy Council of India)",
+            "url": "https://www.pci.nic.in/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_pharmacy-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": "₹8–20 LPA",
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm"
+        ]
+      },
+      {
+        "id": "medical_pharmacy-8",
+        "name": "Own Pharmacy / Franchise",
+        "desc": "Open retail pharmacy (₹5–15L investment) or franchise (Apollo Pharmacy, MedPlus, 1mg). ₹30K–3L/month profit.",
+        "official": {
+          "label": "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Pharmaceutical Sciences",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "video",
+            "label": "Pharmapedia India (YouTube)",
+            "url": "https://www.youtube.com/@pharmapediaindia"
+          },
+          {
+            "type": "regulatory",
+            "label": "PCI (Pharmacy Council of India)",
+            "url": "https://www.pci.nic.in/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "medical_pharmacy-6",
+        "coords": {
+          "x": 50,
+          "y": 112
+        },
+        "salary": "₹20–60 LPA",
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "GPAT (for M.Pharm admission at NITs/Universities) | State CET for B.Pharm"
+        ]
       }
     ]
   },
-
-  // 7. TECHNOLOGY: SOFTWARE ENGINEER
   {
-    id: "software-engineer",
-    name: "Full Stack Software Developer",
-    category: "tech",
-    tagline: "Complete engineering roadmap from web fundamentals to Cloud, DevOps and Scalability.",
-    steps: [
+    "id": "govt_upsc_ias",
+    "name": "IAS / IPS / IFS (UPSC Civil Services)",
+    "category": "government",
+    "tagline": "The most prestigious government career in India. Enormous power, prestige, and service to nation. Long preparation but life-changing outcome.",
+    "steps": [
       {
-        id: "se-1",
-        name: "Modern Web Fundamentals",
-        desc: "Learn modern HTML5 semantic layout, responsive CSS grids, flexbox, and basic client-side programming.",
-        official: { label: "W3C Web Standards", url: "https://www.w3.org" },
-        resources: [
-          { type: "doc", label: "MDN CSS Layout Guide", url: "https://developer.mozilla.org" }
+        "id": "govt_upsc_ias-1",
+        "name": "Graduation (Any Stream)",
+        "desc": "UPSC requires graduation in any subject. Many toppers: Engineering / Law / Humanities. Focus on reading habit, current affairs from Day 1.",
+        "official": {
+          "label": "UPSC Prelims (June)",
+          "url": "https://upsc.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "UPSC Official Site",
+            "url": "https://upsc.gov.in/"
+          },
+          {
+            "type": "study material",
+            "label": "Drishti IAS (Free)",
+            "url": "https://www.drishtiias.com/"
+          },
+          {
+            "type": "study material",
+            "label": "Vision IAS Free Resources",
+            "url": "https://www.visionias.in/"
+          }
         ],
-        checklist: ["Built a responsive personal portfolio", "Deployed basic static site using Vercel or Netlify"],
-        parent: null,
-        coords: { x: 50, y: 12 }
+        "checklist": [
+          "Understand Current Affairs",
+          "Practice Leadership",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "UPSC Prelims (June)"
+        ]
       },
       {
-        id: "se-2",
-        name: "React & Component Architecture",
-        desc: "Master declarative interfaces, state hooks, properties, context wrappers, and virtual DOM reconciliation.",
-        official: { label: "Official React Documentation", url: "https://react.dev" },
-        resources: [
-          { type: "video", label: "React JS Core Tutorials (Free)", url: "https://youtube.com" }
+        "id": "govt_upsc_ias-2",
+        "name": "Know the Exam",
+        "desc": "3 stages: Prelims (objective) → Mains (written) → Interview (Personality Test). Total: ~2 years of serious preparation for most.",
+        "official": {
+          "label": "UPSC Prelims (June)",
+          "url": "https://upsc.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "UPSC Official Site",
+            "url": "https://upsc.gov.in/"
+          },
+          {
+            "type": "study material",
+            "label": "Drishti IAS (Free)",
+            "url": "https://www.drishtiias.com/"
+          },
+          {
+            "type": "study material",
+            "label": "Vision IAS Free Resources",
+            "url": "https://www.visionias.in/"
+          }
         ],
-        checklist: ["Understand useEffect re-renders", "Built a custom todo list app with local persistence"],
-        parent: "se-1",
-        coords: { x: 50, y: 32 }
+        "checklist": [
+          "Understand Essay Writing",
+          "Practice Public Speaking",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_upsc_ias-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "UPSC Prelims (June)"
+        ]
       },
       {
-        id: "se-3a",
-        name: "Express.js Backend APIs",
-        desc: "Write scalable server code, secure endpoints, validate HTTP parameters, and set up cookie tokens.",
-        official: { label: "Express API Documentation", url: "https://expressjs.com" },
-        resources: [
-          { type: "course", label: "Node.js Complete Guide on SWAYAM", url: "https://swayam.gov.in" }
+        "id": "govt_upsc_ias-3",
+        "name": "Prelims Preparation",
+        "desc": "NCERT Class 6–12 (all subjects) → Standard books (Laxmikanth, Spectrum, G.C. Leong) → 5–10 years previous papers → Current affairs daily (The Hindu/Indian Express).",
+        "official": {
+          "label": "UPSC Prelims (June)",
+          "url": "https://upsc.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "UPSC Official Site",
+            "url": "https://upsc.gov.in/"
+          },
+          {
+            "type": "study material",
+            "label": "Drishti IAS (Free)",
+            "url": "https://www.drishtiias.com/"
+          },
+          {
+            "type": "study material",
+            "label": "Vision IAS Free Resources",
+            "url": "https://www.visionias.in/"
+          }
         ],
-        checklist: ["Created dynamic RESTful routes", "Able to parse incoming JSON bodies in requests"],
-        parent: "se-2",
-        coords: { x: 30, y: 56 }
+        "checklist": [
+          "Understand Optional Subject Depth",
+          "Practice Decision Making",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_upsc_ias-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "UPSC Prelims (June)"
+        ]
       },
       {
-        id: "se-3b",
-        name: "Database Modelling",
-        desc: "Implement schema migrations, handle indexing, connect pools, and prevent SQL injections.",
-        official: { label: "PostgreSQL Official Core Wiki", url: "https://www.postgresql.org" },
-        resources: [
-          { type: "pdf", label: "Database Normalization PDF Guide", url: "https://nptel.ac.in" }
+        "id": "govt_upsc_ias-4",
+        "name": "Prelims (Stage 1)",
+        "desc": "2 papers: GS (General Studies) + CSAT. 200 marks each. CSAT is qualifying only (33%). GS score decides cut-off.",
+        "official": {
+          "label": "UPSC Prelims (June)",
+          "url": "https://upsc.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "UPSC Official Site",
+            "url": "https://upsc.gov.in/"
+          },
+          {
+            "type": "study material",
+            "label": "Drishti IAS (Free)",
+            "url": "https://www.drishtiias.com/"
+          },
+          {
+            "type": "study material",
+            "label": "Vision IAS Free Resources",
+            "url": "https://www.visionias.in/"
+          }
         ],
-        checklist: ["Structured a 1-to-many relationship", "Understand database indexing performance advantages"],
-        parent: "se-2",
-        coords: { x: 70, y: 56 }
+        "checklist": [
+          "Understand Answer Writing",
+          "Practice Crisis Management",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_upsc_ias-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "UPSC Prelims (June)"
+        ]
       },
       {
-        id: "se-4",
-        name: "Dockerization & Cloud Deploy",
-        desc: "Containerize the app utilizing lightweight Docker blueprints and host on AWS, GCP or Render.",
-        official: { label: "Docker Reference Manuals", url: "https://docs.docker.com" },
-        resources: [
-          { type: "video", label: "Free DevOps & Cloud Crash Course", url: "https://youtube.com" }
+        "id": "govt_upsc_ias-5",
+        "name": "Mains (Stage 2)",
+        "desc": "9 papers: Essay + GS 1/2/3/4 + Optional Subject (2 papers) + Language papers. 1750 marks. Writing quality matters enormously.",
+        "official": {
+          "label": "UPSC Prelims (June)",
+          "url": "https://upsc.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "UPSC Official Site",
+            "url": "https://upsc.gov.in/"
+          },
+          {
+            "type": "study material",
+            "label": "Drishti IAS (Free)",
+            "url": "https://www.drishtiias.com/"
+          },
+          {
+            "type": "study material",
+            "label": "Vision IAS Free Resources",
+            "url": "https://www.visionias.in/"
+          }
         ],
-        checklist: ["Wrote functional multi-stage Dockerfile", "Understand continuous integration (GitHub Actions)"],
-        parent: "se-3a",
-        coords: { x: 50, y: 86 }
+        "checklist": [
+          "Understand Mental Stamina",
+          "Practice Language Skills (Hindi + regional)",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_upsc_ias-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "UPSC Prelims (June)"
+        ]
+      },
+      {
+        "id": "govt_upsc_ias-6",
+        "name": "Interview (Stage 3)",
+        "desc": "Personality Test (275 marks). Board of UPSC members. Tests character, leadership, awareness, communication.",
+        "official": {
+          "label": "UPSC Prelims (June)",
+          "url": "https://upsc.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "UPSC Official Site",
+            "url": "https://upsc.gov.in/"
+          },
+          {
+            "type": "study material",
+            "label": "Drishti IAS (Free)",
+            "url": "https://www.drishtiias.com/"
+          },
+          {
+            "type": "study material",
+            "label": "Vision IAS Free Resources",
+            "url": "https://www.visionias.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Current Affairs",
+          "Practice Leadership",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_upsc_ias-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "UPSC Prelims (June)"
+        ]
+      },
+      {
+        "id": "govt_upsc_ias-7",
+        "name": "Training (Post Selection)",
+        "desc": "IAS: LBSNAA Mussoorie. IPS: SVP NPA Hyderabad. IFS: FSOI + Lal Bahadur Shastri National Academy.",
+        "official": {
+          "label": "UPSC Prelims (June)",
+          "url": "https://upsc.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "UPSC Official Site",
+            "url": "https://upsc.gov.in/"
+          },
+          {
+            "type": "study material",
+            "label": "Drishti IAS (Free)",
+            "url": "https://www.drishtiias.com/"
+          },
+          {
+            "type": "study material",
+            "label": "Vision IAS Free Resources",
+            "url": "https://www.visionias.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Essay Writing",
+          "Practice Public Speaking",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_upsc_ias-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "UPSC Prelims (June)"
+        ]
+      },
+      {
+        "id": "govt_upsc_ias-8",
+        "name": "Posting & Career",
+        "desc": "SDM → DM/Collector → Secretary → Chief Secretary (State) | Under Secretary → Joint Secretary → Additional Secretary → Secretary (Centre) | Ambassador (IFS)",
+        "official": {
+          "label": "UPSC Prelims (June)",
+          "url": "https://upsc.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "UPSC Official Site",
+            "url": "https://upsc.gov.in/"
+          },
+          {
+            "type": "study material",
+            "label": "Drishti IAS (Free)",
+            "url": "https://www.drishtiias.com/"
+          },
+          {
+            "type": "study material",
+            "label": "Vision IAS Free Resources",
+            "url": "https://www.visionias.in/"
+          }
+        ],
+        "checklist": [
+          "Understand Optional Subject Depth",
+          "Practice Decision Making",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_upsc_ias-6",
+        "coords": {
+          "x": 50,
+          "y": 112
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "UPSC Prelims (June)"
+        ]
       }
     ]
   },
-
-  // 8. MEDICAL: NURSING (B.Sc NURSING)
   {
-    id: "nurse",
-    name: "Registered Nurse (B.Sc Nursing)",
-    category: "medical",
-    tagline: "Pathway mapping the academic nursing college course, clinical boards, and hospital registry.",
-    steps: [
+    "id": "govt_bank_finance",
+    "name": "Banking & Finance Government Career",
+    "category": "government",
+    "tagline": "PSU banks, RBI, SEBI — stable, respected, pensioned careers with good work-life balance.",
+    "steps": [
       {
-        id: "ns-1",
-        name: "HSC PCB Exam Qualification",
-        desc: "Clear 12th standard with biological sciences from a recognized Board under state or center regulations.",
-        official: { label: "Indian Nursing Council Standards", url: "https://www.indiannursingcouncil.org" },
-        resources: [
-          { type: "pdf", label: "B.Sc Nursing Course Guidelines Booklet", url: "https://www.indiannursingcouncil.org" }
+        "id": "govt_bank_finance-1",
+        "name": "Education",
+        "desc": "Graduation in any stream. Commerce/Maths background helps but not mandatory. 60% marks preferred.",
+        "official": {
+          "label": "IBPS PO: Prelims",
+          "url": "https://www.ibps.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "IBPS Official",
+            "url": "https://www.ibps.in/"
+          },
+          {
+            "type": "mock tests",
+            "label": "Oliveboard (Free Mocks)",
+            "url": "https://www.oliveboard.in/"
+          },
+          {
+            "type": "prep",
+            "label": "Adda247 (YouTube + Free Content)",
+            "url": "https://www.adda247.com/"
+          }
         ],
-        checklist: ["Class 12 board passed with minimum 45% marks in PCB", "Cleared state level nursing entrance test"],
-        parent: null,
-        coords: { x: 50, y: 15 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "IBPS PO: Prelims"
+        ]
       },
       {
-        id: "ns-2",
-        name: "Anatomy & Foundation Theory",
-        desc: "Undergo deep training in fundamental nursing principles, human nutrition, biochemistry, and physical health.",
-        official: { label: "INC Academic Syllabus", url: "https://www.indiannursingcouncil.org" },
-        resources: [
-          { type: "video", label: "Nursing Foundations Lecture Classes", url: "https://youtube.com" }
+        "id": "govt_bank_finance-2",
+        "name": "Choose Your Target",
+        "desc": "IBPS PO (Bank PO) / IBPS Clerk / SBI PO / SBI Clerk / RBI Grade B / RBI Assistant / SEBI Grade A / NABARD Grade A.",
+        "official": {
+          "label": "IBPS PO: Prelims",
+          "url": "https://www.ibps.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "IBPS Official",
+            "url": "https://www.ibps.in/"
+          },
+          {
+            "type": "mock tests",
+            "label": "Oliveboard (Free Mocks)",
+            "url": "https://www.oliveboard.in/"
+          },
+          {
+            "type": "prep",
+            "label": "Adda247 (YouTube + Free Content)",
+            "url": "https://www.adda247.com/"
+          }
         ],
-        checklist: ["Memorized clinical vitals metrics", "Conducted sterile dressing practice sessions"],
-        parent: "ns-1",
-        coords: { x: 50, y: 40 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_bank_finance-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "IBPS PO: Prelims"
+        ]
       },
       {
-        id: "ns-3",
-        name: "Clinical Hospital Posting",
-        desc: "Obtain clinical exposure inside medical-surgical wards, psychiatric clinics, and maternity care units.",
-        official: { label: "Ministry of Health & Family Welfare", url: "https://mohfw.gov.in" },
-        resources: [
-          { type: "pdf", label: "INC Practical Logbook Blueprint", url: "https://www.indiannursingcouncil.org" }
+        "id": "govt_bank_finance-3",
+        "name": "Prepare",
+        "desc": "Quantitative Aptitude, Reasoning, English, Banking Awareness, Computer. Mains adds Data Analysis, General/Economy/Banking Awareness essay.",
+        "official": {
+          "label": "IBPS PO: Prelims",
+          "url": "https://www.ibps.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "IBPS Official",
+            "url": "https://www.ibps.in/"
+          },
+          {
+            "type": "mock tests",
+            "label": "Oliveboard (Free Mocks)",
+            "url": "https://www.oliveboard.in/"
+          },
+          {
+            "type": "prep",
+            "label": "Adda247 (YouTube + Free Content)",
+            "url": "https://www.adda247.com/"
+          }
         ],
-        checklist: ["Completed pediatric intensive care posting", "Logged 200 hours of clinical patient treatment"],
-        parent: "ns-2",
-        coords: { x: 50, y: 65 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_bank_finance-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "IBPS PO: Prelims"
+        ]
       },
       {
-        id: "ns-4",
-        name: "State Registry & Licensing",
-        desc: "Register in your target State Nursing Council to secure certified licensing for nursing officer roles.",
-        official: { label: "State Nursing Council Registration Portal", url: "https://www.indiannursingcouncil.org" },
-        resources: [
-          { type: "video", label: "Nursing Officer Exam Preparation Mock", url: "https://youtube.com" }
+        "id": "govt_bank_finance-4",
+        "name": "IBPS PO / SBI PO (Entry Level Management)",
+        "desc": "Join as Probationary Officer. Training period 2 years. Posted anywhere in India.",
+        "official": {
+          "label": "IBPS PO: Prelims",
+          "url": "https://www.ibps.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "IBPS Official",
+            "url": "https://www.ibps.in/"
+          },
+          {
+            "type": "mock tests",
+            "label": "Oliveboard (Free Mocks)",
+            "url": "https://www.oliveboard.in/"
+          },
+          {
+            "type": "prep",
+            "label": "Adda247 (YouTube + Free Content)",
+            "url": "https://www.adda247.com/"
+          }
         ],
-        checklist: ["Obtained character verification certification", "Secure State Nurse Registry ID number"],
-        parent: "ns-3",
-        coords: { x: 50, y: 90 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_bank_finance-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "IBPS PO: Prelims"
+        ]
+      },
+      {
+        "id": "govt_bank_finance-5",
+        "name": "Growth Path (PO Route)",
+        "desc": "PO → Officer Scale 1 → Officer Scale 2 (Branch Manager) → Scale 3 → AGM → DGM → GM → ED → MD/CEO",
+        "official": {
+          "label": "IBPS PO: Prelims",
+          "url": "https://www.ibps.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "IBPS Official",
+            "url": "https://www.ibps.in/"
+          },
+          {
+            "type": "mock tests",
+            "label": "Oliveboard (Free Mocks)",
+            "url": "https://www.oliveboard.in/"
+          },
+          {
+            "type": "prep",
+            "label": "Adda247 (YouTube + Free Content)",
+            "url": "https://www.adda247.com/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_bank_finance-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "IBPS PO: Prelims"
+        ]
+      },
+      {
+        "id": "govt_bank_finance-6",
+        "name": "RBI Grade B (Elite Route)",
+        "desc": "Phase 1 + Phase 2 (very tough). Posted at RBI offices. ₹35,150/month + perks. Path: Grade B → C → D (Executive Director) → Deputy Governor → Governor.",
+        "official": {
+          "label": "IBPS PO: Prelims",
+          "url": "https://www.ibps.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "IBPS Official",
+            "url": "https://www.ibps.in/"
+          },
+          {
+            "type": "mock tests",
+            "label": "Oliveboard (Free Mocks)",
+            "url": "https://www.oliveboard.in/"
+          },
+          {
+            "type": "prep",
+            "label": "Adda247 (YouTube + Free Content)",
+            "url": "https://www.adda247.com/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "govt_bank_finance-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "IBPS PO: Prelims"
+        ]
       }
     ]
   },
-
-  // 9. GOVERNMENT: POLICE SUB-INSPECTOR
   {
-    id: "police-sub-inspector",
-    name: "Police Sub-Inspector (SI)",
-    category: "government",
-    tagline: "Milestones for clearing police SI recruitments, physical screening tests, and basic training academies.",
-    steps: [
+    "id": "engineering_civil",
+    "name": "Civil Engineer",
+    "category": "tech",
+    "tagline": "Building India's infrastructure: roads, bridges, dams, airports, smart cities, metro systems.",
+    "steps": [
       {
-        id: "pol-1",
-        name: "Graduation Graduation",
-        desc: "Obtain any Bachelor's degree (BA/BSc/BCom/BTech) from an officially recognized university.",
-        official: { label: "UGC Degree Equivalencies Guide", url: "https://www.ugc.gov.in" },
-        resources: [
-          { type: "video", label: "State Police SI Exam Complete Syllabus Info", url: "https://youtube.com" }
+        "id": "engineering_civil-1",
+        "name": "Class 11–12 (PCM)",
+        "desc": "Focus on Maths and Physics. JEE Mains for admission to NITs/IITs/Govt colleges. State entrance for state colleges.",
+        "official": {
+          "label": "JEE Mains",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Civil Engineering",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "govt exam",
+            "label": "SSC JE Official",
+            "url": "https://ssc.nic.in/"
+          },
+          {
+            "type": "exam prep",
+            "label": "GATE CE Prep - Made Easy YouTube",
+            "url": "https://www.youtube.com/@MadeEasyPrimeOfficial"
+          }
         ],
-        checklist: ["Graduation cleared with no active arrears", "Aged between 21 and 28 years (varies per state)"],
-        parent: null,
-        coords: { x: 50, y: 15 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Mains"
+        ]
       },
       {
-        id: "pol-2",
-        name: "Written Recruitment Exam",
-        desc: "Study and clear multiple papers covering General Knowledge, Numerical Ability, Reasoning, and Regional Language.",
-        official: { label: "State Police Recruitment Board Link", url: "https://mppolice.gov.in" }, // Example: MP Police
-        resources: [
-          { type: "pdf", label: "General Knowledge Previous Years Sample Qs", url: "https://youtube.com" }
+        "id": "engineering_civil-2",
+        "name": "B.Tech / B.E. Civil Engineering (4 years)",
+        "desc": "Structures, Geotechnical, Transportation, Environmental, Construction Management, Hydraulics. Internship on construction site is essential.",
+        "official": {
+          "label": "JEE Mains",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Civil Engineering",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "govt exam",
+            "label": "SSC JE Official",
+            "url": "https://ssc.nic.in/"
+          },
+          {
+            "type": "exam prep",
+            "label": "GATE CE Prep - Made Easy YouTube",
+            "url": "https://www.youtube.com/@MadeEasyPrimeOfficial"
+          }
         ],
-        checklist: ["Cleared basic arithmetic mock papers", "Strong awareness of local state laws and geography"],
-        parent: "pol-1",
-        coords: { x: 50, y: 40 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "engineering_civil-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Mains"
+        ]
       },
       {
-        id: "pol-3",
-        name: "Physical Measurement & Endurance",
-        desc: "Pass the mandatory chest/height benchmarks, and clear sprint races, high-jumps, and long-jumps.",
-        official: { label: "Police SI Physical Standard Rules", url: "https://mppolice.gov.in" },
-        resources: [
-          { type: "video", label: "Daily Physical Conditioning & Run Tips", url: "https://youtube.com" }
+        "id": "engineering_civil-3",
+        "name": "Licensure",
+        "desc": "Register with Institute of Engineers India (IEI). Get AMIE or pursue Graduate Engineer from state.",
+        "official": {
+          "label": "JEE Mains",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Civil Engineering",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "govt exam",
+            "label": "SSC JE Official",
+            "url": "https://ssc.nic.in/"
+          },
+          {
+            "type": "exam prep",
+            "label": "GATE CE Prep - Made Easy YouTube",
+            "url": "https://www.youtube.com/@MadeEasyPrimeOfficial"
+          }
         ],
-        checklist: ["Height meets state minimum requirements", "Completed 1600m run test within statutory limits"],
-        parent: "pol-2",
-        coords: { x: 50, y: 65 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "engineering_civil-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Mains"
+        ]
       },
       {
-        id: "pol-4",
-        name: "Police Training Academy",
-        desc: "Secure placement in regional police training colleges to study penal code, defense, weaponry, and protocols.",
-        official: { label: "Sardar Vallabhbhai Patel National Police Academy", url: "https://www.svpnpa.gov.in" },
-        resources: [
-          { type: "pdf", label: "Indian Penal Code (IPC) Basic Summary Booklet", url: "https://ncert.nic.in" }
+        "id": "engineering_civil-4",
+        "name": "Entry Roles (0–3 yrs)",
+        "desc": "Site Engineer / Junior Engineer / Structural Engineer / Quality Engineer. ₹3–8 LPA.",
+        "official": {
+          "label": "JEE Mains",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Civil Engineering",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "govt exam",
+            "label": "SSC JE Official",
+            "url": "https://ssc.nic.in/"
+          },
+          {
+            "type": "exam prep",
+            "label": "GATE CE Prep - Made Easy YouTube",
+            "url": "https://www.youtube.com/@MadeEasyPrimeOfficial"
+          }
         ],
-        checklist: ["Cleared character background verification", "Cleared physical medical checkup board"],
-        parent: "pol-3",
-        coords: { x: 50, y: 90 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "engineering_civil-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Mains"
+        ]
+      },
+      {
+        "id": "engineering_civil-5",
+        "name": "Mid Level (3–7 yrs)",
+        "desc": "Project Engineer / Senior Site Engineer / Design Engineer. ₹8–18 LPA.",
+        "official": {
+          "label": "JEE Mains",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Civil Engineering",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "govt exam",
+            "label": "SSC JE Official",
+            "url": "https://ssc.nic.in/"
+          },
+          {
+            "type": "exam prep",
+            "label": "GATE CE Prep - Made Easy YouTube",
+            "url": "https://www.youtube.com/@MadeEasyPrimeOfficial"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "engineering_civil-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": "₹3–8 LPA",
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Mains"
+        ]
+      },
+      {
+        "id": "engineering_civil-6",
+        "name": "Senior Level (7–12 yrs)",
+        "desc": "Project Manager / Senior Design Engineer / DGM Civil. ₹18–40 LPA.",
+        "official": {
+          "label": "JEE Mains",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Civil Engineering",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "govt exam",
+            "label": "SSC JE Official",
+            "url": "https://ssc.nic.in/"
+          },
+          {
+            "type": "exam prep",
+            "label": "GATE CE Prep - Made Easy YouTube",
+            "url": "https://www.youtube.com/@MadeEasyPrimeOfficial"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "engineering_civil-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": "₹3–8 LPA",
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Mains"
+        ]
+      },
+      {
+        "id": "engineering_civil-7",
+        "name": "Leadership",
+        "desc": "General Manager / VP Infrastructure / Director Projects. ₹40–80 LPA.",
+        "official": {
+          "label": "JEE Mains",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Civil Engineering",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "govt exam",
+            "label": "SSC JE Official",
+            "url": "https://ssc.nic.in/"
+          },
+          {
+            "type": "exam prep",
+            "label": "GATE CE Prep - Made Easy YouTube",
+            "url": "https://www.youtube.com/@MadeEasyPrimeOfficial"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "engineering_civil-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": "₹8–18 LPA",
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Mains"
+        ]
+      },
+      {
+        "id": "engineering_civil-8",
+        "name": "Own Business",
+        "desc": "Civil Contractor → Construction firm → Infrastructure company → Real estate developer.",
+        "official": {
+          "label": "JEE Mains",
+          "url": "https://nptel.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "course",
+            "label": "NPTEL Civil Engineering",
+            "url": "https://nptel.ac.in/"
+          },
+          {
+            "type": "govt exam",
+            "label": "SSC JE Official",
+            "url": "https://ssc.nic.in/"
+          },
+          {
+            "type": "exam prep",
+            "label": "GATE CE Prep - Made Easy YouTube",
+            "url": "https://www.youtube.com/@MadeEasyPrimeOfficial"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "engineering_civil-6",
+        "coords": {
+          "x": 50,
+          "y": 112
+        },
+        "salary": "₹18–40 LPA",
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "JEE Mains"
+        ]
       }
     ]
   },
-
-  // 10. BUSINESS: ORGANIC FARMING & AGRITECH
   {
-    id: "organic-farmer-agritech",
-    name: "Organic Farming & Agritech Startup",
-    category: "business",
-    tagline: "Pathway to starting an organic crop system, MSME registration, and commercial supply logs.",
-    steps: [
+    "id": "commerce_ca",
+    "name": "Chartered Accountant (CA)",
+    "category": "finance",
+    "tagline": "India's most respected finance credential. CA opens doors to Big 4, CFO roles, IND AS, FEMA, taxation, and more.",
+    "steps": [
       {
-        id: "farm-1",
-        name: "Soil Testing & Land Ready",
-        desc: "Determine nutritional density, pH indices, and heavy metal aggregates by submitting farm soil to regional government labs.",
-        official: { label: "Soil Health Card Scheme Portal", url: "https://soilhealth.dac.gov.in" },
-        resources: [
-          { type: "pdf", label: "Soil Sampling Official Methodologies", url: "https://soilhealth.dac.gov.in" }
+        "id": "commerce_ca-1",
+        "name": "Class 11–12 (Commerce)",
+        "desc": "Accounts, Economics, Business Studies, Maths. Score 60%+. PCM students also eligible.",
+        "official": {
+          "label": "CA Foundation",
+          "url": "https://www.icai.org/"
+        },
+        "resources": [
+          {
+            "type": "official study material",
+            "label": "ICAI Official Study Material",
+            "url": "https://www.icai.org/"
+          },
+          {
+            "type": "video lectures",
+            "label": "CA Foundation Free Videos - Unacademy",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "free classes",
+            "label": "ICAI Virtual Classes (Free for students)",
+            "url": "https://www.icai.org/post/virtual-classes"
+          }
         ],
-        checklist: ["Gathered 5-point dry soil samples", "Verified organic carbon parameters (minimum 0.5% recommended)"],
-        parent: null,
-        coords: { x: 50, y: 15 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CA Foundation"
+        ]
       },
       {
-        id: "farm-2",
-        name: "NPOP Organic Certification",
-        desc: "Register with certified third-party inspectors to obtain statutory organic compliance tags under NPOP standards.",
-        official: { label: "APEDA National Programme for Organic Production", url: "https://apeda.gov.in" },
-        resources: [
-          { type: "video", label: "How to Obtain Organic Certifications in India", url: "https://youtube.com" }
+        "id": "commerce_ca-2",
+        "name": "CA Foundation",
+        "desc": "Register with ICAI after Class 12. 4 papers: Accounts, Law, Maths/Stats, Economics. Pass both groups (200 marks each).",
+        "official": {
+          "label": "CA Foundation",
+          "url": "https://www.icai.org/"
+        },
+        "resources": [
+          {
+            "type": "official study material",
+            "label": "ICAI Official Study Material",
+            "url": "https://www.icai.org/"
+          },
+          {
+            "type": "video lectures",
+            "label": "CA Foundation Free Videos - Unacademy",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "free classes",
+            "label": "ICAI Virtual Classes (Free for students)",
+            "url": "https://www.icai.org/post/virtual-classes"
+          }
         ],
-        checklist: ["Created farm mapping sketches", "Documented source of seeds and irrigation files"],
-        parent: "farm-1",
-        coords: { x: 50, y: 40 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "commerce_ca-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CA Foundation"
+        ]
       },
       {
-        id: "farm-3a",
-        name: "B2C Digital Delivery Setup",
-        desc: "Configure direct subscription pipelines and retail web catalogs targeting urban centers with fresh produce.",
-        official: { label: "OMK Organic Markets Association", url: "https://apeda.gov.in" },
-        resources: [
-          { type: "video", label: "Setting Up Shopify Store for Farming Deliveries", url: "https://youtube.com" }
+        "id": "commerce_ca-3",
+        "name": "CA Intermediate",
+        "desc": "8 papers in 2 groups. Accounts, Law, Costing, Taxation, Advanced Accounts, Audit, Financial Management, IT/SM. Pass both groups.",
+        "official": {
+          "label": "CA Foundation",
+          "url": "https://www.icai.org/"
+        },
+        "resources": [
+          {
+            "type": "official study material",
+            "label": "ICAI Official Study Material",
+            "url": "https://www.icai.org/"
+          },
+          {
+            "type": "video lectures",
+            "label": "CA Foundation Free Videos - Unacademy",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "free classes",
+            "label": "ICAI Virtual Classes (Free for students)",
+            "url": "https://www.icai.org/post/virtual-classes"
+          }
         ],
-        checklist: ["Integrated secure digital payment scanners", "Established courier box packaging supply line"],
-        parent: "farm-2",
-        coords: { x: 30, y: 68 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "commerce_ca-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CA Foundation"
+        ]
       },
       {
-        id: "farm-3b",
-        name: "Agritech Irrigation Automation",
-        desc: "Establish highly optimized IoT solar water drips, sensor relays, and soil hydrometer feedback setups.",
-        official: { label: "PM Krishi Sinchayee Yojana Guidelines", url: "https://pmksy.gov.in" },
-        resources: [
-          { type: "pdf", label: "Drip Irrigation Engineering Manual", url: "https://nptel.ac.in" }
+        "id": "commerce_ca-4",
+        "name": "Articleship (3 years)",
+        "desc": "Mandatory practical training under a CA firm. Small firms: tax + audit work. Big 4 (Deloitte/PwC/EY/KPMG): industry exposure, better placement.",
+        "official": {
+          "label": "CA Foundation",
+          "url": "https://www.icai.org/"
+        },
+        "resources": [
+          {
+            "type": "official study material",
+            "label": "ICAI Official Study Material",
+            "url": "https://www.icai.org/"
+          },
+          {
+            "type": "video lectures",
+            "label": "CA Foundation Free Videos - Unacademy",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "free classes",
+            "label": "ICAI Virtual Classes (Free for students)",
+            "url": "https://www.icai.org/post/virtual-classes"
+          }
         ],
-        checklist: ["Installed standard solenoid valves", "Connected weather forecasting software alerts"],
-        parent: "farm-2",
-        coords: { x: 70, y: 68 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "commerce_ca-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CA Foundation"
+        ]
       },
       {
-        id: "farm-4",
-        name: "APEDA Export Standard Log",
-        desc: "Secure phytosanitary logs, cargo export clearance certificates, and trade overseas.",
-        official: { label: "APEDA Export Advisory Directory", url: "https://apeda.gov.in" },
-        resources: [
-          { type: "video", label: "Indian Agritech Global Scale Procedures", url: "https://youtube.com" }
+        "id": "commerce_ca-5",
+        "name": "CA Final",
+        "desc": "8 papers: 2 groups. FR, SFM, Audit, Law, Costing + 3 electives (Risk, Global FR, Economics for Finance, etc). Toughest CA exam.",
+        "official": {
+          "label": "CA Foundation",
+          "url": "https://www.icai.org/"
+        },
+        "resources": [
+          {
+            "type": "official study material",
+            "label": "ICAI Official Study Material",
+            "url": "https://www.icai.org/"
+          },
+          {
+            "type": "video lectures",
+            "label": "CA Foundation Free Videos - Unacademy",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "free classes",
+            "label": "ICAI Virtual Classes (Free for students)",
+            "url": "https://www.icai.org/post/virtual-classes"
+          }
         ],
-        checklist: ["Registered active IEC (Import Export Code) with DGFT", "Meets target residue guidelines criteria"],
-        parent: "farm-3a",
-        coords: { x: 50, y: 90 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "commerce_ca-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CA Foundation"
+        ]
+      },
+      {
+        "id": "commerce_ca-6",
+        "name": "Membership (ACA)",
+        "desc": "Associate Chartered Accountant. Can practice independently or join industry.",
+        "official": {
+          "label": "CA Foundation",
+          "url": "https://www.icai.org/"
+        },
+        "resources": [
+          {
+            "type": "official study material",
+            "label": "ICAI Official Study Material",
+            "url": "https://www.icai.org/"
+          },
+          {
+            "type": "video lectures",
+            "label": "CA Foundation Free Videos - Unacademy",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "free classes",
+            "label": "ICAI Virtual Classes (Free for students)",
+            "url": "https://www.icai.org/post/virtual-classes"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "commerce_ca-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CA Foundation"
+        ]
+      },
+      {
+        "id": "commerce_ca-7",
+        "name": "Entry Roles",
+        "desc": "Big 4 (₹7–12 LPA) / Mid-firms (₹5–8 LPA) / Industry (₹8–15 LPA) / Own practice.",
+        "official": {
+          "label": "CA Foundation",
+          "url": "https://www.icai.org/"
+        },
+        "resources": [
+          {
+            "type": "official study material",
+            "label": "ICAI Official Study Material",
+            "url": "https://www.icai.org/"
+          },
+          {
+            "type": "video lectures",
+            "label": "CA Foundation Free Videos - Unacademy",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "free classes",
+            "label": "ICAI Virtual Classes (Free for students)",
+            "url": "https://www.icai.org/post/virtual-classes"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "commerce_ca-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CA Foundation"
+        ]
+      },
+      {
+        "id": "commerce_ca-8",
+        "name": "Growth",
+        "desc": "Senior Associate → Manager → Senior Manager → Director / Partner at firms. OR CFO track in industry.",
+        "official": {
+          "label": "CA Foundation",
+          "url": "https://www.icai.org/"
+        },
+        "resources": [
+          {
+            "type": "official study material",
+            "label": "ICAI Official Study Material",
+            "url": "https://www.icai.org/"
+          },
+          {
+            "type": "video lectures",
+            "label": "CA Foundation Free Videos - Unacademy",
+            "url": "https://unacademy.com/"
+          },
+          {
+            "type": "free classes",
+            "label": "ICAI Virtual Classes (Free for students)",
+            "url": "https://www.icai.org/post/virtual-classes"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "commerce_ca-6",
+        "coords": {
+          "x": 50,
+          "y": 112
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CA Foundation"
+        ]
       }
     ]
   },
-
-  // 11. FINANCE: BANK PROBATIONARY OFFICER (PO)
   {
-    id: "bank-po",
-    name: "Bank Probationary Officer (IBPS/SBI PO)",
-    category: "finance",
-    tagline: "Pathway mapping bank examinations, commercial banking foundations, and PO training.",
-    steps: [
+    "id": "business_mba",
+    "name": "MBA / Business Management",
+    "category": "business",
+    "tagline": "MBA from IIM is a game-changer. Even tier-2 MBA opens leadership, consulting, marketing, and finance doors.",
+    "steps": [
       {
-        id: "bpo-1",
-        name: "Academic Graduate Degree",
-        desc: "Complete graduation from any UGC approved institution. Any field is completely eligible.",
-        official: { label: "IBPS Exams Schedule & Guidelines", url: "https://www.ibps.in" },
-        resources: [
-          { type: "video", label: "Bank PO Preparation Strategy Tutorials", url: "https://youtube.com" }
+        "id": "business_mba-1",
+        "name": "Graduation",
+        "desc": "Any bachelor's degree with 50%+. Work experience of 1–3 years significantly boosts CAT score value and IIM calls.",
+        "official": {
+          "label": "CAT (Nov)",
+          "url": "https://iimcat.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "CAT Official",
+            "url": "https://iimcat.ac.in/"
+          },
+          {
+            "type": "prep",
+            "label": "2IIM CAT Prep (Free + Paid)",
+            "url": "https://www.2iim.com/"
+          },
+          {
+            "type": "prep",
+            "label": "Career Launcher Free Resources",
+            "url": "https://www.careerlauncher.com/"
+          }
         ],
-        checklist: ["Secured graduate pass certificate", "Aged between 21 and 30 years"],
-        parent: null,
-        coords: { x: 50, y: 15 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CAT (Nov)"
+        ]
       },
       {
-        id: "bpo-2",
-        name: "PO Preliminary Exam",
-        desc: "Clear 100 objective MCQ items spanning Quantitative Aptitude, Reasoning Ability, and English Language.",
-        official: { label: "IBPS Exam Mock Portals", url: "https://www.ibps.in" },
-        resources: [
-          { type: "pdf", label: "IBPS PO Prelims Section Mock Papers", url: "https://youtube.com" }
+        "id": "business_mba-2",
+        "name": "Work Experience (Recommended)",
+        "desc": "1–3 years work exp before MBA. IIMs prefer: 24–36 months. Freshers join but have lower salary leverage.",
+        "official": {
+          "label": "CAT (Nov)",
+          "url": "https://iimcat.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "CAT Official",
+            "url": "https://iimcat.ac.in/"
+          },
+          {
+            "type": "prep",
+            "label": "2IIM CAT Prep (Free + Paid)",
+            "url": "https://www.2iim.com/"
+          },
+          {
+            "type": "prep",
+            "label": "Career Launcher Free Resources",
+            "url": "https://www.careerlauncher.com/"
+          }
         ],
-        checklist: ["Mastered mental math short-cut tricks", "Solving logic reasoning questions within 45 seconds"],
-        parent: "bpo-1",
-        coords: { x: 50, y: 40 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_mba-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CAT (Nov)"
+        ]
       },
       {
-        id: "bpo-3",
-        name: "PO Mains & Descriptive",
-        desc: "Clear advanced banking aptitude papers, data analysis, general economy awareness, and English letters.",
-        official: { label: "SBI Career Recruitment Portal", url: "https://sbi.co.in/careers" },
-        resources: [
-          { type: "video", label: "Financial & Economic Current Affairs", url: "https://youtube.com" }
+        "id": "business_mba-3",
+        "name": "Entrance Exam",
+        "desc": "CAT (IIMs) → Scores used by 100+ colleges. Also: XAT (XLRI), SNAP (Symbiosis), MAT, CMAT, NMAT, GMAT (international/ISB).",
+        "official": {
+          "label": "CAT (Nov)",
+          "url": "https://iimcat.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "CAT Official",
+            "url": "https://iimcat.ac.in/"
+          },
+          {
+            "type": "prep",
+            "label": "2IIM CAT Prep (Free + Paid)",
+            "url": "https://www.2iim.com/"
+          },
+          {
+            "type": "prep",
+            "label": "Career Launcher Free Resources",
+            "url": "https://www.careerlauncher.com/"
+          }
         ],
-        checklist: ["Understand repo rates, SLR, and bank ratios", "Understand general essay drafting templates"],
-        parent: "bpo-2",
-        coords: { x: 50, y: 65 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_mba-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CAT (Nov)"
+        ]
       },
       {
-        id: "bpo-4",
-        name: "Interview & Group Discussion",
-        desc: "Face highly conversational banking board panels evaluating general knowledge, customer relations, and banking ethics.",
-        official: { label: "IBPS Final Seat Allocation Results", url: "https://www.ibps.in" },
-        resources: [
-          { type: "pdf", label: "Banking Interview Mock Questions Booklet", url: "https://youtube.com" }
+        "id": "business_mba-4",
+        "name": "MBA Program (2 years)",
+        "desc": "Year 1: Core (Finance, Marketing, HR, Operations, Strategy, Quant). Year 2: Specialization + Summer Internship (crucial for placement).",
+        "official": {
+          "label": "CAT (Nov)",
+          "url": "https://iimcat.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "CAT Official",
+            "url": "https://iimcat.ac.in/"
+          },
+          {
+            "type": "prep",
+            "label": "2IIM CAT Prep (Free + Paid)",
+            "url": "https://www.2iim.com/"
+          },
+          {
+            "type": "prep",
+            "label": "Career Launcher Free Resources",
+            "url": "https://www.careerlauncher.com/"
+          }
         ],
-        checklist: ["Prepared personal introduction answers", "Completed 2 full mock panels"],
-        parent: "bpo-3",
-        coords: { x: 50, y: 90 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_mba-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CAT (Nov)"
+        ]
+      },
+      {
+        "id": "business_mba-5",
+        "name": "Summer Internship (After Year 1)",
+        "desc": "2-month internship. IIM-A/B/C: McKinsey, BCG, Bain, Goldman Sachs, etc. Stipend: ₹1–5L/month. Most convert to PPO (Pre-Placement Offer).",
+        "official": {
+          "label": "CAT (Nov)",
+          "url": "https://iimcat.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "CAT Official",
+            "url": "https://iimcat.ac.in/"
+          },
+          {
+            "type": "prep",
+            "label": "2IIM CAT Prep (Free + Paid)",
+            "url": "https://www.2iim.com/"
+          },
+          {
+            "type": "prep",
+            "label": "Career Launcher Free Resources",
+            "url": "https://www.careerlauncher.com/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_mba-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CAT (Nov)"
+        ]
+      },
+      {
+        "id": "business_mba-6",
+        "name": "Placement (Post MBA)",
+        "desc": "IIM A/B/C: ₹25–90 LPA average. Consulting, Finance, FMCG, Tech are top hirers. Tier-2: ₹8–20 LPA.",
+        "official": {
+          "label": "CAT (Nov)",
+          "url": "https://iimcat.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "CAT Official",
+            "url": "https://iimcat.ac.in/"
+          },
+          {
+            "type": "prep",
+            "label": "2IIM CAT Prep (Free + Paid)",
+            "url": "https://www.2iim.com/"
+          },
+          {
+            "type": "prep",
+            "label": "Career Launcher Free Resources",
+            "url": "https://www.careerlauncher.com/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_mba-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CAT (Nov)"
+        ]
+      },
+      {
+        "id": "business_mba-7",
+        "name": "MBA Career Tracks",
+        "desc": "Consulting / Finance (IB, PE, VC) / Marketing / General Management / Operations / Entrepreneurship.",
+        "official": {
+          "label": "CAT (Nov)",
+          "url": "https://iimcat.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "official",
+            "label": "CAT Official",
+            "url": "https://iimcat.ac.in/"
+          },
+          {
+            "type": "prep",
+            "label": "2IIM CAT Prep (Free + Paid)",
+            "url": "https://www.2iim.com/"
+          },
+          {
+            "type": "prep",
+            "label": "Career Launcher Free Resources",
+            "url": "https://www.careerlauncher.com/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_mba-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CAT (Nov)"
+        ]
       }
     ]
   },
-
-  // 12. EDUCATION: CUET UG EXAM (COLLEGE ADMISSION)
   {
-    id: "cuet-ug",
-    name: "CUET UG College Entrance",
-    category: "education",
-    tagline: "Pathway to preparing and clearing Common University Entrance Test for top central university slots.",
-    steps: [
+    "id": "business_retail_shop",
+    "name": "Retail Business / Dukaan Setup (Indian Context)",
+    "category": "business",
+    "tagline": "Start a local shop, grocery, medical store, electronics shop, or franchise. India's retail sector = ₹80 lakh crore market.",
+    "steps": [
       {
-        id: "cut-1",
-        name: "Domain Subjects Setup",
-        desc: "Review and select standard NCERT class 12 domain books representing your chosen degree target.",
-        official: { label: "NTA CUET Official Website Portal", url: "https://exams.nta.ac.in/CUET-UG/" },
-        resources: [
-          { type: "pdf", label: "NCERT Class 12 Humanities/Science Textbooks", url: "https://ncert.nic.in" }
+        "id": "business_retail_shop-1",
+        "name": "Business Idea Validation",
+        "desc": "Identify demand in your locality. Talk to 20 potential customers. Check competition. Low competition + high need = good.",
+        "official": {
+          "label": "Official Guide",
+          "url": "https://www.gst.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "govt portal",
+            "label": "GST Official Portal",
+            "url": "https://www.gst.gov.in/"
+          },
+          {
+            "type": "schemes & support",
+            "label": "Ministry of MSME",
+            "url": "https://msme.gov.in/"
+          },
+          {
+            "type": "food license",
+            "label": "FSSAI Registration",
+            "url": "https://foscos.fssai.gov.in/"
+          }
         ],
-        checklist: ["Class 12 board exams ongoing or completed", "Selected target degree choices"],
-        parent: null,
-        coords: { x: 50, y: 15 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": []
       },
       {
-        id: "cut-2",
-        name: "Language & General Test Preparation",
-        desc: "Prepare for comprehension skills, vocabulary structures, mental logic aptitude, and local current affairs.",
-        official: { label: "CUET-UG Section Syllabus Blueprint", url: "https://exams.nta.ac.in/CUET-UG/" },
-        resources: [
-          { type: "video", label: "CUET General Test Quantitative Practice Class", url: "https://youtube.com" }
+        "id": "business_retail_shop-2",
+        "name": "Legal Registration",
+        "desc": "Shop and Establishment Act registration at local Municipal Corporation (₹500–2000, varies by state). Simple process, usually same day.",
+        "official": {
+          "label": "Official Guide",
+          "url": "https://www.gst.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "govt portal",
+            "label": "GST Official Portal",
+            "url": "https://www.gst.gov.in/"
+          },
+          {
+            "type": "schemes & support",
+            "label": "Ministry of MSME",
+            "url": "https://msme.gov.in/"
+          },
+          {
+            "type": "food license",
+            "label": "FSSAI Registration",
+            "url": "https://foscos.fssai.gov.in/"
+          }
         ],
-        checklist: ["Completed English grammatical tests", "Familiar with daily standard GK events"],
-        parent: "cut-1",
-        coords: { x: 50, y: 40 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_retail_shop-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": []
       },
       {
-        id: "cut-3",
-        name: "CUET Examination Attempt",
-        desc: "Attempt the high-speed computer based test at NTA designated national examination centers.",
-        official: { label: "NTA Admit Card & Seat Schedule", url: "https://exams.nta.ac.in/CUET-UG/" },
-        resources: [
-          { type: "pdf", label: "CUET CBT Official Mock Sample Paper", url: "https://exams.nta.ac.in/CUET-UG/" }
+        "id": "business_retail_shop-3",
+        "name": "GST Registration (if turnover > ₹20L/yr)",
+        "desc": "GST Portal: gst.gov.in → Free registration → Takes 3–7 working days. Need PAN + Aadhaar + Bank account + Shop address proof.",
+        "official": {
+          "label": "Official Guide",
+          "url": "https://www.gst.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "govt portal",
+            "label": "GST Official Portal",
+            "url": "https://www.gst.gov.in/"
+          },
+          {
+            "type": "schemes & support",
+            "label": "Ministry of MSME",
+            "url": "https://msme.gov.in/"
+          },
+          {
+            "type": "food license",
+            "label": "FSSAI Registration",
+            "url": "https://foscos.fssai.gov.in/"
+          }
         ],
-        checklist: ["Obtained printed copy of NTA Admit Card", "Successfully verified exam hall coordinates"],
-        parent: "cut-2",
-        coords: { x: 50, y: 65 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_retail_shop-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": []
       },
       {
-        id: "cut-4",
-        name: "CSAS University Portal Counseling",
-        desc: "Apply on specific university portals (e.g. Delhi University CSAS, BHU, JNU) to claim cut-off allocations.",
-        official: { label: "DU CSAS Central Registration Link", url: "https://admission.uod.ac.in" },
-        resources: [
-          { type: "video", label: "DU Preference Sheet Preparation Tutorial", url: "https://youtube.com" }
+        "id": "business_retail_shop-4",
+        "name": "FSSAI License (Food businesses)",
+        "desc": "If selling any food item → FSSAI Basic license (₹100/yr) at fssai.gov.in. State license for larger operations. Required by law.",
+        "official": {
+          "label": "Official Guide",
+          "url": "https://www.gst.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "govt portal",
+            "label": "GST Official Portal",
+            "url": "https://www.gst.gov.in/"
+          },
+          {
+            "type": "schemes & support",
+            "label": "Ministry of MSME",
+            "url": "https://msme.gov.in/"
+          },
+          {
+            "type": "food license",
+            "label": "FSSAI Registration",
+            "url": "https://foscos.fssai.gov.in/"
+          }
         ],
-        checklist: ["Successfully compiled NTA scorecard values", "Submitted sorted university college preference forms"],
-        parent: "cut-3",
-        coords: { x: 50, y: 90 }
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_retail_shop-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": []
+      },
+      {
+        "id": "business_retail_shop-5",
+        "name": "Udyam Registration (MSME)",
+        "desc": "Register at udyamregistration.gov.in → Free → Unlocks: MSME loans at 8–12% interest, govt tenders, priority credit, subsidies.",
+        "official": {
+          "label": "Official Guide",
+          "url": "https://www.gst.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "govt portal",
+            "label": "GST Official Portal",
+            "url": "https://www.gst.gov.in/"
+          },
+          {
+            "type": "schemes & support",
+            "label": "Ministry of MSME",
+            "url": "https://msme.gov.in/"
+          },
+          {
+            "type": "food license",
+            "label": "FSSAI Registration",
+            "url": "https://foscos.fssai.gov.in/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_retail_shop-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": []
+      },
+      {
+        "id": "business_retail_shop-6",
+        "name": "Bank Account & Business Finance",
+        "desc": "Current account at any bank. MUDRA Loan (Shishu: up to ₹50K, Kishor: ₹50K–5L, Tarun: ₹5L–10L) from PM MUDRA Yojana — no collateral.",
+        "official": {
+          "label": "Official Guide",
+          "url": "https://www.gst.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "govt portal",
+            "label": "GST Official Portal",
+            "url": "https://www.gst.gov.in/"
+          },
+          {
+            "type": "schemes & support",
+            "label": "Ministry of MSME",
+            "url": "https://msme.gov.in/"
+          },
+          {
+            "type": "food license",
+            "label": "FSSAI Registration",
+            "url": "https://foscos.fssai.gov.in/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_retail_shop-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": []
+      },
+      {
+        "id": "business_retail_shop-7",
+        "name": "Source Products",
+        "desc": "For FMCG: Local distributor/stockist contact. For electronics: Wholesale markets (Nehru Place Delhi, SP Road Bangalore, Lamington Rd Mumbai). For pharma: C&F agent.",
+        "official": {
+          "label": "Official Guide",
+          "url": "https://www.gst.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "govt portal",
+            "label": "GST Official Portal",
+            "url": "https://www.gst.gov.in/"
+          },
+          {
+            "type": "schemes & support",
+            "label": "Ministry of MSME",
+            "url": "https://msme.gov.in/"
+          },
+          {
+            "type": "food license",
+            "label": "FSSAI Registration",
+            "url": "https://foscos.fssai.gov.in/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_retail_shop-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": []
+      },
+      {
+        "id": "business_retail_shop-8",
+        "name": "Digital Presence",
+        "desc": "Google Business Profile (free) → WhatsApp Business (free) → Meesho/JioMart seller for online orders → Get listed on Swiggy Instamart / Zepto (for grocery).",
+        "official": {
+          "label": "Official Guide",
+          "url": "https://www.gst.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "govt portal",
+            "label": "GST Official Portal",
+            "url": "https://www.gst.gov.in/"
+          },
+          {
+            "type": "schemes & support",
+            "label": "Ministry of MSME",
+            "url": "https://msme.gov.in/"
+          },
+          {
+            "type": "food license",
+            "label": "FSSAI Registration",
+            "url": "https://foscos.fssai.gov.in/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_retail_shop-6",
+        "coords": {
+          "x": 50,
+          "y": 112
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": []
+      },
+      {
+        "id": "business_retail_shop-9",
+        "name": "Growth",
+        "desc": "Expand inventory → Hire helper → Open second outlet → Become area distributor → Franchise model.",
+        "official": {
+          "label": "Official Guide",
+          "url": "https://www.gst.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "govt portal",
+            "label": "GST Official Portal",
+            "url": "https://www.gst.gov.in/"
+          },
+          {
+            "type": "schemes & support",
+            "label": "Ministry of MSME",
+            "url": "https://msme.gov.in/"
+          },
+          {
+            "type": "food license",
+            "label": "FSSAI Registration",
+            "url": "https://foscos.fssai.gov.in/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "business_retail_shop-8",
+        "coords": {
+          "x": 50,
+          "y": 134
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": []
+      }
+    ]
+  },
+  {
+    "id": "law_llb",
+    "name": "Lawyer / Legal Career (LLB)",
+    "category": "government",
+    "tagline": "Law is the backbone of democracy and business. India has 1.7M+ lawyers with growing demand in corporate law, litigation, IPR, and human rights.",
+    "steps": [
+      {
+        "id": "law_llb-1",
+        "name": "After 12th (CLAT Route)",
+        "desc": "5-year integrated BA.LLB / BBA.LLB / BSc.LLB via CLAT / AILET / LSAT India. National Law Universities are top tier.",
+        "official": {
+          "label": "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)",
+          "url": "https://consortiumofnlus.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "exam info",
+            "label": "CLAT Official",
+            "url": "https://consortiumofnlus.ac.in/"
+          },
+          {
+            "type": "legal news",
+            "label": "Bar and Bench (Legal News)",
+            "url": "https://www.barandbench.com/"
+          },
+          {
+            "type": "case law database",
+            "label": "SCC Online (Student Access via College)",
+            "url": "https://www.scconline.com/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)"
+        ]
+      },
+      {
+        "id": "law_llb-2",
+        "name": "OR After Graduation (3-year LLB)",
+        "desc": "Any graduation + 3-year LLB. Slower but available to all streams. Delhi University, Symbiosis, Amity are popular.",
+        "official": {
+          "label": "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)",
+          "url": "https://consortiumofnlus.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "exam info",
+            "label": "CLAT Official",
+            "url": "https://consortiumofnlus.ac.in/"
+          },
+          {
+            "type": "legal news",
+            "label": "Bar and Bench (Legal News)",
+            "url": "https://www.barandbench.com/"
+          },
+          {
+            "type": "case law database",
+            "label": "SCC Online (Student Access via College)",
+            "url": "https://www.scconline.com/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "law_llb-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)"
+        ]
+      },
+      {
+        "id": "law_llb-3",
+        "name": "Bar Council Enrollment",
+        "desc": "Pass State Bar Council exam → Enroll as Advocate. Required to practice in courts.",
+        "official": {
+          "label": "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)",
+          "url": "https://consortiumofnlus.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "exam info",
+            "label": "CLAT Official",
+            "url": "https://consortiumofnlus.ac.in/"
+          },
+          {
+            "type": "legal news",
+            "label": "Bar and Bench (Legal News)",
+            "url": "https://www.barandbench.com/"
+          },
+          {
+            "type": "case law database",
+            "label": "SCC Online (Student Access via College)",
+            "url": "https://www.scconline.com/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "law_llb-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)"
+        ]
+      },
+      {
+        "id": "law_llb-4",
+        "name": "Internships (During Study)",
+        "desc": "Court internship with senior advocate + Law firm internship. Both crucial. Apply to AZB, Cyril Amarchand, Shardul Amarchand, Khaitan.",
+        "official": {
+          "label": "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)",
+          "url": "https://consortiumofnlus.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "exam info",
+            "label": "CLAT Official",
+            "url": "https://consortiumofnlus.ac.in/"
+          },
+          {
+            "type": "legal news",
+            "label": "Bar and Bench (Legal News)",
+            "url": "https://www.barandbench.com/"
+          },
+          {
+            "type": "case law database",
+            "label": "SCC Online (Student Access via College)",
+            "url": "https://www.scconline.com/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "law_llb-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)"
+        ]
+      },
+      {
+        "id": "law_llb-5",
+        "name": "Entry Roles",
+        "desc": "Junior Advocate (₹10K–50K/month initially — grows fast) / Law firm Associate (₹6–15 LPA) / Corporate Legal (₹8–20 LPA) / Judicial Services.",
+        "official": {
+          "label": "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)",
+          "url": "https://consortiumofnlus.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "exam info",
+            "label": "CLAT Official",
+            "url": "https://consortiumofnlus.ac.in/"
+          },
+          {
+            "type": "legal news",
+            "label": "Bar and Bench (Legal News)",
+            "url": "https://www.barandbench.com/"
+          },
+          {
+            "type": "case law database",
+            "label": "SCC Online (Student Access via College)",
+            "url": "https://www.scconline.com/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "law_llb-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)"
+        ]
+      },
+      {
+        "id": "law_llb-6",
+        "name": "Growth",
+        "desc": "Associate → Senior Associate → Partner at law firm. OR Court advocate → Senior Advocate designation. OR Corporate: Legal Manager → General Counsel → CLO.",
+        "official": {
+          "label": "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)",
+          "url": "https://consortiumofnlus.ac.in/"
+        },
+        "resources": [
+          {
+            "type": "exam info",
+            "label": "CLAT Official",
+            "url": "https://consortiumofnlus.ac.in/"
+          },
+          {
+            "type": "legal news",
+            "label": "Bar and Bench (Legal News)",
+            "url": "https://www.barandbench.com/"
+          },
+          {
+            "type": "case law database",
+            "label": "SCC Online (Student Access via College)",
+            "url": "https://www.scconline.com/"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "law_llb-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "CLAT (for 5-yr integrated) OR State Judicial Service Exam (after LLB)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "creative_design_uiux",
+    "name": "UI/UX Designer / Product Designer",
+    "category": "tech",
+    "tagline": "Design the apps and websites Indians use daily. Booming demand from startups and tech companies. Portfolio > degree.",
+    "steps": [
+      {
+        "id": "creative_design_uiux-1",
+        "name": "Foundation",
+        "desc": "Any degree helps but not required. Start learning Figma (free) today. No gatekeeping in design — portfolio is everything.",
+        "official": {
+          "label": "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport.",
+          "url": "https://www.figma.com/"
+        },
+        "resources": [
+          {
+            "type": "tool",
+            "label": "Figma (Free Plan)",
+            "url": "https://www.figma.com/"
+          },
+          {
+            "type": "course",
+            "label": "Google UX Design Certificate (Audit Free)",
+            "url": "https://www.coursera.org/professional-certificates/google-ux-design"
+          },
+          {
+            "type": "video",
+            "label": "DesignWithAryan (YouTube Hindi)",
+            "url": "https://www.youtube.com/@DesignWithAryan"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [
+          "Swiggy",
+          "Zomato",
+          "PhonePe",
+          "CRED",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport."
+        ]
+      },
+      {
+        "id": "creative_design_uiux-2",
+        "name": "Core Skills",
+        "desc": "Figma (must), User Research, Wireframing, Prototyping, Design Thinking, Usability Testing, Visual Design basics.",
+        "official": {
+          "label": "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport.",
+          "url": "https://www.figma.com/"
+        },
+        "resources": [
+          {
+            "type": "tool",
+            "label": "Figma (Free Plan)",
+            "url": "https://www.figma.com/"
+          },
+          {
+            "type": "course",
+            "label": "Google UX Design Certificate (Audit Free)",
+            "url": "https://www.coursera.org/professional-certificates/google-ux-design"
+          },
+          {
+            "type": "video",
+            "label": "DesignWithAryan (YouTube Hindi)",
+            "url": "https://www.youtube.com/@DesignWithAryan"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "creative_design_uiux-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [
+          "Swiggy",
+          "Zomato",
+          "PhonePe",
+          "CRED",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport."
+        ]
+      },
+      {
+        "id": "creative_design_uiux-3",
+        "name": "Build Portfolio",
+        "desc": "3–5 case studies. Include: Problem → Research → Sketches → Wireframes → Final Design → Results. Add to Behance/Dribbble.",
+        "official": {
+          "label": "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport.",
+          "url": "https://www.figma.com/"
+        },
+        "resources": [
+          {
+            "type": "tool",
+            "label": "Figma (Free Plan)",
+            "url": "https://www.figma.com/"
+          },
+          {
+            "type": "course",
+            "label": "Google UX Design Certificate (Audit Free)",
+            "url": "https://www.coursera.org/professional-certificates/google-ux-design"
+          },
+          {
+            "type": "video",
+            "label": "DesignWithAryan (YouTube Hindi)",
+            "url": "https://www.youtube.com/@DesignWithAryan"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "creative_design_uiux-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [
+          "Swiggy",
+          "Zomato",
+          "PhonePe",
+          "CRED",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport."
+        ]
+      },
+      {
+        "id": "creative_design_uiux-4",
+        "name": "Specialize",
+        "desc": "Choose: Mobile App Design / Web Design / SaaS Product / Fintech UI / Healthcare UX / Gaming UI.",
+        "official": {
+          "label": "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport.",
+          "url": "https://www.figma.com/"
+        },
+        "resources": [
+          {
+            "type": "tool",
+            "label": "Figma (Free Plan)",
+            "url": "https://www.figma.com/"
+          },
+          {
+            "type": "course",
+            "label": "Google UX Design Certificate (Audit Free)",
+            "url": "https://www.coursera.org/professional-certificates/google-ux-design"
+          },
+          {
+            "type": "video",
+            "label": "DesignWithAryan (YouTube Hindi)",
+            "url": "https://www.youtube.com/@DesignWithAryan"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "creative_design_uiux-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [
+          "Swiggy",
+          "Zomato",
+          "PhonePe",
+          "CRED",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport."
+        ]
+      },
+      {
+        "id": "creative_design_uiux-5",
+        "name": "Entry Role (0–2 yrs)",
+        "desc": "Junior UI/UX Designer / Product Design Intern → Designer. ₹4–12 LPA.",
+        "official": {
+          "label": "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport.",
+          "url": "https://www.figma.com/"
+        },
+        "resources": [
+          {
+            "type": "tool",
+            "label": "Figma (Free Plan)",
+            "url": "https://www.figma.com/"
+          },
+          {
+            "type": "course",
+            "label": "Google UX Design Certificate (Audit Free)",
+            "url": "https://www.coursera.org/professional-certificates/google-ux-design"
+          },
+          {
+            "type": "video",
+            "label": "DesignWithAryan (YouTube Hindi)",
+            "url": "https://www.youtube.com/@DesignWithAryan"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "creative_design_uiux-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": "₹4–12 LPA",
+        "companies": [
+          "Swiggy",
+          "Zomato",
+          "PhonePe",
+          "CRED",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport."
+        ]
+      },
+      {
+        "id": "creative_design_uiux-6",
+        "name": "Mid Level (2–4 yrs)",
+        "desc": "UI/UX Designer / Senior Designer. Own features. ₹12–30 LPA.",
+        "official": {
+          "label": "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport.",
+          "url": "https://www.figma.com/"
+        },
+        "resources": [
+          {
+            "type": "tool",
+            "label": "Figma (Free Plan)",
+            "url": "https://www.figma.com/"
+          },
+          {
+            "type": "course",
+            "label": "Google UX Design Certificate (Audit Free)",
+            "url": "https://www.coursera.org/professional-certificates/google-ux-design"
+          },
+          {
+            "type": "video",
+            "label": "DesignWithAryan (YouTube Hindi)",
+            "url": "https://www.youtube.com/@DesignWithAryan"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "creative_design_uiux-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": "₹4–12 LPA",
+        "companies": [
+          "Swiggy",
+          "Zomato",
+          "PhonePe",
+          "CRED",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport."
+        ]
+      },
+      {
+        "id": "creative_design_uiux-7",
+        "name": "Senior / Lead (4–7 yrs)",
+        "desc": "Senior Designer / Design Lead / UX Architect. ₹30–70 LPA.",
+        "official": {
+          "label": "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport.",
+          "url": "https://www.figma.com/"
+        },
+        "resources": [
+          {
+            "type": "tool",
+            "label": "Figma (Free Plan)",
+            "url": "https://www.figma.com/"
+          },
+          {
+            "type": "course",
+            "label": "Google UX Design Certificate (Audit Free)",
+            "url": "https://www.coursera.org/professional-certificates/google-ux-design"
+          },
+          {
+            "type": "video",
+            "label": "DesignWithAryan (YouTube Hindi)",
+            "url": "https://www.youtube.com/@DesignWithAryan"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "creative_design_uiux-5",
+        "coords": {
+          "x": 70,
+          "y": 90
+        },
+        "salary": "₹12–30 LPA",
+        "companies": [
+          "Swiggy",
+          "Zomato",
+          "PhonePe",
+          "CRED",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport."
+        ]
+      },
+      {
+        "id": "creative_design_uiux-8",
+        "name": "Leadership",
+        "desc": "Principal Designer / Head of Design / VP Design / Chief Design Officer. ₹70L–2 Cr+.",
+        "official": {
+          "label": "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport.",
+          "url": "https://www.figma.com/"
+        },
+        "resources": [
+          {
+            "type": "tool",
+            "label": "Figma (Free Plan)",
+            "url": "https://www.figma.com/"
+          },
+          {
+            "type": "course",
+            "label": "Google UX Design Certificate (Audit Free)",
+            "url": "https://www.coursera.org/professional-certificates/google-ux-design"
+          },
+          {
+            "type": "video",
+            "label": "DesignWithAryan (YouTube Hindi)",
+            "url": "https://www.youtube.com/@DesignWithAryan"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "creative_design_uiux-6",
+        "coords": {
+          "x": 50,
+          "y": 112
+        },
+        "salary": "₹30–70 LPA",
+        "companies": [
+          "Swiggy",
+          "Zomato",
+          "PhonePe",
+          "CRED",
+          "Meesho"
+        ],
+        "colleges": [],
+        "entranceExams": [
+          "No mandatory exam. NID / IDC IIT for formal design degree. Portfolio is passport."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "agri_career",
+    "name": "Agriculture / AgriTech Career",
+    "category": "business",
+    "tagline": "India is an agrarian economy. Modern agriculture + AgriTech = massive opportunity. From farming to agri-startups to government roles.",
+    "steps": [
+      {
+        "id": "agri_career-1",
+        "name": "Education Options",
+        "desc": "B.Sc Agriculture (4 yrs via ICAR-AIEEA or state exams) OR B.Tech AgriTech/Food Tech OR Diploma in Agriculture (2 yrs, state level).",
+        "official": {
+          "label": "ICAR AIEEA (UG)",
+          "url": "https://ecourses.icar.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "free agri courses",
+            "label": "ICAR e-Krishi Shiksha",
+            "url": "https://ecourses.icar.gov.in/"
+          },
+          {
+            "type": "agri management training",
+            "label": "MANAGE Hyderabad",
+            "url": "https://www.manage.gov.in/"
+          },
+          {
+            "type": "govt app",
+            "label": "Kisan Suvidha App",
+            "url": "https://play.google.com/store/apps/details?id=in.gov.kisansuvidha"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": null,
+        "coords": {
+          "x": 50,
+          "y": 10
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "ICAR AIEEA (UG)"
+        ]
+      },
+      {
+        "id": "agri_career-2",
+        "name": "Core Knowledge",
+        "desc": "Soil science, Crop science, Agronomy, Plant pathology, Agricultural economics. Hands-on farm experience is essential.",
+        "official": {
+          "label": "ICAR AIEEA (UG)",
+          "url": "https://ecourses.icar.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "free agri courses",
+            "label": "ICAR e-Krishi Shiksha",
+            "url": "https://ecourses.icar.gov.in/"
+          },
+          {
+            "type": "agri management training",
+            "label": "MANAGE Hyderabad",
+            "url": "https://www.manage.gov.in/"
+          },
+          {
+            "type": "govt app",
+            "label": "Kisan Suvidha App",
+            "url": "https://play.google.com/store/apps/details?id=in.gov.kisansuvidha"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "agri_career-1",
+        "coords": {
+          "x": 50,
+          "y": 25
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "ICAR AIEEA (UG)"
+        ]
+      },
+      {
+        "id": "agri_career-3",
+        "name": "Career Paths",
+        "desc": "Govt agriculture officer, agri input company, AgriTech startup, farming entrepreneur, cooperative sector, export/import, teaching.",
+        "official": {
+          "label": "ICAR AIEEA (UG)",
+          "url": "https://ecourses.icar.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "free agri courses",
+            "label": "ICAR e-Krishi Shiksha",
+            "url": "https://ecourses.icar.gov.in/"
+          },
+          {
+            "type": "agri management training",
+            "label": "MANAGE Hyderabad",
+            "url": "https://www.manage.gov.in/"
+          },
+          {
+            "type": "govt app",
+            "label": "Kisan Suvidha App",
+            "url": "https://play.google.com/store/apps/details?id=in.gov.kisansuvidha"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "agri_career-2",
+        "coords": {
+          "x": 30,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "ICAR AIEEA (UG)"
+        ]
+      },
+      {
+        "id": "agri_career-4",
+        "name": "Government Jobs",
+        "desc": "Agriculture Officer (State PSC) / NABARD Officer / FCI (Food Corporation of India) / IARI Scientist / Agricultural Scientist (ICAR) / Block Agriculture Officer.",
+        "official": {
+          "label": "ICAR AIEEA (UG)",
+          "url": "https://ecourses.icar.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "free agri courses",
+            "label": "ICAR e-Krishi Shiksha",
+            "url": "https://ecourses.icar.gov.in/"
+          },
+          {
+            "type": "agri management training",
+            "label": "MANAGE Hyderabad",
+            "url": "https://www.manage.gov.in/"
+          },
+          {
+            "type": "govt app",
+            "label": "Kisan Suvidha App",
+            "url": "https://play.google.com/store/apps/details?id=in.gov.kisansuvidha"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "agri_career-2",
+        "coords": {
+          "x": 70,
+          "y": 45
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "ICAR AIEEA (UG)"
+        ]
+      },
+      {
+        "id": "agri_career-5",
+        "name": "AgriTech Sector",
+        "desc": "Work at agri-startups: drone services, precision farming, soil testing, farmer advisory apps, agri e-commerce.",
+        "official": {
+          "label": "ICAR AIEEA (UG)",
+          "url": "https://ecourses.icar.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "free agri courses",
+            "label": "ICAR e-Krishi Shiksha",
+            "url": "https://ecourses.icar.gov.in/"
+          },
+          {
+            "type": "agri management training",
+            "label": "MANAGE Hyderabad",
+            "url": "https://www.manage.gov.in/"
+          },
+          {
+            "type": "govt app",
+            "label": "Kisan Suvidha App",
+            "url": "https://play.google.com/store/apps/details?id=in.gov.kisansuvidha"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "agri_career-3",
+        "coords": {
+          "x": 50,
+          "y": 68
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "ICAR AIEEA (UG)"
+        ]
+      },
+      {
+        "id": "agri_career-6",
+        "name": "Entrepreneurship",
+        "desc": "Organic farming / Poly house / Mushroom cultivation / Apiculture / Dairy / Agro-processing unit — all supported by PM schemes.",
+        "official": {
+          "label": "ICAR AIEEA (UG)",
+          "url": "https://ecourses.icar.gov.in/"
+        },
+        "resources": [
+          {
+            "type": "free agri courses",
+            "label": "ICAR e-Krishi Shiksha",
+            "url": "https://ecourses.icar.gov.in/"
+          },
+          {
+            "type": "agri management training",
+            "label": "MANAGE Hyderabad",
+            "url": "https://www.manage.gov.in/"
+          },
+          {
+            "type": "govt app",
+            "label": "Kisan Suvidha App",
+            "url": "https://play.google.com/store/apps/details?id=in.gov.kisansuvidha"
+          }
+        ],
+        "checklist": [
+          "Understand fundamentals",
+          "Practice core concepts",
+          "Complete stage milestones"
+        ],
+        "parent": "agri_career-5",
+        "coords": {
+          "x": 30,
+          "y": 90
+        },
+        "salary": null,
+        "companies": [],
+        "colleges": [],
+        "entranceExams": [
+          "ICAR AIEEA (UG)"
+        ]
       }
     ]
   }
