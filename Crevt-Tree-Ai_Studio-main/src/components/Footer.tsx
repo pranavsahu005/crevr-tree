@@ -23,11 +23,11 @@ export default function Footer({ onNavigate, onOpenCategory }: FooterProps) {
         {/* Brand Info */}
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-honey-amber rounded-full flex items-center justify-center shadow-[1.5px_1.5px_0px_0px_#2D2D2D] border-2 border-[#2D2D2D]">
-              <svg className="w-4 h-4 text-earth-brown" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M12 9c2-2 4-2 6 0M12 14c-2-2-4-2-6 0M12 9c-2-1-4-1-6 0M12 14c2-1 4-1 6 0"></path>
-              </svg>
-            </div>
+            <img 
+              src="/main_logo_no_bg.webp" 
+              alt="CrevrTree Logo" 
+              className="w-8 h-8 object-contain"
+            />
             <span className="text-xl font-bold text-earth-brown font-display">CrevrTree</span>
           </div>
           <p className="text-xs text-soft-brown leading-relaxed font-sans">

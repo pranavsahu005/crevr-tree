@@ -27,11 +27,11 @@ export default function Navbar({ onNavigate, onSearch, onOpenCategory }: NavbarP
           className="flex items-center space-x-3 cursor-pointer"
           id="nav-logo"
         >
-          <div className="w-10 h-10 bg-honey-amber rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-            <svg className="w-5 h-5 text-earth-brown" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M12 9c2-2 4-2 6 0M12 14c-2-2-4-2-6 0M12 9c-2-1-4-1-6 0M12 14c2-1 4-1 6 0"></path>
-            </svg>
-          </div>
+          <img 
+            src="/main_logo_no_bg.webp" 
+            alt="CrevrTree Logo" 
+            className="w-10 h-10 object-contain hover:scale-105 transition-transform"
+          />
           <div>
             <span className="text-2xl font-extrabold tracking-tight text-earth-brown font-display leading-none block">
               Crevr<span className="text-honey-amber-dark">Tree</span>
