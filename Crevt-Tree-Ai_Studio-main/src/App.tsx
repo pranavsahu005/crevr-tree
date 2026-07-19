@@ -14,7 +14,9 @@ import {
   Cpu,
   BookmarkCheck,
   Heart,
-  X
+  X,
+  Sparkles,
+  FileText
 } from 'lucide-react';
 
 import { ROADMAPS_DATABASE } from './data';
@@ -477,28 +479,58 @@ export default function App() {
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-2">
                 <span className="text-xs font-bold text-soft-brown mr-1">Popular searches:</span>
                 <button
-                  onClick={() => handleLoadCareerPathByKeyword('Doctor')}
+                  onClick={() => handleLoadRoadmap('doctor')}
                   className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
                 >
                   Doctor
                 </button>
                 <button
-                  onClick={() => handleLoadCareerPathByKeyword('AI Engineer')}
+                  onClick={() => handleLoadRoadmap('ai-engineer')}
                   className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
                 >
                   AI Engineer
                 </button>
                 <button
-                  onClick={() => handleLoadCareerPathByKeyword('IAS Officer')}
+                  onClick={() => handleLoadRoadmap('ias-officer')}
                   className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
                 >
                   IAS Officer
                 </button>
                 <button
-                  onClick={() => handleLoadCareerPathByKeyword('Startup')}
+                  onClick={() => handleLoadRoadmap('startup-founder')}
                   className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
                 >
                   Startup
+                </button>
+                <button
+                  onClick={() => handleLoadRoadmap('software-engineer')}
+                  className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
+                >
+                  Software Developer
+                </button>
+                <button
+                  onClick={() => handleLoadRoadmap('chartered-accountant')}
+                  className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
+                >
+                  Chartered Accountant (CA)
+                </button>
+                <button
+                  onClick={() => handleLoadRoadmap('police-sub-inspector')}
+                  className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
+                >
+                  Police SI
+                </button>
+                <button
+                  onClick={() => handleLoadRoadmap('bank-po')}
+                  className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
+                >
+                  Bank PO
+                </button>
+                <button
+                  onClick={() => handleLoadRoadmap('cuet-ug')}
+                  className="px-3 py-1 bg-warm-white border border-border-soft text-xs rounded-full hover:bg-honey-amber/15 hover:border-honey-amber transition-all text-earth-brown cursor-pointer font-semibold"
+                >
+                  CUET Exam
                 </button>
                 <button
                   onClick={handleLoadFullCareerTree}
@@ -539,143 +571,11 @@ export default function App() {
               </div>
 
               {/* Signature swaying tree illustration */}
-              <svg className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 animate-sway text-earth-brown" viewBox="0 0 200 200" fill="none">
-                {/* Ground roots */}
-                <path d="M40 180 C 70 178, 130 178, 160 180" stroke="#6B4A2E" strokeWidth="5" strokeLinecap="round" />
-                <path d="M100 130 L100 180" stroke="#6B4A2E" strokeWidth="8" strokeLinecap="round" />
-                <path d="M100 150 C 85 160, 70 165, 55 175" stroke="#6B4A2E" strokeWidth="4" strokeLinecap="round" />
-                <path d="M100 145 C 115 155, 130 162, 145 172" stroke="#6B4A2E" strokeWidth="4" strokeLinecap="round" />
-
-                {/* Branches themed after the Category Identity Colors (Lush 10-Branch structure) */}
-                 <path d="M100 120 C 70 110, 50 110, 35 120" stroke="#FF6B81" strokeWidth="5.5" strokeLinecap="round" /> {/* Rose Branch 1 - Medical Lower Left */}
-                 <path d="M100 110 C 80 90, 60 80, 45 90" stroke="#FF6B81" strokeWidth="5" strokeLinecap="round" /> {/* Rose Branch 2 - Medical Mid Left */}
-                 <path d="M100 115 C 130 105, 150 105, 165 115" stroke="#4ECDC4" strokeWidth="5.5" strokeLinecap="round" /> {/* Teal Branch 1 - Education Lower Right */}
-                 <path d="M100 100 C 120 75, 140 60, 155 75" stroke="#4ECDC4" strokeWidth="5" strokeLinecap="round" /> {/* Teal Branch 2 - Education Mid Right */}
-                 <path d="M100 80 L100 40" stroke="#FF9F43" strokeWidth="5.5" strokeLinecap="round" /> {/* Orange Trunk - Govt Central */}
-                 <path d="M100 65 C 85 50, 85 30, 75 22" stroke="#FF9F43" strokeWidth="4" strokeLinecap="round" /> {/* Orange Branch 2 - Govt Left Top */}
-                 <path d="M100 65 C 115 50, 115 30, 125 22" stroke="#FFC020" strokeWidth="4" strokeLinecap="round" /> {/* Yellow Branch 3 - Govt Right Top */}
-                 
-                 <path d="M100 90 C 75 70, 55 55, 38 60" stroke="#43C97E" strokeWidth="4.5" strokeLinecap="round" /> {/* Green Branch 1 - Business Lower Left */}
-                 <path d="M100 70 C 80 50, 70 30, 50 25" stroke="#43C97E" strokeWidth="4" strokeLinecap="round" /> {/* Green Branch 2 - Business Upper Left */}
-                 
-                 <path d="M100 85 C 125 65, 145 50, 162 55" stroke="#6C5CE7" strokeWidth="4.5" strokeLinecap="round" /> {/* Violet Branch 1 - Finance Lower Right */}
-                 <path d="M100 55 C 120 40, 135 25, 150 20" stroke="#6C5CE7" strokeWidth="4" strokeLinecap="round" /> {/* Violet Branch 2 - Finance Upper Right */}
-
-                 {/* Lush Organic Leaves markers (31 leaves total) */}
-                 {/* Rose Branch (Medical) Leaves */}
-                 <g transform="translate(75, 115) rotate(-60) scale(0.7)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(55, 112) rotate(-63) scale(0.85)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(35, 120) rotate(-65)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(75, 92) rotate(-50) scale(0.7)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(60, 87) rotate(-55) scale(0.85)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(45, 90) rotate(-60)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#FF6B81" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-
-                 {/* Teal Branch (Education) Leaves */}
-                 <g transform="translate(125, 111) rotate(60) scale(0.7)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(145, 110) rotate(63) scale(0.85)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(165, 115) rotate(65)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(120, 83) rotate(45) scale(0.7)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(140, 71) rotate(55) scale(0.85)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(155, 75) rotate(60)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#4ECDC4" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-
-                 {/* Orange Trunk (Govt) Leaves */}
-                 <g transform="translate(100, 68) rotate(-15) scale(0.75)">
-                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(100, 52) rotate(15) scale(0.85)">
-                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(100, 40) rotate(0)">
-                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(88, 38) rotate(-20) scale(0.75)">
-                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(82, 28) rotate(-22) scale(0.85)">
-                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(75, 22) rotate(-25)">
-                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FF9F43" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(112, 38) rotate(20) scale(0.75)">
-                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FFC020" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(118, 28) rotate(22) scale(0.85)">
-                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FFC020" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(125, 22) rotate(25)">
-                   <path d="M 0,0 C -5,-4 -6.5,-9 -3.5,-12 C 0,-15 0,-15 3.5,-12 C 6.5,-9 5,-4 0,0 Z" fill="#FFC020" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-
-                 {/* Green Branch (Business) Leaves */}
-                 <g transform="translate(75, 72) rotate(-45) scale(0.7)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(55, 63) rotate(-48) scale(0.85)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(38, 60) rotate(-50)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(80, 55) rotate(-35) scale(0.7)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(65, 38) rotate(-40) scale(0.85)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(50, 25) rotate(-45)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#43C97E" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-
-                 {/* Violet Branch (Finance) Leaves */}
-                 <g transform="translate(125, 70) rotate(45) scale(0.7)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(145, 61) rotate(48) scale(0.85)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(162, 55) rotate(50)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(120, 43) rotate(35) scale(0.7)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(138, 30) rotate(40) scale(0.85)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 <g transform="translate(150, 20) rotate(45)">
-                   <path d="M 0,0 C -6,-5 -8,-12 -4,-16 C 0,-20 0,-20 4,-16 C 8,-12 6,-5 0,0 Z" fill="#6C5CE7" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>
-                 
-                 <path d="M100 120 C 90 100, 110 80, 100 60" stroke="#FFC020" strokeWidth="7" strokeLinecap="round" /> {/* Main Center */}
-                 <g transform="translate(100, 60) rotate(15)">
-                   <path d="M 0,0 C -4,-3 -5,-8 -2.5,-11 C 0,-13 0,-13 2.5,-11 C 5,-8 4,-3 0,0 Z" fill="#E9FFC7" stroke="#2D2D2D" strokeWidth="2.5" />
-                 </g>    
-              </svg>
+              <img
+                src="/tree.webp"
+                alt="Crevr Tree Illustration"
+                className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-contain animate-sway"
+              />
             </div>
           </section>
 
@@ -766,6 +666,114 @@ export default function App() {
                     <span className="text-[10px] font-bold bg-finance/20 text-indigo-700 px-2 py-0.5 rounded-full">CA Exam</span>
                     <span className="text-[10px] font-bold bg-finance/20 text-indigo-700 px-2 py-0.5 rounded-full">Bank PO</span>
                   </div>
+                </div>
+              </div>
+
+              {/* Explore More Tools Section */}
+              <div className="mt-16 pt-12 border-t border-border-soft/60 text-center">
+                <h3 className="text-2xl font-extrabold text-earth-brown mb-2 font-display">Explore More</h3>
+                <p className="text-sm text-soft-brown max-w-xl mx-auto mb-8">
+                  Accelerate your career preparation with our free advanced AI tools.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left">
+                  {/* Card 1 */}
+                  <a
+                    href="https://nearbyhiring.com/ai-mock-interview"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-warm-white border border-border-soft rounded-2xl overflow-hidden shadow-card hover:shadow-hover hover:border-honey-amber-dark transition-all duration-300 flex flex-col cursor-pointer"
+                  >
+                    <div className="h-44 overflow-hidden bg-cream relative flex items-center justify-center">
+                      <img 
+                        src="/project_imgs_to_we_use/interview.webp" 
+                        alt="AI Mock Interview Preview" 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 left-3 bg-rose-500/90 text-white font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">
+                        Practice Free
+                      </div>
+                    </div>
+                    <div className="p-5 flex-grow flex flex-col justify-between space-y-3">
+                      <div>
+                        <h4 className="text-lg font-bold text-earth-brown group-hover:text-honey-amber-dark transition-colors font-display">
+                          AI Mock Interview
+                        </h4>
+                        <p className="text-xs text-soft-brown mt-1.5 leading-relaxed font-sans">
+                          Crack your interviews with our custom AI interviewer. Receive instant feedback and tailored recommendations.
+                        </p>
+                      </div>
+                      <div className="flex items-center space-x-1.5 text-xs font-bold text-honey-amber-dark pt-2 group-hover:underline">
+                        <span>Launch Interviewer</span>
+                        <span>&rarr;</span>
+                      </div>
+                    </div>
+                  </a>
+
+                  {/* Card 2 */}
+                  <a
+                    href="https://nearbyhiring.com/ai-resume-builder"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-warm-white border border-border-soft rounded-2xl overflow-hidden shadow-card hover:shadow-hover hover:border-honey-amber-dark transition-all duration-300 flex flex-col cursor-pointer"
+                  >
+                    <div className="h-44 overflow-hidden bg-cream relative flex items-center justify-center">
+                      <img 
+                        src="/project_imgs_to_we_use/ai_resume.webp" 
+                        alt="AI Resume Builder Preview" 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 left-3 bg-sky-500/90 text-white font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">
+                        Instant PDF
+                      </div>
+                    </div>
+                    <div className="p-5 flex-grow flex flex-col justify-between space-y-3">
+                      <div>
+                        <h4 className="text-lg font-bold text-earth-brown group-hover:text-honey-amber-dark transition-colors font-display">
+                          AI Resume Builder
+                        </h4>
+                        <p className="text-xs text-soft-brown mt-1.5 leading-relaxed font-sans">
+                          Create ATS-friendly professional resumes in seconds. Beautiful Indian formatting layouts included.
+                        </p>
+                      </div>
+                      <div className="flex items-center space-x-1.5 text-xs font-bold text-honey-amber-dark pt-2 group-hover:underline">
+                        <span>Build Your Resume</span>
+                        <span>&rarr;</span>
+                      </div>
+                    </div>
+                  </a>
+
+                  {/* Card 3 */}
+                  <a
+                    href="https://nearbyhiring.com/career-flow"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-warm-white border border-border-soft rounded-2xl overflow-hidden shadow-card hover:shadow-hover hover:border-honey-amber-dark transition-all duration-300 flex flex-col cursor-pointer"
+                  >
+                    <div className="h-44 overflow-hidden bg-cream relative flex items-center justify-center">
+                      <img 
+                        src="/project_imgs_to_we_use/better_career_growth.webp" 
+                        alt="Career Flow Preview" 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 left-3 bg-emerald-500/90 text-white font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">
+                        Visual Map
+                      </div>
+                    </div>
+                    <div className="p-5 flex-grow flex flex-col justify-between space-y-3">
+                      <div>
+                        <h4 className="text-lg font-bold text-earth-brown group-hover:text-honey-amber-dark transition-colors font-display">
+                          Career Flow
+                        </h4>
+                        <p className="text-xs text-soft-brown mt-1.5 leading-relaxed font-sans">
+                          A visual directory of high-growth career options. Map your targets and track progression milestones.
+                        </p>
+                      </div>
+                      <div className="flex items-center space-x-1.5 text-xs font-bold text-honey-amber-dark pt-2 group-hover:underline">
+                        <span>View Career Flow</span>
+                        <span>&rarr;</span>
+                      </div>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>

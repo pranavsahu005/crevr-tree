@@ -1,0 +1,98 @@
+Microsoft Windows [Version 10.0.19045.6466]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\xampp\htdocs\Antigravity-Pro\nearby-hiring-project\nearby-modern-ui-main\assets\img\interview>tree/f
+Folder PATH listing
+Volume serial number is 5E05-425A
+C:.
+│   abstract1.webp
+│   ai_discussion.webp
+│   ai_help.webp
+│   ai_helper-bot.webp
+│   ai_recruit.webp
+│   ai_resume.webp
+│   ai_solution.webp
+│   all_in_one.webp
+│   analatic.webp
+│   better_career_growth.webp
+│   card1_boy.webp
+│   card2_girl.webp
+│   card3_conclusion.webp
+│   card4.webp
+│   card5.webp
+│   carousel1.webp
+│   carousel10.webp
+│   carousel11.webp
+│   carousel12.webp
+│   carousel2.webp
+│   carousel3.webp
+│   carousel4.webp
+│   carousel5.webp
+│   carousel6.webp
+│   carousel7.webp
+│   carousel8.webp
+│   carousel9.webp
+│   cover_ad.webp
+│   cover_ad2.webp
+│   cover_letter.webp
+│   cv_help_ai.webp
+│   get_better_team.webp
+│   hire-fast.webp
+│   how_to_use.webp
+│   interview.webp
+│   office_girl.webp
+│   prep_cycle.webp
+│   qa.webp
+│   resume.webp
+│   save_your_cv.webp
+│   save_your_test.webp
+│   successive.webp
+│   user_friendly.webp
+│
+├───reviews
+│       review1.webp
+│       review10.webp
+│       review10_girl.webp
+│       review11.webp
+│       review11_girl.webp
+│       review12.webp
+│       review12_girl.webp
+│       review13.webp
+│       review13_girl.webp
+│       review14.webp
+│       review14_girl.webp
+│       review15.webp
+│       review15_girl.webp
+│       review16.webp
+│       review16_girl.webp
+│       review1_girl.webp
+│       review2.webp
+│       review2_girl.webp
+│       review3.webp
+│       review3_girl.webp
+│       review4.webp
+│       review4_girl.webp
+│       review5.webp
+│       review5_girl.webp
+│       review6.webp
+│       review6_girl.webp
+│       review7.webp
+│       review7_girl.webp
+│       review8.webp
+│       review8_girl.webp
+│       review9.webp
+│       review9_girl.webp
+│
+└───tech
+        dsa_qa.webp
+        easy-learinig-tech.webp
+        easy-use-programming.webp
+        easy-use-tech.webp
+        language_support.webp
+        programming.webp
+        tech-footer.webp
+        tech-header.webp
+        tech_preparation.webp
+
+
+C:\xampp\htdocs\Antigravity-Pro\nearby-hiring-project\nearby-modern-ui-main\assets\img\interview>

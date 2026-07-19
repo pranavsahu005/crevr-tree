@@ -7,10 +7,17 @@ interface FooterProps {
 
 export default function Footer({ onNavigate, onOpenCategory }: FooterProps) {
   return (
-    <footer className="relative bg-warm-white border-t border-border-soft py-12 mt-12 overflow-hidden" id="platform-footer">
+    <footer className="relative bg-gradient-to-b from-warm-white to-[#F5F2ED] border-t border-border-soft py-16 mt-16 overflow-hidden" id="platform-footer">
       {/* Decorative leaf backgrounds from design system assets */}
-      <div className="absolute right-6 bottom-4 w-14 h-14 bg-[#43C97E]/10 rounded-tl-full rounded-br-full pointer-events-none transform rotate-45 border border-[#43C97E]/20" />
+      <div className="absolute right-12 bottom-6 w-20 h-20 bg-[#43C97E]/5 rounded-tl-full rounded-br-full pointer-events-none transform rotate-45 border border-[#43C97E]/10" />
       <div className="absolute left-8 top-6 w-10 h-10 bg-[#43C97E]/8 rounded-tl-full rounded-br-full pointer-events-none transform -rotate-12 border border-[#43C97E]/10" />
+
+      {/* Decorative tech graphic from user assets folder */}
+      <img 
+        src="/project_imgs_to_we_use/tech/tech-footer.webp" 
+        alt="Ecosystem Art" 
+        className="absolute right-0 bottom-0 h-48 w-auto object-contain opacity-[0.06] pointer-events-none mix-blend-multiply"
+      />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
         {/* Brand Info */}
@@ -35,7 +42,7 @@ export default function Footer({ onNavigate, onOpenCategory }: FooterProps) {
             <li>
               <button 
                 onClick={() => onNavigate('home')} 
-                className="text-soft-brown hover:text-honey-amber-dark cursor-pointer text-left"
+                className="text-soft-brown hover:text-honey-amber-dark cursor-pointer text-left transition-colors"
               >
                 Platform Home
               </button>
@@ -43,7 +50,7 @@ export default function Footer({ onNavigate, onOpenCategory }: FooterProps) {
             <li>
               <button 
                 onClick={() => onOpenCategory('career')} 
-                className="text-soft-brown hover:text-honey-amber-dark cursor-pointer text-left"
+                className="text-soft-brown hover:text-honey-amber-dark cursor-pointer text-left transition-colors"
               >
                 Career Paths
               </button>
@@ -51,7 +58,7 @@ export default function Footer({ onNavigate, onOpenCategory }: FooterProps) {
             <li>
               <button 
                 onClick={() => onOpenCategory('government')} 
-                className="text-soft-brown hover:text-honey-amber-dark cursor-pointer text-left"
+                className="text-soft-brown hover:text-honey-amber-dark cursor-pointer text-left transition-colors"
               >
                 Government Directory
               </button>
@@ -59,7 +66,7 @@ export default function Footer({ onNavigate, onOpenCategory }: FooterProps) {
             <li>
               <button 
                 onClick={() => onOpenCategory('business')} 
-                className="text-soft-brown hover:text-honey-amber-dark cursor-pointer text-left"
+                className="text-soft-brown hover:text-honey-amber-dark cursor-pointer text-left transition-colors"
               >
                 Startup & MSME
               </button>
@@ -69,12 +76,38 @@ export default function Footer({ onNavigate, onOpenCategory }: FooterProps) {
 
         {/* Links 2 */}
         <div className="space-y-3">
-          <h5 className="text-xs font-bold text-earth-brown uppercase tracking-widest font-display">Ecosystem Partners</h5>
-          <ul className="space-y-1.5 text-xs font-sans text-soft-brown">
-            <li><span className="hover:text-honey-amber-dark cursor-default">HexAtom Agency</span></li>
-            <li><span className="hover:text-honey-amber-dark cursor-default">Aronar AI Systems</span></li>
-            <li><span className="hover:text-honey-amber-dark cursor-default">Wear Tome Fashion</span></li>
-            <li><span className="hover:text-honey-amber-dark cursor-default">Clever Tool SaaS</span></li>
+          <h5 className="text-xs font-bold text-earth-brown uppercase tracking-widest font-display">Ecosystem Tools</h5>
+          <ul className="space-y-2 text-xs font-semibold text-soft-brown">
+            <li>
+              <a 
+                href="https://nearbyhiring.com/ai-mock-interview"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-honey-amber-dark transition-colors"
+              >
+                AI Mock Interview
+              </a>
+            </li>
+            <li>
+              <a 
+                href="https://nearbyhiring.com/ai-resume-builder"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-honey-amber-dark transition-colors"
+              >
+                AI Resume Builder
+              </a>
+            </li>
+            <li>
+              <a 
+                href="https://nearbyhiring.com/career-flow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-honey-amber-dark transition-colors"
+              >
+                Career Flow
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -85,20 +118,20 @@ export default function Footer({ onNavigate, onOpenCategory }: FooterProps) {
             CrevrTree is a self-funded open educational repository. No cookie tracking, no profiling. Made with ❤️ in Madhya Pradesh, India.
           </p>
           <div className="flex space-x-3 text-soft-brown pt-1">
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-honey-amber-dark">
+            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-honey-amber-dark transition-colors">
               <Github className="w-4 h-4" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-honey-amber-dark">
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-honey-amber-dark transition-colors">
               <Linkedin className="w-4 h-4" />
             </a>
-            <a href="mailto:support@crevrtree.com" className="hover:text-honey-amber-dark">
+            <a href="mailto:support@crevrtree.com" className="hover:text-honey-amber-dark transition-colors">
               <Mail className="w-4 h-4" />
             </a>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-border-soft mt-8 pt-8 text-center text-[10px] text-soft-brown uppercase tracking-wider font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-border-soft/60 mt-8 pt-8 text-center text-[10px] text-soft-brown uppercase tracking-wider font-sans">
         © 2026 CrevrTree Ecosystem. All pathways are verified open-source schemas.
       </div>
     </footer>
