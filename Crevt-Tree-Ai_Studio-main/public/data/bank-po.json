@@ -1,0 +1,154 @@
+{
+  "id": "bank-po",
+  "name": "Bank Probationary Officer (IBPS/SBI PO)",
+  "category": "finance",
+  "description": "Pathway mapping bank examinations, commercial banking foundations, and PO training.",
+  "nodes": [
+    {
+      "id": "bpo-1",
+      "label": "Academic Graduate Degree",
+      "tier": 1,
+      "children": [
+        "bpo-2"
+      ],
+      "detail": {
+        "overview": "Complete graduation from any UGC approved institution. Any field is completely eligible.",
+        "official": {
+          "label": "IBPS Exams Schedule & Guidelines",
+          "url": "https://www.ibps.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Bank PO Preparation Strategy Tutorials",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Secured graduate pass certificate",
+          "Aged between 21 and 30 years"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Secured graduate pass certificate"
+        },
+        {
+          "label": "Aged between 21 and 30 years"
+        }
+      ]
+    },
+    {
+      "id": "bpo-2",
+      "label": "PO Preliminary Exam",
+      "tier": 2,
+      "children": [
+        "bpo-3"
+      ],
+      "detail": {
+        "overview": "Clear 100 objective MCQ items spanning Quantitative Aptitude, Reasoning Ability, and English Language.",
+        "official": {
+          "label": "IBPS Exam Mock Portals",
+          "url": "https://www.ibps.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "IBPS PO Prelims Section Mock Papers",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Mastered mental math short-cut tricks",
+          "Solving logic reasoning questions within 45 seconds"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Mastered mental math short-cut tricks"
+        },
+        {
+          "label": "Solving logic reasoning questions within 45 seconds"
+        }
+      ]
+    },
+    {
+      "id": "bpo-3",
+      "label": "PO Mains & Descriptive",
+      "tier": 3,
+      "children": [
+        "bpo-4"
+      ],
+      "detail": {
+        "overview": "Clear advanced banking aptitude papers, data analysis, general economy awareness, and English letters.",
+        "official": {
+          "label": "SBI Career Recruitment Portal",
+          "url": "https://sbi.co.in/careers"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Financial & Economic Current Affairs",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Understand repo rates, SLR, and bank ratios",
+          "Understand general essay drafting templates"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Understand repo rates, SLR, and bank ratios"
+        },
+        {
+          "label": "Understand general essay drafting templates"
+        }
+      ]
+    },
+    {
+      "id": "bpo-4",
+      "label": "Interview & Group Discussion",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "Face highly conversational banking board panels evaluating general knowledge, customer relations, and banking ethics.",
+        "official": {
+          "label": "IBPS Final Seat Allocation Results",
+          "url": "https://www.ibps.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "Banking Interview Mock Questions Booklet",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Prepared personal introduction answers",
+          "Completed 2 full mock panels"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Prepared personal introduction answers"
+        },
+        {
+          "label": "Completed 2 full mock panels"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "ai-engineer",
+    "name": "AI & Machine Learning Engineer",
+    "category": "tech",
+    "tagline": "From school mathematics bases to production LLM model integration.",
+    "stepCount": 5
+  },
+  {
+    "id": "doctor",
+    "name": "Medical Doctor (MBBS)",
+    "category": "medical",
+    "tagline": "Pathway to clear NEET exams and complete the statutory clinical MBBS curriculum.",
+    "stepCount": 5
+  },
+  {
+    "id": "ias-officer",
+    "name": "UPSC Civil Services Officer (IAS)",
+    "category": "government",
+    "tagline": "Pathway to clearing the UPSC CSE Prelims, Mains, and Interview cycle.",
+    "stepCount": 5
+  },
+  {
+    "id": "startup-founder",
+    "name": "Startup Founder / Entrepreneur",
+    "category": "business",
+    "tagline": "Pathway to define MVP, register entity (LLP/Pvt), and seek Mudra or seed funding.",
+    "stepCount": 5
+  },
+  {
+    "id": "chartered-accountant",
+    "name": "Chartered Accountant (CA)",
+    "category": "finance",
+    "tagline": "Pathway to clear ICAI Foundation, Inter, articleship placement, and ICAI Finals.",
+    "stepCount": 4
+  },
+  {
+    "id": "bca-btech",
+    "name": "Computer Science (BCA/BTech)",
+    "category": "education",
+    "tagline": "Pathway to building core data structure principles, web systems, and placing as a developer.",
+    "stepCount": 5
+  },
+  {
+    "id": "software-engineer",
+    "name": "Full Stack Software Developer",
+    "category": "tech",
+    "tagline": "Complete engineering roadmap from web fundamentals to Cloud, DevOps and Scalability.",
+    "stepCount": 5
+  },
+  {
+    "id": "nurse",
+    "name": "Registered Nurse (B.Sc Nursing)",
+    "category": "medical",
+    "tagline": "Pathway mapping the academic nursing college course, clinical boards, and hospital registry.",
+    "stepCount": 4
+  },
+  {
+    "id": "police-sub-inspector",
+    "name": "Police Sub-Inspector (SI)",
+    "category": "government",
+    "tagline": "Milestones for clearing police SI recruitments, physical screening tests, and basic training academies.",
+    "stepCount": 4
+  },
+  {
+    "id": "organic-farmer-agritech",
+    "name": "Organic Farming & Agritech Startup",
+    "category": "business",
+    "tagline": "Pathway to starting an organic crop system, MSME registration, and commercial supply logs.",
+    "stepCount": 5
+  },
+  {
+    "id": "bank-po",
+    "name": "Bank Probationary Officer (IBPS/SBI PO)",
+    "category": "finance",
+    "tagline": "Pathway mapping bank examinations, commercial banking foundations, and PO training.",
+    "stepCount": 4
+  },
+  {
+    "id": "cuet-ug",
+    "name": "CUET UG College Entrance",
+    "category": "education",
+    "tagline": "Pathway to preparing and clearing Common University Entrance Test for top central university slots.",
+    "stepCount": 4
+  }
+]

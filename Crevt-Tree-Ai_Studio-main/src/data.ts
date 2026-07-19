@@ -1,0 +1,803 @@
+import { Roadmap } from './types';
+
+export const ROADMAPS_DATABASE: Roadmap[] = [
+  // 1. TECHNOLOGY: AI & ML ENGINEER
+  {
+    id: "ai-engineer",
+    name: "AI & Machine Learning Engineer",
+    category: "tech",
+    tagline: "From school mathematics bases to production LLM model integration.",
+    steps: [
+      {
+        id: "ai-1",
+        name: "Mathematics Foundation",
+        desc: "Master linear algebra, calculus foundations, and probability statistics standard to Indian board class 11-12 curriculum.",
+        official: { label: "NCERT Class 12 Math Syllabus", url: "https://ncert.nic.in" },
+        resources: [
+          { type: "pdf", label: "NCERT Chapter 13 Probability Text", url: "https://ncert.nic.in/textbook.php" },
+          { type: "video", label: "Probability Lectures on YouTube", url: "https://youtube.com" }
+        ],
+        checklist: ["Comfortable with vectors", "Understand Matrix operations", "Basic probability concepts"],
+        parent: null,
+        coords: { x: 50, y: 12 },
+        salary: "₹6 - ₹12 LPA (Entry)",
+        companies: ["TCS Research", "Infosys Helix", "Google India", "Uniphore"],
+        colleges: ["IIT Madras", "IIIT Hyderabad", "BITS Pilani"],
+        entranceExams: ["JEE Advanced", "GATE CS"]
+      },
+      {
+        id: "ai-2",
+        name: "Python Logic Programming",
+        desc: "Master key scripting elements: conditional statements, logical loop algorithms, lists, and file handling.",
+        official: { label: "Python Foundation Documentation", url: "https://docs.python.org/3/" },
+        resources: [
+          { type: "course", label: "Python for Absolute Beginners (NPTEL)", url: "https://nptel.ac.in" }
+        ],
+        checklist: ["Can write simple logic loops", "Understand list comprehensions", "Installed local Python IDLE"],
+        parent: "ai-1",
+        coords: { x: 50, y: 32 }
+      },
+      {
+        id: "ai-3a",
+        name: "Data Analysis & Pandas",
+        desc: "Learn to clean, manipulate, and analyze tabular records utilizing Pandas, NumPy, and Matplotlib libraries.",
+        official: { label: "Pandas Dataframe Documentation", url: "https://pandas.pydata.org" },
+        resources: [
+          { type: "video", label: "Pandas Data Cleaning Workshop", url: "https://youtube.com" }
+        ],
+        checklist: ["Can filter rows in a Dataframe", "Completed basic CSV parsing project"],
+        parent: "ai-2",
+        coords: { x: 30, y: 56 }
+      },
+      {
+        id: "ai-3b",
+        name: "Neural Networks Theory",
+        desc: "Understand backpropagation, weights, activation functions, and layer gradient flows.",
+        official: { label: "Neural Networks Foundations", url: "https://deeplearning.ai" },
+        resources: [
+          { type: "pdf", label: "Deep Learning Book chapter PDF", url: "https://www.deeplearningbook.org" }
+        ],
+        checklist: ["Calculated simple hand derivatives", "Understand Sigmoid vs ReLU functions"],
+        parent: "ai-2",
+        coords: { x: 70, y: 56 }
+      },
+      {
+        id: "ai-4",
+        name: "Production Model Integration",
+        desc: "Deploy API-driven pipelines leveraging OpenAI API, Claude API, or local HuggingFace transformers.",
+        official: { label: "OpenAI Developer API Portal", url: "https://platform.openai.com" },
+        resources: [
+          { type: "video", label: "Deploying AI Agents on YouTube", url: "https://youtube.com" }
+        ],
+        checklist: ["Understand REST API requests", "Constructed a simple custom LLM chatbot UI"],
+        parent: "ai-3b",
+        coords: { x: 50, y: 86 }
+      }
+    ]
+  },
+
+  // 2. MEDICAL: DOCTOR (MBBS)
+  {
+    id: "doctor",
+    name: "Medical Doctor (MBBS)",
+    category: "medical",
+    tagline: "Pathway to clear NEET exams and complete the statutory clinical MBBS curriculum.",
+    steps: [
+      {
+        id: "med-1",
+        name: "PCB Class 11-12 Board Prep",
+        desc: "Complete your board foundations with deep attention to NCERT Biology, Chemistry, and Physics syllabus.",
+        official: { label: "NCERT Official E-Textbooks", url: "https://ncert.nic.in" },
+        resources: [
+          { type: "pdf", label: "NCERT Class 11 Biology Textbook PDF", url: "https://ncert.nic.in" }
+        ],
+        checklist: ["Completed Class 12 exams with Physics, Chemistry, Biology", "Achieved minimum age limit of 17 years"],
+        parent: null,
+        coords: { x: 50, y: 12 },
+        salary: "₹8 - ₹15 LPA (Govt Medical Officer)",
+        companies: ["AIIMS", "Apollo Hospitals", "Fortis Healthcare"],
+        colleges: ["AIIMS New Delhi", "CMC Vellore", "KGMU Lucknow"],
+        entranceExams: ["NEET UG"]
+      },
+      {
+        id: "med-2",
+        name: "NEET UG Examination Clearance",
+        desc: "Apply, prepare, and clear the National Eligibility cum Entrance Test to secure a government or private college seat.",
+        official: { label: "NTA NEET Official Portal", url: "https://neet.nta.nic.in" },
+        resources: [
+          { type: "pdf", label: "NEET UG Exam Syllabus PDF", url: "https://neet.nta.nic.in" }
+        ],
+        checklist: ["Enrolled on NTA NEET portal", "Completed multiple official mock sample papers"],
+        parent: "med-1",
+        coords: { x: 50, y: 32 }
+      },
+      {
+        id: "med-3a",
+        name: "MBBS Pre-Clinical Phase",
+        desc: "Deep studies into Human Anatomy, Biochemistry, and Physiology during MBBS semesters 1 and 2.",
+        official: { label: "National Medical Commission", url: "https://www.nmc.org.in" },
+        resources: [
+          { type: "video", label: "MBBS Anatomy Lecture Series", url: "https://youtube.com" }
+        ],
+        checklist: ["Mastered dissection procedures", "Cleared college first professional exams"],
+        parent: "med-2",
+        coords: { x: 30, y: 56 }
+      },
+      {
+        id: "med-3b",
+        name: "MBBS Clinical Pathology",
+        desc: "Semesters 3 to 9. Studying Pharmacology, pathology, forensic medicine, and diagnostic parameters.",
+        official: { label: "NMC UG Medical Guidelines", url: "https://www.nmc.org.in" },
+        resources: [
+          { type: "course", label: "Clinical Pathology Open Modules", url: "https://youtube.com" }
+        ],
+        checklist: ["Completed pediatric rotation", "Completed ward observation rotations"],
+        parent: "med-2",
+        coords: { x: 70, y: 56 }
+      },
+      {
+        id: "med-4",
+        name: "Compulsory Rotatory Internship",
+        desc: "Complete 1 full year of practical hands-on rotatory clinical placement across active hospital units.",
+        official: { label: "State Medical Council Registration", url: "https://www.nmc.org.in" },
+        resources: [
+          { type: "pdf", label: "Intern Logbook Standards Guidelines", url: "https://www.nmc.org.in" }
+        ],
+        checklist: ["Completed Emergency rotation", "Obtained provisional doctor practitioner license registration number"],
+        parent: "med-3a",
+        coords: { x: 50, y: 86 }
+      }
+    ]
+  },
+
+  // 3. GOVERNMENT: UPSC CIVIL SERVICES (IAS)
+  {
+    id: "ias-officer",
+    name: "UPSC Civil Services Officer (IAS)",
+    category: "government",
+    tagline: "Pathway to clearing the UPSC CSE Prelims, Mains, and Interview cycle.",
+    steps: [
+      {
+        id: "civ-1",
+        name: "UGC Graduate Degree",
+        desc: "Complete a standard bachelor degree in any stream from a UGC recognized Indian university.",
+        official: { label: "UGC Approved Universities List", url: "https://www.ugc.gov.in" },
+        resources: [
+          { type: "video", label: "UPSC CSE Preparation Strategy", url: "https://youtube.com" }
+        ],
+        checklist: ["Enrolled in graduation", "Read standard newspapers daily (The Hindu/Express)"],
+        parent: null,
+        coords: { x: 50, y: 12 },
+        salary: "₹56,100 - ₹2,500,000 per month (Basic Pay Matrix)",
+        companies: ["Ministry of Home Affairs", "District Administrations", "Public Sector Enterprises"],
+        colleges: ["LBSNAA Mussoorie (Post-selection Training)"],
+        entranceExams: ["UPSC Civil Services Examination"]
+      },
+      {
+        id: "civ-2",
+        name: "UPSC Prelims Filtering",
+        desc: "Clear GS Paper 1 and score minimum 33% passing aggregate inside the CSAT Aptitude paper.",
+        official: { label: "UPSC Official Notification Portal", url: "https://upsc.gov.in" },
+        resources: [
+          { type: "pdf", label: "UPSC General Studies Previous Year Papers", url: "https://upsc.gov.in" }
+        ],
+        checklist: ["Mastered basic NCERT History (6-12)", "Cleared mock CSAT test series"],
+        parent: "civ-1",
+        coords: { x: 50, y: 35 }
+      },
+      {
+        id: "civ-3a",
+        name: "GS Descriptive Mains Papers",
+        desc: "Prepare and write 9 descriptive papers covering policy, essay, ethics, and your elective option.",
+        official: { label: "UPSC Mains Descriptive Guidelines", url: "https://upsc.gov.in" },
+        resources: [
+          { type: "video", label: "Mains Answer Writing Strategy Class", url: "https://youtube.com" }
+        ],
+        checklist: ["Completed syllabus for 1 optional subject", "Practiced daily answer writing speeds"],
+        parent: "civ-2",
+        coords: { x: 30, y: 65 }
+      },
+      {
+        id: "civ-3b",
+        name: "Detailed Application Form (DAF)",
+        desc: "Fill and compile details regarding background history, extracurriculars, and cadre preferences.",
+        official: { label: "UPSC Online DAF Filing", url: "https://upsconline.nic.in" },
+        resources: [
+          { type: "pdf", label: "UPSC DAF Sample Blueprint Form", url: "https://upsc.gov.in" }
+        ],
+        checklist: ["Verified regional certificate details", "Listed clear district/cadre priority choices"],
+        parent: "civ-2",
+        coords: { x: 70, y: 65 }
+      },
+      {
+        id: "civ-4",
+        name: "UPSC Personality Interview",
+        desc: "Face highly structured boards evaluating composure, national values, policy vision, and ethics.",
+        official: { label: "UPSC CSE Final Board Schedule", url: "https://upsc.gov.in" },
+        resources: [
+          { type: "video", label: "Live Mock Interview Board Sessions", url: "https://youtube.com" }
+        ],
+        checklist: ["Thoroughly updated on current affairs", "Completed 3 panel mock tests"],
+        parent: "civ-3a",
+        coords: { x: 50, y: 90 }
+      }
+    ]
+  },
+
+  // 4. BUSINESS: STARTUP FOUNDER
+  {
+    id: "startup-founder",
+    name: "Startup Founder / Entrepreneur",
+    category: "business",
+    tagline: "Pathway to define MVP, register entity (LLP/Pvt), and seek Mudra or seed funding.",
+    steps: [
+      {
+        id: "biz-1",
+        name: "Customer Interview (MVP)",
+        desc: "Speak with at least 50 target buyers to validate if they face the problem you are solving.",
+        official: { label: "Startup India Learning Hub", url: "https://www.startupindia.gov.in" },
+        resources: [
+          { type: "video", label: "Y-Combinator Startup School Videos", url: "https://youtube.com" }
+        ],
+        checklist: ["Documented 50 customer feedback chats", "Defined core product pricing metrics"],
+        parent: null,
+        coords: { x: 50, y: 15 },
+        salary: "Self-structured (Revenue Dependent)",
+        companies: ["NITI Aayog Incubators", "Y Combinator", "Indian Angel Network"]
+      },
+      {
+        id: "biz-2",
+        name: "Company Incorporation (MCA)",
+        desc: "Register a legal Indian business entity — Private Limited or Limited Liability Partnership (LLP) on MCA.",
+        official: { label: "Ministry of Corporate Affairs Portal", url: "https://www.mca.gov.in" },
+        resources: [
+          { type: "pdf", label: "Step-by-step SPICe+ Registration PDF", url: "https://www.mca.gov.in" }
+        ],
+        checklist: ["Obtained DSC (Digital Signature Certificate)", "Approved unique business name", "Obtained PAN & TAN for company"],
+        parent: "biz-1",
+        coords: { x: 50, y: 40 }
+      },
+      {
+        id: "biz-3a",
+        name: "Government Mudra Loan Support",
+        desc: "Seek debt capital via the Micro Units Development Refinance Agency (MUDRA) scheme (Shishu/Kishor/Tarun segments).",
+        official: { label: "Official Udyam Registration & Mudra", url: "https://www.mudra.org.in" },
+        resources: [
+          { type: "video", label: "Udyam Registration Tutorial Hub", url: "https://youtube.com" }
+        ],
+        checklist: ["Completed Udyam MSME Registration portal", "Prepared detailed project report"],
+        parent: "biz-2",
+        coords: { x: 30, y: 68 }
+      },
+      {
+        id: "biz-3b",
+        name: "Angel Funding & Term Sheet",
+        desc: "Create investor deck slides, present to local Indian angel networks, and agree on standard SHA terms.",
+        official: { label: "Startup India Investor Network", url: "https://www.startupindia.gov.in" },
+        resources: [
+          { type: "pdf", label: "Standard Term Sheet template PDF", url: "https://youtube.com" }
+        ],
+        checklist: ["Formulated fully detailed cash cap table", "Calculated basic customer acquisition cost (CAC)"],
+        parent: "biz-2",
+        coords: { x: 70, y: 68 }
+      },
+      {
+        id: "biz-4",
+        name: "Scale & GST Compliance",
+        desc: "File regular monthly/quarterly GST returns, maintain accounting files, and process staff salaries.",
+        official: { label: "GST Central Filing Portal", url: "https://www.gst.gov.in" },
+        resources: [
+          { type: "video", label: "GST Monthly Return Tutorial Series", url: "https://youtube.com" }
+        ],
+        checklist: ["Created active corporate bank account", "Set up internal payroll software system"],
+        parent: "biz-3a",
+        coords: { x: 50, y: 90 }
+      }
+    ]
+  },
+
+  // 5. FINANCE: CHARTERED ACCOUNTANT (CA)
+  {
+    id: "chartered-accountant",
+    name: "Chartered Accountant (CA)",
+    category: "finance",
+    tagline: "Pathway to clear ICAI Foundation, Inter, articleship placement, and ICAI Finals.",
+    steps: [
+      {
+        id: "fin-1",
+        name: "ICAI Foundation Entry",
+        desc: "Register and clear the 4 primary objective papers including accounting principles and business laws.",
+        official: { label: "ICAI Foundation Registration Online", url: "https://www.icai.org" },
+        resources: [
+          { type: "pdf", label: "ICAI Foundation Official Board Materials", url: "https://icai.org" }
+        ],
+        checklist: ["Registered on ICAI portal post Class 12", "Mastered double-entry balance sheets"],
+        parent: null,
+        coords: { x: 50, y: 15 },
+        salary: "₹7 - ₹20 LPA (Fresh Chartered Accountant)",
+        companies: ["Deloitte India", "EY", "KPMG", "PwC", "Aditya Birla Group"]
+      },
+      {
+        id: "fin-2",
+        name: "ICAI Intermediate Exam",
+        desc: "Register, study, and clear Group 1 and Group 2 papers of ICAI Intermediate covering corporate audits and direct tax codes.",
+        official: { label: "ICAI Intermediate Syllabus Directory", url: "https://www.icai.org" },
+        resources: [
+          { type: "video", label: "ICAI Inter Tax Prep Lecture Videos", url: "https://youtube.com" }
+        ],
+        checklist: ["Completed Direct Tax study modules", "Cleared both Inter groups"],
+        parent: "fin-1",
+        coords: { x: 50, y: 40 }
+      },
+      {
+        id: "fin-3",
+        name: "Practical Articleship Placement",
+        desc: "Undergo a mandatory 2-year practical internship working under a certified auditing practice firm.",
+        official: { label: "ICAI Articleship Vacancy Portal", url: "https://icai.org" },
+        resources: [
+          { type: "pdf", label: "Articleship Logbook Code of Conduct Guidelines", url: "https://icai.org" }
+        ],
+        checklist: ["Obtained active articleship NOC", "Verified monthly stipend registrations"],
+        parent: "fin-2",
+        coords: { x: 50, y: 65 }
+      },
+      {
+        id: "fin-4",
+        name: "ICAI Final Examination",
+        desc: "Clear advanced strategic finance, financial reporting, and indirect tax tribunals to receive your membership ID.",
+        official: { label: "ICAI Final Registration & Membership", url: "https://www.icai.org" },
+        resources: [
+          { type: "video", label: "Final Advanced Audit Revision", url: "https://youtube.com" }
+        ],
+        checklist: ["Completed advanced IT training course", "Cleared both final ICAI papers"],
+        parent: "fin-3",
+        coords: { x: 50, y: 90 }
+      }
+    ]
+  },
+
+  // 6. EDUCATION: COMPUTER SCIENCE (BCA/BTECH)
+  {
+    id: "bca-btech",
+    name: "Computer Science (BCA/BTech)",
+    category: "education",
+    tagline: "Pathway to building core data structure principles, web systems, and placing as a developer.",
+    steps: [
+      {
+        id: "edu-1",
+        name: "Structured Programming Base",
+        desc: "Choose a primary programming language (C++ or Java) to understand syntax and computer memory.",
+        official: { label: "AICTE Recommended CSE Syllabus", url: "https://aicte-india.org" },
+        resources: [
+          { type: "video", label: "Free C++ Complete Placement Course", url: "https://youtube.com" }
+        ],
+        checklist: ["Understand loops and array definitions", "Mastered compiling code in local terminal"],
+        parent: null,
+        coords: { x: 50, y: 15 },
+        salary: "₹4.5 - ₹15 LPA (Junior Engineer)",
+        companies: ["TCS", "Wipro", "HCLTech", "Cognizant India", "Razorpay"],
+        entranceExams: ["JEE Main", "WBJEE", "MHT CET"]
+      },
+      {
+        id: "edu-2",
+        name: "Data Structures & Algorithms",
+        desc: "Master complexity metrics, binary search trees, hashing algorithms, recursion, and sorting models.",
+        official: { label: "NPTEL Data Structures and Algorithms", url: "https://nptel.ac.in" },
+        resources: [
+          { type: "pdf", label: "Algorithmic Complexity Cheat Sheet", url: "https://youtube.com" }
+        ],
+        checklist: ["Can write bubble and quicksort algorithms", "Solved 50 practice logic patterns"],
+        parent: "edu-1",
+        coords: { x: 50, y: 40 }
+      },
+      {
+        id: "edu-3a",
+        name: "Frontend Web Stack (HTML/JS)",
+        desc: "Develop completely fluid responsive website systems utilizing modern JavaScript engines.",
+        official: { label: "MDN Web Docs JS Reference", url: "https://developer.mozilla.org" },
+        resources: [
+          { type: "video", label: "Complete Web Design Series on YouTube", url: "https://youtube.com" }
+        ],
+        checklist: ["Constructed dynamic API weather widget", "Understand DOM event triggers"],
+        parent: "edu-2",
+        coords: { x: 30, y: 65 }
+      },
+      {
+        id: "edu-3b",
+        name: "Database Design (SQL)",
+        desc: "Design clean tables, structural primary/foreign keys, and master relational querying commands.",
+        official: { label: "MySQL Documentation and Guides", url: "https://dev.mysql.com" },
+        resources: [
+          { type: "pdf", label: "SQL Query Cheat Sheet PDF Guide", url: "https://youtube.com" }
+        ],
+        checklist: ["Can perform complex INNER JOIN statements", "Understand standard index locks"],
+        parent: "edu-2",
+        coords: { x: 70, y: 65 }
+      },
+      {
+        id: "edu-4",
+        name: "Final Year Portfolio Placement",
+        desc: "Establish a complete public GitHub workspace showcasing deployed systems to secure high placement ratings.",
+        official: { label: "GitHub Developer Portal", url: "https://github.com" },
+        resources: [
+          { type: "video", label: "Resume Strategy for CS Engineering Freshers", url: "https://youtube.com" }
+        ],
+        checklist: ["Completed 3 end-to-end projects", "Maintained 50+ active GitHub commit logs"],
+        parent: "edu-3a",
+        coords: { x: 50, y: 90 }
+      }
+    ]
+  },
+
+  // 7. TECHNOLOGY: SOFTWARE ENGINEER
+  {
+    id: "software-engineer",
+    name: "Full Stack Software Developer",
+    category: "tech",
+    tagline: "Complete engineering roadmap from web fundamentals to Cloud, DevOps and Scalability.",
+    steps: [
+      {
+        id: "se-1",
+        name: "Modern Web Fundamentals",
+        desc: "Learn modern HTML5 semantic layout, responsive CSS grids, flexbox, and basic client-side programming.",
+        official: { label: "W3C Web Standards", url: "https://www.w3.org" },
+        resources: [
+          { type: "doc", label: "MDN CSS Layout Guide", url: "https://developer.mozilla.org" }
+        ],
+        checklist: ["Built a responsive personal portfolio", "Deployed basic static site using Vercel or Netlify"],
+        parent: null,
+        coords: { x: 50, y: 12 }
+      },
+      {
+        id: "se-2",
+        name: "React & Component Architecture",
+        desc: "Master declarative interfaces, state hooks, properties, context wrappers, and virtual DOM reconciliation.",
+        official: { label: "Official React Documentation", url: "https://react.dev" },
+        resources: [
+          { type: "video", label: "React JS Core Tutorials (Free)", url: "https://youtube.com" }
+        ],
+        checklist: ["Understand useEffect re-renders", "Built a custom todo list app with local persistence"],
+        parent: "se-1",
+        coords: { x: 50, y: 32 }
+      },
+      {
+        id: "se-3a",
+        name: "Express.js Backend APIs",
+        desc: "Write scalable server code, secure endpoints, validate HTTP parameters, and set up cookie tokens.",
+        official: { label: "Express API Documentation", url: "https://expressjs.com" },
+        resources: [
+          { type: "course", label: "Node.js Complete Guide on SWAYAM", url: "https://swayam.gov.in" }
+        ],
+        checklist: ["Created dynamic RESTful routes", "Able to parse incoming JSON bodies in requests"],
+        parent: "se-2",
+        coords: { x: 30, y: 56 }
+      },
+      {
+        id: "se-3b",
+        name: "Database Modelling",
+        desc: "Implement schema migrations, handle indexing, connect pools, and prevent SQL injections.",
+        official: { label: "PostgreSQL Official Core Wiki", url: "https://www.postgresql.org" },
+        resources: [
+          { type: "pdf", label: "Database Normalization PDF Guide", url: "https://nptel.ac.in" }
+        ],
+        checklist: ["Structured a 1-to-many relationship", "Understand database indexing performance advantages"],
+        parent: "se-2",
+        coords: { x: 70, y: 56 }
+      },
+      {
+        id: "se-4",
+        name: "Dockerization & Cloud Deploy",
+        desc: "Containerize the app utilizing lightweight Docker blueprints and host on AWS, GCP or Render.",
+        official: { label: "Docker Reference Manuals", url: "https://docs.docker.com" },
+        resources: [
+          { type: "video", label: "Free DevOps & Cloud Crash Course", url: "https://youtube.com" }
+        ],
+        checklist: ["Wrote functional multi-stage Dockerfile", "Understand continuous integration (GitHub Actions)"],
+        parent: "se-3a",
+        coords: { x: 50, y: 86 }
+      }
+    ]
+  },
+
+  // 8. MEDICAL: NURSING (B.Sc NURSING)
+  {
+    id: "nurse",
+    name: "Registered Nurse (B.Sc Nursing)",
+    category: "medical",
+    tagline: "Pathway mapping the academic nursing college course, clinical boards, and hospital registry.",
+    steps: [
+      {
+        id: "ns-1",
+        name: "HSC PCB Exam Qualification",
+        desc: "Clear 12th standard with biological sciences from a recognized Board under state or center regulations.",
+        official: { label: "Indian Nursing Council Standards", url: "https://www.indiannursingcouncil.org" },
+        resources: [
+          { type: "pdf", label: "B.Sc Nursing Course Guidelines Booklet", url: "https://www.indiannursingcouncil.org" }
+        ],
+        checklist: ["Class 12 board passed with minimum 45% marks in PCB", "Cleared state level nursing entrance test"],
+        parent: null,
+        coords: { x: 50, y: 15 }
+      },
+      {
+        id: "ns-2",
+        name: "Anatomy & Foundation Theory",
+        desc: "Undergo deep training in fundamental nursing principles, human nutrition, biochemistry, and physical health.",
+        official: { label: "INC Academic Syllabus", url: "https://www.indiannursingcouncil.org" },
+        resources: [
+          { type: "video", label: "Nursing Foundations Lecture Classes", url: "https://youtube.com" }
+        ],
+        checklist: ["Memorized clinical vitals metrics", "Conducted sterile dressing practice sessions"],
+        parent: "ns-1",
+        coords: { x: 50, y: 40 }
+      },
+      {
+        id: "ns-3",
+        name: "Clinical Hospital Posting",
+        desc: "Obtain clinical exposure inside medical-surgical wards, psychiatric clinics, and maternity care units.",
+        official: { label: "Ministry of Health & Family Welfare", url: "https://mohfw.gov.in" },
+        resources: [
+          { type: "pdf", label: "INC Practical Logbook Blueprint", url: "https://www.indiannursingcouncil.org" }
+        ],
+        checklist: ["Completed pediatric intensive care posting", "Logged 200 hours of clinical patient treatment"],
+        parent: "ns-2",
+        coords: { x: 50, y: 65 }
+      },
+      {
+        id: "ns-4",
+        name: "State Registry & Licensing",
+        desc: "Register in your target State Nursing Council to secure certified licensing for nursing officer roles.",
+        official: { label: "State Nursing Council Registration Portal", url: "https://www.indiannursingcouncil.org" },
+        resources: [
+          { type: "video", label: "Nursing Officer Exam Preparation Mock", url: "https://youtube.com" }
+        ],
+        checklist: ["Obtained character verification certification", "Secure State Nurse Registry ID number"],
+        parent: "ns-3",
+        coords: { x: 50, y: 90 }
+      }
+    ]
+  },
+
+  // 9. GOVERNMENT: POLICE SUB-INSPECTOR
+  {
+    id: "police-sub-inspector",
+    name: "Police Sub-Inspector (SI)",
+    category: "government",
+    tagline: "Milestones for clearing police SI recruitments, physical screening tests, and basic training academies.",
+    steps: [
+      {
+        id: "pol-1",
+        name: "Graduation Graduation",
+        desc: "Obtain any Bachelor's degree (BA/BSc/BCom/BTech) from an officially recognized university.",
+        official: { label: "UGC Degree Equivalencies Guide", url: "https://www.ugc.gov.in" },
+        resources: [
+          { type: "video", label: "State Police SI Exam Complete Syllabus Info", url: "https://youtube.com" }
+        ],
+        checklist: ["Graduation cleared with no active arrears", "Aged between 21 and 28 years (varies per state)"],
+        parent: null,
+        coords: { x: 50, y: 15 }
+      },
+      {
+        id: "pol-2",
+        name: "Written Recruitment Exam",
+        desc: "Study and clear multiple papers covering General Knowledge, Numerical Ability, Reasoning, and Regional Language.",
+        official: { label: "State Police Recruitment Board Link", url: "https://mppolice.gov.in" }, // Example: MP Police
+        resources: [
+          { type: "pdf", label: "General Knowledge Previous Years Sample Qs", url: "https://youtube.com" }
+        ],
+        checklist: ["Cleared basic arithmetic mock papers", "Strong awareness of local state laws and geography"],
+        parent: "pol-1",
+        coords: { x: 50, y: 40 }
+      },
+      {
+        id: "pol-3",
+        name: "Physical Measurement & Endurance",
+        desc: "Pass the mandatory chest/height benchmarks, and clear sprint races, high-jumps, and long-jumps.",
+        official: { label: "Police SI Physical Standard Rules", url: "https://mppolice.gov.in" },
+        resources: [
+          { type: "video", label: "Daily Physical Conditioning & Run Tips", url: "https://youtube.com" }
+        ],
+        checklist: ["Height meets state minimum requirements", "Completed 1600m run test within statutory limits"],
+        parent: "pol-2",
+        coords: { x: 50, y: 65 }
+      },
+      {
+        id: "pol-4",
+        name: "Police Training Academy",
+        desc: "Secure placement in regional police training colleges to study penal code, defense, weaponry, and protocols.",
+        official: { label: "Sardar Vallabhbhai Patel National Police Academy", url: "https://www.svpnpa.gov.in" },
+        resources: [
+          { type: "pdf", label: "Indian Penal Code (IPC) Basic Summary Booklet", url: "https://ncert.nic.in" }
+        ],
+        checklist: ["Cleared character background verification", "Cleared physical medical checkup board"],
+        parent: "pol-3",
+        coords: { x: 50, y: 90 }
+      }
+    ]
+  },
+
+  // 10. BUSINESS: ORGANIC FARMING & AGRITECH
+  {
+    id: "organic-farmer-agritech",
+    name: "Organic Farming & Agritech Startup",
+    category: "business",
+    tagline: "Pathway to starting an organic crop system, MSME registration, and commercial supply logs.",
+    steps: [
+      {
+        id: "farm-1",
+        name: "Soil Testing & Land Ready",
+        desc: "Determine nutritional density, pH indices, and heavy metal aggregates by submitting farm soil to regional government labs.",
+        official: { label: "Soil Health Card Scheme Portal", url: "https://soilhealth.dac.gov.in" },
+        resources: [
+          { type: "pdf", label: "Soil Sampling Official Methodologies", url: "https://soilhealth.dac.gov.in" }
+        ],
+        checklist: ["Gathered 5-point dry soil samples", "Verified organic carbon parameters (minimum 0.5% recommended)"],
+        parent: null,
+        coords: { x: 50, y: 15 }
+      },
+      {
+        id: "farm-2",
+        name: "NPOP Organic Certification",
+        desc: "Register with certified third-party inspectors to obtain statutory organic compliance tags under NPOP standards.",
+        official: { label: "APEDA National Programme for Organic Production", url: "https://apeda.gov.in" },
+        resources: [
+          { type: "video", label: "How to Obtain Organic Certifications in India", url: "https://youtube.com" }
+        ],
+        checklist: ["Created farm mapping sketches", "Documented source of seeds and irrigation files"],
+        parent: "farm-1",
+        coords: { x: 50, y: 40 }
+      },
+      {
+        id: "farm-3a",
+        name: "B2C Digital Delivery Setup",
+        desc: "Configure direct subscription pipelines and retail web catalogs targeting urban centers with fresh produce.",
+        official: { label: "OMK Organic Markets Association", url: "https://apeda.gov.in" },
+        resources: [
+          { type: "video", label: "Setting Up Shopify Store for Farming Deliveries", url: "https://youtube.com" }
+        ],
+        checklist: ["Integrated secure digital payment scanners", "Established courier box packaging supply line"],
+        parent: "farm-2",
+        coords: { x: 30, y: 68 }
+      },
+      {
+        id: "farm-3b",
+        name: "Agritech Irrigation Automation",
+        desc: "Establish highly optimized IoT solar water drips, sensor relays, and soil hydrometer feedback setups.",
+        official: { label: "PM Krishi Sinchayee Yojana Guidelines", url: "https://pmksy.gov.in" },
+        resources: [
+          { type: "pdf", label: "Drip Irrigation Engineering Manual", url: "https://nptel.ac.in" }
+        ],
+        checklist: ["Installed standard solenoid valves", "Connected weather forecasting software alerts"],
+        parent: "farm-2",
+        coords: { x: 70, y: 68 }
+      },
+      {
+        id: "farm-4",
+        name: "APEDA Export Standard Log",
+        desc: "Secure phytosanitary logs, cargo export clearance certificates, and trade overseas.",
+        official: { label: "APEDA Export Advisory Directory", url: "https://apeda.gov.in" },
+        resources: [
+          { type: "video", label: "Indian Agritech Global Scale Procedures", url: "https://youtube.com" }
+        ],
+        checklist: ["Registered active IEC (Import Export Code) with DGFT", "Meets target residue guidelines criteria"],
+        parent: "farm-3a",
+        coords: { x: 50, y: 90 }
+      }
+    ]
+  },
+
+  // 11. FINANCE: BANK PROBATIONARY OFFICER (PO)
+  {
+    id: "bank-po",
+    name: "Bank Probationary Officer (IBPS/SBI PO)",
+    category: "finance",
+    tagline: "Pathway mapping bank examinations, commercial banking foundations, and PO training.",
+    steps: [
+      {
+        id: "bpo-1",
+        name: "Academic Graduate Degree",
+        desc: "Complete graduation from any UGC approved institution. Any field is completely eligible.",
+        official: { label: "IBPS Exams Schedule & Guidelines", url: "https://www.ibps.in" },
+        resources: [
+          { type: "video", label: "Bank PO Preparation Strategy Tutorials", url: "https://youtube.com" }
+        ],
+        checklist: ["Secured graduate pass certificate", "Aged between 21 and 30 years"],
+        parent: null,
+        coords: { x: 50, y: 15 }
+      },
+      {
+        id: "bpo-2",
+        name: "PO Preliminary Exam",
+        desc: "Clear 100 objective MCQ items spanning Quantitative Aptitude, Reasoning Ability, and English Language.",
+        official: { label: "IBPS Exam Mock Portals", url: "https://www.ibps.in" },
+        resources: [
+          { type: "pdf", label: "IBPS PO Prelims Section Mock Papers", url: "https://youtube.com" }
+        ],
+        checklist: ["Mastered mental math short-cut tricks", "Solving logic reasoning questions within 45 seconds"],
+        parent: "bpo-1",
+        coords: { x: 50, y: 40 }
+      },
+      {
+        id: "bpo-3",
+        name: "PO Mains & Descriptive",
+        desc: "Clear advanced banking aptitude papers, data analysis, general economy awareness, and English letters.",
+        official: { label: "SBI Career Recruitment Portal", url: "https://sbi.co.in/careers" },
+        resources: [
+          { type: "video", label: "Financial & Economic Current Affairs", url: "https://youtube.com" }
+        ],
+        checklist: ["Understand repo rates, SLR, and bank ratios", "Understand general essay drafting templates"],
+        parent: "bpo-2",
+        coords: { x: 50, y: 65 }
+      },
+      {
+        id: "bpo-4",
+        name: "Interview & Group Discussion",
+        desc: "Face highly conversational banking board panels evaluating general knowledge, customer relations, and banking ethics.",
+        official: { label: "IBPS Final Seat Allocation Results", url: "https://www.ibps.in" },
+        resources: [
+          { type: "pdf", label: "Banking Interview Mock Questions Booklet", url: "https://youtube.com" }
+        ],
+        checklist: ["Prepared personal introduction answers", "Completed 2 full mock panels"],
+        parent: "bpo-3",
+        coords: { x: 50, y: 90 }
+      }
+    ]
+  },
+
+  // 12. EDUCATION: CUET UG EXAM (COLLEGE ADMISSION)
+  {
+    id: "cuet-ug",
+    name: "CUET UG College Entrance",
+    category: "education",
+    tagline: "Pathway to preparing and clearing Common University Entrance Test for top central university slots.",
+    steps: [
+      {
+        id: "cut-1",
+        name: "Domain Subjects Setup",
+        desc: "Review and select standard NCERT class 12 domain books representing your chosen degree target.",
+        official: { label: "NTA CUET Official Website Portal", url: "https://exams.nta.ac.in/CUET-UG/" },
+        resources: [
+          { type: "pdf", label: "NCERT Class 12 Humanities/Science Textbooks", url: "https://ncert.nic.in" }
+        ],
+        checklist: ["Class 12 board exams ongoing or completed", "Selected target degree choices"],
+        parent: null,
+        coords: { x: 50, y: 15 }
+      },
+      {
+        id: "cut-2",
+        name: "Language & General Test Preparation",
+        desc: "Prepare for comprehension skills, vocabulary structures, mental logic aptitude, and local current affairs.",
+        official: { label: "CUET-UG Section Syllabus Blueprint", url: "https://exams.nta.ac.in/CUET-UG/" },
+        resources: [
+          { type: "video", label: "CUET General Test Quantitative Practice Class", url: "https://youtube.com" }
+        ],
+        checklist: ["Completed English grammatical tests", "Familiar with daily standard GK events"],
+        parent: "cut-1",
+        coords: { x: 50, y: 40 }
+      },
+      {
+        id: "cut-3",
+        name: "CUET Examination Attempt",
+        desc: "Attempt the high-speed computer based test at NTA designated national examination centers.",
+        official: { label: "NTA Admit Card & Seat Schedule", url: "https://exams.nta.ac.in/CUET-UG/" },
+        resources: [
+          { type: "pdf", label: "CUET CBT Official Mock Sample Paper", url: "https://exams.nta.ac.in/CUET-UG/" }
+        ],
+        checklist: ["Obtained printed copy of NTA Admit Card", "Successfully verified exam hall coordinates"],
+        parent: "cut-2",
+        coords: { x: 50, y: 65 }
+      },
+      {
+        id: "cut-4",
+        name: "CSAS University Portal Counseling",
+        desc: "Apply on specific university portals (e.g. Delhi University CSAS, BHU, JNU) to claim cut-off allocations.",
+        official: { label: "DU CSAS Central Registration Link", url: "https://admission.uod.ac.in" },
+        resources: [
+          { type: "video", label: "DU Preference Sheet Preparation Tutorial", url: "https://youtube.com" }
+        ],
+        checklist: ["Successfully compiled NTA scorecard values", "Submitted sorted university college preference forms"],
+        parent: "cut-3",
+        coords: { x: 50, y: 90 }
+      }
+    ]
+  }
+];

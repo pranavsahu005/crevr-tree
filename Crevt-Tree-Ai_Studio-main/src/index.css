@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-cream: #FCFAF7;
+  --color-warm-white: #FFFFFF;
+  --color-earth-brown: #2D2D2D;
+  --color-soft-brown: #6B665F;
+  --color-border-soft: #EAE6E1;
+  --color-honey-amber: #E0F2FE;
+  --color-honey-amber-dark: #0369A1;
+
+  --color-leaf-light: #F0FDF4;
+  --color-leaf-bright: #4ADE80;
+  --color-leaf-deep: #22C55E;
+  --color-leaf-dark: #15803D;
+
+  --color-medical-primary: #E11D48;
+  --color-medical-bg: #FFF1F2;
+
+  --color-education-primary: #0D9488;
+  --color-education-bg: #F0FDFA;
+
+  --color-govt-primary: #D97706;
+  --color-govt-bg: #FEF3C7;
+
+  --color-business-primary: #16A34A;
+  --color-business-bg: #F0FDF4;
+
+  --color-finance-primary: #4F46E5;
+  --color-finance-bg: #EEF2FF;
+
+  --color-tech-primary: #0284C7;
+  --color-tech-bg: #F0F9FF;
+}
+
+/* Ambient swaying tree illustration on Hero */
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1.2deg); }
+}
+.animate-sway {
+  animation: sway 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Pulsing current node halo */
+@keyframes pulse-halo {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(224, 242, 254, 0.5); }
+  50% { box-shadow: 0 0 0 10px rgba(14, 165, 233, 0.3); }
+}
+.pulse-halo-active {
+  animation: pulse-halo 2.5s infinite ease-in-out;
+}
+
+/* SVG Line drawing animation simulating organic growth */
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.tree-connector-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 1.5s ease-out forwards;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #FCFAF7; /* --cream */
+  color: #2D2D2D; /* --earth-brown */
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+/* Custom scrollbar to match warm patisserie cream palette */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FCFAF7;
+}
+::-webkit-scrollbar-thumb {
+  background: #EAE6E1;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CBC7C2;
+}

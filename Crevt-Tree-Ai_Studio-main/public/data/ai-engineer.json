@@ -1,0 +1,215 @@
+{
+  "id": "ai-engineer",
+  "name": "AI & Machine Learning Engineer",
+  "category": "tech",
+  "description": "From school mathematics bases to production LLM model integration.",
+  "nodes": [
+    {
+      "id": "ai-1",
+      "label": "Mathematics Foundation",
+      "tier": 1,
+      "children": [
+        "ai-2"
+      ],
+      "detail": {
+        "overview": "Master linear algebra, calculus foundations, and probability statistics standard to Indian board class 11-12 curriculum.",
+        "official": {
+          "label": "NCERT Class 12 Math Syllabus",
+          "url": "https://ncert.nic.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "NCERT Chapter 13 Probability Text",
+            "url": "https://ncert.nic.in/textbook.php"
+          },
+          {
+            "type": "video",
+            "label": "Probability Lectures on YouTube",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Comfortable with vectors",
+          "Understand Matrix operations",
+          "Basic probability concepts"
+        ],
+        "salary": "₹6 - ₹12 LPA (Entry)",
+        "companies": [
+          "TCS Research",
+          "Infosys Helix",
+          "Google India",
+          "Uniphore"
+        ],
+        "colleges": [
+          "IIT Madras",
+          "IIIT Hyderabad",
+          "BITS Pilani"
+        ]
+      },
+      "sub_topics": [
+        {
+          "label": "Comfortable with vectors"
+        },
+        {
+          "label": "Understand Matrix operations"
+        },
+        {
+          "label": "Basic probability concepts"
+        },
+        {
+          "label": "Exam: JEE Advanced"
+        }
+      ]
+    },
+    {
+      "id": "ai-2",
+      "label": "Python Logic Programming",
+      "tier": 2,
+      "children": [
+        "ai-3a",
+        "ai-3b"
+      ],
+      "detail": {
+        "overview": "Master key scripting elements: conditional statements, logical loop algorithms, lists, and file handling.",
+        "official": {
+          "label": "Python Foundation Documentation",
+          "url": "https://docs.python.org/3/"
+        },
+        "free_resources": [
+          {
+            "type": "course",
+            "label": "Python for Absolute Beginners (NPTEL)",
+            "url": "https://nptel.ac.in"
+          }
+        ],
+        "checklist": [
+          "Can write simple logic loops",
+          "Understand list comprehensions",
+          "Installed local Python IDLE"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Can write simple logic loops"
+        },
+        {
+          "label": "Understand list comprehensions"
+        },
+        {
+          "label": "Installed local Python IDLE"
+        }
+      ]
+    },
+    {
+      "id": "ai-3a",
+      "label": "Data Analysis & Pandas",
+      "tier": 3,
+      "children": [],
+      "detail": {
+        "overview": "Learn to clean, manipulate, and analyze tabular records utilizing Pandas, NumPy, and Matplotlib libraries.",
+        "official": {
+          "label": "Pandas Dataframe Documentation",
+          "url": "https://pandas.pydata.org"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Pandas Data Cleaning Workshop",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Can filter rows in a Dataframe",
+          "Completed basic CSV parsing project"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Can filter rows in a Dataframe"
+        },
+        {
+          "label": "Completed basic CSV parsing project"
+        }
+      ]
+    },
+    {
+      "id": "ai-3b",
+      "label": "Neural Networks Theory",
+      "tier": 3,
+      "children": [
+        "ai-4"
+      ],
+      "detail": {
+        "overview": "Understand backpropagation, weights, activation functions, and layer gradient flows.",
+        "official": {
+          "label": "Neural Networks Foundations",
+          "url": "https://deeplearning.ai"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "Deep Learning Book chapter PDF",
+            "url": "https://www.deeplearningbook.org"
+          }
+        ],
+        "checklist": [
+          "Calculated simple hand derivatives",
+          "Understand Sigmoid vs ReLU functions"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Calculated simple hand derivatives"
+        },
+        {
+          "label": "Understand Sigmoid vs ReLU functions"
+        }
+      ]
+    },
+    {
+      "id": "ai-4",
+      "label": "Production Model Integration",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "Deploy API-driven pipelines leveraging OpenAI API, Claude API, or local HuggingFace transformers.",
+        "official": {
+          "label": "OpenAI Developer API Portal",
+          "url": "https://platform.openai.com"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Deploying AI Agents on YouTube",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Understand REST API requests",
+          "Constructed a simple custom LLM chatbot UI"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Understand REST API requests"
+        },
+        {
+          "label": "Constructed a simple custom LLM chatbot UI"
+        }
+      ]
+    }
+  ]
+}

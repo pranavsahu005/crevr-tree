@@ -1,0 +1,202 @@
+{
+  "id": "bca-btech",
+  "name": "Computer Science (BCA/BTech)",
+  "category": "education",
+  "description": "Pathway to building core data structure principles, web systems, and placing as a developer.",
+  "nodes": [
+    {
+      "id": "edu-1",
+      "label": "Structured Programming Base",
+      "tier": 1,
+      "children": [
+        "edu-2"
+      ],
+      "detail": {
+        "overview": "Choose a primary programming language (C++ or Java) to understand syntax and computer memory.",
+        "official": {
+          "label": "AICTE Recommended CSE Syllabus",
+          "url": "https://aicte-india.org"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Free C++ Complete Placement Course",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Understand loops and array definitions",
+          "Mastered compiling code in local terminal"
+        ],
+        "salary": "₹4.5 - ₹15 LPA (Junior Engineer)",
+        "companies": [
+          "TCS",
+          "Wipro",
+          "HCLTech",
+          "Cognizant India",
+          "Razorpay"
+        ],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Understand loops and array definitions"
+        },
+        {
+          "label": "Mastered compiling code in local terminal"
+        },
+        {
+          "label": "Exam: JEE Main"
+        },
+        {
+          "label": "Exam: WBJEE"
+        }
+      ]
+    },
+    {
+      "id": "edu-2",
+      "label": "Data Structures & Algorithms",
+      "tier": 2,
+      "children": [
+        "edu-3a",
+        "edu-3b"
+      ],
+      "detail": {
+        "overview": "Master complexity metrics, binary search trees, hashing algorithms, recursion, and sorting models.",
+        "official": {
+          "label": "NPTEL Data Structures and Algorithms",
+          "url": "https://nptel.ac.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "Algorithmic Complexity Cheat Sheet",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Can write bubble and quicksort algorithms",
+          "Solved 50 practice logic patterns"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Can write bubble and quicksort algorithms"
+        },
+        {
+          "label": "Solved 50 practice logic patterns"
+        }
+      ]
+    },
+    {
+      "id": "edu-3a",
+      "label": "Frontend Web Stack (HTML/JS)",
+      "tier": 3,
+      "children": [
+        "edu-4"
+      ],
+      "detail": {
+        "overview": "Develop completely fluid responsive website systems utilizing modern JavaScript engines.",
+        "official": {
+          "label": "MDN Web Docs JS Reference",
+          "url": "https://developer.mozilla.org"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Complete Web Design Series on YouTube",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Constructed dynamic API weather widget",
+          "Understand DOM event triggers"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Constructed dynamic API weather widget"
+        },
+        {
+          "label": "Understand DOM event triggers"
+        }
+      ]
+    },
+    {
+      "id": "edu-3b",
+      "label": "Database Design (SQL)",
+      "tier": 3,
+      "children": [],
+      "detail": {
+        "overview": "Design clean tables, structural primary/foreign keys, and master relational querying commands.",
+        "official": {
+          "label": "MySQL Documentation and Guides",
+          "url": "https://dev.mysql.com"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "SQL Query Cheat Sheet PDF Guide",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Can perform complex INNER JOIN statements",
+          "Understand standard index locks"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Can perform complex INNER JOIN statements"
+        },
+        {
+          "label": "Understand standard index locks"
+        }
+      ]
+    },
+    {
+      "id": "edu-4",
+      "label": "Final Year Portfolio Placement",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "Establish a complete public GitHub workspace showcasing deployed systems to secure high placement ratings.",
+        "official": {
+          "label": "GitHub Developer Portal",
+          "url": "https://github.com"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Resume Strategy for CS Engineering Freshers",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Completed 3 end-to-end projects",
+          "Maintained 50+ active GitHub commit logs"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Completed 3 end-to-end projects"
+        },
+        {
+          "label": "Maintained 50+ active GitHub commit logs"
+        }
+      ]
+    }
+  ]
+}

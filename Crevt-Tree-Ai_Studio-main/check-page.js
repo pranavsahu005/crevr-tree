@@ -1,0 +1,17 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch({ headless: true });
+const page = await browser.newPage();
+const errors = [];
+page.on('console', msg => { if(msg.type() === 'error') errors.push(msg.text()); });
+page.on('pageerror', err => errors.push(err.message));
+await page.goto('http://localhost:3000', { waitUntil: 'networkidle', timeout: 15000 });
+const h1 = await page.locator('h1').first().textContent().catch(() => 'NO_H1');
+const heroSearch = await page.locator('#hero-search-input').count();
+const allText = await page.textContent('body');
+console.log('=== PAGE CHECK ===');
+console.log('H1:', h1);
+console.log('hero-search count:', heroSearch);
+console.log('Errors:', JSON.stringify(errors));
+console.log('Body snippet:', allText.substring(0, 800));
+await page.screenshot({ path: 'screenshot-home.png', fullPage: true });
+await browser.close();

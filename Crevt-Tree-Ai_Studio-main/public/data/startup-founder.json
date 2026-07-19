@@ -1,0 +1,198 @@
+{
+  "id": "startup-founder",
+  "name": "Startup Founder / Entrepreneur",
+  "category": "business",
+  "description": "Pathway to define MVP, register entity (LLP/Pvt), and seek Mudra or seed funding.",
+  "nodes": [
+    {
+      "id": "biz-1",
+      "label": "Customer Interview (MVP)",
+      "tier": 1,
+      "children": [
+        "biz-2"
+      ],
+      "detail": {
+        "overview": "Speak with at least 50 target buyers to validate if they face the problem you are solving.",
+        "official": {
+          "label": "Startup India Learning Hub",
+          "url": "https://www.startupindia.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Y-Combinator Startup School Videos",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Documented 50 customer feedback chats",
+          "Defined core product pricing metrics"
+        ],
+        "salary": "Self-structured (Revenue Dependent)",
+        "companies": [
+          "NITI Aayog Incubators",
+          "Y Combinator",
+          "Indian Angel Network"
+        ],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Documented 50 customer feedback chats"
+        },
+        {
+          "label": "Defined core product pricing metrics"
+        }
+      ]
+    },
+    {
+      "id": "biz-2",
+      "label": "Company Incorporation (MCA)",
+      "tier": 2,
+      "children": [
+        "biz-3a",
+        "biz-3b"
+      ],
+      "detail": {
+        "overview": "Register a legal Indian business entity — Private Limited or Limited Liability Partnership (LLP) on MCA.",
+        "official": {
+          "label": "Ministry of Corporate Affairs Portal",
+          "url": "https://www.mca.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "Step-by-step SPICe+ Registration PDF",
+            "url": "https://www.mca.gov.in"
+          }
+        ],
+        "checklist": [
+          "Obtained DSC (Digital Signature Certificate)",
+          "Approved unique business name",
+          "Obtained PAN & TAN for company"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Obtained DSC (Digital Signature Certificate)"
+        },
+        {
+          "label": "Approved unique business name"
+        },
+        {
+          "label": "Obtained PAN & TAN for company"
+        }
+      ]
+    },
+    {
+      "id": "biz-3a",
+      "label": "Government Mudra Loan Support",
+      "tier": 3,
+      "children": [
+        "biz-4"
+      ],
+      "detail": {
+        "overview": "Seek debt capital via the Micro Units Development Refinance Agency (MUDRA) scheme (Shishu/Kishor/Tarun segments).",
+        "official": {
+          "label": "Official Udyam Registration & Mudra",
+          "url": "https://www.mudra.org.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Udyam Registration Tutorial Hub",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Completed Udyam MSME Registration portal",
+          "Prepared detailed project report"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Completed Udyam MSME Registration portal"
+        },
+        {
+          "label": "Prepared detailed project report"
+        }
+      ]
+    },
+    {
+      "id": "biz-3b",
+      "label": "Angel Funding & Term Sheet",
+      "tier": 3,
+      "children": [],
+      "detail": {
+        "overview": "Create investor deck slides, present to local Indian angel networks, and agree on standard SHA terms.",
+        "official": {
+          "label": "Startup India Investor Network",
+          "url": "https://www.startupindia.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "Standard Term Sheet template PDF",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Formulated fully detailed cash cap table",
+          "Calculated basic customer acquisition cost (CAC)"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Formulated fully detailed cash cap table"
+        },
+        {
+          "label": "Calculated basic customer acquisition cost (CAC)"
+        }
+      ]
+    },
+    {
+      "id": "biz-4",
+      "label": "Scale & GST Compliance",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "File regular monthly/quarterly GST returns, maintain accounting files, and process staff salaries.",
+        "official": {
+          "label": "GST Central Filing Portal",
+          "url": "https://www.gst.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "GST Monthly Return Tutorial Series",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Created active corporate bank account",
+          "Set up internal payroll software system"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Created active corporate bank account"
+        },
+        {
+          "label": "Set up internal payroll software system"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+Everyone please use this EXACT prompt in Gamma AI.
+
+Do NOT change the theme.
+
+Do NOT use dark mode.
+
+Do NOT use random templates.
+
+Our final presentation will combine all four PPTs into one professional Minor Project presentation, so every PPT must look like it belongs to the same project.
+
+========================
+
+You are creating a professional academic engineering presentation.
+
+Use the uploaded Markdown file as the only source of truth.
+
+Presentation Language:
+English
+
+Target Audience:
+College Faculty
+External Examiner
+Minor Project Evaluation
+
+Presentation Length:
+Exactly 5 Slides
+
+Design Style:
+
+Clean
+
+Minimal
+
+Modern
+
+Academic
+
+Premium
+
+Bright
+
+White Background
+
+Soft Warm Colors
+
+No Dark Theme
+
+No Neon
+
+No Cyberpunk
+
+No Gaming Style
+
+No Heavy Gradients
+
+No Corporate Sales Style
+
+Color Palette:
+
+Background:
+#FFFFFF
+#FFFDF8
+#FFF8E7
+
+Primary:
+#FFC020
+
+Secondary:
+#4ECDC4
+
+Accent:
+#43C97E
+
+Text:
+#6B4A2E
+
+Light Borders:
+#F0E4CC
+
+Typography:
+
+Large clear headings
+
+Readable body text
+
+Lots of whitespace
+
+Rounded cards
+
+Soft shadows
+
+Professional icons
+
+Illustrations only where necessary
+
+Presentation Structure:
+
+Slide 1
+
+Module Title
+
+Project Name
+
+Student Name
+
+College
+
+Department
+
+Guide Name
+
+Simple hero illustration
+
+--------------------------------
+
+Slide 2
+
+Problem Statement
+
+Existing System
+
+Need of the Module
+
+Objectives
+
+Simple infographic
+
+--------------------------------
+
+Slide 3
+
+Architecture
+
+Workflow
+
+Flow Diagram
+
+System Components
+
+Technology Stack
+
+Use diagrams instead of paragraphs.
+
+--------------------------------
+
+Slide 4
+
+Module Features
+
+Working Process
+
+Screenshots
+
+UI Images
+
+Flow Diagrams
+
+Tables if required
+
+--------------------------------
+
+Slide 5
+
+Benefits
+
+Future Scope
+
+Conclusion
+
+Thank You
+
+Professional closing page
+
+========================
+
+Rules
+
+Use images from the provided project.
+
+Use screenshots of the actual website wherever possible.
+
+If diagrams exist in the Markdown, recreate them beautifully.
+
+If architecture diagrams exist, redesign them professionally.
+
+Never use clipart.
+
+Never use childish graphics.
+
+Never overcrowd slides.
+
+One idea per slide.
+
+Keep layouts consistent.
+
+Use the same colors on every slide.
+
+Every slide should look like it belongs to the same project.
+
+Export both:
+
+1. PowerPoint (.pptx)
+
+2. PDF
+
+Do not create more than 5 slides.
+Do not create fewer than 5 slides.
+
+The final presentation should look like it was designed by a professional UI/UX designer for a university project.

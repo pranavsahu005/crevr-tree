@@ -1,0 +1,190 @@
+{
+  "id": "software-engineer",
+  "name": "Full Stack Software Developer",
+  "category": "tech",
+  "description": "Complete engineering roadmap from web fundamentals to Cloud, DevOps and Scalability.",
+  "nodes": [
+    {
+      "id": "se-1",
+      "label": "Modern Web Fundamentals",
+      "tier": 1,
+      "children": [
+        "se-2"
+      ],
+      "detail": {
+        "overview": "Learn modern HTML5 semantic layout, responsive CSS grids, flexbox, and basic client-side programming.",
+        "official": {
+          "label": "W3C Web Standards",
+          "url": "https://www.w3.org"
+        },
+        "free_resources": [
+          {
+            "type": "doc",
+            "label": "MDN CSS Layout Guide",
+            "url": "https://developer.mozilla.org"
+          }
+        ],
+        "checklist": [
+          "Built a responsive personal portfolio",
+          "Deployed basic static site using Vercel or Netlify"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Built a responsive personal portfolio"
+        },
+        {
+          "label": "Deployed basic static site using Vercel or Netlify"
+        }
+      ]
+    },
+    {
+      "id": "se-2",
+      "label": "React & Component Architecture",
+      "tier": 2,
+      "children": [
+        "se-3a",
+        "se-3b"
+      ],
+      "detail": {
+        "overview": "Master declarative interfaces, state hooks, properties, context wrappers, and virtual DOM reconciliation.",
+        "official": {
+          "label": "Official React Documentation",
+          "url": "https://react.dev"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "React JS Core Tutorials (Free)",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Understand useEffect re-renders",
+          "Built a custom todo list app with local persistence"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Understand useEffect re-renders"
+        },
+        {
+          "label": "Built a custom todo list app with local persistence"
+        }
+      ]
+    },
+    {
+      "id": "se-3a",
+      "label": "Express.js Backend APIs",
+      "tier": 3,
+      "children": [
+        "se-4"
+      ],
+      "detail": {
+        "overview": "Write scalable server code, secure endpoints, validate HTTP parameters, and set up cookie tokens.",
+        "official": {
+          "label": "Express API Documentation",
+          "url": "https://expressjs.com"
+        },
+        "free_resources": [
+          {
+            "type": "course",
+            "label": "Node.js Complete Guide on SWAYAM",
+            "url": "https://swayam.gov.in"
+          }
+        ],
+        "checklist": [
+          "Created dynamic RESTful routes",
+          "Able to parse incoming JSON bodies in requests"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Created dynamic RESTful routes"
+        },
+        {
+          "label": "Able to parse incoming JSON bodies in requests"
+        }
+      ]
+    },
+    {
+      "id": "se-3b",
+      "label": "Database Modelling",
+      "tier": 3,
+      "children": [],
+      "detail": {
+        "overview": "Implement schema migrations, handle indexing, connect pools, and prevent SQL injections.",
+        "official": {
+          "label": "PostgreSQL Official Core Wiki",
+          "url": "https://www.postgresql.org"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "Database Normalization PDF Guide",
+            "url": "https://nptel.ac.in"
+          }
+        ],
+        "checklist": [
+          "Structured a 1-to-many relationship",
+          "Understand database indexing performance advantages"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Structured a 1-to-many relationship"
+        },
+        {
+          "label": "Understand database indexing performance advantages"
+        }
+      ]
+    },
+    {
+      "id": "se-4",
+      "label": "Dockerization & Cloud Deploy",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "Containerize the app utilizing lightweight Docker blueprints and host on AWS, GCP or Render.",
+        "official": {
+          "label": "Docker Reference Manuals",
+          "url": "https://docs.docker.com"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Free DevOps & Cloud Crash Course",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Wrote functional multi-stage Dockerfile",
+          "Understand continuous integration (GitHub Actions)"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Wrote functional multi-stage Dockerfile"
+        },
+        {
+          "label": "Understand continuous integration (GitHub Actions)"
+        }
+      ]
+    }
+  ]
+}

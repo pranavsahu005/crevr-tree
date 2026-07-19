@@ -1,0 +1,202 @@
+{
+  "id": "ias-officer",
+  "name": "UPSC Civil Services Officer (IAS)",
+  "category": "government",
+  "description": "Pathway to clearing the UPSC CSE Prelims, Mains, and Interview cycle.",
+  "nodes": [
+    {
+      "id": "civ-1",
+      "label": "UGC Graduate Degree",
+      "tier": 1,
+      "children": [
+        "civ-2"
+      ],
+      "detail": {
+        "overview": "Complete a standard bachelor degree in any stream from a UGC recognized Indian university.",
+        "official": {
+          "label": "UGC Approved Universities List",
+          "url": "https://www.ugc.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "UPSC CSE Preparation Strategy",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Enrolled in graduation",
+          "Read standard newspapers daily (The Hindu/Express)"
+        ],
+        "salary": "₹56,100 - ₹2,500,000 per month (Basic Pay Matrix)",
+        "companies": [
+          "Ministry of Home Affairs",
+          "District Administrations",
+          "Public Sector Enterprises"
+        ],
+        "colleges": [
+          "LBSNAA Mussoorie (Post-selection Training)"
+        ]
+      },
+      "sub_topics": [
+        {
+          "label": "Enrolled in graduation"
+        },
+        {
+          "label": "Read standard newspapers daily (The Hindu/Express)"
+        },
+        {
+          "label": "Exam: UPSC Civil Services Examination"
+        },
+        {
+          "label": "Hub: LBSNAA Mussoorie (Post-selection Training)"
+        }
+      ]
+    },
+    {
+      "id": "civ-2",
+      "label": "UPSC Prelims Filtering",
+      "tier": 2,
+      "children": [
+        "civ-3a",
+        "civ-3b"
+      ],
+      "detail": {
+        "overview": "Clear GS Paper 1 and score minimum 33% passing aggregate inside the CSAT Aptitude paper.",
+        "official": {
+          "label": "UPSC Official Notification Portal",
+          "url": "https://upsc.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "UPSC General Studies Previous Year Papers",
+            "url": "https://upsc.gov.in"
+          }
+        ],
+        "checklist": [
+          "Mastered basic NCERT History (6-12)",
+          "Cleared mock CSAT test series"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Mastered basic NCERT History (6-12)"
+        },
+        {
+          "label": "Cleared mock CSAT test series"
+        }
+      ]
+    },
+    {
+      "id": "civ-3a",
+      "label": "GS Descriptive Mains Papers",
+      "tier": 3,
+      "children": [
+        "civ-4"
+      ],
+      "detail": {
+        "overview": "Prepare and write 9 descriptive papers covering policy, essay, ethics, and your elective option.",
+        "official": {
+          "label": "UPSC Mains Descriptive Guidelines",
+          "url": "https://upsc.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Mains Answer Writing Strategy Class",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Completed syllabus for 1 optional subject",
+          "Practiced daily answer writing speeds"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Completed syllabus for 1 optional subject"
+        },
+        {
+          "label": "Practiced daily answer writing speeds"
+        }
+      ]
+    },
+    {
+      "id": "civ-3b",
+      "label": "Detailed Application Form (DAF)",
+      "tier": 3,
+      "children": [],
+      "detail": {
+        "overview": "Fill and compile details regarding background history, extracurriculars, and cadre preferences.",
+        "official": {
+          "label": "UPSC Online DAF Filing",
+          "url": "https://upsconline.nic.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "UPSC DAF Sample Blueprint Form",
+            "url": "https://upsc.gov.in"
+          }
+        ],
+        "checklist": [
+          "Verified regional certificate details",
+          "Listed clear district/cadre priority choices"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Verified regional certificate details"
+        },
+        {
+          "label": "Listed clear district/cadre priority choices"
+        }
+      ]
+    },
+    {
+      "id": "civ-4",
+      "label": "UPSC Personality Interview",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "Face highly structured boards evaluating composure, national values, policy vision, and ethics.",
+        "official": {
+          "label": "UPSC CSE Final Board Schedule",
+          "url": "https://upsc.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Live Mock Interview Board Sessions",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Thoroughly updated on current affairs",
+          "Completed 3 panel mock tests"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Thoroughly updated on current affairs"
+        },
+        {
+          "label": "Completed 3 panel mock tests"
+        }
+      ]
+    }
+  ]
+}

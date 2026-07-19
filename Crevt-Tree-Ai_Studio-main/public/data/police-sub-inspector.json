@@ -1,0 +1,154 @@
+{
+  "id": "police-sub-inspector",
+  "name": "Police Sub-Inspector (SI)",
+  "category": "government",
+  "description": "Milestones for clearing police SI recruitments, physical screening tests, and basic training academies.",
+  "nodes": [
+    {
+      "id": "pol-1",
+      "label": "Graduation Graduation",
+      "tier": 1,
+      "children": [
+        "pol-2"
+      ],
+      "detail": {
+        "overview": "Obtain any Bachelor's degree (BA/BSc/BCom/BTech) from an officially recognized university.",
+        "official": {
+          "label": "UGC Degree Equivalencies Guide",
+          "url": "https://www.ugc.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "State Police SI Exam Complete Syllabus Info",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Graduation cleared with no active arrears",
+          "Aged between 21 and 28 years (varies per state)"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Graduation cleared with no active arrears"
+        },
+        {
+          "label": "Aged between 21 and 28 years (varies per state)"
+        }
+      ]
+    },
+    {
+      "id": "pol-2",
+      "label": "Written Recruitment Exam",
+      "tier": 2,
+      "children": [
+        "pol-3"
+      ],
+      "detail": {
+        "overview": "Study and clear multiple papers covering General Knowledge, Numerical Ability, Reasoning, and Regional Language.",
+        "official": {
+          "label": "State Police Recruitment Board Link",
+          "url": "https://mppolice.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "General Knowledge Previous Years Sample Qs",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Cleared basic arithmetic mock papers",
+          "Strong awareness of local state laws and geography"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Cleared basic arithmetic mock papers"
+        },
+        {
+          "label": "Strong awareness of local state laws and geography"
+        }
+      ]
+    },
+    {
+      "id": "pol-3",
+      "label": "Physical Measurement & Endurance",
+      "tier": 3,
+      "children": [
+        "pol-4"
+      ],
+      "detail": {
+        "overview": "Pass the mandatory chest/height benchmarks, and clear sprint races, high-jumps, and long-jumps.",
+        "official": {
+          "label": "Police SI Physical Standard Rules",
+          "url": "https://mppolice.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Daily Physical Conditioning & Run Tips",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Height meets state minimum requirements",
+          "Completed 1600m run test within statutory limits"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Height meets state minimum requirements"
+        },
+        {
+          "label": "Completed 1600m run test within statutory limits"
+        }
+      ]
+    },
+    {
+      "id": "pol-4",
+      "label": "Police Training Academy",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "Secure placement in regional police training colleges to study penal code, defense, weaponry, and protocols.",
+        "official": {
+          "label": "Sardar Vallabhbhai Patel National Police Academy",
+          "url": "https://www.svpnpa.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "Indian Penal Code (IPC) Basic Summary Booklet",
+            "url": "https://ncert.nic.in"
+          }
+        ],
+        "checklist": [
+          "Cleared character background verification",
+          "Cleared physical medical checkup board"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Cleared character background verification"
+        },
+        {
+          "label": "Cleared physical medical checkup board"
+        }
+      ]
+    }
+  ]
+}

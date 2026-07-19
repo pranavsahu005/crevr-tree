@@ -1,0 +1,154 @@
+{
+  "id": "nurse",
+  "name": "Registered Nurse (B.Sc Nursing)",
+  "category": "medical",
+  "description": "Pathway mapping the academic nursing college course, clinical boards, and hospital registry.",
+  "nodes": [
+    {
+      "id": "ns-1",
+      "label": "HSC PCB Exam Qualification",
+      "tier": 1,
+      "children": [
+        "ns-2"
+      ],
+      "detail": {
+        "overview": "Clear 12th standard with biological sciences from a recognized Board under state or center regulations.",
+        "official": {
+          "label": "Indian Nursing Council Standards",
+          "url": "https://www.indiannursingcouncil.org"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "B.Sc Nursing Course Guidelines Booklet",
+            "url": "https://www.indiannursingcouncil.org"
+          }
+        ],
+        "checklist": [
+          "Class 12 board passed with minimum 45% marks in PCB",
+          "Cleared state level nursing entrance test"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Class 12 board passed with minimum 45% marks in PCB"
+        },
+        {
+          "label": "Cleared state level nursing entrance test"
+        }
+      ]
+    },
+    {
+      "id": "ns-2",
+      "label": "Anatomy & Foundation Theory",
+      "tier": 2,
+      "children": [
+        "ns-3"
+      ],
+      "detail": {
+        "overview": "Undergo deep training in fundamental nursing principles, human nutrition, biochemistry, and physical health.",
+        "official": {
+          "label": "INC Academic Syllabus",
+          "url": "https://www.indiannursingcouncil.org"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Nursing Foundations Lecture Classes",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Memorized clinical vitals metrics",
+          "Conducted sterile dressing practice sessions"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Memorized clinical vitals metrics"
+        },
+        {
+          "label": "Conducted sterile dressing practice sessions"
+        }
+      ]
+    },
+    {
+      "id": "ns-3",
+      "label": "Clinical Hospital Posting",
+      "tier": 3,
+      "children": [
+        "ns-4"
+      ],
+      "detail": {
+        "overview": "Obtain clinical exposure inside medical-surgical wards, psychiatric clinics, and maternity care units.",
+        "official": {
+          "label": "Ministry of Health & Family Welfare",
+          "url": "https://mohfw.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "INC Practical Logbook Blueprint",
+            "url": "https://www.indiannursingcouncil.org"
+          }
+        ],
+        "checklist": [
+          "Completed pediatric intensive care posting",
+          "Logged 200 hours of clinical patient treatment"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Completed pediatric intensive care posting"
+        },
+        {
+          "label": "Logged 200 hours of clinical patient treatment"
+        }
+      ]
+    },
+    {
+      "id": "ns-4",
+      "label": "State Registry & Licensing",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "Register in your target State Nursing Council to secure certified licensing for nursing officer roles.",
+        "official": {
+          "label": "State Nursing Council Registration Portal",
+          "url": "https://www.indiannursingcouncil.org"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Nursing Officer Exam Preparation Mock",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Obtained character verification certification",
+          "Secure State Nurse Registry ID number"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Obtained character verification certification"
+        },
+        {
+          "label": "Secure State Nurse Registry ID number"
+        }
+      ]
+    }
+  ]
+}

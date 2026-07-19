@@ -1,0 +1,204 @@
+{
+  "id": "doctor",
+  "name": "Medical Doctor (MBBS)",
+  "category": "medical",
+  "description": "Pathway to clear NEET exams and complete the statutory clinical MBBS curriculum.",
+  "nodes": [
+    {
+      "id": "med-1",
+      "label": "PCB Class 11-12 Board Prep",
+      "tier": 1,
+      "children": [
+        "med-2"
+      ],
+      "detail": {
+        "overview": "Complete your board foundations with deep attention to NCERT Biology, Chemistry, and Physics syllabus.",
+        "official": {
+          "label": "NCERT Official E-Textbooks",
+          "url": "https://ncert.nic.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "NCERT Class 11 Biology Textbook PDF",
+            "url": "https://ncert.nic.in"
+          }
+        ],
+        "checklist": [
+          "Completed Class 12 exams with Physics, Chemistry, Biology",
+          "Achieved minimum age limit of 17 years"
+        ],
+        "salary": "₹8 - ₹15 LPA (Govt Medical Officer)",
+        "companies": [
+          "AIIMS",
+          "Apollo Hospitals",
+          "Fortis Healthcare"
+        ],
+        "colleges": [
+          "AIIMS New Delhi",
+          "CMC Vellore",
+          "KGMU Lucknow"
+        ]
+      },
+      "sub_topics": [
+        {
+          "label": "Completed Class 12 exams with Physics, Chemistry, Biology"
+        },
+        {
+          "label": "Achieved minimum age limit of 17 years"
+        },
+        {
+          "label": "Exam: NEET UG"
+        },
+        {
+          "label": "Hub: AIIMS New Delhi"
+        }
+      ]
+    },
+    {
+      "id": "med-2",
+      "label": "NEET UG Examination Clearance",
+      "tier": 2,
+      "children": [
+        "med-3a",
+        "med-3b"
+      ],
+      "detail": {
+        "overview": "Apply, prepare, and clear the National Eligibility cum Entrance Test to secure a government or private college seat.",
+        "official": {
+          "label": "NTA NEET Official Portal",
+          "url": "https://neet.nta.nic.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "NEET UG Exam Syllabus PDF",
+            "url": "https://neet.nta.nic.in"
+          }
+        ],
+        "checklist": [
+          "Enrolled on NTA NEET portal",
+          "Completed multiple official mock sample papers"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Enrolled on NTA NEET portal"
+        },
+        {
+          "label": "Completed multiple official mock sample papers"
+        }
+      ]
+    },
+    {
+      "id": "med-3a",
+      "label": "MBBS Pre-Clinical Phase",
+      "tier": 3,
+      "children": [
+        "med-4"
+      ],
+      "detail": {
+        "overview": "Deep studies into Human Anatomy, Biochemistry, and Physiology during MBBS semesters 1 and 2.",
+        "official": {
+          "label": "National Medical Commission",
+          "url": "https://www.nmc.org.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "MBBS Anatomy Lecture Series",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Mastered dissection procedures",
+          "Cleared college first professional exams"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Mastered dissection procedures"
+        },
+        {
+          "label": "Cleared college first professional exams"
+        }
+      ]
+    },
+    {
+      "id": "med-3b",
+      "label": "MBBS Clinical Pathology",
+      "tier": 3,
+      "children": [],
+      "detail": {
+        "overview": "Semesters 3 to 9. Studying Pharmacology, pathology, forensic medicine, and diagnostic parameters.",
+        "official": {
+          "label": "NMC UG Medical Guidelines",
+          "url": "https://www.nmc.org.in"
+        },
+        "free_resources": [
+          {
+            "type": "course",
+            "label": "Clinical Pathology Open Modules",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Completed pediatric rotation",
+          "Completed ward observation rotations"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Completed pediatric rotation"
+        },
+        {
+          "label": "Completed ward observation rotations"
+        }
+      ]
+    },
+    {
+      "id": "med-4",
+      "label": "Compulsory Rotatory Internship",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "Complete 1 full year of practical hands-on rotatory clinical placement across active hospital units.",
+        "official": {
+          "label": "State Medical Council Registration",
+          "url": "https://www.nmc.org.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "Intern Logbook Standards Guidelines",
+            "url": "https://www.nmc.org.in"
+          }
+        ],
+        "checklist": [
+          "Completed Emergency rotation",
+          "Obtained provisional doctor practitioner license registration number"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Completed Emergency rotation"
+        },
+        {
+          "label": "Obtained provisional doctor practitioner license registration number"
+        }
+      ]
+    }
+  ]
+}

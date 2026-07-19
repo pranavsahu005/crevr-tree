@@ -1,0 +1,190 @@
+{
+  "id": "organic-farmer-agritech",
+  "name": "Organic Farming & Agritech Startup",
+  "category": "business",
+  "description": "Pathway to starting an organic crop system, MSME registration, and commercial supply logs.",
+  "nodes": [
+    {
+      "id": "farm-1",
+      "label": "Soil Testing & Land Ready",
+      "tier": 1,
+      "children": [
+        "farm-2"
+      ],
+      "detail": {
+        "overview": "Determine nutritional density, pH indices, and heavy metal aggregates by submitting farm soil to regional government labs.",
+        "official": {
+          "label": "Soil Health Card Scheme Portal",
+          "url": "https://soilhealth.dac.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "Soil Sampling Official Methodologies",
+            "url": "https://soilhealth.dac.gov.in"
+          }
+        ],
+        "checklist": [
+          "Gathered 5-point dry soil samples",
+          "Verified organic carbon parameters (minimum 0.5% recommended)"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Gathered 5-point dry soil samples"
+        },
+        {
+          "label": "Verified organic carbon parameters (minimum 0.5% recommended)"
+        }
+      ]
+    },
+    {
+      "id": "farm-2",
+      "label": "NPOP Organic Certification",
+      "tier": 2,
+      "children": [
+        "farm-3a",
+        "farm-3b"
+      ],
+      "detail": {
+        "overview": "Register with certified third-party inspectors to obtain statutory organic compliance tags under NPOP standards.",
+        "official": {
+          "label": "APEDA National Programme for Organic Production",
+          "url": "https://apeda.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "How to Obtain Organic Certifications in India",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Created farm mapping sketches",
+          "Documented source of seeds and irrigation files"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Created farm mapping sketches"
+        },
+        {
+          "label": "Documented source of seeds and irrigation files"
+        }
+      ]
+    },
+    {
+      "id": "farm-3a",
+      "label": "B2C Digital Delivery Setup",
+      "tier": 3,
+      "children": [
+        "farm-4"
+      ],
+      "detail": {
+        "overview": "Configure direct subscription pipelines and retail web catalogs targeting urban centers with fresh produce.",
+        "official": {
+          "label": "OMK Organic Markets Association",
+          "url": "https://apeda.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Setting Up Shopify Store for Farming Deliveries",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Integrated secure digital payment scanners",
+          "Established courier box packaging supply line"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Integrated secure digital payment scanners"
+        },
+        {
+          "label": "Established courier box packaging supply line"
+        }
+      ]
+    },
+    {
+      "id": "farm-3b",
+      "label": "Agritech Irrigation Automation",
+      "tier": 3,
+      "children": [],
+      "detail": {
+        "overview": "Establish highly optimized IoT solar water drips, sensor relays, and soil hydrometer feedback setups.",
+        "official": {
+          "label": "PM Krishi Sinchayee Yojana Guidelines",
+          "url": "https://pmksy.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "Drip Irrigation Engineering Manual",
+            "url": "https://nptel.ac.in"
+          }
+        ],
+        "checklist": [
+          "Installed standard solenoid valves",
+          "Connected weather forecasting software alerts"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Installed standard solenoid valves"
+        },
+        {
+          "label": "Connected weather forecasting software alerts"
+        }
+      ]
+    },
+    {
+      "id": "farm-4",
+      "label": "APEDA Export Standard Log",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "Secure phytosanitary logs, cargo export clearance certificates, and trade overseas.",
+        "official": {
+          "label": "APEDA Export Advisory Directory",
+          "url": "https://apeda.gov.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Indian Agritech Global Scale Procedures",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Registered active IEC (Import Export Code) with DGFT",
+          "Meets target residue guidelines criteria"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Registered active IEC (Import Export Code) with DGFT"
+        },
+        {
+          "label": "Meets target residue guidelines criteria"
+        }
+      ]
+    }
+  ]
+}

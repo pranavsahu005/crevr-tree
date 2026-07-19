@@ -1,0 +1,154 @@
+{
+  "id": "cuet-ug",
+  "name": "CUET UG College Entrance",
+  "category": "education",
+  "description": "Pathway to preparing and clearing Common University Entrance Test for top central university slots.",
+  "nodes": [
+    {
+      "id": "cut-1",
+      "label": "Domain Subjects Setup",
+      "tier": 1,
+      "children": [
+        "cut-2"
+      ],
+      "detail": {
+        "overview": "Review and select standard NCERT class 12 domain books representing your chosen degree target.",
+        "official": {
+          "label": "NTA CUET Official Website Portal",
+          "url": "https://exams.nta.ac.in/CUET-UG/"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "NCERT Class 12 Humanities/Science Textbooks",
+            "url": "https://ncert.nic.in"
+          }
+        ],
+        "checklist": [
+          "Class 12 board exams ongoing or completed",
+          "Selected target degree choices"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Class 12 board exams ongoing or completed"
+        },
+        {
+          "label": "Selected target degree choices"
+        }
+      ]
+    },
+    {
+      "id": "cut-2",
+      "label": "Language & General Test Preparation",
+      "tier": 2,
+      "children": [
+        "cut-3"
+      ],
+      "detail": {
+        "overview": "Prepare for comprehension skills, vocabulary structures, mental logic aptitude, and local current affairs.",
+        "official": {
+          "label": "CUET-UG Section Syllabus Blueprint",
+          "url": "https://exams.nta.ac.in/CUET-UG/"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "CUET General Test Quantitative Practice Class",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Completed English grammatical tests",
+          "Familiar with daily standard GK events"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Completed English grammatical tests"
+        },
+        {
+          "label": "Familiar with daily standard GK events"
+        }
+      ]
+    },
+    {
+      "id": "cut-3",
+      "label": "CUET Examination Attempt",
+      "tier": 3,
+      "children": [
+        "cut-4"
+      ],
+      "detail": {
+        "overview": "Attempt the high-speed computer based test at NTA designated national examination centers.",
+        "official": {
+          "label": "NTA Admit Card & Seat Schedule",
+          "url": "https://exams.nta.ac.in/CUET-UG/"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "CUET CBT Official Mock Sample Paper",
+            "url": "https://exams.nta.ac.in/CUET-UG/"
+          }
+        ],
+        "checklist": [
+          "Obtained printed copy of NTA Admit Card",
+          "Successfully verified exam hall coordinates"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Obtained printed copy of NTA Admit Card"
+        },
+        {
+          "label": "Successfully verified exam hall coordinates"
+        }
+      ]
+    },
+    {
+      "id": "cut-4",
+      "label": "CSAS University Portal Counseling",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "Apply on specific university portals (e.g. Delhi University CSAS, BHU, JNU) to claim cut-off allocations.",
+        "official": {
+          "label": "DU CSAS Central Registration Link",
+          "url": "https://admission.uod.ac.in"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "DU Preference Sheet Preparation Tutorial",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Successfully compiled NTA scorecard values",
+          "Submitted sorted university college preference forms"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Successfully compiled NTA scorecard values"
+        },
+        {
+          "label": "Submitted sorted university college preference forms"
+        }
+      ]
+    }
+  ]
+}

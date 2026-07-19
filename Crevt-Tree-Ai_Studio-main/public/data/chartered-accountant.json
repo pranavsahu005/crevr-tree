@@ -1,0 +1,160 @@
+{
+  "id": "chartered-accountant",
+  "name": "Chartered Accountant (CA)",
+  "category": "finance",
+  "description": "Pathway to clear ICAI Foundation, Inter, articleship placement, and ICAI Finals.",
+  "nodes": [
+    {
+      "id": "fin-1",
+      "label": "ICAI Foundation Entry",
+      "tier": 1,
+      "children": [
+        "fin-2"
+      ],
+      "detail": {
+        "overview": "Register and clear the 4 primary objective papers including accounting principles and business laws.",
+        "official": {
+          "label": "ICAI Foundation Registration Online",
+          "url": "https://www.icai.org"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "ICAI Foundation Official Board Materials",
+            "url": "https://icai.org"
+          }
+        ],
+        "checklist": [
+          "Registered on ICAI portal post Class 12",
+          "Mastered double-entry balance sheets"
+        ],
+        "salary": "₹7 - ₹20 LPA (Fresh Chartered Accountant)",
+        "companies": [
+          "Deloitte India",
+          "EY",
+          "KPMG",
+          "PwC",
+          "Aditya Birla Group"
+        ],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Registered on ICAI portal post Class 12"
+        },
+        {
+          "label": "Mastered double-entry balance sheets"
+        }
+      ]
+    },
+    {
+      "id": "fin-2",
+      "label": "ICAI Intermediate Exam",
+      "tier": 2,
+      "children": [
+        "fin-3"
+      ],
+      "detail": {
+        "overview": "Register, study, and clear Group 1 and Group 2 papers of ICAI Intermediate covering corporate audits and direct tax codes.",
+        "official": {
+          "label": "ICAI Intermediate Syllabus Directory",
+          "url": "https://www.icai.org"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "ICAI Inter Tax Prep Lecture Videos",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Completed Direct Tax study modules",
+          "Cleared both Inter groups"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Completed Direct Tax study modules"
+        },
+        {
+          "label": "Cleared both Inter groups"
+        }
+      ]
+    },
+    {
+      "id": "fin-3",
+      "label": "Practical Articleship Placement",
+      "tier": 3,
+      "children": [
+        "fin-4"
+      ],
+      "detail": {
+        "overview": "Undergo a mandatory 2-year practical internship working under a certified auditing practice firm.",
+        "official": {
+          "label": "ICAI Articleship Vacancy Portal",
+          "url": "https://icai.org"
+        },
+        "free_resources": [
+          {
+            "type": "pdf",
+            "label": "Articleship Logbook Code of Conduct Guidelines",
+            "url": "https://icai.org"
+          }
+        ],
+        "checklist": [
+          "Obtained active articleship NOC",
+          "Verified monthly stipend registrations"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Obtained active articleship NOC"
+        },
+        {
+          "label": "Verified monthly stipend registrations"
+        }
+      ]
+    },
+    {
+      "id": "fin-4",
+      "label": "ICAI Final Examination",
+      "tier": 4,
+      "children": [],
+      "detail": {
+        "overview": "Clear advanced strategic finance, financial reporting, and indirect tax tribunals to receive your membership ID.",
+        "official": {
+          "label": "ICAI Final Registration & Membership",
+          "url": "https://www.icai.org"
+        },
+        "free_resources": [
+          {
+            "type": "video",
+            "label": "Final Advanced Audit Revision",
+            "url": "https://youtube.com"
+          }
+        ],
+        "checklist": [
+          "Completed advanced IT training course",
+          "Cleared both final ICAI papers"
+        ],
+        "salary": null,
+        "companies": [],
+        "colleges": []
+      },
+      "sub_topics": [
+        {
+          "label": "Completed advanced IT training course"
+        },
+        {
+          "label": "Cleared both final ICAI papers"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "CrevrTree",
+  "description": "India's Career, Business & Government Directions Tree Viewer",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
